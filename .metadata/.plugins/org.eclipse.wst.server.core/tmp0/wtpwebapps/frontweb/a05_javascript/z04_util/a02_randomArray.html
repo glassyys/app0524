@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 
+
+*/
+	
+	</style>
+
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	bdObj.innerHTML = "<h2>컴퓨터와 가위/바위/보</h2>"
+	var games01 = ["가위","바위","보"]
+	var ran = parseInt(Math.random()*3)
+	bdObj.innerHTML += `<h3>컴퓨터의 선택:${games01[ran]}</h3>`
+	// ex) 구슬로 홀/짝 게임을 하려고 한다. 컴퓨터가 선택한 홀/짝은? @@
+	var myChoice = prompt("컴퓨터와 홀/짝게임 선택하세요(홀/짝)","홀")
+	var ran2 = parseInt(Math.random()*2)
+	var games02 = ["홀","짝"]
+	bdObj.innerHTML += `<h3>컴퓨터가 선택한 홀/짝은?:
+			${games02[ran2]}</h3>`
+	bdObj.innerHTML += `<h3>당신이 선택한 홀/짝은?:${myChoice}</h3>`
+	bdObj.innerHTML += `<h3>결과?:
+						${myChoice==games02[ran2]?"승":"패"}</h3>`
+	var result="패"
+	if(myChoice==games02[ran2]){
+		result="승"
+	}
+	bdObj.innerHTML += `<h3>if 결과?:${result}</h3>`			
+			
+			
+/*
+8. 가위,바위,보 ==> 경우의 3, 0,1,2 ==> if
+	조건문 없이 처리하는 방법..??
+   홀,짝
+   ==> 배열과, 배열의 index를 이용하면 가능..
+  var games01 = ["가위","바위","보"]
+   games01[0]
+   games01[1]
+   games01[2]
+   임의로 가위, 바위, 보가 나올게 할려면..
+   0,1,2 ==> 임의로 나오게 하여
+   games01[ran]
+   var ran = parseInt(Math.random()*3)
+   games01[ran] ==> 가위, 바위, 보 중에 하나만 임의로 가져온다..
+
+*/
+//
+</script>
+</html>

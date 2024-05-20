@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	var num01 = prompt("첫번째 숫자 입력:","0")
+	while(isNaN(num01)){
+		num01 = prompt("입력한데이터가 숫자형이어야 합니다!","0")
+	}
+	var num02 = prompt("두번째 숫자 입력:","0")
+	while(isNaN(num02)){
+		num02 = prompt("입력한데이터가 숫자형이어야 합니다!","0")
+	}
+	var calcu = prompt("연산자 입력(+,-,*,/):","+")
+	var calStr = num01 + calcu+ num02  
+	bdObj.innerHTML += "11 " +calStr+" = "+eval(calStr)
+/*
+	//ex) prompt 창을 3번 로딩하면서 숫자 2개, 마지막에는 연산자 입력하게 하여..
+	//    연산 결과값을 화면에 출력 하세요  
+	//   ex) 1, 5, * 입력받아 ==> 1*5 = 5 출력..
+	
+	
+	
+	
+*/
+
+	function calcuEx(num01,num02,calcu){
+		var calcuResult = 0;
+		var calcuStr = `${num01} ${calcu} ${num02}`
+
+		/* 		if(calcuC == "*" ){
+			calcuResult = num01 * num02
+		}else if (calcuC == "+" ){
+			calcuResult = num01 + num02
+		}
+		else if (calcuC == "-" ){
+			calcuResult = num01 - num02
+		
+		}else if (calcuC == "/" ){
+			calcuResult = num01 / num02
+		}else{
+			calcuResult= 0;
+		} */
+
+		bdObj.innerHTML += "<h2> intest "+num01+calcu+num02+ "</h2>"
+
+		//console.log(calcuStr);
+
+		calcuResult = eval(calcuStr)
+
+		return calcuResult;
+	}
+	calcuEx(num01,num02,calcu)
+
+	bdObj.innerHTML += "<h2>result "+ calcuEx(num01,num02,calcu)+ "</h2>"
+/* 
+	function calcuEx1(testNum){
+		bdObj.innerHTML += "<h2> in "+testNum+ "</h2>"
+		return testNum;
+	}
+	var testNum = 11;
+	calcuEx1(testNum);
+	bdObj.innerHTML += "<h2> out "+testNum+ "</h2>"
+ */
+/*
+#
+
+*/
+//
+</script>
+</html>

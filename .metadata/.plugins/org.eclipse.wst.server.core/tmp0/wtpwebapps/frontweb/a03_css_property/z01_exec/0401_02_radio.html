@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#### 연습 문제 2: 설문조사 폼
+**목표**: 사용자의 선호도를 알아보기 위한 간단한 설문조사 폼을 만듭니다.
+- 질문은 "당신이 선호하는 프로그래밍 언어는 무엇입니까?"이며,
+선택지로는 "JavaScript", "Python", "Java"의 라디오 버튼을 포함합니다.
+- 라디오 버튼 옵션에 마우스를 호버하면 글자 굵기가 굵어지며,
+선택지에 포커스됐을 때는 글자 색상이 파랑색으로 변경됩니다.
+- 설문 제출 버튼을 포함합니다.
+*/
+		.radio_option:hover{
+			background:blue;
+		}
+		.fontbold:hover{
+			font-weight: bold;
+			color: red;
+		}
+		.fontbold:focus{
+			color: green;
+		}
+
+    /* CSS */
+    
+    .option label:hover {
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    /* 선택된 옵션에 대한 스타일 */
+    .option input:checked + label {
+        font-weight: bold;
+    }
+
+    /* 포커스 시 색상 변경 */
+    .option input:focus + label {
+        color: blue;
+    }
+	</style>
+
+</head>
+<body>
+<h2>당신이 선호하는 프로그래밍 언어는 무엇입니까?</h2>
+
+<form>
+
+    <div class="option">
+        <input type="radio" id="javascript" name="language" value="javascript">
+        <label for="javascript">JavaScript</label><br>
+    </div>
+    <div class="option">
+        <input type="radio" id="python" name="language" value="python">
+        <label for="python">Python</label><br>
+    </div>
+    <div class="option">
+        <input type="radio" id="java" name="language" value="java">
+        <label for="java">Java</label><br>
+    </div>
+        <button type="submit">제출</button>
+
+</form>
+
+    <form id="survey-form">
+        <fieldset>
+            <legend>당신이 선호하는 프로그래밍 언어는 무엇입니까?</legend>
+            <input type="radio" id="javascript1" name="language" value="JavaScript1">
+            <label for="javascript1">JavaScript1</label><br>
+            <input type="radio" id="python1" name="language" value="Python1">
+            <label for="python1">Python1</label><br>
+            <input type="radio" id="java1" name="language" value="Java1">
+            <label for="java1">Java1</label><br>
+        </fieldset><br>
+        <button type="submit">제출</button>
+    </form>
+</body>
+
+</html>

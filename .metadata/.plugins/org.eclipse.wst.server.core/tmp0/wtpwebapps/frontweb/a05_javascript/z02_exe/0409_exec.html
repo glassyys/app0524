@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+
+
+// C:\a00_javaexp\workspace1\frontweb\doc\daily\0409.txt 에 있는 문제 쳇Gpt에서 찾은 내용입니다.
+// #### 1. 1부터 100까지의 숫자 중에서 홀수만 출력하는 코드를 작성하세요.
+for (let i = 1; i <= 100; i++) {
+    if (i % 2 !== 0) {
+        console.log(i);
+    }
+}
+//#### 2. 0부터 주어진 숫자까지의 모든 정수를 더하는 함수를 작성하세요.
+function sumOfIntegersUpTo(n) {
+    let sum = 0;
+    for (let i = 0; i <= n; i++) {
+        sum += i;
+    }
+    return sum;
+}
+var inputNum = parseInt(prompt("0부터 합계를 원하는 숫자를 입력하세요",""));
+var sumN = sumOfIntegersUpTo(inputNum);
+bdObj.innerHTML += "0부터 " + inputNum + "까지 합계" + sumN + "입니다.";
+
+//#### 3. 주어진 숫자가 짝수인지 확인하는 함수를 작성하세요.
+function isEven(number) {
+    return number % 2 === 0;
+}
+isEven(4);
+
+//#### 4. 1부터 주어진 숫자까지의 짝수의 합을 반환하는 함수를 작성하세요.
+function sumOfEvenUpTo(n) {
+    let sum = 0;
+    for (let i = 2; i <= n; i += 2) {
+        sum += i;
+    }
+    return sum;
+}
+sumOfEvenUpTo(6);
+
+//#### 5. 주어진 두 숫자 중 더 큰 숫자를 반환하는 함수를 작성하세요.
+function maxNumber(a, b) {
+    return a > b ? a : b;
+}
+
+//#### 6. 숫자 두 개를 입력받아 큰 수에서 작은 수를 뺀 결과를 반환하는 함수를 작성하세요.
+function subtractSmallerFromLarger(a, b) {
+    return Math.abs(a - b);
+}
+subtractSmallerFromLarger(10, 5); //10에서 5를 뺀 결과인 5를 반환합니다.
+
+//#### 7. 점수 계산기
+//사용자로부터 여러 개의 점수를 입력받아 평균을 구하는 함수를 작성하세요. 입력이 끝났음을 알리는 특별한 문자열 ("end")이 입력될 때까지 점수 입력을 계속 받습니다.
+function calculateAverage() {
+    let sum = 0;
+    let count = 0;
+    let input;
+
+    while (true) {
+        input = prompt("점수를 입력하세요 (종료하려면 'end' 입력):");
+        
+        // 'end'가 입력되면 입력 종료
+        if (input === 'end') {
+            break;
+        }
+        
+        // 입력된 값이 숫자인지 확인 후 계산에 포함
+        let score = parseFloat(input);
+        if (!isNaN(score)) {
+            sum += score;
+            count++;
+        } else {
+            alert("유효하지 않은 입력입니다. 숫자를 입력하세요.");
+        }
+    }
+    
+    // 입력된 점수가 없을 경우
+    if (count === 0) {
+        return 0;
+    }
+    
+    // 평균 계산
+    return sum / count;
+}
+
+// 함수 호출하여 평균 출력
+const average1 = calculateAverage();
+console.log("평균 점수:", average1);
+
+//#### 8. 로그인 시도 제한
+//사용자가 비밀번호를 3회 연속으로 잘못 입력하면 시스템 접근을 차단하는 함수를 작성하세요. 사용자로부터 비밀번호를 입력받아 저장된 비밀번호와 비교합니다.
+function accessControl() {
+    const correctPassword = "mySecretPassword";
+    let attempts = 0;
+
+    while (attempts < 3) {
+        let userInput = prompt("비밀번호를 입력하세요:");
+        
+        if (userInput === correctPassword) {
+            alert("액세스 허용되었습니다.");
+            return; // 비밀번호가 일치하면 함수 종료
+        } else {
+            attempts++;
+            alert(`비밀번호가 잘못되었습니다. ${3 - attempts}번의 시도가 남았습니다.`);
+        }
+    }
+
+    // 3번의 시도가 모두 실패한 경우
+    alert("시스템 접근이 차단되었습니다. 관리자에게 문의하세요.");
+}
+
+// 함수 호출
+accessControl();
+
+//#### 9. 랜덤 비밀번호 생성기
+//랜덤하게 비밀번호를 생성하는 함수를 작성하세요. 생성된 비밀번호는 숫자8자로로 리턴됩니다.  받습니다.
+function generateRandomPassword() {
+    let password = '';
+    const characters = '0123456789';
+    const passwordLength = 8;
+
+    for (let i = 0; i < passwordLength; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        password += characters[randomIndex];
+    }
+
+    return password;
+}
+
+// 함수 호출하여 랜덤 비밀번호 생성 및 출력
+const randomPassword = generateRandomPassword();
+console.log("랜덤 비밀번호:", randomPassword);
+
+//#### 10. 점수 계산기
+//사용자로부터 여러 개의 점수를 입력받아 평균을 구하는 함수를 작성하세요. 입력이 끝났음을 알리는 특별한 문자열 ("end")이 입력될 때까지 점수 입력을 계속 받습니다.
+function calculateAverage() {
+    let sum = 0;
+    let count = 0;
+    let input;
+
+    while (true) {
+        input = prompt("점수를 입력하세요 (종료하려면 'end' 입력):");
+        
+        // 'end'가 입력되면 입력 종료
+        if (input === 'end') {
+            break;
+        }
+        
+        // 입력된 값이 숫자인지 확인 후 계산에 포함
+        let score = parseFloat(input);
+        if (!isNaN(score)) {
+            sum += score;
+            count++;
+        } else {
+            alert("유효하지 않은 입력입니다. 숫자를 입력하세요.");
+        }
+    }
+    
+    // 입력된 점수가 없을 경우
+    if (count === 0) {
+        return 0;
+    }
+    
+    // 평균 계산
+    return sum / count;
+}
+
+// 함수 호출하여 평균 출력
+const average = calculateAverage();
+console.log("평균 점수:", average);
+
+calculateAverage();
+
+//#### 11. 로그인 시도 제한
+//사용자가 비밀번호를 3회 연속으로 잘못 입력하면 시스템 접근을 차단하는 함수를 작성하세요. 사용자로부터 비밀번호를 입력받아 저장된 비밀번호와 비교합니다.
+function accessControl() {
+    const correctPassword = "mySecretPassword";
+    let attempts = 0;
+
+    while (attempts < 3) {
+        let userInput = prompt("비밀번호를 입력하세요:");
+        
+        if (userInput === correctPassword) {
+            alert("액세스 허용되었습니다.");
+            return; // 비밀번호가 일치하면 함수 종료
+        } else {
+            attempts++;
+            alert(`비밀번호가 잘못되었습니다. ${3 - attempts}번의 시도가 남았습니다.`);
+        }
+    }
+
+    // 3번의 시도가 모두 실패한 경우
+    alert("시스템 접근이 차단되었습니다. 관리자에게 문의하세요.");
+}
+
+// 함수 호출
+accessControl();
+
+//correctPassword: 시스템에 저장된 올바른 비밀번호입니다.
+//attempts: 사용자가 비밀번호를 입력한 횟수를 추적합니다.
+//userInput: 사용자가 입력한 비밀번호를 저장합니다.
+
+//#### 12. 랜덤 비밀번호 생성기
+//랜덤하게 비밀번호를 생성하는 함수를 작성하세요. 생성된 비밀번호는 숫자로 8자리를 만들어 생성합니다.
+function generateRandomPassword() {
+    let password = '';
+    const characters = '0123456789';
+    const passwordLength = 8;
+
+    for (let i = 0; i < passwordLength; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        password += characters[randomIndex];
+    }
+
+    return password;
+}
+
+// 함수 호출하여 랜덤 비밀번호 생성 및 출력
+const randomPassword1 = generateRandomPassword();
+console.log("랜덤 비밀번호:", randomPassword1);
+
+generateRandomPassword();
+
+//#### 13. 별 찍기
+//사용자로부터 숫자를 입력받아 해당 숫자 크기의 정삼각형 형태의 별(*) 패턴을 출력하는 함수를 작성하세요.
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	let n = 5; // 삼각형의 높이
+	for (let i = 1; i <= n; i++) {
+	  let stars = ' '.repeat(n - i);
+	  stars += '*'.repeat(2 * i - 1);
+	  // console.log(stars);
+	}
+	
+	//process.stdout.write('*'); Node.js 에서 가능함
+/* 	
+	function printTriangle(height) {
+	    // 각 줄을 출력
+	    for (let i = 1; i <= height; i++) {
+	        // 공백 출력
+	        for (let j = 1; j <= height - i; j++) {
+	            process.stdout.write(' ');
+	        }
+	        // 별 출력
+	        for (let k = 1; k <= 2 * i - 1; k++) {
+	            process.stdout.write('*');
+	        }
+	        // 줄 바꿈
+	        console.log();
+	    }
+	}
+
+	// 사용자로부터 숫자 입력 받기
+	const height = parseInt(prompt("삼각형의 높이를 입력하세요:"));
+
+	// 함수 호출하여 삼각형 출력
+	printTriangle(height);
+*/
+//
+</script>
+</html>

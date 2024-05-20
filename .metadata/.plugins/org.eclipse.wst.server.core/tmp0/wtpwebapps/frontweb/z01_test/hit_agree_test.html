@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.memberContainer{
+    width: 50%; /* 너비를 50%로 설정합니다. */
+    margin: 0 auto; /* 좌우 여백을 자동으로 설정하여 수평 가운데 정렬합니다. */
+    background-color: white; /* 배경색을 지정합니다. */
+    padding: 20px; /* 내부 여백을 추가합니다. */
+    box-sizing: border-box; /* padding을 포함한 너비로 설정합니다. */
+
+}
+
+.header {
+  display: flex; /* 플렉스 컨테이너로 설정합니다. */
+  align-items: center; /* 수직 가운데 정렬합니다. */
+  border: 3px solid white; /* 테두리 스타일 설정 */
+}
+.headerInner {
+	width:200px;
+	border: 3px solid white; /* 테두리 스타일 설정 */
+	/*flex-grow: 1;  남은 공간을 모두 채웁니다. */
+}
+.headerTitle {
+	width:400px;
+	text-align: center; /* 텍스트를 가운데 정렬합니다. */
+	border: 3px solid white; /* 테두리 스타일 설정 */
+}
+.headerTitle1 {
+  text-align: center; /* 텍스트를 가운데 정렬합니다. */
+}
+
+/* .uCheckbox label input[type="checkbox"] + span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 10px;
+} */
+
+.contents{
+  display: flex; /* 플렉스 컨테이너로 설정합니다. */
+  background-color: white;
+}
+.uCheckbox label input[type="checkbox"]:checked + span {
+  background-color: #007bff;
+}
+
+.uBtn{
+width:200px;
+}
+.footer {
+	position: fixed; /* 화면에 고정 위치시킵니다. */
+	bottom: 0; /* 하단에 위치시킵니다. */
+	left: 0; /* 왼쪽 정렬합니다. */
+	right: 0; /* 오른쪽 정렬합니다. */
+	text-align: center; /* 텍스트를 가운데 정렬합니다. */
+	background-color: #f0f0f0; /* 배경색을 지정합니다. */
+	padding: 10px; /* 안쪽 여백을 추가합니다. */
+}
+div{
+	margin: 10px; /* 각 요소 사이의 간격을 조절할 수 있습니다. */
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.termsContent .termsBlock {
+    margin-top: 10px;
+    padding-left: 5px;
+}
+/*
+.uCheckbox .text:after {
+    background: url(//openimage.interpark.com/member/common/icon/icon_check_new.png) 0 0 no-repeat;
+    background-size: 100% auto;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    background-position: 0 0;
+    background-size: 100% auto;
+    border-radius: 50%;
+}
+.uCheckbox:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+input {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+input, select {
+    vertical-align: middle;
+}
+
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+} */
+
+/* 숨겨진 기본 체크박스 */
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* 체크박스 컨테이너 */
+.checkbox-container {
+    position: relative;
+    cursor: pointer;
+}
+
+/* 원형 체크박스 디자인 */
+/* .checkbox-container .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+} 
+*/
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 0; /* 왼쪽 정렬로 변경 */
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #eee;
+    border: 2px solid #000;
+}
+
+/* 체크 표시 V 모양 */
+.checkbox-container .checkmark:after {
+    content: "✔";
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 체크된 상태일 때 체크 표시 표시 */
+.checkbox-container input:checked + .checkmark:after {
+    display: block;
+}
+.inputWrap{
+	display:inline-block;
+}
+/* 체크박스 레이블 */
+.checkbox-container .text {
+    margin-left: 50px; /* 체크박스와 텍스트 사이 간격 조정 */
+}
+
+.btn btnLink{
+    margin-left: 50px; /* 체크박스와 텍스트 사이 간격 조정 */
+
+}
+
+.uCheckbox .btnLink {
+    font-size: 13px;
+    line-height: 20px;
+    color: #666;
+    display: inline-block;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    vertical-align: top;
+}
+
+.memberContainer {
+	background-color: white; /* 배경색을 지정합니다. */
+}
+/*
+ .contentWrapper{
+	border: 3px solid green; / 테두리 스타일 설정 /
+}
+.inputWrap{
+	border: 3px solid purple; / 테두리 스타일 설정 /
+}
+
+.uCheckbox{
+    padding-left: 10px;
+	border: 3px solid yellow; / 테두리 스타일 설정 /
+} */
+</style>
+
+    <script>
+        function openPopup(url) {
+            window.open(url, '_blank', 'width=600,height=400');
+            return false;
+        }
+    </script>
+</head>
+
+
+<noscript>
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4M7TGG"
+		height="0" width="0" style="display: none; visibility: hidden"></iframe>
+</noscript>
+<meta charSet="utf-8" />
+<title>회원가입-인터파크</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="/styles/common/regist.css" />
+<link rel="preload" href="/_next/static/css/425c6040fd8ff83f59c1.css"
+	as="style" />
+<link rel="stylesheet" href="/_next/static/css/425c6040fd8ff83f59c1.css"
+	data-n-g="" />
+<noscript data-n-css="true"></noscript>
+
+</head>
+<body>
+
+	<div id="agred">
+			<div class="header">
+				<div class="headerInner">
+					<a href="https://www.interpark.com" class="headerLogo">
+						<img src="./image/interpark_logo.jpg"/>
+					</a>
+				</div>
+				<div class="headerTitle">
+				<div class="headerTitle1">약관동의</div>
+				</div>
+			</div>
+			<hr>
+		<div class="memberContainer">
+			<div class="contents">
+				<div class="contentWrapper termsContent">
+<!-- 					<div class="uCheckbox allAgree">
+						<label><input type="checkbox" /><span class="text">약관전체 동의</span></label>
+					</div> -->
+<div class="uCheckbox sType checkbox-container">
+    <label>
+        <div class="inputWrap">
+            <input type="checkbox" class="singleSelector requireSelector" />
+            <span class="checkmark"></span>&nbsp&nbsp&nbsp약관전체 동의
+        </div>
+    </label>
+
+</div>
+					<div class="termsBlock">
+						<div class="label">필수 동의 항목</div>
+						<div class="termsItem">
+<div class="uCheckbox sType checkbox-container">
+    <label>
+        <div class="inputWrap">
+            <input type="checkbox" class="singleSelector requireSelector" />
+            <span class="checkmark"></span> 
+            <a href="#" class="btn btnLink">[필수] 이용약관</a>
+<!--             <a href="https://incorp.interpark.com/member/2016/pop_agreement.html" class="btn btnLink">[필수] 이용약관</a>
+    
+            <a href="#"  onclick="return openPopup('https://incorp.interpark.com/member/2016/pop_agreement.html')" class="btn btnLink">[필수] 이용약관</a>
+ -->
+        </div>
+    </label>
+</div>
+<div class="uCheckbox sType checkbox-container">
+     <label>
+        <div class="inputWrap">
+            <input type="checkbox" class="singleSelector requireSelector" />
+            <span class="checkmark"></span> 
+<!--             <a href="#" class="btn btnLink">[필수] 전자금융거래 이용약관</a> -->
+<a href="#" class="btn btnLink" onclick="return openPopup('https://incorp.interpark.com/member/2016/pop_agreement.html')">[필수] 전자금융거래 이용약관</a>
+        </div>
+    </label>
+<!-- <label>
+    <div class="inputWrap">
+        <input type="checkbox" class="singleSelector requireSelector" />
+        <span class="checkmark"></span> 
+        <a href="#" onclick="return openPopup('https://incorp.interpark.com/member/2016/pop_transaction.html')" class="btn btnLink">[필수] 전자금융거래 이용약관</a>
+    </div>
+</label> -->
+</div>
+<div class="uCheckbox sType checkbox-container">
+    <label>
+        <div class="inputWrap">
+            <input type="checkbox" class="singleSelector requireSelector" />
+            <span class="checkmark"></span> 
+            <a href="#" class="btn btnLink">[필수] 개인정보 수집동의서</a>
+        </div>
+    </label>
+</div>
+
+					</div>
+<!-- 					<div class="termsBlock"> -->
+						<div class="label">선택 동의 항목</div>
+						<div class="termsItem1">
+<div class="uCheckbox sType checkbox-container">
+    <label>
+        <div class="inputWrap">
+            <input type="checkbox" class="singleSelector requireSelector" />
+            <span class="checkmark"></span> 
+            <a href="#" class="btn btnLink">[선택] 개인정보 수집동의서</a>
+        </div>
+    </label>
+</div>
+<div class="uCheckbox sType checkbox-container">
+    <label>
+        <div class="inputWrap">
+            <input type="checkbox" class="singleSelector requireSelector" />
+            <span class="checkmark"></span> 
+            <a href="#" class="btn btnLink">[선택] 위치기반서비스 이용약관</a>
+        </div>
+    </label>
+</div>
+						</div>
+<!-- 					</div> -->
+					<div class="ubtnArea">
+						<div class="col">
+						<a href="hit_member_test0429.html"></a>
+							<button type="button" class="uBtn active" disabled=""
+								data-id="nextStep">다음단계</button>
+								
+								
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+<footer class="footer">
+				<div class="copyright">Copyright © InterparkTriple Corp. Allrights reserved.</div>
+</footer>
+</html>
+
+<script type="text/javascript">
+//약관전체 동의 체크 박스
+var allAgreeCheckbox = document.querySelector('.uCheckbox.sType.checkbox-container input[type="checkbox"]');
+// 필수 동의 항목 체크 박스
+var requiredCheckboxes = document.querySelectorAll('.termsItem input[type="checkbox"]');
+// 선택 동의 항목 체크 박스
+var optionalCheckboxes = document.querySelectorAll('.termsItem1 input[type="checkbox"]');
+// 다음 단계 버튼
+var nextStepButton = document.querySelector('[data-id="nextStep"]');
+
+// 약관전체 동의 체크 박스가 변경될 때마다 호출되는 함수
+function checkAllAgreeCheckbox() {
+    // 약관전체 동의 체크 박스가 체크되었는지 확인
+    if (allAgreeCheckbox.checked) {
+        // 필수 동의 항목 체크 박스 모두 선택
+        requiredCheckboxes.forEach(function(checkbox) {
+            checkbox.checked = true;
+        });
+        // 선택 동의 항목 체크 박스 모두 선택
+        optionalCheckboxes.forEach(function(checkbox) {
+            checkbox.checked = true;
+        });
+    } else {
+        // 약관전체 동의 체크 박스가 체크되지 않았을 때 필수 동의 항목 체크 박스 모두 해제
+        requiredCheckboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+        // 약관전체 동의 체크 박스가 체크되지 않았을 때 선택 동의 항목 체크 박스 모두 해제
+        optionalCheckboxes.forEach(function(checkbox) {
+            checkbox.checked = false;
+        });
+    }
+    // 필수 동의 항목 체크 상태 확인하여 버튼 활성화 또는 비활성화
+    checkRequiredCheckboxes();
+}
+
+// 필수 동의 항목 체크 박스가 변경될 때마다 호출되는 함수
+function checkRequiredCheckboxes() {
+    // 필수 동의 항목 체크 박스가 모두 선택되었는지 확인
+    var allRequiredChecked = Array.from(requiredCheckboxes).every(function(checkbox) {
+        return checkbox.checked;
+    });
+
+    // 모든 필수 동의 항목이 선택되었는지 확인하여 버튼 활성화 또는 비활성화
+    nextStepButton.disabled = !allRequiredChecked;
+}
+
+// 약관전체 동의 체크 박스 상태 모니터링
+allAgreeCheckbox.addEventListener('change', checkAllAgreeCheckbox);
+// 필수 동의 항목 체크 박스 상태 모니터링
+requiredCheckboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', checkRequiredCheckboxes);
+});
+
+// 페이지 로드 시 초기 체크 확인
+checkAllAgreeCheckbox();
+checkRequiredCheckboxes();
+
+
+/* // 모든 필수 항목 체크 박스
+var requiredCheckboxes = document.querySelectorAll('.termsItem [type="checkbox"]');
+
+// 다음 단계 버튼
+var nextStepButton = document.querySelector('[data-id="nextStep"]');
+
+// 모든 필수 항목 체크 박스가 변경될 때마다 호출되는 함수
+function checkRequiredCheckboxes() {
+    var allChecked = true;
+    requiredCheckboxes.forEach(function(checkbox) {
+        if (!checkbox.checked) {
+            allChecked = false;
+        }
+    });
+    // 모든 필수 항목이 체크되면 버튼 활성화, 그렇지 않으면 비활성화
+    nextStepButton.disabled = !allChecked;
+}
+
+// 필수 항목 체크 박스 상태 모니터링
+requiredCheckboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', checkRequiredCheckboxes);
+});
+
+// 페이지 로드 시 초기 체크 확인
+checkRequiredCheckboxes();  */
+</script>
+</html>

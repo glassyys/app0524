@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mouseover Content Display</title>
+<style>
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* 가상 툴팁 표시를 위한 점선 */
+    cursor: pointer; /* 마우스 오버 상태에서 커서를 포인터로 변경 */
+  }
+  
+  .tooltip .tooltiptext {
+    /*visibility: hidden;  기본적으로 툴팁 내용을 숨김 */
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1; /* 다른 요소 위에 표시하기 위해 */
+    bottom: 125%; /* 요소 위에 위치하도록 설정 */
+    left: 50%; /* 요소 가운데 위치하도록 설정 */
+    margin-left: -60px; /* 가운데 정렬을 위한 마진 설정 */
+    opacity: 0; /* 툴팁 내용을 처음부터 투명하게 설정 */
+    transition: opacity 0.3s; /* 투명도 변화에 애니메이션 적용 */
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible; /* 마우스 오버 시 툴팁 내용 표시 */
+    opacity: 1; /* 툴팁 내용을 표시할 때 투명도를 1로 설정하여 표시 */
+		.p2{ text-indent:10em;text-align:center;} 
+
+  }
+</style>
+</head>
+<body>
+<br>
+<br>
+<div class="tooltip">마우스를 올려보세요
+  <span class="tooltiptext">여기에 표시할 내용을 입력하세요.</span>
+</div>
+<p>그러나</p>
+	<p class="p2">그러나, <strong>스타일 시트</strong>는 이를
+		가능하게 한다. 들여쓰기, 정렬에 대해서 알아본다.</p>
+</body>
+</html>

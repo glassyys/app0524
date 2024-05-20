@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	bdObj.innerHTML += "<h2>무지개색</h2>"
+	var colors = ['red','orange','yellow','green','blue','navy','purple']
+	alert("3초 이후 색상 출력")
+	var set01 = setTimeout(function(){
+		for(var idx=0;idx<colors.length;idx++){
+			//bdObj.innerHTML += "<h2 style='background:"+colors[idx]+";'>"+colors[idx]+"</h2>"
+			//bdObj.innerHTML += `<h2 style='background:${colors[idx]};'>${colors[idx]}</h2>`
+			bdObj.innerHTML += `<h2 style="background:${colors[idx]}"> ${colors[idx]} </h2>`;
+
+		}
+		clearTimeout(set01); // 메모리 해제.. 위 내용 수행 후..
+	}, 3000) // 3000 ==> 1/1000초이기에 3초를 의미
+
+/* 	
+	var msgCrm2 = confirm("3 초 후에 무지개색상 출력 확인")
+	
+		if(msgCrm2){
+			var set02 = setTimeout(function(){
+				bdObj.innerHTML += "<h2 style='background:red'>빨강</h2>"
+				bdObj.innerHTML += "<h2 style='background:orange'>주황</h2>"
+				bdObj.innerHTML += "<h2 style='background:yellow'>노랑</h2>"
+				bdObj.innerHTML += "<h2 style='background:green'>초록</h2>"
+				bdObj.innerHTML += "<h2 style='background:blue'>파랑</h2>"
+				bdObj.innerHTML += "<h2 style='background:navy'>남색</h2>"
+				bdObj.innerHTML += "<h2 style='background:purple'>보라</h2>"
+				clearTimeout(set02) // 메모리 해제.. 위 내용 수행 후..
+			}, 3000) // 3000 ==> 1/1000초이기에 3초를 의미
+		} */
+/*
+ex) 3초 이후에 무지개 색상이 출력됩니다.
+bdObj.innerHTML += "<h2 style='background:red'>빨강</h2>"
+bdObj.innerHTML += "<h2 style='background:orange'>주황</h2>"
+bdObj.innerHTML += "<h2 style='background:red'>노랑</h2>"
+
+*/
+//
+</script>
+</html>

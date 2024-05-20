@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*header*/
+header{
+box-sizing:border-box;/*테두리를 포함한 크기를 지정*/
+display:flex;
+flex-direction:colume;/*속성들이 세로방향으로 만들어짐*/
+align-items:center;/*flex를 정렬하는 방법*/
+padding:0;
+width:100%;
+background:white;
+border-bottom:1px solid silver;
+}
+/*header 전체 box*/
+.firstdiv{
+	display:flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content:flex-start;/*콘텐츠 항목 사이와 주위에 공간을 분배(flex-start:아이템들을 시작점으로 정렬)
+								->flex-direction:column(세로배치)으로 두었으므로 위에서 정렬*/
+	width:100%	
+}
+/*header 로고있는 라인 box*/
+.firstdiv_logo{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+	width:100%;
+	padding:0 30px;
+	box-sizing: border-box;
+	height:100px;
+} 
+/*로고있는 박스 내부 박스*/
+.inside_firstdiv_logo{
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	justify-content:space-betewen; /*아이템들 사이에 균일 간격*/
+	max-width:1280px;/*요소의 최대 가로 크기 설정*/
+	width:100%;
+	height:50px;
+}
+/*내부 박스 안의 로고와 검색 박스*/
+.logo_find{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    gap: 20px;/*로고와 검색창 사이 간격*/
+}
+/*로고 설정*/
+.logosize{
+	width:200px;
+	height:50px;
+	left:0;
+}
+/*검색 설정*/
+.find{
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+    height:50px;
+    max-width: 452px;
+    border:0.5px solid silver;
+    border-radius:50px;
+    cursor: text;
+}
+/*검색창 크기설정 및 border 없애기*/
+.find input{
+	 border:none;
+	 display:flex;
+	 position:relative;
+	 text-align:left;
+	 top:13px;
+	 left:10px;
+	 font-size:15pt; 
+}
+/*검색할때에도 border 없애기 */
+.find input:focus{
+	 outline:none;	 
+}
+
+/*내부 박스 안의 로그인부터 언어설정 박스*/
+.login_language{
+	display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    gap: 20px;
+    width: 100%;
+    max-width: 312px;
+    height: 18px;
+    border-radius: 6px; /*모서리 둥글게*/
+    flex: 1; /*아이템의 순서*/
+    text-wrap: nowrap; /*지정된 박스보다 text가 길면 박스 밖으로 나감(줄바꿈 안됨)*/
+    
+}
+.login_language>a{
+	height: 18px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #111;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*언어 박스*/
+.language{
+	position: relative;
+}
+.language_button{
+	position: relative;
+    font-size: 15px;
+    background-color: transparent;
+    border: none;
+    color: #000;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius:50%;
+    border:1px solid silver;
+}
+.language_imagesize{
+	width:15px;
+	height:20px;
+	border-radius:50%;
+}
+
+/*header의 메뉴바 있는 box*/
+.firstdiv_menu{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+	width:100%;
+	padding:0 30px;
+	box-sizing: border-box;
+	height:50px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+.menubar{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    gap: 20px;
+    max-width: 1280px;
+}
+.menu_first{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 39px;
+    padding: 0;
+    gap: 22px;
+    border-radius: 6px;
+    white-space: nowrap;
+    list-style-type: none;
+    margin: 0;
+}
+.menu_separate{
+	display: flex;
+    align-items: center;
+    width: 1px;
+    height: 15px;
+    background-color: #ddd;
+}
+.menu_second{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 39px;
+    padding: 0;
+    gap: 22px;
+    border-radius: 6px;
+    white-space: nowrap;
+    list-style-type: none;
+    margin: 0;
+}
+.menu_first li a{
+	text-decoration:none;
+	color:black;
+	font-weight: bold;
+	
+}	
+.menu_second li a{
+	text-decoration:none;
+	color:#B21EF1;
+	font-weight: bold;
+}	
+
+	</style>
+
+</head>
+<body>
+
+<header>
+  <!--로고~언어까지 담고 있는 박스 지정 -->
+ 	<!-- header 전체 //header_wrap_abfca-->
+ 		<div class="firstdiv"> <!-- header 에서 로고 있는 라인 box -->
+			<div class="firstdiv_logo"> <!-- header 에서 로고 있는 라인 box -->
+				<div class="inside_firstdiv_logo">
+					<div class="logo_find">
+						<div class="logo">
+						<a href="https://tickets.interpark.com/">
+							<img class="logosize" src="interparkticket_logo.jpg">
+						</a>
+						</div>
+						<div class="find">
+							<div>
+							<input type="text" placeholder="검색하세요"/>
+							</div>
+						</div>						
+					</div>
+					<div class="login_language">
+						<a href="login_test01.html">로그인</a>
+						<a href="input ">회원가입</a>
+						<a href="input">마이페이지</a>
+						<div class="language">
+							<button class="language_button">
+								<img class="language_imagesize" src="korea.png"> 
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+	<div class="firstdiv_menu"><!-- header 에서 메뉴 있는 라인 box -->
+		<div class="menubar">
+			<ul class="menu_first">
+				<li><a href="input hyper link">뮤지컬</a>
+				<li><a href="input hyper link">콘서트</a>
+				<li><a href="input hyper link">스포츠</a>
+				<li><a href="input hyper link">전시/행사</a>
+				<li><a href="input hyper link">클래식/무용</a>
+				<li><a href="input hyper link">아동/가족</a>
+				<li><a href="input hyper link">연극</a>
+				<li><a href="input hyper link">레저/캠핑</a>
+				<li><a href="input hyper link">토핑</a>
+				<li><a href="input hyper link">MD샵</a>
+			</ul>
+			<div class="menu_separate"></div>
+			<ul class="menu_second">
+				<li><a href="input hyper link">랭킹</a>
+				<li><a href="input hyper link" class="menufontcolor">오픈공지</a>
+				<li><a href="input hyper link" class="menufontcolor">지역별</a>
+				<li><a href="input hyper link" class="menufontcolor">공연장</a>
+				<li><a href="input hyper link"><img src="MOL.PNG"/></a>
+			</ul>
+				
+		</div>
+	</div>
+		</div>
+		
+
+</header>
+<main></main>
+<footer></footer>
+
+
+</body>
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	//bdObj.innerHTML = "제목"
+/*#*/
+//
+	var bdObj = document.querySelector("div") //css선택하는 형식과 동일
+	//bdObj.innerHTML = "검색하세요"
+	
+</script>
+</html>

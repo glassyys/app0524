@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	bdObj.innerHTML = "프로그래밍 순차"
+	// 변수를 정하여 연산을 처리하는 프로그램을 해 보고, 그 결과값을 출력하자.
+	// 1. 변수 설정 num01, num02
+	var num01, num02;
+	// 2. 초기 데이터 할당.
+	num01 = 5; num02 = 10;
+	// 3. 다른 변수에 데이터 처리(합산, 곱셈, 덧셈)
+	var tot = num01*num02;
+	// 4. 결과 출력형식 지정 및 출력 처리( @@ X @@ = @@ )
+	bdObj.innerHTML += `<h3>${num01} X ${num02} = ${num01*num02}</h3>`
+	// ex) 상품 가격을 30000으로 정하고, 15%할인율이 적용되어 최종적으로
+	//	   할인된 금액을 프로그램의 순차적으로 처리하여 출력해보세요.
+
+	// 1. 변수 설정 num01, num02
+	var pordprice, discRate;
+	// 2. 초기 데이터 할당.
+	pordprice = 30000; discRate = 0.15;
+	// 3. 다른 변수에 데이터 처리(합산, 곱셈, 덧셈)
+	var lastPrice = pordprice -(pordprice*discRate);
+	// 4. 결과 출력형식 지정 및 출력 처리( @@ X @@ = @@ )
+	bdObj.innerHTML += `<h3>상품가격은 ${pordprice}원 이고 할인율은 ${discRate}% 이고
+	최종상품가격은 ${lastPrice}원</h3>`
+	// 1. 변수 설정 price, disRatio, totPay
+	// 2. 데이터 할당.
+	// 3. 연산처리.
+	// 4. 결과 출력 형식 지정 상품가격: @@, 할인율 : @@ %, 최종금액 : @@@
+	var price, disRatio, disPay, totPay;
+	price = 30000; disRatio=15;
+	disPay = (price*disRatio/100);
+	// 특정 금액 %로 표시 %/100 %/100
+	// ex) 1000의 50% ==> 1000*50/100
+	totpay = price - disPay;
+	bdObj.innerHTML += `<h3>상품가격 : ${price}
+		할인율 :${disRatio}%, 할인금액:${disPay},
+		최종금액 :${totpay}</h3>`
+/*
+# 프로그램 플로우에 대한 이해
+1. 순차구조 이해 : 효과적으로 순차를 먼저 나열한다.
+2. 조건문 이해 : 위 순차구조에서 조건문으로 분기되는 구간을 확인하여 처리한다.
+3. 반복문 이해 : 위 순차구조와 조건문에서 반복으로 처리할 구간을 확인하여 처리한다.
+
+ex) 라면 끓이기 플로우 처리
+1. 순차 구조 처리하기
+*/
+bdObj.innerHTML += `<h2>라면끓이기</h2>`
+bdObj.innerHTML += `<ol>`
+bdObj.innerHTML += `<li>물을 끓인다(시작)</li>`
+bdObj.innerHTML += `<li>스프와 함께 라면을 넣는다</li>`
+bdObj.innerHTML += `<li>계란을 넣는다</li>`
+bdObj.innerHTML += `<li>파를 넣는다</li>`
+bdObj.innerHTML += `<li>라면을 용기에 넣고 먹는다</li>`
+bdObj.innerHTML += `</ol>`
+
+var food = `<h2>라면끓이기</h2>`
+food += `<ol>`
+food += `<li>물을 넣은다(시작)</li>` // 500cc 넣기까지 조건문 반복
+food += `<li>물을 끓인다</li>` // 온도가 100C되기까지 끓인다 반복/조건
+food += `<li>스프와 함께 라면을 넣는다</li>` // 100C가 되었을 때..
+food += `<li>계란을 넣는다</li>`
+food += `<li>파를 넣는다</li>` // 조건 시간 2분 정도 더 끓인다.
+food += `<li>라면을 용기에 넣고 먹는다</li>`
+food += `<ol>`
+bdObj.innerHTML += food
+
+
+/*
+# 프로그래밍에 있어서 순차
+1. 프로그래밍의 조건문/반복문에 들어가기 전에 어떤 순서에 의해서 처리할 것인가가
+	더 중요하다고 할 수 있다.
+2. 프로그래밍의 순차 처리는 알고리즘에서 가장 먼저 점검해야 할 부분이다.
+3. 프로그래밍 처리 순서
+	1) 기본적으로 프로그래밍은 위에서 아래로, 왼쪽에서 오른쪽으로 코드된 대로
+		흘러간다. ps)물로, 대입연산자의 경우 오늘쪽에 있는 데이터를 왼쪽에
+		할당하는 경우가 많다.
+	2) 사용할 변수를 선언하고, 초기 데이터를 할당 후,
+	3) 가장 최적을 순서로 프로그램 순서를 잡고,
+	4) 각 단계별로 처리해야 할 조건문과 반복문을 처리하고,
+	5) 마지막에 프로그램에 대한 처리방식(예외, 에러 등 대비, 자원해제)
+		을 결정하여, 프고르갬의 완성도를 높인다.
+	
+
+
+*/
+//
+</script>
+</html>

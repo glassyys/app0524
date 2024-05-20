@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	var h2Obj = document.querySelector("h2")
+	h2Obj.innerText = ""
+	/*
+	
+	*/
+}  
+
+</script>
+</head>
+<body>
+	<h2></h2>
+            <input id="inputtext" type="text" placeholder="휴대폰번호"><br>
+			<button class="button3" type="submit">인증번호 받기</button>
+</body>
+<script>
+document.getElementById("inputtext").addEventListener("input", function() {
+    var inputText = document.getElementById("inputtext");
+    var button3 = document.querySelector(".button3");
+    if (inputText.value.trim() !== "") {
+        button3.style.backgroundColor = "#007bff"; // 파란색 배경색 적용
+    } else {
+        button3.style.backgroundColor = "gray"; // 기본 배경색 적용
+    }
+});
+</script>
+</html>

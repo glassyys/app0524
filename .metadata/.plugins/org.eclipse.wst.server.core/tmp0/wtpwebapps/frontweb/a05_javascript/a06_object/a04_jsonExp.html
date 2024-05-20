@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 
+
+*/
+	
+	</style>
+
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	bdObj.innerHTML = "<h2>json객체 연습</h2>"
+	// 1단계 객체 선언과 출력
+	var music = {title:"Ditto", singer:"NewJeans",pubYear:2023}
+	bdObj.innerHTML += "<h3>타이틀:"+music.title+"</h3>"
+	bdObj.innerHTML += "<h3>가수:"+music.singer+"</h3>"
+	bdObj.innerHTML += "<h3>발매연도:"+music.pubYear+"</h3>"
+	// 2단계 객체 메서드 선언과 출력..
+	var music2 = {}
+	music2.title = "IAM"
+	music2.singer = "IVE"
+	music2.pubYear = 2023
+	music2.show = function(){
+		bdObj.innerHTML += "<h3>타이틀:"+this.title+"</h3>"
+		bdObj.innerHTML += "<h3>가수:"+this.singer+"</h3>"
+		bdObj.innerHTML += "<h3>발매연도:"+this.pubYear+"</h3>"		
+	}
+	music2.show()
+	// 11:05~
+	
+	
+/*
+
+*/
+//
+</script>
+</html>

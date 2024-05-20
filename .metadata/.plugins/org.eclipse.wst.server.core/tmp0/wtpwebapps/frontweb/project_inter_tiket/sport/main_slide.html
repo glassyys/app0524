@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#big_slide .sl_back a{
+		display:none;
+	}
+	#big_slide .sl_back #slBck_selected{
+		display:block;
+	}
+	#big_slide .sl_back img{
+		width:400px;
+		height:240px;
+	}
+	
+	#big_slide .sl_button{
+		position:absolute;
+		right:20px;
+		/* bottom:20px; */
+	}
+	
+	#big_slide input[type=button]{
+		background-color:white;
+		border-radius:999px;
+		width:30px;
+		height:30px;
+	}
+	#big_slide .sl_button #slBtn_selected{
+		display:inline-block;
+		background-color:red;
+		width:60px;
+		z-index:2;
+	}
+</style>
+<script type="text/javascript">
+// 버튼 갯수 저장하는 상수
+const btn_num = 8;
+// 어느 버튼에 포커스되어있는지 판단하는 변수
+var btn_cursor = 0;//ctrl_big_slide에서 사용
+
+window.onload=function(){
+	var slBtnObj = document.querySelector("#big_slide .sl_button");
+	// 0~7의 값을 ctrl_big_slide 함수에 전달하는 버튼 생성
+	for (var i = 0; i<btn_num; i++){
+		slBtnObj.innerHTML += `<input type="button" onClick="ctrl_big_slide(${i})"></input>`;
+	}
+	var slBckArr = document.querySelectorAll("#big_slide .sl_back a");
+	slBckArr[0].id = "slBck_selected";
+	var slBtnArr = document.querySelectorAll("#big_slide .sl_button input");
+	slBtnArr[0].id = "slBtn_selected";
+	// 5초 간격으로 아래에 함수를 -1을 전달하고 반복 호출
+	setInterval(ctrl_big_slide,5000,-1)
+}  
+
+
+function ctrl_big_slide(num){
+	// 자동으로 호출하여 넘겨줄 경우, 특정 인덱스가 아닌 -1을 전달하여 구분
+	if (num == -1){
+		num = (btn_cursor + 1)>=8?0:btn_cursor+1	
+	}
+	
+	var slBckArr = document.querySelectorAll("#big_slide .sl_back a");
+	var slBtnArr = document.querySelectorAll("#big_slide .sl_button input");
+	for (var i = 0; i<btn_num; i++){
+		slBckArr[i].id = "";
+		slBtnArr[i].id = "";
+	}
+	slBckArr[num].id = "slBck_selected";
+	slBtnArr[num].id = "slBtn_selected";
+	
+	btn_cursor = num
+}
+</script>
+</head>
+<body>
+	<div id="big_slide">
+		<div class="sl_back">
+			<a target="_parent" href="#">
+				<img src="media/bs_0.gif">
+			</a>
+			<a target="_parent" href="#">
+				<img src="media/bs_1.gif">
+			</a>
+			<a target="_parent" href="#">
+				<img src="media/bs_2.gif">
+			</a>
+			<a target="_parent" href="#">
+				<img src="media/bs_3.gif">
+			</a>
+			<a target="_parent" href="#">
+				<img src="media/bs_4.gif">
+			</a>
+			<a target="_parent" href="#">
+				<img src="media/bs_5.gif">
+			</a>
+			<a target="_parent" href="#">
+				<img src="media/bs_6.gif">
+			</a>
+			<a target="_parent" href="#">
+				<img src="media/bs_7.gif">
+			</a>
+		</div>
+		<div class="sl_button">
+		</div>
+	</div>
+</body>
+</html>

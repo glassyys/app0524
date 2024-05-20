@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+//	bdObj.innerHTML = "제목"
+//1. **패션 쇼 평가하기**: 사용자가 입력한 옷의 색상에 따라
+// "트렌디함", "클래식함", 또는 "독특함" 등을 출력하세요.
+/* 
+bdObj.innerHTML += "<h3>1. **패션 쇼 평가하기**</h3>";
+var color = prompt("옷의 색상을 입력하세요:","빨강 노랑 파랑 검정 회색 흰색 중");
+if (color === "빨강"|| color === "노랑"|| color === "파랑")
+{
+	bdObj.innerHTML += "트렌디함";
+}else if(color === "검정"|| color === "회색"|| color === "흰색"){
+	bdObj.innerHTML += "클래식함";
+}else
+{
+	bdObj.innerHTML += "독특함";
+
+}
+*/
+//2. **영화 나이 제한**: 사용자의 나이에 따라 영화 티켓 판매 여부를 결정하고 결과를 출력하세요.
+// 12세 이하면 "어린이용 영화를 보세요."
+/* 
+bdObj.innerHTML += "<h3>2. **영화 나이 제한**</h3>";
+var age = prompt("나이를 입력하세요!:","0");
+if (age <=12)
+{
+	bdObj.innerHTML += "어린이용 영화를 보세요.";
+} else {
+    bdObj.innerHTML = "티켓을 구매할 수 있습니다.";
+}
+*/
+
+//3. **음식 주문 자동화**: 사용자가 입력한 음식 목록 중에 "피자"가 포함되어 있으면
+// "피자 주문 완료!"를, 그렇지 않으면 "다른 메뉴를 선택하세요."를 출력하세요.
+
+/* bdObj.innerHTML += "<h3>3. **음식 주문 자동화**</h3>";
+var foodList = prompt("음식 목록을 입력하세요 (여러 음식을 콤마로 구분하여 입력하세요):");
+//입력받은 음식 목록을 쉼표를 기준으로 나누어 배열로 만듦
+var foods = foodList.split(",");
+
+//"피자"가 음식 목록에 포함되어 있는지 확인
+var hasPizza = false;
+for (var i = 0; i < foods.length; i++) {
+    if (foods[i].trim() === "피자") {
+        hasPizza = true;
+        break;
+    }
+}
+
+// 결과 출력
+if (hasPizza) {
+	bdObj.innerHTML += "피자 주문 완료!";
+} else {
+	bdObj.innerHTML += "다른 메뉴를 선택하세요.";
+}
+*/
+
+//4. **도서관 책 대출**: 사용자가 도서관에서 책을 대출하려 할 때, 
+// 이미 대출한 책의 수에 따라 추가 대출 가능 여부를 출력하세요.
+/* 
+bdObj.innerHTML += "<h3>4. **도서관 책 대출**</h3>";
+var bookCnt = prompt("대출건수");
+var maxBookCnt = 5;
+if (bookCnt< maxBookCnt) {
+	bdObj.innerHTML += "추가대출이 가능합니다.";
+} else {
+	bdObj.innerHTML += "최대대출이"+ maxBookCnt + "건 이라 추가대출이 불가능합니다." + "<br>"; 
+}
+*/
+//5. **운동 추천 프로그램**: 사용자가 입력한 날씨(비, 눈, 맑음)에 따라 적합한 운동을 추천하고 출력하세요.
+/* 
+bdObj.innerHTML += "<h3>5. **운동 추천 프로그램**</h3>";
+var weader = prompt("날씨를 입력하세요");
+
+if (weader === "비") {
+	bdObj.innerHTML +=  weader + "가 오면 실내골프를 치세요." + "<br>"; 
+} else if (weader === "눈")  {
+	bdObj.innerHTML +=  weader + "이 오면 실내탁구를 치세요." + "<br>"; 
+} else if (weader === "맑음")  {
+	bdObj.innerHTML +=  weader + "이면 축구를 추천드립니다." + "<br>"; 
+} else{
+	bdObj.innerHTML +=  weader + "날씨이면 추천할 운동이 없읍니다." + "<br>"; 
+}
+*/	
+
+//6. **휴대폰 요금제 추천**: 사용자의 월간 데이터 사용량에 따라 가장 적합한 요금제를 추천하세요.
+/* 
+bdObj.innerHTML += "<h3>6. **휴대폰 요금제 추천**</h3>";
+var phoneFee = prompt("휴대폰 월사용량을 입력하세요(GB):");
+
+if (phoneFee > 10) {
+	bdObj.innerHTML +=  "무제한 요금제를 추천합니다." + "<br>"; 
+} else if (phoneFee <= 10 && phoneFee > 5)  {
+	bdObj.innerHTML +=  "세이브 요금제를 추천합니다." + "<br>"; 
+} else{
+	bdObj.innerHTML +=  "표준 요금제를 추천합니다." + "<br>"; 
+}
+ */
+//7. **과일 분류기**: 사용자가 입력한 과일 이름에 따라 "열대과일", "온대과일" 또는 "다른 종류의 과일"로 분류하여 출력하세요.
+/* 
+bdObj.innerHTML += "<h3>7. **과일 분류기**</h3>";
+var fruit = prompt("과일을 입력하세요","");
+if (fruit === "사과"|| fruit === "배"|| fruit === "딸기")
+{
+	bdObj.innerHTML += "온대과일";
+}else if(fruit === "바나나"|| fruit === "파인애플"){
+	bdObj.innerHTML += "열대과일";
+}else
+{
+	bdObj.innerHTML += "다른 종류의 과일";
+}
+*/
+
+//8. **사용자 피드백 분석**: 웹사이트에서 사용자가 제공한 피드백(긍정적, 부정적, 중립)을 분석하여 각각의 피드백에 대한 적절한 대응 메시지를 출력하세요.
+/* 
+bdObj.innerHTML += "<h3>8. **사용자 피드백 분석**</h3>";
+var feedback = prompt("피드백할 내용을 입력하세요(좋음, 나쁨, 보통)");
+if (fruit == "좋음")
+{
+	bdObj.innerHTML += "긍정적인 피드백 감사합니다.";
+}else if(fruit == "나쁨"){
+	bdObj.innerHTML += "문제를 개선겠습니다.";
+}else
+{
+	bdObj.innerHTML += "피드백 주셔서 감사합니다.";
+}
+*/
+
+//9. **자동차 연비 계산기**: 사용자의 차량 종류에 따라 예상 연비를 계산하여
+// "고연비", "중간 연비", "저연비" 중 하나를 출력하세요.
+/*
+bdObj.innerHTML += "<h3>9. **자동차 연비 계산기**</h3>";
+ 
+var carType = prompt("자동차의 종류를 입력하세요(승용차 SUV 전기차 하이브리드 기타 증 한가지)");
+if (carType === "승용차")
+{
+	bdObj.innerHTML += "저연비";
+}else if(carType === "전기차" || carType === "하이브리드" ){
+	bdObj.innerHTML += "고연비";
+}else
+{
+	bdObj.innerHTML += "중간 연비";
+}
+*/
+
+//10. **회원 가입 연령 확인**: 웹사이트에 회원 가입을 시도하는 사용자의 나이를 확인하여,
+//18세 미만이면 "부모님 동의가 필요합니다."를 출력하세요.
+
+bdObj.innerHTML += "<h3>10. **회원 가입 연령 확인**</h3>";
+var userAge = prompt("나이를 입력하세요:");
+
+if (userAge <18)
+{
+	bdObj.innerHTML += "부모님의 동의가 필요합니다.";
+}else
+{
+	bdObj.innerHTML += "회원가입을 진행하시면 됩니다.";
+}
+/*
+#
+
+*/
+//
+</script>
+</html>

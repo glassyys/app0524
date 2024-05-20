@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	bdObj.innerHTML = "<h3>여러가지 조건문</h3>"
+	bdObj.innerHTML = "<h3>단순 if문</h3>"
+	// 나이를 입력받고, 해당 나이가 고나람가능 나이이면 관람입장 처리..
+	var age =14
+	bdObj.innerHTML = "<h3>입력받은 나이:"+ age + "</h3>"
+	if(age>=13){
+		bdObj.innerHTML = "<h4>13세 이상이라 관람</h4>"
+	}
+	bdObj.innerHTML += "<h4>종료</h4>"
+	// ex) 구매금액을 입력받게 하여, 구매금액인 100000이상이면 할인 쿠폰 발급
+	//	   출력되게 하세요..
+	
+	var buyAmt = prompt("구매금액을 입력하세요","");
+	bdObj.innerHTML += "<h4>입력한 구매금액 : " + pay + "</h4>"
+	if(buyAmt>=100000){
+		bdObj.innerHTML = "<h4>할인쿠폰 발급</h4>"
+	}
+	bdObj.innerHTML = "<h4>처리종료</h4>"
+
+/*
+# 조건문
+1. 기본적인 프로그램의 flow에서 특정 조건에 의해 처리되게할 때, 처리하는
+	형식을 말한다.
+2. 조건문의 형식
+	1) if(조건문){
+			위 조건이 true일 때, 처리해야할 구문
+		}
+	2) if(조건문){
+			조건문이 true일 때, 처리해야할 구문	
+		}
+		else{
+			조건문이 false일 때, 처리해야할 구문
+		}
+	3) if(조건문1){
+		
+		}else if(조건문2){
+		
+		}else if(조건문3){
+		
+		}..{
+		
+		
+		}else{
+			위에 나열된 조건이 아닐 때..
+		}
+*/
+//
+</script>
+</html>

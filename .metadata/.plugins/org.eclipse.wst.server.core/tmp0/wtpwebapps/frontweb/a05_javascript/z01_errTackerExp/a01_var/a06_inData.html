@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 
+
+*/
+	
+	</style>
+
+</head>
+<body>
+	<table width="30%" align="center" border>
+		<tr><th></th></tr>
+		<tr><td></td></tr>
+	</table>
+</body>
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	var subject = prompt("과목을 입력:","")
+	var pt = promp2t("점수를 입력:","")
+	//  국어 : 80 점
+	bdObj.innerHTML += subject+" : " +pt+ "점"
+	var thObj = document.querySelector("th")
+	var tdObj = document.querySelector("td")
+	thObj.innerText = subject;
+	// style="background:orange"
+	thObj.style.background="orange"
+	tdObj.innerText = pt;
+	// style="text-align:center" 
+	// ==> javascript 프로그램이기에 구분자를 대문자로 처리
+	tdObj.style.textAlign="center"
+	
+/*
+
+*/
+//
+</script>
+</html>

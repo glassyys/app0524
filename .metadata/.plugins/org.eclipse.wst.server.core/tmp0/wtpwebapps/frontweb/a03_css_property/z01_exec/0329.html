@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+### 연습과제
+
+#### 1. 리스트 꾸미기
+- 리스트 아이템 마커를 기본값에서 `circle`, `square`, `none`으로 변경하는 CSS를 적용해보세요.
+- 리스트 아이템에 이미지를 마커로 사용하세요 (`list-style-image`).
+- 리스트 마커의 위치를 `inside`와 `outside`로 변경해보며 차이를 비교하세요.
+*/
+  ul.circle-list {
+    list-style-type: circle;
+  }
+
+  ul.square-list {
+    list-style-type: square;
+  }
+
+  ul.no-list {
+    list-style-type: none;
+  }
+
+  ul.image-list {
+    list-style-image: url('../media/marker.png');
+  }
+
+  ul.inside-list {
+    list-style-position: inside;
+  }
+
+  ul.outside-list {
+    list-style-position: outside;
+  }
+/*
+
+#### 2. `z-index`를 사용한 요소 겹치기
+- 여러 이미지 혹은 요소들을 겹치게 배치하고, `z-index`를 다르게 설정하여 겹치는 순서를 변경해보세요.
+*/
+  .box {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+  }
+
+  #box1 {
+    background-color: red;
+    left: 210px;
+    top: 210px;
+    z-index: 3;
+  }
+
+  #box2 {
+    background-color: blue;
+    left: 250px;
+    top: 250px;
+    z-index: 2;
+  }
+
+  #box3 {
+    background-color: green;
+    left: 290px;
+    top: 290px;
+    z-index: 1;
+  }
+/*
+
+#### 3. `visibility` 옵션 활용
+- 몇몇 요소에 `visibility: hidden;`과 `visibility: visible;`을 적용하여 화면에서의 표시 여부를 변경해보세요.
+- `visibility: hidden;`과 `display: none;`의 차이를 비교해보세요.
+*/
+  .hidden {
+    visibility: hidden;
+  }
+
+  .visible {
+    visibility: visible;
+  }
+/*
+
+#### 4. 스토리
+"위젯 공장"은 다양한 위젯을 생산하는 가상의 회사입니다. 최근 웹사이트 리뉴얼을 결정했고, 여러분이 디자인 작업을 맡게 되었습니다. 
+웹사이트는 제품 목록, 회사 소개, 연락처 정보를 포함해야 하며, 방문자들이 쉽게 정보를 찾을 수 있도록 사용자 친화적이어야 합니다.
+
+1. **제품 목록 페이지 디자인**
+   - 제품 사진과 설명이 포함된 리스트를 만듭니다. `list-style-image`를 사용하여 제품 유형에 따라 다른 아이콘을 마커로 표시하세요.
+   - 제품 리스트에 `overflow` 속성을 적용하여, 제품 설명이 너무 길 경우 스크롤하여 볼 수 있게 하세요.
+2. **회사 소개 페이지 디자인**
+   - 회사 역사, 비전, 팀 멤버를 소개하는 섹션을 만듭니다. 각 섹션의 제목에는 `z-index`를 활용하여 겹치는 배경 이미지 효과를 주세요.
+   - 팀 멤버의 사진 목록에서, 사람의 이름에 마우스를 올리면 해당 사람의 짧은 소개가 나타나도록 `visibility` 옵션을 활용하세요.
+
+3. **연락처 정보 페이지**
+   - 연락처 정보를 깔끔하게 표시하는 테이블을 디자인하세요. 테이블의 행마다 서로 다른 배경색을 적용하여 가독성을 높이세요(`nth-child` 활용).
+   - 연락처 목록에 마우스를 올렸을 때, 해당 행의 색상이 변하도록 해보세요(`hover` 효과).
+*/
+  ul.products {
+    list-style-type: none;
+    overflow: auto;
+    max-height: 200px;
+  }
+
+  ul.products li {
+    margin-bottom: 10px;
+    
+  }
+  #img01{
+  	list-style-image:url("widget1.png") 
+  }
+  #img02{
+  	list-style-image:url("widget2.png") 
+  }
+  #img03{
+  	list-style-image:url("widget3.png") 
+  }
+  
+
+  ul.products li img {
+    width: 50px;
+    height: auto;
+  }
+  
+/*
+
+### 토론 문제
+
+1. `list-style-image`를 사용할 때 발생할 수 있는 문제점과 해결 방법은 무엇인가요?
+이미지 마커가 제대로 로드되지 않거나, 이미지 크기가 일관되지 않는 경우가 발생할 수 있습니다. 해결 방법으로는 웹에서 잘 로드되는 경량 이미지를 사용하고, 이미지 크기를 CSS 또는 서버 측에서 일관되게 조정하는 것입니다.
+
+2. `z-index`가 작동하지 않는 경우, 어떤 조건이 충족되어야 하는지 논의하세요.
+ z-index는 position 속성이 static이 아닌 요소에만 적용됩니다. 즉, 요소에 position: relative;, absolute;, fixed; 또는 sticky; 중 하나가 설정되어 있어야 z-index가 올바르게 작동합니다.
+ 
+
+3. `visibility: hidden;`과 `display: none;` 사이의 주요 차이점은 무엇이며, 어떤 상황에서 각각을 선호하나요?
+visibility: hidden; vs display: none;: visibility: hidden;은 요소를 숨기되 공간을 유지할 때 사용하고, display: none;은 요소와 해당 공간을 모두 제거할 때 사용합니다. 예를 들어, 페이지 레이아웃을 유지하면서 일부 정보를 숨길 필요가 있는 경우 visibility를, 요소를 완전히 제거해야 할 때 display를 사용합니다.
+
+4. `overflow: auto;`와 `overflow: scroll;`의 차이점을 설명하고, 각각을 선호하는 상황은 어떤 것이 있나요?
+overflow: auto; vs overflow: scroll;: overflow: auto;는 내용이 넘치는 경우에만 스크롤바를 표시하고, 그렇지 않으면 스크롤바를 숨깁니다. overflow: scroll;은 내용의 양에 상관없이 항상 스크롤바를 표시합니다. 내용량이 변동될 때 스크롤바의 자동 표시/숨김이 필요한 경우 auto를, 사용자에게 항상 스크롤 가능성을 알리고자 할 때는 scroll을 사용합니다.
+
+# 다음의 각 내용에 대하여 개인별로 점검하시고, 내일 발전할 내용도 적어주세요.(조장님이 취합해서 전달)
+1. 오늘 출결사항(전날, 9:00지각/조퇴사유)
+	
+2. 수업에 긍정적인 마음으로 집중하였는가?
+	1) 수업시간에 수업관련 없는 채팅이나 동영상 등 방해되는 내용을 접하지 않았는가?
+	2) 수업시간에 효과적으로 집중을 하였는가?
+
+3. 수업 진행 중, 어려웠던 내용과 해결해야할 과제.
+
+# 조별로 공통적으로 이해가 힘든 내용이나 어려운 내용 정리해서 전달해주세요.
+
+# 수업관련 건의사항이 있으면 전달 부탁드립니다.
+
+==> 손들기 : 본인이 진행이 필요하다고 판단하는 시점 기준..
+(개인 톡 자세한 설명 필요 메시지)	
+*/
+	
+	</style>
+
+</head>
+<body>
+<h2>Circle List</h2>
+<ul class="circle-list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+<h2>Square List</h2>
+<ul class="square-list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+<h2>No Marker List</h2>
+<ul class="no-list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+<h2>Image Marker List</h2>
+<ul class="image-list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+<h2>Marker Inside List</h2>
+<ul class="inside-list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+<h2>Marker Outside List</h2>
+<ul class="outside-list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+<div id="box1" class="box"></div>
+<div id="box2" class="box"></div>
+<div id="box3" class="box"></div>
+
+<div class="hidden">This text is hidden.</div>
+<div class="visible">This text is visible.</div>
+
+<!-- Comparison with display: none; -->
+<div style="display: none;">This element uses display: none; and will not take up space.</div>
+<div>This element is visible and shows the space difference with display: none; above.</div>
+<h2>Product List</h2>
+<ul class="products">
+  <li id="img01"> Widget 1 Description...</li>
+  <li id="img02"> Widget 2 Description...</li>
+  <li id="img03"> Widget 3 Description...</li>
+</ul>
+</body>
+</html>

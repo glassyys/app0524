@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!--
+# type="radio"
+1. 여러개의 중에 단일로 선택할 때, 주로 사용된다.
+2. 기본현식
+	input type="radio" name="선택1"
+	input type="radio" name="선택2"
+	input type="radio" name="선택3"
+	input type="radio" name="선택4"
+	위와 같이 name이 같은 속성일 경우, 이 중에서
+	하나만 선택되게 처리된다.
+-->
+	<h2>먹고 싶은 하나만 선택</h2>
+	<hr>
+
+	<form action="a02_orderMenu.jsp"><!-- 주문된 메뉴 ${param.china} -->
+		<input type="radio" name="china" value="짜장면">짜장면<br>
+		<img src="media/jajang.png"><br>
+		<input type="radio" name="china" value="짬뽕">짬뽕<br>
+		<img src="media/jjambbong.png"><br>
+		<input type="radio" name="china" value="탕수육">탕수육<br>
+		<img src="media/tangsuyuk.png"><br>
+		<input type="submit" value="주문"/>
+
+
+	</form>
+	<!-- 
+	ex) 선호도 선택
+		1) 다양한 여행지 중에서 선호하는 여행지를 선택하게 하는 설문 조사를 만듭니다.
+			예를 들어 파리, 로마, 뉴욕, 도쿄 등이 있습니다.
+			사용자는 가장 가보고 싶은 곳을 선택
+		2) 사용자가 가장 응원하는 스포츠 팀을 선택할 수 있도록 하는 투표입니다.
+			예를 들어 축구, 농구, 야구 등 다양한 스포츠와 관련된 팀을 나열할 수 있습니다.
+	
+	-->
+	<h2>좋아하는 여행지 선택</h2>
+	<hr>
+	<form action="a03_myFaver.jsp"><!-- 주문된 메뉴 ${param.china} -->
+		<input type="radio" name="travels" value="파리">파리
+		<input type="radio" name="travels" value="로마">로마
+		<input type="radio" name="travels" value="뉴욕">뉴욕
+		<input type="radio" name="travels" value="도쿄">도쿄<br>
+		<h2>응원하는 축구팀 선택</h2>
+	<hr>
+		<input type="radio" name="soccerteam" value="전북">전북
+		<input type="radio" name="soccerteam" value="서울">서울
+		<input type="radio" name="soccerteam" value="제주">제주<br>
+		<h2>응원하는 야구팀 선택</h2>
+	<hr>
+		<input type="radio" name="baseballteam" value="삼성">삼성
+		<input type="radio" name="baseballteam" value="LG">LG
+		<input type="radio" name="baseballteam" value="두산">두산
+		<input type="radio" name="baseballteam" value="SK">SK<br>
+		<input type="submit" value="제출"/>
+	</form>
+</body>
+</html>

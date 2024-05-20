@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# visibility 옵션
+1. 코드로는 있는만 화면에 보이지 않게 처리할 때, 설정할 수 있는 옵션
+2. 기본형식
+	visibility : hidden|visible;
+	해당내용이 보이지 않게 처리.(해당 공간을 잡고 있다)
+	ps)
+	display:none <-> block
+	해당내용이 보이지 않게 처리.(아래 공간도 사라지게 한다.)
+	
+==> 손들기 : 본인이 진행이 필요하다고 판단하는 시점 기준..
+(개인 톡 자세한 설명 필요 메시지)
+/*
+		span{
+			visibility:hidden;
+		}
+
+
+		strong{
+			display:none;
+		}
+*/		
+	</style>
+<script type="text/javascript">
+	function show1(obj){
+		obj.style.visibility="hidden"
+	}
+	function show2(obj){
+
+		obj.style.display="none"
+	}	
+</script>	
+</head>
+<body>
+	<h2  >다음 빈 곳에 숨은 단어</h2>
+	<hr>
+	<ul>
+		<li >I (<span onclick="show1(this)">love</span>) you.</li>
+		<li>CSS is Cascading (<span  onclick="show1(this)">love</span>) Sheet</li>
+		<li>응답하라 (<span  onclick="show1(this)">1988</span>) !!</li>
+	</ul>
+	<hr>
+	<ul>
+		<li>I (<b  onclick="show2(this)">love</b>) you.</li>
+		<li>CSS is Cascading (<b   onclick="show2(this)">love</b>) Sheet</li>
+		<li>응답하라 (<b  onclick="show2(this)">1988</b>) !!</li>
+	</ul>
+
+</body>
+</html>
+
+

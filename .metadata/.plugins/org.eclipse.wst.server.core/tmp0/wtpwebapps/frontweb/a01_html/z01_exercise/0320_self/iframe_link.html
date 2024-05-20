@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>외부 컨텐츠 포함</title>
+</head>
+<body>
+<!-- 
+### 문제 4: 인라인 프레임을 사용하여 외부 컨텐츠 포함하기
+
+**요구사항:**
+- 인라인 프레임(`iframe`)을 사용하여 외부 웹사이트(예: 공식 문서, 튜토리얼 페이지)를 포함하는 페이지를 만드세요.
+- 페이지 상단에는 몇 가지 외부 리소스로 바로 이동할 수 있는 하이퍼링크를 포함해야 합니다.
+- 사용자가 하이퍼링크를 클릭할 때, 해당 컨텐츠가 현재 페이지 내의 `iframe`에서 로드되어야 합니다.
+-->
+<h1>외부 컨텐츠 포함하기</h1>
+<ul type="none">
+	<li><a href="https://www.gmarket.co.kr/" target="frame01">g마켓페이지</a> |
+	<li><a href="https://www.daum.net/" target="frame01">다음</a> |
+	<li><a href="https://www.human.or.kr/" target="frame01">휴먼교육센터</a>
+</ul>
+<!--
+<style>
+	li{display:inline;}
+</style>
+-->
+<!-- target="프레임의 name"과 연동해서 클릭시마다, 해당 frame의 내용을
+변경처리한다. -->
+<iframe srcdoc="<h2>초기 페이지</h2>" name="frame01" 
+	width="600" height="500"></iframe> 
+</body>
+</html>

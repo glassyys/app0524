@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+# cell 병합 처리 방법
+1. 일단 구조를 확인하여 병합 전의 nxm의 테이블을 생성한다.
+2. 병합할 셀을 확인하여 병합할 갯수와 함께
+   1) 열단위로 병합할 경우 colspan="병합할갯수"로 지정하고,
+      병합 후, 필요 없는 td는 삭제 한다.
+   2) 행단위로 병합할 경우 rowspan="병합할갯수"로 지정하고,
+      병합 후, 필요 없는 td는 삭제 한다.
+   2) 열/행단위 모두 병합할 경우 해당 td에 colspan, rowwpan
+       을 선언한 후 그 외 필요없은 셀을 모두다 삭제한다.
+
+-->
+<!--3 X 3 테이블에서 상단 열 모두 열단위 병합,
+	가장 오른쪽 열아래로 병합처리 
+-->
+<table width="100" height="100" border>
+	<tr>
+		<td colspan="3"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td rowspan="2"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<hr>
+<hr>
+<h2>연습1</h2>
+
+<table width="300" height="100" border>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td colspan="3"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2"></td>
+	</tr>
+</table> 
+<hr>
+<h2>연습2</h2>
+<table width="300" height="100" border>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td colspan="2"></td>
+		<td></td>
+		<td rowspan="3"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td colspan="3"></td>
+	</tr>
+</table>
+<hr>
+<h2>연습3</h2>
+<table width="300" height="100" border>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td colspan="2" rowspan="5"></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+<hr>
+	<!-- 
+	학생의 성적표(1학년3반)
+	no   이름    국어    영어    수학     총점   평균
+	1    @@@    @@@    @@@    @@@     @@    @@
+	2    @@@    @@@    @@@    @@@     @@    @@
+	3    @@@    @@@    @@@    @@@     @@    @@
+ 	 반평균       @@@    @@@    @@@          @@@
+	
+	
+	 -->
+<h2 allign="center">학생의 성적표(1학년3반)</h2>
+<table allign="center" whdth="80%" border> <!-- border : 테이블 전체 cell border 굵기 -->
+	<col whdth="10%">
+	<col whdth="15%">
+	<col whdth="15%">
+	<col whdth="15%">
+	<col whdth="15%">
+	<col whdth="15%">
+	<col whdth="15%">
+	<thead>
+		<tr>
+		<th>no</th>
+		<th>이름</th>
+		<th>국어</th>
+		<th>영어</th>
+		<th>수학</th>
+		<th>총점</th>
+		<th>평균</th>
+	</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>황기태</td><td>80</td><td>60</td><td>70</td>
+			<td>240</td>
+			<td>70</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>김순용</td><td>80</td><td>60</td><td>70</td>
+			<td>240</td><td>70</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>이필수</td><td>80</td><td>60</td><td>70</td>
+			<td>240</td><td>70</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th colspan="2">반평균</th>
+			<td>80</td><td>60</td><td>70</td>
+			<th>240</th>
+			<th>70</th>
+		</tr>
+    </tfoot>
+</table>
+
+</body>
+</html>

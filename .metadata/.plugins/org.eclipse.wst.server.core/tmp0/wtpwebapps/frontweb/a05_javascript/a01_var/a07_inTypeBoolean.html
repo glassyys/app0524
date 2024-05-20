@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 
+
+*/
+	
+	</style>
+
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	//var bool01 = confirm("성인여부")
+	//bdObj.innerText = "성인여부:"+bool01
+	// ex) confirm창을 이용해서 수도권에 거주하십니까? 질문을 하고 true/false
+	//     값을 받아 출력하세요..
+	var bool02 = confirm("수도권에 거주하십니까?")
+	bdObj.innerText = "수도권 거주 여부:"+bool02
+	bdObj.innerText += ", "+(bool02?"수도권거주":"비수도권 거주")
+	// bool02가 true이면 "수도권거주" 출력, false이면 "비수도권 거주" 출력
+	// 
+	
+/*
+# boolean 유형 입력하는 confirm
+1. 기본형식
+	var bool01 = confirm("성인입니까?")
+	확인을 클릭시, true값이 bool01에 할당되고 
+	취소를 클릭시, false값이 bool01에 할당된다.
+
+ps) 실제 업무에서 등록하시겠습니까? 확인후 진행
+삭제 하시겠습니까?, 수정이 도었습니다. 메인화면으로 이동하겠습니까?
+등 활용할 때, 사용된다.
+*/
+
+
+//
+</script>
+</html>

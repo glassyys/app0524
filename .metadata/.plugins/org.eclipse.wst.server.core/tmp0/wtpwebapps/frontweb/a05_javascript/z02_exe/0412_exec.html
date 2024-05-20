@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+
+/*
+### 자바스트립트 연습문제 (20문제)
+
+1. `break`문이 포함된 `for` 반복문을 사용하여 1부터 10까지 숫자 중에서 5를 만나면 중단하는 코드를 작성하시오.
+2. `continue`문을 사용하여 1부터 10까지 숫자 중에서 5를 제외하고 출력하는 `for` 반복문을 작성하시오.
+3. `while`문을 사용하여 사용자로부터 숫자를 입력받고, 입력받은 숫자의 총합이 100을 넘으면 반복을 중단하는 프로그램을 작성하시오.
+4. `do-while`문을 사용하여 사용자로부터 입력받은 값이 'yes'일 때까지 계속 질문을 반복하는 프로그램을 작성하시오.
+5. 간단한 계산기 함수 `calculate(operator, x, y)`를 작성하고, 사용자로부터 연산자와 두 수를 입력받아 결과를 출력하시오.
+6. `for` 반복문을 사용하여 주어진 배열의 모든 요소를 출력하고, 배열의 요소 중 'stop'을 만나면 중단하는 코드를 작성하시오.
+7. 사용자가 입력한 값을 배열에 저장하고, 'end'를 입력하면 저장된 모든 값을 출력하는 코드를 작성하시오.
+8. 주어진 배열에서 가장 큰 수를 찾아 반환하는 함수 `findMax(numbers)`를 작성하시오.
+9. `while` 반복문을 사용하여 0부터 시작하여 사용자가 'stop'을 입력할 때까지의 수를 모두 더하는 코드를 작성하시오.
+10. `do-while`문을 사용하여 로또 번호(1~45 사이의 숫자 6개)를 생성하는 함수를 작성하시오.
+11. 함수를 이용하여 두 수를 곱하는 `multiply(x, y)` 함수를 작성하고, 사용자 입력을 통해 두 수를 받아 결과를 출력하시오.
+12. 사용자로부터 연도를 입력받아 윤년인지 아닌지를 판단하는 함수 `isLeapYear(year)`를 작성하시오.
+13. `while`문을 사용하여, 사용자로부터 이름을 입력받아 배열에 저장하고, 'quit'을 입력받으면
+	입력받은 모든 이름을 출력하는 코드를 작성하시오.
+14. 함수를 사용하여, 주어진 배열 내에서 짝수만을 찾아 새 배열로 반환하는 `filterEvens(arr)` 함수를 작성하시오.
+
+*/
+	bdObj.innerHTML += "<h2>0412_exec</h2>"
+/*
+### 자바스트립트 연습문제 (20문제)
+
+1. `break`문이 포함된 `for` 반복문을 사용하여 1부터 10까지 숫자 중에서 5를 만나면 중단하는 코드를 작성하시오.
+2. `continue`문을 사용하여 1부터 10까지 숫자 중에서 5를 제외하고 출력하는 `for` 반복문을 작성하시오.
+3. `while`문을 사용하여 사용자로부터 숫자를 입력받고, 입력받은 숫자의 총합이 100을 넘으면 반복을 중단하는 프로그램을 작성하시오.
+4. `do-while`문을 사용하여 사용자로부터 입력받은 값이 'yes'일 때까지 계속 질문을 반복하는 프로그램을 작성하시오.
+5. 간단한 계산기 함수 `calculate(operator, x, y)`를 작성하고, 사용자로부터 연산자와 두 수를 입력받아 결과를 출력하시오.
+6. `for` 반복문을 사용하여 주어진 배열의 모든 요소를 출력하고, 배열의 요소 중 'stop'을 만나면 중단하는 코드를 작성하시오.
+7. 사용자가 입력한 값을 배열에 저장하고, 'end'를 입력하면 저장된 모든 값을 출력하는 코드를 작성하시오.
+8. 주어진 배열에서 가장 큰 수를 찾아 반환하는 함수 `findMax(numbers)`를 작성하시오.
+9. `while` 반복문을 사용하여 0부터 시작하여 사용자가 'stop'을 입력할 때까지의 수를 모두 더하는 코드를 작성하시오.
+10. `do-while`문을 사용하여 로또 번호(1~45 사이의 숫자 6개)를 생성하는 함수를 작성하시오.
+11. 함수를 이용하여 두 수를 곱하는 `multiply(x, y)` 함수를 작성하고, 사용자 입력을 통해 두 수를 받아 결과를 출력하시오.
+12. 사용자로부터 연도를 입력받아 윤년인지 아닌지를 판단하는 함수 `isLeapYear(year)`를 작성하시오.
+13. `while`문을 사용하여, 사용자로부터 이름을 입력받아 배열에 저장하고, 'quit'을 입력받으면
+	입력받은 모든 이름을 출력하는 코드를 작성하시오.
+14. 함수를 사용하여, 주어진 배열 내에서 짝수만을 찾아 새 배열로 반환하는 `filterEvens(arr)` 함수를 작성하시오.
+
+*/
+//1. `break`문이 포함된 `for` 반복문을 사용하여 1부터 10까지 숫자 중에서 5를 만나면 중단하는 코드를 작성하시오.
+/* 
+for(i=1; i <= 10; i++){
+	bdObj.innerHTML += "<h3>"+ "반복문 "+ i+ "</h3>"
+	if(i==5){
+		bdObj.innerHTML += "<h3>"+ "5를 만나면 중단 "+ i+ "</h3>"
+		break;
+	}
+}
+ */
+// 2. `continue`문을 사용하여 1부터 10까지 숫자 중에서 5를 제외하고 출력하는 `for` 반복문을 작성하시오.
+/* 
+for(i=1; i <= 10; i++){
+	if(i==5){
+		bdObj.innerHTML += "<h3>"+ "5를 제외 "+ i+ "</h3>"
+		continue;
+	}
+	bdObj.innerHTML += "<h3>"+ "5를 제외하고 출력 "+ i+ "</h3>"
+}
+ */
+
+
+// 3. `while`문을 사용하여 사용자로부터 숫자를 입력받고, 입력받은 숫자의 총합이 100을 넘으면 반복을 중단하는 프로그램을 작성하시오.
+
+
+/* var totSum = 0;
+	while(true){
+	var myNum = parseInt(prompt("숫자를 입력하세요","0"));
+	totSum += myNum;
+	bdObj.innerHTML += "<h3>"+ "입력받은숫자는 "+ myNum + "이고 숫자의 총합은" + totSum + "</h3>"
+	if(totSum> 100){
+		bdObj.innerHTML += "<h3>"+ "으로 입력받은 숫자의 총합이 " + totSum + "으로 100을 넘었습니다"+"</h3>"
+		break;
+	}
+
+}
+bdObj.innerHTML += "<h3>"+"입력받은 숫자의 총합:"+totSum+"</h3>"
+ */
+
+// 4. `do-while`문을 사용하여 사용자로부터 입력받은 값이 'yes'일 때까지 계속 질문을 반복하는 프로그램을 작성하시오.
+/* 
+	do{
+	var question = prompt("질문을 입력하세요!\n(종료하실려면yes)","yes")
+		if(question!='yes'){
+			bdObj.innerHTML += "<h3>"+ "질문은 " + question + "</h3>"
+		}
+	}while(question != "yes")
+ */
+// 5. 간단한 계산기 함수 `calculate(operator, x, y)`를 작성하고, 사용자로부터 연산자와 두 수를 입력받아 결과를 출력하시오.
+/* 
+function calculate(operator, x, y){
+		if (operator == "+"){
+			var calcuNum= x +  y;		
+		}
+		else if (operator == "-"){
+			var calcuNum= x -  y;		
+		}		
+		else if (operator == "*"){
+			var calcuNum= x *  y;		
+		}		
+		else if (operator == "/"){
+			var calcuNum= x /  y;		
+		}		
+		
+		bdObj.innerHTML += "<h3>"+ x + " " + operator  +  " " + y + " 계산된 결과 " + calcuNum + "</h3>"
+
+	}
+calculate('*',1 , 2);
+ */
+
+// 6. `for` 반복문을 사용하여 주어진 배열의 모든 요소를 출력하고, 배열의 요소 중 'stop'을 만나면 중단하는 코드를 작성하시오.
+/* 
+var arrayStr = ["start","no","enter","bye","cat","stop","dog"]
+
+ for(i=0 ; i < arrayStr.length ; i++){
+	 
+	 if (arrayStr[i] ==="stop" ){
+		 break;
+	 }
+	 bdObj.innerHTML += "<h3>"+ arrayStr[i] + "</h3>"
+ }
+*/
+
+// 7. 사용자가 입력한 값을 배열에 저장하고, 'end'를 입력하면 저장된 모든 값을 출력하는 코드를 작성하시오.
+/* 
+var inputStr = []
+
+while(true){
+	var arrayAdd = prompt("문자를 입력하세요!");
+	
+	if (arrayAdd === "end"){
+		break;
+	}
+	inputStr.push(arrayAdd);
+
+}
+bdObj.innerHTML += "<h3>"+ inputStr + "</h3>"
+*/
+
+// 8. 주어진 배열에서 가장 큰 수를 찾아 반환하는 함수 `findMax(numbers)`를 작성하시오.
+/* 
+function findMax(){
+	var arrayNumFindMax = [2,3,54,7,7]
+	var arrayMax = 0;
+
+	for (i= 0; i < arrayNumFindMax.length ; i++){
+	
+		if (arrayNumFindMax[i] > arrayMax){
+			arrayMax = arrayNumFindMax[i]; 
+		}
+	}
+	return arrayMax;
+}
+var maxNum =findMax();
+
+bdObj.innerHTML += "<h3>"+ "배열에서 가장큰수" + findMax() + "</h3>"
+*/
+
+// 9. `while` 반복문을 사용하여 0부터 시작하여 사용자가 'stop'을 입력할 때까지의 수를 모두 더하는 코드를 작성하시오.
+/* 
+var totNum01Sum = 0;
+while(true){
+	var num01 = prompt("0보다 큰 더할 숫자를 입력하세요!\n(종료하실려면 stop을 입력하세요)","stop")
+	
+	if (num01 === "stop"){
+		break;
+	}
+	totNum01Sum += parseInt(num01);
+
+}
+bdObj.innerHTML += "<h3>"+ "총합계: " + totNum01Sum + "</h3>"
+*/
+
+// 10. `do-while`문을 사용하여 로또 번호(1~45 사이의 숫자 6개)를 생성하는 함수를 작성하시오.
+/* 
+var lottoNum = [];
+var cnt=0;
+do{
+	var ran = parseInt(Math.random()*45+1); 
+	cnt+=1;
+	bdObj.innerHTML += "<h3>"+ cnt + "</h3>"
+
+	lottoNum.push(ran) ;
+}while(cnt!=6) 
+bdObj.innerHTML += "<h3>"+ lottoNum + "</h3>"
+*/
+
+// 11. 함수를 이용하여 두 수를 곱하는 `multiply(x, y)` 함수를 작성하고, 사용자 입력을 통해 두 수를 받아 결과를 출력하시오.
+/* 
+function multiply(x, y){
+	var multiplyResult = x*y;
+	return multiplyResult;
+}
+var multiplyResult = multiply(5,4);
+bdObj.innerHTML += multiplyResult +"<br>";
+*/
+
+// 12. 사용자로부터 연도를 입력받아 윤년인지 아닌지를 판단하는 함수 `isLeapYear(year)`를 작성하시오.
+/* 
+function isLeapYear(year){
+	var fourDigitNumChk = ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0));
+
+	var yoonYear = fourDigitNumChk? "윤년":"윤년아님";
+	return yoonYear;
+	
+}
+var yearInput = 400
+var yoonYearGbn = isLeapYear(yearInput);
+
+bdObj.innerHTML += yearInput + "년은 " + yoonYearGbn +"<br>";
+*/
+// 13. `while`문을 사용하여, 사용자로부터 이름을 입력받아 배열에 저장하고, 'quit'을 입력받으면
+//	입력받은 모든 이름을 출력하는 코드를 작성하시오.
+/* 
+var nameArray= [];
+while(true){
+	var name = prompt("이름을 입력하세요!\n(종료하실려면 quit을 입력하세요)","quit")
+	
+	if (name === "quit"){
+		break;
+	}
+	nameArray.push(name);
+	
+}
+bdObj.innerHTML += "이름들 " + nameArray +"<br>";
+*/
+// 14. 함수를 사용하여, 주어진 배열 내에서 짝수만을 찾아 새 배열로 반환하는 `filterEvens(arr)` 함수를 작성하시오.
+
+function filterEvens(arrNum){
+	var evenNum = [];
+	for(i=1 ; i < arrNum.length ; i++){
+		if (arrNum[i]%2 == 0){
+			evenNum.push(arrNum[i])
+		}
+	}
+	return evenNum;
+}
+
+var arrNum = [];
+for( i=0 ; i <= 50; i++ ){
+	// bdObj.innerHTML += "i :" + i +"<br>";
+	arrNum.push(i);
+}
+
+bdObj.innerHTML += "배열내 짝수는 :" + filterEvens(arrNum) + "입니다" + "<br>";
+
+
+//
+</script>
+</html>

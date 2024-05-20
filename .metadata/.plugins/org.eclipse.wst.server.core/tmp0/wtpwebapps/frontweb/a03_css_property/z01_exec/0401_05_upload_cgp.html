@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>파일 업로드 폼</title>
+<style>
+    /* CSS */
+    .upload-container {
+        width: 300px;
+        margin: 50px auto;
+        text-align: center;
+    }
+
+    .upload-input {
+        display: none;
+    }
+
+    .upload-label {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .upload-label:hover {
+        background-color: #0056b3;
+    }
+
+    .upload-label:focus {
+        outline: none;
+        border: 2px solid red; /* 포커스될 때 테두리 두께를 변경합니다. */
+    }
+
+    .submit-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .submit-button:hover {
+        background-color: #218838;
+    }
+</style>
+</head>
+<body>
+
+<div class="upload-container">
+    <input type="file" id="fileInput" class="upload-input">
+    <label for="fileInput" class="upload-label">파일 선택</label>
+    <br>
+    <button type="submit" class="submit-button">제출</button>
+</div>
+
+</body>
+</html>

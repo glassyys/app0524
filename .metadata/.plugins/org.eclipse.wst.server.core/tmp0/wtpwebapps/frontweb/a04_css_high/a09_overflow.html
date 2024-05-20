@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# overflow 프로퍼티 
+1. div 등 컨테이너성 태그(다른 태그를 포함하는 태그)의 경우,
+	설정된 크기(width, height)보다 내용(포함된 태그)가 더 많을 때,
+	처리에 대한 옵션을 설정하는 경우를 말한다.
+2. 속성
+	overflow:hidden;	넘치는 부분을 보이지 않게 처리..
+	overflow:visible;	넘치는 부분을 그대 넘치게 처리(default)
+	overflow:scroll;	넘치는 부분을 scrolling bar 생성되어 처리
+	overflow:auto;		넘치기 전에는 scrolling bar가 생성되지 않다가
+					       넘치면 scolling bar가 생성되게 처리
+					       (javascript에서 동적을 처리되는 경우 발생)
+*/
+		p{width:15em;height:3em;border:1px solid lightgray;}
+		.hidden{ overflow:hidden;}
+		.visible{ overflow:visible;}
+		.scroll{ overflow:scroll;}
+		
+		div{width:100px;height:50px;
+		    display:block;
+			background:yellow;
+			border:10px solid pink;
+			
+		}
+	</style>
+</head>
+<body>
+	<h3>overflow 프로퍼티</h3>
+	<hr>
+	<p class="hidden" style="box-shadow: 10px 20px 10px red">
+		overflow에 hidden값을 적용하면 박스을 넘어가는 내용이 잘려 보이지
+		않습니다.
+	</p>
+	<p class="visible">
+		overflow에 visible값을 적용하면 콘텐츠가 박스를 넘어가도록 출력됩니다.
+	</p>
+	<p class="scroll">
+		overflow에 scroll값을 적용하면 박스에 스크롤바를 붙여 출력합니다.
+	</p>
+	<!-- 
+	ex) div로 설정하여 div01, div02, div03 클래스로 위 3가지 옵션이
+	적용되어 출력되게 처리해 보세요..
+	-->
+	<hr>
+	<div class="hidden">
+		overflow에 hidden값을 적용하면 박스을 넘어가는 내용이 잘려 보이지
+		않습니다.
+	</div>
+	<br>
+	<div class="visible">
+		overflow에 visible값을 적용하면 콘텐츠가 박스를 넘어가도록 출력됩니다.
+	</div>
+	<br>
+	<div class="scroll">
+		overflow에 scroll값을 적용하면 박스에 스크롤바를 붙여 출력합니다.
+	</div>
+</body>
+</html>

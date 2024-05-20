@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회사 소개 섹션만 적용한 것 예제</title>
+    <style>
+        /* CSS 스타일링 */
+        .section {
+            position: relative;
+            margin-bottom: 50px;
+            padding: 20px;
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .section h2 {
+            position: relative;
+            z-index: 1;
+        }
+        .section:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 50%;
+            background-image: url('banana.png'); /* 배경 이미지 경로 */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+            z-index: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h2 style="z-index: 1;">회사 역사</h2>
+    </div>
+
+    <div class="section">
+        <h2 style="z-index: 1;">비전</h2>
+    </div>
+
+    <div class="section">
+        <h2 style="z-index: 1;">팀 멤버</h2>
+    </div>
+</body>
+</html>

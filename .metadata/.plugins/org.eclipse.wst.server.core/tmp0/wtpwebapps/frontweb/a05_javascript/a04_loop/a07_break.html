@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 
+
+*/
+	
+	</style>
+
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	bdObj.innerHTML += "<h2>break문</h2>"
+	for(var cnt=1;cnt<=10;cnt++){
+		if(cnt==5){
+			break;
+		}
+		bdObj.innerHTML += "카운트:"+cnt+","
+	}	
+	bdObj.innerHTML += "<h2>continue문</h2>"
+	for(var cnt=1;cnt<=10;cnt++){
+		if(cnt==5){
+			continue;
+		}
+		bdObj.innerHTML += "카운트:"+cnt+","
+	}	
+// ex) 구구단 5단을 출력하되 x8에서는 중단을 하고, x3은 출력하지 않게 하세요..
+//     5 x 1 = 5
+//     5 x 2 = 10
+//     5 x 4 = 20
+//     ..
+//     5 x 7 = 40
+//     이후 중단 처리..
+	var grade = 5
+	bdObj.innerHTML += "<h2>구구단</h2>"
+	for(var cnt=1;cnt<=9;cnt++){
+		if(cnt==3){
+			continue;
+		}
+		if(cnt==8){
+			break;
+		}		
+		bdObj.innerHTML += `<h3>${grade} x ${cnt} = ${grade*cnt}</h3>`
+	}	
+
+/*
+# while
+	
+	
+	
+# break/continue
+1. break : 반복을 중단시켜주는 구문으로 일반적으로 조건문과 함께 사용한다.
+	ex)
+	for(var cnt=1;cnt<=10;cnt++){
+		if(cnt==5){
+			break;
+		}
+		bdObj.innerHTML = "카운트:"+cnt
+	}
+	1~10까지 출력하지만, 조건문에 의해 break를 만나면 4까지만 출력하고 중단처리된다.
+2. continue : 해당 구문을 만나면 이 후, 코드가 처리되지 않고, 다음 step으로
+	이동되어 반복문을 계속 진행한다.
+	ex)
+	for(var cnt=1;cnt<=10;cnt++){
+		
+		if(cnt==5){
+			continue; // 다음 step으로 바로 이동 처리
+		}
+		bdObj.innerHTML = "카운트:"+cnt
+	}	
+	1부터 4까지 출력되고, 5일 때는 출력되지 않고, 6부터 10까지 다시 출력된다.
+	
+	
+	
+*/
+//
+</script>
+</html>

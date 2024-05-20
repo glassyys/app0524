@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 
+
+*/
+	
+	</style>
+
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	var price01 = 3000, price02 = 4000;
+    var tot = price01 + price02	
+	bdObj.innerHTML = "물건1 가격 "+price01+", 물건2 가격 "+price02
+			+", 총비용 "+tot+"<br>"
+	/*		
+	var num01 = prompt("첫번째 숫자","0")*1;		
+	var num02 = Number( prompt("두번째 숫자","0") );		
+	var num03 = parseInt( prompt("셋번째 숫자","0") );
+	var tot = num01 + num02 + num03;
+	var avg = tot/3;
+	bdObj.innerHTML+="첫번째 숫자 : "+num01+", 두번째 숫자 : "+num02+
+		", 세번째 숫자: "+num03+", 평균: "+avg+"<br>"
+	*/
+/*
+ex1) 마트에 2개의 물건을 3000원, 4000원으로 구매하였다. 총비용으로 변수를 이용해서
+	출력하세요.. 
+	1) 변수 지정 및 데이터 할당
+		var price01 = 3000, price02 = 4000;
+	    var tot = price01 + price02
+	    출력  물건1 가격 @@@, 물건2 가격 @@@, 총비용 @@@
+ex2) 사용자로부터 3개의 숫자를 입력받아, 이 숫자들의 평균을 계산하고 결과를 출력하세요.
+	var num01 = prompt("첫번째 숫자","0")  숫자를 입력 3개를 받아서..
+	평균  var avg = (num01+num02+num03)/3
+	첫번째 숫자 : @@, 두번째 숫자 : @@@, 세번째 숫자: @@@, 평균: @@@
+ex3) 사각형의 가로와 세로 길이를 입력받아, 사각형의 면적을 계산하는 코드를 작성하세요
+var width = prompt("사각형의 가로 길이 입력:","0")
+var height = prompt("사각형의 세로 길이 입력:","0")
+var dem = width*height
+bdObj.innerHTML += "가로길이: "+width+", 세로길이ㅣ "+height
++", 면적 "+dem+"<br>"
+
+*/
+/*
+ex4) 분 단위로 입력받은 시간을 초로 변환하는 코드를 작성하세요.
+*/
+var minutes = prompt("분 단위를 입력하세요:"+0)
+var seconds = minutes*60
+bdObj.innerHTML += "입력된 분: "+minutes+"분, 계산된 초 "+seconds+"초<br>"
+
+
+//
+</script>
+</html>

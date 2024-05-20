@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	bdObj.innerHTML = "<h2>삼항 연산자.</h2>"
+	var age=25;
+	var result = age>+18?"성인":"미성년자" ;
+	bdObj.innerHTML += `<h3>나이는 ${age}이고, 결과:${result}</h3>`
+/*
+# 삼항 연산자.
+1. 항 : 연산자 1개 사용(no++, no--), 2개 사용(대입변수 no = 2),3개 사용?
+2. 기본형식
+	조건(비교/논리)?true일때 처리값:false일때 처리값
+	ex)
+	bdObj.innerHTML = age>+18?"성인":"미성년자" //바로 출력..
+	var result = age>+18?"성인":"미성년자" // 변수에 할당 후..
+	bdObj.innerHTML = `나이는 ${age}이고, 결과:${result}`
+			
+*/
+//
+</script>
+</html>

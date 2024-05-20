@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+			
+*/
+
+	</style>
+
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	bdObj.innerHTML = "<h2>월별 날짜 계산</h2>"
+	var month = 3;
+	switch(month){
+		// 위 switch에 해당하는 매개변수의 데이터에 맞는 case 데이터를 찾아서
+		case 1:case 3:case 5:case 7:case 8:case 9:case 10:
+			// case에 맞으면 해당 내용을 처리하는데, 이 해당 처리 구문은
+			// break를 통해서 중단(switch문 벗어남)된다.
+			// break를 만나지 않으면 아래로 흘러가게 된다.
+		case 12:
+			bdObj.innerHTML += `<h3>${month}월의 마지막일은 31일 입니다</h3>`
+				break;		
+		case 4:
+		case 6:
+		case 9:
+		case 11:
+			bdObj.innerHTML += `<h3>${month}월의 마지막일은 30일 입니다</h3>`
+			break;
+		case 2:
+			bdObj.innerHTML += `<h3>${month}월의 마지막일은 29일 입니다</h3>`
+			break;
+		default:
+			bdObj.innerHTML += `<h3>월은 숫자 1~12월까지 입력 가능합니다</h3>`
+	}
+	var movie = prompt("영화장르를 입력하세요");
+		
+	switch(movie){
+		case "액션":  
+		case "모험":  
+			bdObj.innerHTML += `<h3>${movie} 장르의 추천영화는 인디아나 존슨 시리즈를 추천합니다.</h3>`
+			break;
+		case "공포":  
+		case "스릴러":  
+			bdObj.innerHTML += `<h3>${movie} 장르의 추천영화는 컨저링을 추천합니다.</h3>`
+			break;
+		case "코미디":  
+		case "로맨틱":  
+			bdObj.innerHTML += `<h3>${movie} 장르의 추천영화는 러브 액츄얼리를 추천합니다.</h3>`
+			break;
+
+		default:
+			bdObj.innerHTML += `<h3>정해진 장르에서 벗어납니다.</h3>`
+	}
+/*
+ex) 영화 장르에 다를 추천 영화 처리하는 문제
+	장르 : 액션, 모험 ==> 인디아나 존슨 시리즈
+		  공포, 스릴러 ==> 컨저링
+		  코미디, 로맨틱 ==> 러브 액츄얼리
+		  그외에 정해진 장르에서 벗어납니다.
+
+# switch case 문
+1. 조건문을 처리할 때 특정한 범위(단일데이터)로 지정할 때 주로 사용한다.
+2. switch case문은 break문을 이요하기에 case문이 break가 나타나기 까지
+	중복적으로 처리되는 경우에 효과적으로 사용할 수 있다.
+3. 기본형식
+	switch(변수){
+		case 데이터1;
+			처리할 내용
+		case 데이터2:
+			처리할 내용
+			break;
+			데이터1의 경우, 처리내용 1과, 처리내용2 처리된다.
+			데이터2의 경우, 처리내용 2만 처리된다.
+		case 데이터3:
+			처리할 내용
+		case 데이터4:
+			처리할 내용
+			break;
+			데이터3의 경우, 처리내용 3과, 처리내용4 처리된다.
+			데이터4의 경우, 처리내용 4만 처리된다.
+		default:
+			위에서 나열한 case 데이터가 아닐때 처리할 구문..
+	}
+	위에 변수가 case에 해당하는 데이터일 때, 처리할 내용을 지정하고,
+	그 처리가 break;를 만나면 switch문을 벗어나는 것을 말한다.
+*/
+//
+</script>
+</html>

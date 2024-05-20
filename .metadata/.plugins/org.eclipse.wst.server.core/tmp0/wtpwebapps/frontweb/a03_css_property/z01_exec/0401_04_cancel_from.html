@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#### 연습 문제 4: 구독 취소 폼
+**목표**: 사용자가 구독 취소 사유를 선택할 수 있는 폼을 만듭니다.
+- 드롭다운 메뉴를 통해 사용자는 구독 취소 사유를 선택할 수 있습니다.
+  사유로는 "너무 비싸다", "더 이상 사용하지 않는다", "기타" 등이 포함됩니다.
+- 드롭다운 메뉴에 마우스를 호버할 때와 포커스됐을 때 배경색을 변경합니다.
+- 사유를 선택하고 제출 버튼을 포함합니다.
+*/
+/*
+input[type=text]:hover{
+background:red;
+}
+*/
+[name=cancel]:hover, [name=cancel]:focus{
+background:lightblue;
+}
+
+#clist{
+background:blue;
+}
+
+        select:hover, select:focus {
+            background-color: lightgrey;
+        }
+	</style>
+
+</head>
+<body>
+	<h3>구독취소 폼</h3>
+	<hr>
+	<form action="0401_cancel.jsp">
+	취소사유:<input type="text" name="cancel" list="clist"><br>
+	<datalist id="clist">
+		<option value="너무 비싸다">
+		<option value="더 이상 사용하지 않는다">
+		<option value="기타">
+	</datalist>
+	<input type="submit"/>
+
+	</form>
+	
+    <form id="unsubscribe-form">
+        <label for="reason">구독 취소 사유:</label>
+        <select id="reason" name="reason">
+            <option value="expensive">너무 비싸다</option>
+            <option value="not_using">더 이상 사용하지 않는다</option>
+            <option value="other">기타</option>
+        </select><br><br>
+        <button type="submit">제출</button>
+    </form> 
+</body>
+
+</html>

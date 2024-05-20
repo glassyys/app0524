@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+
+*/
+
+	</style>
+
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body")
+/*
+#### 연습 문제 1. 아래 내용을 문자열 "", '', + 를 활용하여 선언하고 출력하세요
+   1) 자기 소개에 사용할 수 있는 변수를 선언하고, 이름, 나이 및 직업을 포함한 문자열을 할당하세요.
+   2) 한 줄짜리 시를 표현하는 변수를 선언하고, 그 변수에 시의 내용을 포함한 문자열을 할당하세요.
+#### 연습 문제 2. 사용자의 이름, 태어난 연도를 입력받아 나이와 성인 여부를 하나의 문자열로 결합하여 화면에 출력하세요. 
+#### 연습 문제 3. 우주선 발사 카운트다운 우주선이 발사되기까지 남은 시간(초)을 문자열로 10으로 할당 후 
+   이 시간을 숫자로 변환하고, 매 초마다 화면에 현재까지 남은 시간을 출력한 다음,
+   발사 시간이 되면 "발사!"라고 출력하는 코드를 작성하세요.(반복문 쓰지말고, 1씩 감소하면서 출력하세요)
+#### 연습 문제 4. 점수를 입력받아(prompt) 변수 passed에 시험 합격 여부를 나타내는 불리언 값을 할당하고, 
+    70점이상인 여부를 처리하여 변환하여 "합격: true" 또는 "합격: false" 형태로 화면에 출력하세요.
+#### 연습 문제 5. 할인율 적용 가격 계산
+상품의 가격과 할인율을 입력받아, 할인이 적용된 가격을 계산하여 출력하세요.
+#### 연습 문제 6. BMI 지수 계산
+사용자의 몸무게(kg)와 키(cm)를 입력받아, BMI(체질량지수)를 계산하고 결과를 출력하세요. BMI 계산 공식은 BMI = 몸무게(kg) / (키(m) * 키(m))입니다.
+#### 연습 문제 7. 거스름돈 계산
+상품의 가격과 고객이 낸 금액을 입력받아, 거스름돈을 계산하는 코드를 작성하세요.
+#### 연습 문제 8. 분 단위로 입력된 시간(예: 150분)을 시간과 분으로 변환하여 출력하세요. 예를 들어, "150분은 2시간 30분입니다."
+#### 연습 문제 9. 100000원에서 32500원짜리 상품을 구매했을 때의 거스름돈을 5만원권 @@장, 만원권 @@장, 오천원권 @@장, ... 식으로 화폐단위로 받는 장수를
+   계산하고 이를 출력하세요.
+
+*/
+/* #### 연습 문제 1. 아래 내용을 문자열 "", '', + 를 활용하여 선언하고 출력하세요
+1) 자기 소개에 사용할 수 있는 변수를 선언하고, 이름, 나이 및 직업을 포함한 문자열을 할당하세요.
+2) 한 줄짜리 시를 표현하는 변수를 선언하고, 그 변수에 시의 내용을 포함한 문자열을 할당하세요.
+*/
+var name = "홍길동"
+var age = 30;
+var job = "개발자";
+bdObj.innerHTML += "이름: "+ name + "나이: "+ age + ",직업: "+job+"<br>";
+
+/* var poem_1 = "삶";
+var poem_2 ="생황이 그대를 속일지라도"+ 
+	   "'슬퍼'하거나 \"미워\"하지 말라"
+bdObj.innerHTML += "<h2>시제목:"+poem_1+"</h2>"
+bdObj.innerHTML += "<h2>내용:"+poem_2+"</h2>"
+ */
+/* #### 연습 문제 2. 사용자의 이름, 태어난 연도를 입력받아 나이와 성인 여부를
+하나의 문자열로 결합하여 화면에 출력하세요.  
+*/
+/* var userName = prompt("이름을 입력하세요.");
+var birthYear = prompt("태어난 연도를 입력하세요.");
+var currentYear = 2024;
+bdObj.innerHTML += birthYear
+var age = currentYear - parseInt(birthYear);
+var adultCheck = age >= 18 ? "성인" : "미성년자";
+
+bdObj.innerHTML += userName + "님은 " + age + "살이며, " + adultCheck + "입니다.<br>";
+bdObj.innerHTML += "4월10일은 선거일입니다. 투표하세요!"+"<br>";
+ */
+ 
+/* #### 연습 문제 3. 우주선 발사 카운트다운 우주선이 발사되기까지 남은 시간(초)을
+문자열로 10으로 할당 후  이 시간을 숫자로 변환하고, 
+매 초마다 화면에 현재까지 남은 시간을 출력한 다음,
+발사 시간이 되면 "발사!"라고 출력하는 코드를 작성하세요.
+(반복문 쓰지말고, 1씩 감소하면서 출력하세요)
+*/
+
+/* //시작 시간 설정 (초)
+ var startTime = 10;
+
+ // 남은 시간 저장
+ var remainingTime = startTime;
+
+ // 타이머 실행을 설정하는 함수
+ var timer = setInterval(function() {
+     // 남은 시간 출력
+     bdObj.innerHTML += "남은 시간: " + remainingTime + "초"+"<br>";
+
+     // 남은 시간이 0이 되면 타이머 종료
+     if (remainingTime <= 0) {
+      	bdObj.innerHTML += "발사!";
+         clearInterval(timer); // 타이머 종료
+     }
+
+     // 남은 시간 1초 감소
+     remainingTime--;
+ }, 1000);
+ 
+ var countdown = "10";
+ bdObj.innerHTML +="남은 초:"+(countdown--)+"<br>";
+ bdObj.innerHTML +="남은 초:"+(countdown--)+"<br>";
+ bdObj.innerHTML +="남은 초:"+(countdown--)+"<br>";
+ bdObj.innerHTML +="남은 초:"+(countdown--)+"<br>";
+ bdObj.innerHTML +="남은 초:"+(countdown--)+"<br>";
+ bdObj.innerHTML +="남은 초:"+(countdown--)+"<br>";
+ bdObj.innerHTML +="남은 초:"+(countdown--)+"<br>";
+ bdObj.innerHTML +="남은 초:"+(countdown--)+"<br>";
+ bdObj.innerHTML +="남은 초:"+(countdown--)+"<br>";
+ bdObj.innerHTML +="남은 초:"+(countdown--)+"<br>";
+ bdObj.innerHTML +="남은 초:"+(countdown--)+"<br>";
+ bdObj.innerHTML += "발사!<br>";
+*/
+/*  #### 연습 문제 4. 점수를 입력받아(prompt) 변수 passed에 시험 합격 여부를
+    나타내는 불리언 값을 할당하고, 
+    70점이상인 여부를 처리하여 변환하여 "합격: true" 또는 "불합격: false" 형태로 화면에 출력하세요.
+*/
+/* 	var point = prompt("점수는?")
+	 
+	var passed = point>=70;
+	bdObj.innerHTML = "true:false 여부? :"+passed+ "<br>"
+	bdObj.innerHTML += "합격여부: "+(passed?"합격":"불합격")
+*/
+
+/*  #### 연습 문제 5. 할인율 적용 가격 계산
+ 상품의 가격과 할인율을 입력받아, 할인이 적용된 가격을 계산하여 출력하세요. */
+/*  	
+	var price = prompt("상품의 가격을 입력하세요:","0")*1;
+	var discountRate = parseFloat(prompt("할인율을 입력하세요 (%):","0")*1);
+	//할인이 적용된 가격 계산
+	var discountAmt = price * (discountRate / 100); // 할인액 계산
+	var lastPrice = price - discountAmt; // 할인이 적용된 가격 계산
+
+	// 결과 출력
+	bdObj.innerHTML += "상품의 가격: " + price +"원";
+	bdObj.innerHTML += "할인율: " + discountRate + "%";
+	bdObj.innerHTML += "할인액: " + discountAmt+"원";
+	bdObj.innerHTML += "할인이 적용된 가격: " + lastPrice+"원";
+	console.log("할인이 적용된 가격:" + lastPrice +"원");
+*/
+/* #### 연습 문제 6. BMI 지수 계산
+사용자의 몸무게(kg)와 키(cm)를 입력받아, BMI(체질량지수)를 계산하고 결과를 출력하세요. 
+BMI 계산 공식은 BMI = 몸무게(kg) / (키(m) * 키(m))입니다. 
+*/
+ 
+var weight = prompt("몸무게(kg):","0")*1;
+var height = Number(prompt("키(cm):","0"));
+var bmi = weight / (height * height);
+bdObj.innerHTML += "입력한 체중: " + weight + " kg"+"<br>";
+bdObj.innerHTML += "입력한 키: " + height + " m" + "<br>";
+bdObj.innerHTML += "BMI(체질량지수): " + bmi.toFixed(2)+"입니다";
+
+/* 
+#### 연습 문제 7. 거스름돈 계산
+상품의 가격과 고객이 낸 금액을 입력받아, 거스름돈을 계산하는 코드를 작성하세요.
+*/
+/* 
+var productPri = prompt("상품가격:","0")*1;
+var receivePri = prompt("받은가격:","0")*1;
+var givePri = receivePri-productPri;
+bdObj.innerHTML += "상품가격: " + productPri + "원" + "<br>";
+bdObj.innerHTML += "받은가격: " + receivePri + "원" + "<br>";
+bdObj.innerHTML += "거스름돈: " + givePri + "원" + "<br>";
+*/
+/* 
+#### 연습 문제 8. 분 단위로 입력된 시간(예: 150분)을 시간과 분으로 변환하여 출력하세요
+예를 들어, "150분은 2시간 30분입니다."
+*/
+
+/* 
+var inputTime = parseInt(prompt("분을 입력하세요:","0"));
+
+var hours = Math.floor(inputTime / 60); // 시간
+var remainMinutes = inputTime % 60; // 나머지 분
+bdObj.innerHTML += inputTime + " 분은 " + hours + " 시간 " + remainMinutes + " 분입니다."
+*/
+/* 
+#### 연습 문제 9. 100000원에서 32500원짜리 상품을 구매했을 때의 
+거스름돈을 5만원권 @@장, 만원권 @@장, 오천원권 @@장, ... 식으로 화폐단위로 받는 장수를
+계산하고 이를 출력하세요.
+*/
+/* //지불 금액과 상품 가격
+var paidAmount = 100000;
+var productPrice = 32500;
+
+// 거스름돈 계산
+var change = paidAmount - productPrice;
+
+// 지불 금액과 상품 가격
+var paidAmount = 100000;
+var productPrice = 32500;
+
+// 거스름돈 계산
+var change = paidAmount - productPrice;
+bdObj.innerHTML += "거스름돈: " + change + "원"+ "<br>";
+
+// 각 화폐/동전 단위별 장수 계산
+var fiftyThousandCount = Math.floor(change / 50000);
+change %= 50000;
+//change = change % 50000;
+
+var tenThousandCount = Math.floor(change / 10000);
+change %= 10000;
+//change = change % 10000;
+
+var fiveThousandCount = Math.floor(change / 5000);
+change %= 5000;
+//change = change % 5000;
+
+var oneThousandCount = Math.floor(change / 1000);
+change %= 1000;
+//change = change % 1000;
+
+var fiveHundredCount = Math.floor(change / 500);
+change %= 500;
+//change = change % 500;
+
+var oneHundredCount = Math.floor(change / 100);
+change %= 100;
+//change = change % 100;
+
+var tenCount = Math.floor(change / 10);
+
+//결과 출력
+bdObj.innerHTML += "5만원권: " + fiftyThousandCount + "장"+ "<br>";
+bdObj.innerHTML += "만원권: " + tenThousandCount + "장"+ "<br>";
+bdObj.innerHTML += "오천원권: " + fiveThousandCount + "장"+ "<br>";
+bdObj.innerHTML += "천원권: " + oneThousandCount + "장"+ "<br>";
+bdObj.innerHTML += "오백원: " + fiveHundredCount + "개"+ "<br>";
+bdObj.innerHTML += "백원: " + oneHundredCount + "개"+ "<br>";
+bdObj.innerHTML += "십원: " + tenCount + "개"+ "<br>";
+ */
+</script>
+</html>

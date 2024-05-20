@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	bdObj.innerHTML = "<h2>if else</h2>"
+	/* 	
+	var isAmericanoFavor=confirm("아메리카노늘 좋아하십니까?")
+	if(isAmericanoFavor){
+		bdObj.innerHTML += "<h3>나와 커피 취향이 맞으시는군요</h3>"
+	}else{
+		bdObj.innerHTML += "<h3>나와 커피 취향이 다르군요..</h3>"
+	}
+	*/
+	// ex) 비밀번호 사용한 기간 개월 수 입력 prompt
+	//	   6개월 초과시 비밀번호를 변경해주세요..
+	//     6개월 이하시 비밀번호는 안전합니다. 출력..
+	var passUsingMonth = prompt("패스워드 사용기간을 입력하세요:","")
+	bdObj.innerHTML += "<h3>패스워드 사용한기간: " + passUsingMonth+ "개월"+"</h3>"
+
+	if(passUsingMonth > 6){ // 비교연산자에서 자동형변환 처리..
+		bdObj.innerHTML += "<h3>6개월 초과하여 비밀번호를 변경해주세요</h3>"
+	}else{
+		bdObj.innerHTML += "<h3>비밀번호 안전합니다</h3>"
+	}
+
+
+/*
+# if else 구개의 분기문 구조
+1. 특정 조건하에 true/false를 나누어 처리하는 경우를 말한다.
+2. if(조건){
+		조건이 true일 떄, 처리할 내용
+}else{
+조건이 false일떄, 처리할 내용..
+}
+
+*/
+//
+</script>
+</html>

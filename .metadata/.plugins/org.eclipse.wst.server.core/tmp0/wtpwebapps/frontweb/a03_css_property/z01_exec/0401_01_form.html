@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#### 연습 문제 1: 피드백 폼
+**목표**: 사용자로부터 피드백을 수집하기 위한 폼을 만듭니다.
+- 폼은 사용자의 이름, 이메일, 그리고 피드백을 위한 큰 텍스트 영역을 포함해야 합니다.
+- 텍스트 영역에 마우스를 호버할 때 배경색을 연한 노랑색으로 변경하고,
+  포커스됐을 때는 배경색을 연한 파랑색으로 변경합니다.
+- 텍스트 영역에 포커스되었을 때, 글자 크기를 110%로 증가시킵니다.
+- 제출 버튼을 포함하며, 버튼에 호버할 때 색상이 변경되도록 합니다.
+*/
+		/*form 전체 모양 설정*/
+		.login-form{
+			width:300px;
+			margin:100px auto;
+			padding:20px;
+			border:1px solid #ccc;
+			border-radius:5px;
+		}	
+		/* 각 요소객체에 대한 기본 css 적용*/
+		.form-control{
+			width:100%;
+			padding:10px;
+			margin-bottom:15px;
+			border:1px solid #ddd;
+			border-radius:4px;
+			box-sizing:border-box;
+			/*
+			각 요소의 최종적으로 계산된 넓이에 padding 속성이 영향을 미치지 않게
+			처리하기 위함
+			*/
+		}
+		/*마우스 커서를 위치 시켰을 때*/
+		.form-control:hover{
+			background:lightyellow;
+		}
+		/*마우스를 포커싱했을 때*/
+		.form-control:focus{
+			background:lightblue;
+			outline:none; /*포커싱시, 아우트라인 삭제 처리..*/
+		}
+		/*텍스트 영역에 포커스되었을 때, 글자 크기를 110%로 증가시킵니다.*/
+		.form-control-text:focus{
+			background:lightblue;
+			font-size:110%;
+			outline:none; /*포커싱시, 아우트라인 삭제 처리..*/
+		}
+		/*마우스 커서를 위치 시켰을 때*/
+		.form-control-submit:hover{
+			background:green;
+		}
+	</style>
+
+</head>
+<body>
+	<h2 align="center">피드백 폼</h2>
+	<hr>
+	<form class="login-form">
+		<label for="이름">이름</label>
+		<input class="form-control" type="text" id="username" name="username"><br>
+
+		<label for="이메일">이메일</label>
+		<input class="form-control"  type="email" id="email" name="email"><br>
+		<label for="문의">문의</label><br>
+		<textarea class="form-control-text" id="faq" name="faq" cols="22" rows="5" placeholder="문의내용"></textarea><br>
+		<button class="form-control-submit" type="submit">제출</button>	
+
+	</form>	
+</body>
+</html>

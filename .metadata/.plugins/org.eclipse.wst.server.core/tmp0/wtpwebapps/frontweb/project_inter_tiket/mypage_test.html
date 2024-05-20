@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Div로 틀 나누기</title>
+<style>
+    /* 왼쪽 콘텐츠 영역 스타일 */
+    .left-content {
+        float: left;
+        width: 20%;
+        background-color: lightgray;
+        height: 100vh; /* 뷰포트의 높이를 100%로 설정하여 화면 전체를 채우도록 함 */
+    }
+
+    /* 오른쪽 콘텐츠 영역 스타일 */
+    .right-content {
+        float: right;
+        width: 80%;
+        background-color: lightblue;
+        height: 100vh; /* 뷰포트의 높이를 100%로 설정하여 화면 전체를 채우도록 함 */
+    }
+
+    /* clear fix 스타일 - float 해제 */
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+</head>
+<body>
+<script type="text/javascript" src="/Lib/js/TPBanner_2015.js"></script>
+<!-- 메인헤더 
+<script type="text/javascript">
+    const script = document.createElement('script');
+    script.src = "//tickets.interpark.com/mf/static/legacy/app.js";
+    document.body.appendChild(script);
+</script>
+-->
+		<link rel="stylesheet" href="//ticketimage.interpark.com/TicketImage/uidev/desktop/styles/pages/mypage/mypage.css?v=20240129">
+		<div style="display: block; width: 100%; text-align: left;">
+			<div class="dpGnb">
+				<ul class="dpNavi">
+					<li class="home"><p><a href="http://ticket.interpark.com" target="_top">홈</a></p></li><li class="nor"> &gt; <strong>마이페이지</strong> </li>
+				</ul>
+			</div>
+		</div>
+		<!-- s: Body 콘텐츠영역 -->
+		<div id="wrapBody" style="margin: 0;">
+			<!-- s: 좌귀 -->
+			<div id="skyL" id="lban1"></div>
+			<!-- e: 좌귀 -->
+			
+			<!-- s: Body -->
+			<div id="Con_M"  >
+				<!--  S : 2010-09-10 유혜정 작업 -->
+				<div class="mp_container">					
+					<!-- s : 좌측 메뉴  -->
+<!-- 최좌측 영역 -->
+<div class="left-content">
+			<!-- s : 좌측 메뉴  -->
+			<div class="mp_aside">
+				
+	<script type="text/javascript" src="/Lib/js/jquery-1.8.0.min.js"></script>
+	<script type="text/javascript">
+		jQuery.noConflict();
+		var j$ = jQuery;
+		var InterparkMemNo = "2100487942";
+	</script>
+	<script type="text/javascript" src="/Lib/left/BookAPI.js?v=20210419"></script>
+			
+			
+			<SCRIPT type="text/javascript" src="/Point/MyTicket/MyIPoint.js"></SCRIPT>
+			<script type="text/javascript" src="/Lib/Js/layerEffect.js"></script>
+			<div id="myinfoWrap">
+				<div class="mypage">
+					<h3><img src="//openimage.interpark.com/_mypage_n/title/tit_mypage.gif" alt="마이페이지"></h3>
+					<div class="level">
+						<div class="myinfo_txt">
+							<span class="st">유영선</span>님은 현재<br />
+						
+							<a href="http://incorp.interpark.com/member/MemberGoodService.do?_method=GoodServiceChk" class="grade" target="_blank"><span class="welcome">WELCOME</span></a>회원입니다.
+						</div>
+						
+						<p class="btn">
+							<a href="http://incorp.interpark.com/member/MemberGoodService.do?_method=GoodServiceChk" target="_blank"><img src="//ticketimage.interpark.com/TicketImage/event/100913_my/btn_memb_level.gif" alt="등급별 혜택" /></a>
+							<a href="https://incorp.interpark.com/member/memberjoin.do?_method=upMemberFront"><img src="//ticketimage.interpark.com/TicketImage/event/100913_my/btn_memb_modify.gif" alt="회원정보수정" /></a>
+						</p>
+					</div>
+					<div class="possess">
+						<ul>
+							<li class="line_o">
+								<div class="pos_1">
+									<div class="tit_Ipont">
+										<img src="http://openimage.interpark.com/_mypage_n/title/tit_ipoint.gif" alt="I-Point" />
+									</div>
+									<div class="btn_i_q">
+										<a href="javascript:;" onmouseover="j$('#layer_question').show()" onmouseout="j$('#layer_question').hide()">
+											<img src="//openimage.interpark.com/_mypage_n/icon/icon_ipoint.gif" alt="I-Point_q" />
+										</a>
+									</div>
+									<!-- 아이포인트  -->
+									<div id="layer_question" class="layer_question_wrap" style="display:none;">
+										<div class="layer_content">
+											<div class="text">
+												<span class="line_o tit">I-Point</span><br />
+												<span>상품구매나 이벤트 등에</br>사용하실 수 있는 포인트</br>입니다.</span>
+											</div>
+										</div>
+									</div>
+									<!-- 아이포인트 ? 마침 -->
+									<!-- [D] 해당 ID값으로 변경(통합아이포인트)/ ipoint 클래스 추가--> 
+									<div id="ipoint2" class="ipoint"><a href="http://ipointmall.interpark.com/ipoint/MyIpointDtl.do?_method=initial&wid1=cus&wid2=ipoint">0</a></div>
+								</div>
+							</li>
+							<!-- //[D] 2016.10tests/pages/mypage.04 ADD - [E] --> 
+
+							<!-- // NolPoint -->
+							<li>
+							  <div class="nolpoint pos_1">
+								<div class="tit_nolpoint"><img src="http://openimage.interpark.com/_mypage_n/title/tit_nolpoint.gif" alt="NOL 포인트">
+								</div>
+								
+                                  <div class="unmember"><a href="https://nol.interpark.com/promotion/nol-promotion?mchtNo=INTERPARK_TICKET&mchtDtlNo=09&eventCode=NOI23" target="_blank">혜택받기</a></div>
+                                
+							  </div>
+							</li>
+						
+						</ul>
+					</div>
+				</div>
+				<div class="bg_bottom"></div>
+			</div>
+<script>
+    jQuery.ajax({
+        url: "/Lib/Left/SMoney.asp", type: "post", timeout: 5000,
+        success: function (result) {
+            jQuery("#smoney_num a").text(result);
+        }
+    });
+</script>
+
+				<hr />
+ 
+				<div class="lnbWrap">
+					<p class="top"></p>
+					<div>
+						<h3><img src="//ticketimage.interpark.com/TicketImage/event/100913_my/lnb_tit_01.gif" alt="예매/취소내역" /></h3>
+						<ul>
+							<li><a href='http://ticket.interpark.com/Gate/TPLogin.asp?CPage=C'  target='_self'>공연/스포츠/전시/레저</a></li>
+							<!--<li><a href='http://movie.interpark.com/Movie/Gate/TPLogin.asp?CPage=C'  target='_self'>영화</a></li>-->
+							<!-- <li><a href='http://movie.interpark.com/Movie/Mart/BookedList.asp'  target='_self'>기프티샵</a></li> -->
+							<li><a href='http://ticket.interpark.com/Ticket/Waiting/MyWaitingList.asp'  target='_self'>예매대기 서비스</a></li>
+							<!--<li><a href='http://shop.interpark.com/mypage/common/MyPage.do?_method=initial'  target='_self'>쇼핑 주문/배송 내역</a></li>
+							<li><a href='http://book.interpark.com/member/MyPage.do?logintgt=mypage'  target='_self'>도서 주문/배송 내역</a></li>
+							<li><a href='http://tour.interpark.com/mypage/Default.aspx'  target='_self'>여행 예약/결제 내역</a></li>-->
+							
+						</ul>
+					</div>
+					<div>
+						<h3><img src="//ticketimage.interpark.com/TicketImage/event/100913_my/lnb_tit_02.gif" alt="증빙서류" /></h3>
+						<ul>
+							<li><a href='http://ticket.interpark.com/Point/MyTicket/MyReceiptTotal.asp'  target='_self'>입금증</a></li>
+							<li><a href='https://ticket.interpark.com/Point/MyTicket/MyReceipt.asp'  target='_self'>현금영수증</a></li>
+							<li><a href='http://ticket.interpark.com/Point/MyTicket/MyCredit.asp'  target='_self'>신용카드 매출전표</a></li>
+							
+						</ul>
+					</div>
+					<div class="bdn">
+						<h3><img src="//ticketimage.interpark.com/TicketImage/event/100913_my/lnb_tit_03.gif" alt="예매권/쿠폰" /></h3>
+						<ul>
+							<li><a href='http://ticket.interpark.com/Ticket/MyTicket/MyPlayVoucher.asp'  target='_self'>공연예매권/스포츠예매권</a></li>
+							<li><a href='http://ticket.interpark.com/Point/MyTicket/MyCoupon.asp'  target='_self'>공연할인쿠폰</a></li>
+							<li><a href='http://ticket.interpark.com/Ticket/MyTicket/MHVoucher.asp'  target='_self'>문화예매권</a></li>
+							<!--<li><a href='http://movie.interpark.com/Point/MyTicket/MyVoucher.asp'  target='_self'>영화예매권</a></li>
+							<li><a href='http://movie.interpark.com/Point/MyTicket/MyCoupon.asp?rb=Movie&Status=37024'  target='_self'>영화할인쿠폰</a></li>-->
+						</ul>
+					</div>
+					<ul class="etc">
+						<li><a href="http://ticket.interpark.com/Ticket/MyTicket/Personal_Main.asp" target="_self"><img src="//ticketimage.interpark.com/TicketImage/myscrap/mn_etc_myscrap.gif" alt="나의 티켓캐스트" /></a></li>
+						<li><a href="https://ticket.interpark.com/Contents/Toping" target="_self"><img src="//ticketimage.interpark.com/TicketImage/event/100913_my/mn_etc_01.gif" alt="나의 TOPING" /></a></li>
+						<li><a href="http://ticket.interpark.com/Point/MyTicket/MyReview.asp" target="_self"><img src="//ticketimage.interpark.com/TicketImage/event/100913_my/mn_etc_02.gif" alt="나의 후기" /></a></li>
+						<li><a href="http://ticket.interpark.com/Point/MyTicket/MyEvent.asp" target="_self"><img src="//ticketimage.interpark.com/TicketImage/event/100913_my/mn_etc_03.gif" alt="참여 이벤트" /></a></li>
+						<li class="bgn"><a href="javascript:goSosWriteListPopUp();" target="_self"><img src="//ticketimage.interpark.com/TicketImage/event/100913_my/mn_etc_05.gif" alt="1:1 문의하기" /></a></li>
+					</ul>
+				</div>
+				<!-- 101104 수정 시작 -->
+				<div><iframe src="//ticket.interpark.com/Lib/left/MyTicketLeftADBanner.html" scrolling="no" frameborder="0" valign= "Top" marginwidth="0"  marginheight="0" width="100%"></iframe></div>
+				<!-- 101104 수정 끝 -->
+			</div>
+			<!-- e : 좌측 메뉴  //-->
+            <script language="javascript">
+
+                if (document.addEventListener)
+                {
+                    window.addEventListener('pageshow', function (event)
+                    {
+                        if (event.persisted || window.performance && window.performance.navigation.type == 2)
+                        {
+			                location.reload();
+		                }
+	                }, false);
+                }
+                
+   	            function goSosWriteListPopUp()
+                {
+	                var url = 'https://tickets.interpark.com/contents/help';
+		            window.open(url, "create", "width=417,height=660,scrollbars=auto");
+	            }
+            </script>
+
+					<!-- e : 좌측 메뉴  //-->
+</div>
+
+<!-- 최우측 영역 -->
+<!-- <div class="right-content">
+    여기에 내용 추가
+</div>
+
+clear fix
+<div class="clearfix"></div> -->
+
+<div class="left-content clearfix">
+    <!-- 왼쪽 메뉴 -->
+<!--     <ul>
+        <li><a href="#" onclick="loadContent('page1.html'); return false;">메뉴 1</a></li>
+        <li><a href="#" onclick="loadContent('page2.html'); return false;">메뉴 2</a></li>
+        <li><a href="#" onclick="loadContent('page3.html'); return false;">메뉴 3</a></li>
+    </ul> -->
+</div>
+
+<div class="right-content clearfix" id="rightContent">
+    <!-- 오른쪽 콘텐츠가 여기에 동적으로 로드됨 -->
+</div>
+<script>
+function loadContent(url) {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                document.getElementById('rightContent').innerHTML = xhr.responseText;
+            } else {
+                console.error('Failed to load content: ' + xhr.status);
+            }
+        }
+    };
+    xhr.open('GET', url, true);
+    xhr.send();
+}
+</script>
+
+</body>
+</html>

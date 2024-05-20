@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	td{text-align:center;font-size:25pt;}
+
+</style>
+<script type="text/javascript">
+var tdArr;
+window.onload=function(){
+	var h2Obj = document.querySelector("h2")
+	var h3Obj = document.querySelector("h3")
+	var tdArr = document.querySelectorAll("td")
+	for(var idx=0;idx < tdArr.length;idx++){
+		tdArr[idx].innerText = idx+1
+	}
+	tdArr[0].style.background="yellow"
+	h2Obj.innerText = "keyup이벤트"
+	// this: window = 현재 이 함수를 포함하여 이벤트를 처리하는 객체를 지칭
+	//		즉,window를 의미..
+	var ckIdx =0;
+	this.onkeyup=function(){
+		h3Obj.innerText = "화살표:"+event.keyCode
+		initBgcolor()
+		if(event.keyCode==39){
+			tdArr[++ckIdx].style.background="yellow"
+		}
+		if(event.keyCode==37){
+			tdArr[--ckIdx].style.background="yellow"
+		}	}
+}
+
+function initBgcolor(){
+	// 배경색상 초기화 하는 함수 처리..
+	for(var idx=0;idx < tdArr.length;idx++){
+		tdArr[idx].style.background=""
+
+	}
+}
+</script>
+</head>
+<body>
+	<h2></h2>
+	<h3></h3>
+	<table border width="300px" height="300px">
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+	</table>
+
+</body>
+</html>

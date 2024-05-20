@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>휴대폰 인증</title>
+    <script>
+        // 휴대폰 번호를 인증하는 함수
+        function 인증하기() {
+            // 사용자가 입력한 휴대폰 번호 가져오기
+            var 휴대폰번호 = document.getElementById("휴대폰번호").value;
+            
+            // 여기서는 휴대폰 번호를 서버로 전송하여 인증 코드를 요청하는 과정을 가정합니다.
+            // 실제로는 서버 사이드 스크립트 (예: PHP, Python 등)를 사용하여 이 과정을 처리해야 합니다.
+            // 이 예제에서는 간단히 콘솔에 출력하는 것으로 대체합니다.
+            console.log("휴대폰 번호:", 휴대폰번호);
+            
+            // 여기서는 사용자에게 인증 코드를 입력하도록 하는 폼을 보여줄 수 있습니다.
+            // 실제로는 사용자의 휴대폰으로 전송된 인증 코드를 입력받아야 합니다.
+            // 이 예제에서는 간단히 "인증 코드를 입력하세요"라는 메시지를 콘솔에 출력합니다.
+            console.log("인증 코드를 입력하세요");
+        }
+    </script>
+</head>
+<body>
+
+<h2>휴대폰 인증</h2>
+
+<!-- 휴대폰 번호 입력 폼 -->
+<form>
+    <label for="휴대폰번호">휴대폰 번호:</label>
+    <input type="text" id="휴대폰번호" name="휴대폰번호">
+    <button type="button" onclick="인증하기()">인증 요청</button>
+</form>
+
+</body>
+</html>

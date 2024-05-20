@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	var h2Obj = document.querySelector("h2")
+	var h3Obj = document.querySelector("h3")
+	h2Obj.innerText = "input key이벤트 연습"
+	var idObj = document.querySelector("[name=id]")
+	var pwdObj = document.querySelector("[name=pwd]")
+	idObj.onkeyup=callKey
+	pwdObj.onkeyup=function(){
+		h3Obj.innerText = pwdObj.value
+	}
+	
+	function callKey(){
+		// 아이디에 입력된 내용을 타이틀에 출력..
+		h2Obj.innerText = idObj.value
+	}
+	// ex) type="password"를 추가하고 , 입력된 password내용을
+	//    하단에 h3에 출력되게 하세요...
+}  
+</script>
+</head>
+<body>
+	<h2></h2>
+	아이디:<input type="text" name="id"/><br>
+	패스워드:<input type="password" name="pwd"/>
+	
+	<h3></h3>
+</body>
+</html>

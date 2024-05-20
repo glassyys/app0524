@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+	<h2 align="center">학생 성적</h2>
+	<table align="center" border width="50%">
+		<tr><th>번호</th><th>이름</th><th>국어</th><th>영어</th><th>수학</th></tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<p align="center">
+	<input type="button" value="데이터입력" onclick="addRecords()">
+	</p>
+</body>
+
+<script type="text/javascript">
+	var tdArr = document.querySelectorAll("td") //css선택하는 형식과 동일
+	//bdObj.innerHTML = "제목"
+	// var 배열명 = [100,200,300,400]
+	// 배열명[0] 배열명[1] 배열명[2] 배열명[3]
+	// 100 200 300 400
+	function addRecords(){
+		// <td></td><td></td>.... 화면에 있는 td에 접근해서 데이터 입력..
+		tdArr[0].innerHTML = 1
+		tdArr[1].innerHTML = "홍길동"
+		tdArr[2].innerHTML = 70
+		tdArr[3].innerHTML = 80
+		tdArr[4].innerHTML = 90
+	}
+/*
+#
+
+*/
+//
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkbox Example</title>
+</head>
+<body>
+
+<input type="checkbox" id="checkAll" onclick="toggleCheckboxes()">
+<label for="checkAll">Select All</label><br>
+
+<input type="checkbox" id="checkbox1" class="required" onclick="updateSubmitButton()">
+<label for="checkbox1">Required Checkbox 1</label><br>
+<input type="checkbox" id="checkbox2" class="required" onclick="updateSubmitButton()">
+<label for="checkbox2">Required Checkbox 2</label><br>
+<input type="checkbox" id="checkbox3" class="required" onclick="updateSubmitButton()">
+<label for="checkbox3">Required Checkbox 3</label><br>
+
+<input type="checkbox" id="checkbox4" onclick="updateSubmitButton()">
+<label for="checkbox4">Optional Checkbox 1</label><br>
+<input type="checkbox" id="checkbox5" onclick="updateSubmitButton()">
+<label for="checkbox5">Optional Checkbox 2</label><br>
+
+<button id="submitButton" disabled onclick="submitForm()">Submit</button>
+
+<script>
+  // 전체 체크박스를 선택/해제하는 함수
+  function toggleCheckboxes() {
+    var checkAllCheckbox = document.getElementById('checkAll');
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(function(checkbox) {
+      checkbox.checked = checkAllCheckbox.checked;
+    });
+    updateSubmitButton();
+  }
+
+  // Submit 버튼을 활성화 또는 비활성화하는 함수
+  function updateSubmitButton() {
+    var requiredCheckboxes = document.querySelectorAll('.required');
+    var optionalCheckboxes = document.querySelectorAll('input[type="checkbox"]:not(.required)');
+    var submitButton = document.getElementById('submitButton');
+    var checkedCount = 0;
+
+    requiredCheckboxes.forEach(function(checkbox) {
+      if (checkbox.checked) {
+        checkedCount++;
+      }
+    });
+
+    if (checkedCount === 3 && optionalCheckboxes.length >= 2) {
+      submitButton.disabled = false;
+    } else {
+      submitButton.disabled = true;
+    }
+  }
+
+  // 폼을 제출하는 함수
+  function submitForm() {
+    // 여기에 폼을 제출하는 코드 추가
+    alert("Form submitted!");
+  }
+</script>
+
+</body>
+</html>

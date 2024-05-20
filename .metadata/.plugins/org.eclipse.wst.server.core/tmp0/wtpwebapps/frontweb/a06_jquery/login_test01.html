@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f0f0f0;
+}
+
+.login-container {
+	width: 400px;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+label {
+	display: block;
+	font-weight: bold;
+}
+
+input[type="text"], input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+.button1 {
+	width: 100%;
+	padding: 10px;
+	background-color: #007bff;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #0056b3;
+}
+
+ul li {
+	display: inline-block;
+	margin-right: 10px; /* 각 요소 사이의 간격을 조절할 수 있습니다. */
+}
+
+a {
+	text-decoration: none; /* 하이퍼링크의 밑줄을 제거합니다. */
+}
+
+.input-with-image {
+	background-image: url('이미지_파일_경로');
+	background-repeat: no-repeat;
+	background-position: right center; /* 이미지 위치 조정 가능 */
+	padding-right: 20px; /* 이미지와 텍스트 사이 여백 설정 */
+}
+
+.centered-title {
+	display: flex;
+	justify-content: center;
+}
+</style>
+<!-- CDN(content delivery network) 방식 jquery 시작 -->
+<!-- 
+<script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+ -->
+<!-- lib 다운로드 설치 처리 -->
+<script src="jquery-3.7.1.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		// $("h2").css("color","yellow").text("jquery시작")
+	})
+</script>
+
+</head>
+<body>
+	<div class="login-container">
+		<form id="login-form">
+			<!-- <h2>Login</h2> -->
+			<div class="form-group centered-title" style="position: relative;">
+				<img src="./image/interpark BI@2x.png" alt="이미지 설명"
+					style="width: 150px; height: 40px">
+			</div>
+				<div class="form-group" style="position: relative; height: 40px">
+			</div>
+
+			<div class="form-group" style="position: relative;">
+				<img src="person.png" alt="로그인"
+					style="position: absolute; filter: blur(0.5px); top: 50%; transform: translateY(-50%); left: 5px; width: 20px; height: 20px;">
+				<input type="text" id="inputText" placeholder="아이디"
+					style="padding-left: 25px; width: 355px;"
+					oninput="toggleDeleteButton()">
+				<!-- 이미지 너비 + 여백 크기만큼 padding-left 설정 -->
+				<button type="button" id="deleteButton" class="inputBtn btnDel"
+					style="position: absolute; top: 50%; transform: translateY(-50%); right: 5px; background: none; border: none; display: none;">
+					<span class="fas fa-trash-alt" style="color: red;"></span>
+					<!-- Font Awesome 아이콘 -->
+					<span class="blind">삭제</span>
+				</button>
+			</div>
+			<div class="form-group" style="position: relative;">
+				<img src="lock.png" alt="비번표시"
+					style="position: absolute; filter: blur(0.5px); top: 50%; transform: translateY(-50%); left: 5px; width: 20px; height: 20px;">
+				<input type="password" id="inputText2" placeholder="비밀번호"
+					style="padding-left: 25px; width: 355px;"
+					oninput="togglePasswordVisibility()">
+				<!-- 이미지 너비 + 여백 크기만큼 padding-left 설정 -->
+				<button type="button" id="passwordShow" class="inputBtn btnDel"
+					style="position: absolute; top: 50%; transform: translateY(-50%); right: 5px; background: none; border: none; display: none;">
+					<span class="fas fa-trash-alt" style="color: red;"></span>
+					<!-- Font Awesome 아이콘 -->
+					<span class="blind">삭제</span>
+				</button>
+			</div>
+			<div class="form-group" style="position: relative; width: 390px;">
+				<button class="button1" type="submit">로그인</button>
+			</div>
+
+			<div class="form-group" style="position: relative;">
+				<ul>
+					<li><a id="findId" class="findId" href="#">아이디 찾기</a></li>
+					<li><a id="findPwd" href="#">비밀번호 찾기</a></li>
+					<li><a id="join" href="#">회원가입</a></li>
+				</ul>
+			</div>
+
+			<!--             <div class="snsLogin"> -->
+			<div class="form-group centered-title" style="position: relative;">
+				<ul>
+					<li id="kakao_li"><a
+						href="https://accounts.kakao.com/login/?continue=https%3A%2F%2Fcs.kakao.com%2Fhelps%3Fcategory%3D25#login"
+						class="kakao" id="openid_kakao"> <img
+							src="./image/kokao_login2.jpg" alt="카카오톡"
+							style="width: 40px; height: 40px"> <span></span>
+					</a></li>
+					<li id="naver_li"><a
+						href="https://nid.naver.com/nidlogin.login?mode=form&url=https://www.naver.com/"
+						class="naver" id="openid_naver"> <img
+							src="./image/naver_login2.jpg" alt="네이버"
+							style="width: 40px; height: 40px"> <span></span>
+					</a></li>
+					<li id="apple_li"><a
+						href="https://appleid.apple.com/auth/authorize?response_type=code&response_mode=form_post&client_id=com.interpark.web.oidc&scope=name%20email&redirect_uri=https://accounts.interpark.com/web/open-id/auth/callback/apple?auto_login=N"
+						class="apple" id="openid_apple"> <img
+							src="./image/apple_login2.jpg" alt="애플"
+							style="width: 40px; height: 40px"> <span></span>
+					</a></li>
+				</ul>
+			</div>
+		</form>
+	</div>
+</body>
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+
+	function toggleDeleteButton() {
+		var inputText = document.getElementById("inputText");
+		var deleteButton = document.getElementById("deleteButton");
+		if (inputText.value.trim() !== "") {
+			deleteButton.innerHTML = '<img src="./image/cancel.png" alt="clean" style="width: 20px; height: 20px;">'; // 새로운 이미지로 버튼 내용 변경
+			deleteButton.style.display = "inline-block";
+		} else {
+			deleteButton.style.display = "none";
+		}
+	}
+
+	// 삭제 버튼 클릭 이벤트 처리
+	deleteButton.addEventListener("click", function() {
+		// 입력 상자의 텍스트를 초기화
+		inputText.value = "";
+	});
+
+	function togglePasswordVisibility() {
+		var passwordInput = document.getElementById("inputText2");
+		/* 	    if (passwordInput.type === "password") {
+		 passwordInput.type = "text";
+		 } else {
+		 passwordInput.type = "password";
+		 } */
+		if (inputText2.value.trim() !== "") {
+			passwordShow.innerHTML = '<img src="./image/visibility.png" alt="clean" style="width: 20px; height: 20px;">'; // 새로운 이미지로 버튼 내용 변경
+			passwordShow.style.display = "inline-block";
+		} else {
+			passwordShow.style.display = "none";
+		}
+	}
+
+	document.getElementById("passwordShow").addEventListener("click",
+			togglePasswordVisibility2);
+
+	function togglePasswordVisibility2() {
+		var passwordInput = document.getElementById("inputText2");
+		if (passwordInput.type === "password") {
+			passwordInput.type = "text";
+		} else {
+			passwordInput.type = "password";
+		}
+
+	}
+	//수정
+	/* 	function togglePasswordVisibility2() {
+	 var passwordInput = document.getElementById("inputText2");
+	 if (passwordInput.type === "password") {
+	 passwordInput.type = "text";
+	 } else {
+	 passwordInput.type = "password";
+	 }
+	 } */
+	document.getElementById("showPasswordButton").addEventListener("click",
+			togglePasswordVisibility);
+	document.getElementById("passwordShow").addEventListener("click",
+			togglePasswordVisibility2);
+	//document.getElementById("passwordShow").addEventListener("click", togglePasswordVisibility2);
+
+	// 입력 상자의 내용이 변경될 때마다 버튼 표시 여부 확인
+	/*   	inputText.addEventListener("input", function() {
+	 if (inputText.value.trim() !== "") {
+	 deleteButton.style.display = "inline-block";
+	 } else {
+	 deleteButton.style.display = "none";
+	 }
+	 }); */
+
+	$(document).ready(function() {
+		// 로그인 폼을 가운데로 이동
+		centerLoginForm();
+
+		// 윈도우 크기가 변경될 때마다 로그인 폼 위치 업데이트
+		$(window).resize(function() {
+			centerLoginForm();
+		});
+	});
+
+	function centerLoginForm() {
+		var container = $('.login-container');
+		var windowHeight = $(window).height();
+		var windowWidth = $(window).width();
+		var containerHeight = container.outerHeight();
+		var containerWidth = container.outerWidth();
+
+		var topPosition = (windowHeight - containerHeight) / 2;
+		var leftPosition = (windowWidth - containerWidth) / 2;
+
+		container.css({
+			'top' : topPosition + 'px',
+			'left' : leftPosition + 'px'
+		});
+	}
+	/*
+	 #
+
+	 */
+	//
+</script>
+</html>

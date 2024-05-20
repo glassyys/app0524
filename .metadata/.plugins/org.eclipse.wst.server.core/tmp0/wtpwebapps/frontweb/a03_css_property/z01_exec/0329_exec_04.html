@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#### 4. 스토리
+"위젯 공장"은 다양한 위젯을 생산하는 가상의 회사입니다. 최근 웹사이트 리뉴얼을 결정했고, 여러분이 디자인 작업을 맡게 되었습니다. 
+웹사이트는 제품 목록, 회사 소개, 연락처 정보를 포함해야 하며, 방문자들이 쉽게 정보를 찾을 수 있도록 사용자 친화적이어야 합니다.
+
+1. **제품 목록 페이지 디자인**
+   - 제품 사진과 설명이 포함된 리스트를 만듭니다. `list-style-image`를 사용하여 제품 유형에 따라 
+     다른 아이콘을 마커로 표시하세요.
+   - 제품 리스트에 `overflow` 속성을 적용하여, 제품 설명이 너무 길 경우 스크롤하여 볼 수 있게 하세요.
+*/
+  ul.products {
+    list-style-type: none;
+    overflow: auto;
+    max-height: 100px;
+	border-style:solid;
+	border-color:blue;
+			margin:2px;
+			border-width:5px;
+  }
+
+  ul.products li {
+    margin-bottom: 10px;
+   
+  }
+  ul.products li img {
+    width: 100px;
+    height: auto;
+  }
+	li.type01{list-style-image:url("apple.gif");background:skyblue;}
+	li.type02{list-style-image:url("peach.gif");background:pink;}
+	li.type03{list-style-image:url("banana.gif");background:yellow;}
+/*
+2. **회사 소개 페이지 디자인**
+   - 회사 역사, 비전, 팀 멤버를 소개하는 섹션을 만듭니다. 
+   각 섹션의 제목에는 `z-index`를 활용하여 겹치는 배경 이미지 효과를 주세요.
+   - 팀 멤버의 사진 목록에서, 사람의 이름에 마우스를 올리면 
+   해당 사람의 짧은 소개가 나타나도록 `visibility` 옵션을 활용하세요.
+*/
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* 가상 툴팁 표시를 위한 점선 */
+    cursor: pointer; /* 마우스 오버 상태에서 커서를 포인터로 변경 */
+  }
+  
+  .tooltip .tooltiptext {
+    /*visibility: hidden;  기본적으로 툴팁 내용을 숨김 */
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1; /* 다른 요소 위에 표시하기 위해 */
+    bottom: 125%; /* 요소 위에 위치하도록 설정 */
+    left: 50%; /* 요소 가운데 위치하도록 설정 */
+    margin-left: -60px; /* 가운데 정렬을 위한 마진 설정 */
+    opacity: 0; /* 툴팁 내용을 처음부터 투명하게 설정 */
+    transition: opacity 0.3s; /* 투명도 변화에 애니메이션 적용 */
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible; /* 마우스 오버 시 툴팁 내용 표시 */
+    opacity: 1; /* 툴팁 내용을 표시할 때 투명도를 1로 설정하여 표시 */
+  }
+/*
+3. **연락처 정보 페이지**
+   - 연락처 정보를 깔끔하게 표시하는 테이블을 디자인하세요.
+     테이블의 행마다 서로 다른 배경색을 적용하여 가독성을 높이세요(`nth-child` 활용).
+   - 연락처 목록에 마우스를 올렸을 때, 해당 행의 색상이 변하도록 해보세요(`hover` 효과).
+*/
+		table{border-collapse:collapse;
+			  border:1px solid blue;}
+		tr>*{padding:5px;text-align:center;}
+		td.cen{text-align:center}
+		td.num{text-align:right}
+		th{background:yellow;}
+		
+		tr:nth-child(even){
+			background:skyblue;
+		}
+		tr:hover{
+			background:#ffccff;color:#6600ff;font-weight:500;
+			
+		}
+	</style>
+</head>
+<body>
+	<h2>1. 제품 목록 페이지 디자인</h2>
+	<hr>
+	<ul class="products" width="50%">
+		<li class="type01">사과</li>
+		<li class="type02">복숭아</li>
+		<li class="type03">바나나</li>
+	</ul>
+		
+	<h2>2.회사 소개 페이지 디자인</h2>
+	<div><h3>==>z01_exec 아래 0329_section_corp.html에 다시 구현</h3></div>
+
+	<div class="tooltip">마우스를 올려보세요
+	  <span class="tooltiptext">여기에 표시할 내용을 입력하세요.</span>
+	</div>
+
+	<h2 align="center">3.연락처 정보 페이지</h2>
+	<table align="center" width="50%" border>
+		<tr><th>번호</th><th>이름</th><th>연락처</th></tr>
+		<tr><td>1</td><td>홍길동</td><td>010-1111-2222</td></tr>
+		<tr><td>2</td><td>정수리</td><td>010-2222-2222</td></tr>
+		<tr><td>3</td><td>옹달샘</td><td>010-3333-2222</td></tr>
+		<tr><td>4</td><td>김미미</td><td>010-4444-2222</td></tr>
+		<tr><td>5</td><td>상수리</td><td>010-5555-2222</td></tr>
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Option Example</title>
+<style>
+  /* 옵션 버튼 스타일 */
+  .option-content div {
+    display: none; /* 모든 하위 내용을 일단 숨깁니다 */
+  }
+
+  /* div를 블록 형태로 세로로 표시합니다 */
+  .option-content div {
+    display: block;
+    margin-bottom: 10px; /* 하위 내용 사이의 간격을 조절합니다 */
+  }
+  
+  #option2-content {
+    display: none; /* 모든 하위 내용을 일단 숨깁니다 */
+  }
+  #option3-content {
+    display: none; /* 모든 하위 내용을 일단 숨깁니다 */
+  }
+  #option4-content {
+    display: none; /* 모든 하위 내용을 일단 숨깁니다 */
+  }
+  /* input과 button을 세로로 나오도록 */
+  .option-content input,
+  .option-content button {
+    display: block;
+    margin-bottom: 5px; /* input과 button 사이의 간격을 조절합니다 */
+  }
+</style>
+</head>
+<body>
+
+<!-- 옵션 버튼들 -->
+<input type="radio" name="options" id="option1" onclick="showOption('option1-content')" checked>
+<label for="option1">Option 1</label>
+<input type="radio" name="options" id="option2" onclick="showOption('option2-content')">
+<label for="option2">Option 2</label>
+<input type="radio" name="options" id="option3" onclick="showOption('option3-content')">
+<label for="option3">Option 3</label>
+<input type="radio" name="options" id="option4" onclick="showOption('option4-content')">
+<label for="option4">Option 4</label>
+
+<!-- 옵션에 따라 보여질 하위 내용 -->
+<div class="option-content">
+  <!-- Option 1에 해당하는 내용 -->
+  <div id="option1-content">
+    <span>Content for Option 1</span>
+    <input type="text" placeholder="Input 1 for Option 1">
+    <button>Button 1 for Option 1</button>
+  </div>
+  <!-- Option 2에 해당하는 내용 -->
+  <div id="option2-content">
+    <span>Content for Option 2</span>
+    <input type="text" placeholder="Input 1 for Option 2">
+    <input type="text" placeholder="Input 2 for Option 2">
+    <button>Button 1 for Option 2</button>
+    <button>Button 2 for Option 2</button>
+  </div>
+  <!-- Option 3에 해당하는 내용 -->
+  <div id="option3-content">
+    <span>Content for Option 3</span>
+    <input type="text" placeholder="Input 1 for Option 3">
+    <button>Button 1 for Option 3</button>
+    <button>Button 2 for Option 3</button>
+    <button>Button 3 for Option 3</button>
+  </div>
+  <!-- Option 4에 해당하는 내용 -->
+  <div id="option4-content">
+    <span>Content for Option 4</span>
+    <input type="text" placeholder="Input 1 for Option 4">
+    <button>Button 1 for Option 4</button>
+    <button>Button 2 for Option 4</button>
+  </div>
+</div>
+
+<script>
+  function showOption(optionId) {
+    // 모든 옵션에 해당하는 div를 숨깁니다.
+    var allOptionDivs = document.querySelectorAll('.option-content div');
+    allOptionDivs.forEach(function(div) {
+      div.style.display = 'none';
+    });
+    // 선택된 옵션에 해당하는 div를 보여줍니다.
+    var optionDiv = document.getElementById(optionId);
+    if (optionDiv) {
+      optionDiv.style.display = 'block';
+    }
+  }
+</script>
+
+</body>
+</html>

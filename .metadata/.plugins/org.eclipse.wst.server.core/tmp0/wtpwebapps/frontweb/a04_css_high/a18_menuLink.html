@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 탭메뉴를 링크된 화면 로딩.
+1. 기본 화면 클래스메뉴 : display:none;
+2. 특정탭 메뉴가 클릭시 출력 철;
+	:target{
+		display:block;
+	}
+ex) <a href="#아이디명">메뉴1</a>
+	<div id="아이디명">
+		클릭시마다 출력 처리
+	</div>
+
+*/
+		.tab-content{
+			display:none
+		}
+		.tab-content:target{
+			display:block
+		}
+		
+		nav a{
+			padding:10px;
+			text-decoraion:none;
+			color:blue;
+			border:1px solid blue;
+			border-radius:5px;
+			margin-right:5px;
+		}
+		
+	</style>
+
+</head>
+<body>
+	<nav>
+		<a href="#tab01">메뉴1</a>
+		<a href="#tab02">메뉴2</a>
+		<a href="#tab03">메뉴3</a>
+	</nav>
+	<div id="tab01" class="tab-content">
+		<h2>메뉴1</h2>
+		<p>메뉴 1의 내용!!!</p>
+	</div>
+	<div id="tab02" class="tab-content">
+		<h2>메뉴2</h2>
+		<p>메뉴 2의 내용!!!</p>
+	</div>
+	<div id="tab03" class="tab-content">
+		<h2>메뉴3</h2>
+		<p>메뉴 3의 내용!!!</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+	
+	</style>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+/******************************************************************************/
+// 1. 사용자의 나이를 나타내는 변수 `age`가 있을 때, 2024년의 나이를 계산하여 출력하세요.
+/******************************************************************************/
+/* 
+	var age = 30;
+	var age_2024 = age+(2024-2024);
+	bdObj.innerHTML += "2024년의 나이는 " + age_2024 + "세입니다." + "<br>";
+	var currentYear = new Date().getFullYear();
+	var ageIn2024 = age + (2024 - currentYear);
+	
+	bdObj.innerHTML += "2024년에 사용자의 나이는 " + ageIn2024 + "세입니다." + "<br>";
+*/
+
+/* 위 코드에서는 age 변수에 사용자의 나이를 설정하고, 
+currentYear 변수에 현재 년도를 구한 후 2024에서 현재 년도를 뺀 값을 age에 더해줍니다.
+이렇게 계산된 나이를 ageIn2024 변수에 저장한 후 결과를 출력합니다. 
+*/
+/* 	// 사용자의 현재 나이
+	var age = 30; // 예시 나이
+
+	// 현재 년도
+	var currentYear = new Date().getFullYear();
+
+	// 2024년의 나이 계산
+	var ageIn2024 = age + (2024 - currentYear);
+
+	// 결과 출력
+	bdObj.innerHTML += "2024년에 사용자의 나이는 " + ageIn2024 + "세입니다." + "<br>";
+*/
+
+// 2. 현재 시간을 나타내는 변수 `hour`가 있을 때, `hour`가 12보다 작으면 "Good morning", 
+//    12 이상 18 이하면 "Good afternoon", 그 외에는 "Good evening"을 출력하세요.
+/* var hour = prompt("현재시간(0~24)")*1;
+var hellowGood = hour<12? "Good morning":
+				(hour>=12 && hour<=18)? "Good afternoon":"Good evening";
+
+bdObj.innerHTML += "현재시간은 " + hour + "시입니다. 그러므로 인사말은 " + hellowGood + "이 좋겠죠!" + "<br>";
+
+ */
+// 3. 변수 `temperature`가 주어졌을 때, 절대 온도(켈빈)로 변환하여 출력하는 식을 작성하세요. (켈빈 = 섭씨 + 273.15)
+
+/* var temperature = 40;
+var absotTemper = Number(temperature) + 273.15;
+
+bdObj.innerHTML += "현재온도 " + temperature + "도" + "절대 온도(켈빈):" + absotTemper + "K" + "<br>";
+*/
+
+
+//4. 문자열 "2023"을 숫자로 변환하고, 현재 년도(2023년)와 비교하여 같으면 "Current year"를,
+//다르면 "Not the current year"를 출력하세요.
+/* 
+//var strYear = "2024";
+var strYear = prompt("년도를입력하세요");
+var strYearChk = parseInt(strYear) === 2023 ? "Current year": "Not the current year";
+bdObj.innerHTML +=  strYear + "년은" + strYearChk + "<br>";
+*/
+
+//5. 두 자리 수 `num`이 주어졌을 때, 십의 자리와 일의 자리 숫자의 합을 출력하세요.
+/* 
+var twoDigitNum = prompt("두 자리 수를 입력하세요 예시:12");
+
+var twoDigitNumSum = parseInt(twoDigitNum[0]) + parseInt(twoDigitNum[1]);
+bdObj.innerHTML +=  twoDigitNum[0] + "+" + twoDigitNum[1] + "=" + twoDigitNumSum + "<br>";
+
+*/
+
+//6. 초를 나타내는 변수 `seconds`가 있을 때, 이를 시간과 분으로 변환하여 "HH시간 MM분" 형태로 출력하세요.
+
+//7. 세 자리 수 `num`이 주어졌을 때, 가장 큰 자리 수(백의 자리)를 출력하세요.
+
+/* var num03 = '123';
+
+bdObj.innerHTML +=  num03 + "백의자리" + num03[0] + "<br>";
+*/
+
+/******************************************************************************/
+//8. 금액을 나타내는 변수 `money`가 있을 때, 5000원 짜리 몇 장과 1000원 짜리 몇 장으로 나눌 수 있는지 계산하여 출력하세요.
+/******************************************************************************/
+/* 
+var money = 79000;
+var money_50000 = parseInt(money/50000);
+var money_10000 = parseInt(money%50000/10000);
+var money_5000 = parseInt(money%10000/5000);
+var money_1000 = parseInt(money%5000/1000);
+
+bdObj.innerHTML +=  money + "+" + "50000원짜리" + money_50000 +"장"+"<br>";
+bdObj.innerHTML +=  money + "+" + "10000원짜리" + money_10000 +"장"+"<br>";
+bdObj.innerHTML +=  money + "+" + "5000원짜리" + money_5000 +"장"+"<br>";
+bdObj.innerHTML +=  money + "+" + "1000원짜리" + money_1000 +"장"+"<br>";
+
+*/
+//9. 문자열 "ReverseMe"를 거꾸로 출력하세요. (반복문, 배열 사용 없이)
+
+/* var reverseMe = "ReverseMe";
+
+bdObj.innerHTML += reverseMe[reverseMe.length -1]; 
+bdObj.innerHTML += reverseMe[reverseMe.length -2];
+bdObj.innerHTML += reverseMe[reverseMe.length -3];
+bdObj.innerHTML += reverseMe[reverseMe.length -4];
+bdObj.innerHTML += reverseMe[reverseMe.length -5];
+bdObj.innerHTML += reverseMe[reverseMe.length -6];
+bdObj.innerHTML += reverseMe[reverseMe.length -7];
+bdObj.innerHTML += reverseMe[reverseMe.length -8];
+bdObj.innerHTML += reverseMe[reverseMe.length -9];
+*/
+
+//10. 속도 `speed`가 주어졌을 때, 초속(m/s)으로 변환하여 출력하세요. (1시간 = 3600초 공식 사용)
+/*
+var speed= prompt("속도를 입력하세요");
+//주어진 속도를 초속(m/s)으로 변환하여 출력
+var speedMetersPerSecond = speed * (1000 / 3600);
+bdObj.innerHTML += "초속: " + speedMetersPerSecond +"<br>";
+*/
+
+/******************************************************************************/
+//11. 나이 `age`가 주어졌을 때, 윤년을 고려한 총 생일 수를 계산하여 출력하세요. (2023년 기준)
+/******************************************************************************/
+// 주어진 나이
+/* 
+var age = 30; // 예시 나이
+
+// 현재 년도
+var currentYear = 2023; // 현재 년도 (2023년 기준)
+
+//윤년을 고려하여 생일 수를 계산하는 것은 주어진 나이를 년도로 변환하고, 
+//해당 년도까지의 윤년을 고려하여 생일 수를 계산하는 것을 의미합니다.
+//윤년은 4년마다 발생하며, 100의 배수이면서 400의 배수인 년도가 윤년입니다.
+
+// 주어진 나이를 년도로 변환하여 윤년을 고려한 총 생일 수 계산
+var totalBirthdays = age + Math.floor(age / 4) - Math.floor(age / 100) + Math.floor(age / 400);
+
+// 결과 출력
+bdObj.innerHTML += "윤년을 고려한 총 생일 수:" + totalBirthdays +"<br>";
+*/
+
+/* 윤년 규칙은 다음과 같습니다:
+4로 나누어 떨어지는 연도는 윤년입니다.
+그러나 100으로 나누어 떨어지는 연도는 윤년이 아닙니다.
+그러나 400으로 나누어 떨어지는 연도는 다시 윤년입니다.
+따라서, Math.floor(age / 4)를 통해 4로 나누어 떨어지는 연도의 수를 계산하고, Math.floor(age / 100)을 빼는 것은 100으로 나누어 떨어지는 연도를 보정하는 것입니다.
+
+예를 들어, 100, 200, 300 등의 연도는 일반적으로 윤년이 아니지만, 
+400, 800, 1200 등의 연도는 다시 윤년으로 보정됩니다. 
+그래서 이 보정을 해주는 것입니다.
+*/
+
+
+/******************************************************************************/
+//12. 변수 `angle`이 주어졌을 때, 이 각이 둔각인지 예각인지 직각인지 판별하여 출력하세요.
+/******************************************************************************/
+var angle = prompt("각도를 입력하세요?");
+var angleGbn = (angle > 0 && angle < 90)? "예각입니다":
+				(angle == 90)? "직각입니다":
+				(angle > 90 && angle < 180)? "직각입니다": "유효하지 않은 각도입니다.";
+					
+bdObj.innerHTML += "각도(angle)는 " + angleGbn +"<br>";
+/*
+궁금한 것: 비교연산자의 경우 숫자로 산술연산자처럼 자동 형변환이 되는것이 맞는지?
+		■CHTGPT문의■
+		자바스크립트에서 a="1" 인경우 a>0 체크시 숫자로 자동형변환되는지?
+		JavaScript에서 a="1"인 경우, a는 문자열 "1"이 됩니다. 이 때 a > 0을 체크할 때,
+		JavaScript는 문자열과 숫자를 비교하기 위해 자동으로 형변환을 수행합니다.
+		​
+		JavaScript는 비교 연산자를 사용할 때 필요에 따라 피연산자의 형을 자동으로 변환합니다.
+		따라서 문자열 "1"과 숫자 0을 비교할 때 JavaScript는 문자열을 숫자로 형변환하여 비교합니다.
+		​
+		문자열을 숫자로 형변환할 때는 가능한 숫자로 변환하려고 하며,
+		문자열이 숫자로 시작하면 숫자로 변환합니다. 따라서 문자열 "1"은 숫자 1로 변환됩니다. 
+		그리고 1 > 0은 참(true)이므로, 
+		a > 0의 결과는 참(true)이 됩니다.
+		​
+		var a = "1";
+		console.log(a > 0); // true
+
+var a = "1";
+console.log(a > 0); // true
+*/
+/* 참고로직
+//각도 변수
+var angle = 100;
+
+if (angle > 0 && angle < 90) {
+    console.log("예각입니다.");
+} else if (angle === 90) {
+    console.log("직각입니다.");
+} else if (angle > 90 && angle < 180) {
+    console.log("둔각입니다.");
+} else {
+    console.log("유효하지 않은 각도입니다.");
+}
+*/
+ 
+//13. `price`가 주어졌을 때, 10% 부가세를 포함한 최종 금액을 계산하여 출력하세요.
+/* 
+// var priceData = 200;
+var priceData = prompt("물건의 가격을 입력하세요?");
+bdObj.innerHTML += priceData+ "의 부가세 포함금액은" + parseInt(priceData*1.1) + "원 입니다." +"<br>";
+*/
+
+//14. 사용자의 키 `height`가 주어졌을 때, 평균 키(170cm)와 비교하여 
+// "above average", "average", "below average" 중 하나를 출력하세요.
+/* 
+var height = prompt("당신의 키(cm)를 입력하세요?");
+var heightDistinguish = height> 170? "above average": height< 170? "below average":"average";
+
+bdObj.innerHTML += "당신의 키는 " + height + "cm 이고 " + heightDistinguish +"<br>";
+*/
+
+//15. 온도 `temp`가 주어졌을 때, 이 온도가 물의 끓는점(100°C) 이상인지, 어는점(0°C) 이하인지, 아니면 사이에 있는지 출력하세요.
+/* 
+var temp = prompt("온도를 입력하세요?");
+var tempCheck = temp >= 100? "끓는점(100°C) 이상입니다." : temp <= 0? "어는점(0°C) 이하입니다.":
+	"물의 끓는점(100°C)과 어는점(0°C) 사이입니다.";
+
+bdObj.innerHTML += "물의 온도는 " + temp + "°C 이고 " + tempCheck +"<br>";
+*/
+
+//16. 사각형의 길이 `length`와 너비 `width`가 주어졌을 때, 정사각형인지 아닌지를 출력하세요.
+
+/* 
+//var length = 100; var width = 100;
+var length = prompt("사각형의 길이를 입력하세요?");
+var width = prompt("사각형의 너비를 입력하세요?");
+
+// === 연산자 사용 필요 == 사용하려면 변수를 문자형으로 값을 생성 필요
+var widthChk = length === width? "정사각형 입니다.":"정사각형이 아닙니다.";
+bdObj.innerHTML += "길이:" +  length + " 너비:" +  width + "인 사각형은 " + widthChk +"<br>";
+*/
+
+//17. 4자리 숫자 `year`가 주어졌을 때, 이 해가 윤년인지 아닌지 판별하여 출력하세요. 
+/* 
+var fourDigitNum = 4000;
+//윤년은 연도가 4로 나누어 떨어지고, 100으로 나누어 떨어지지 않는 경우.
+//연도가 400으로 나누어 떨어지는 경우.
+var fourDigitNumChk = ((fourDigitNum % 4 === 0 && fourDigitNum % 100 !== 0) || (fourDigitNum % 400 === 0));
+
+var yoonYear = fourDigitNumChk? "윤년":"윤년아님";
+
+bdObj.innerHTML += fourDigitNum + "년은" + yoonYear +"<br>";
+*/
+
+//18. 소비자가 `consumerPrice`와 원가 `costPrice`가 주어졌을 때, 이윤이 있는지 손실이 있는지 판별하여 출력하세요.
+/* 
+var consumerPrice = prompt("소비자가를 입력하세요?");
+var costPrice = prompt("원가를 입력하세요?");
+//var lossYrofit = (parseInt(consumerPrice) - parseInt(costPrice)) > 0? "이윤이 발생합니다.":"손실이 발생합니다.";
+var lossYrofit = consumerPrice - costPrice;
+
+var lossYrofitCheck = lossYrofit > 0? "이윤이 발생합니다.":
+	                  lossYrofit < 0? "손실이 발생합니다.": "이윤도 손실도 없읍니다";
+	
+bdObj.innerHTML += "소비자가는 " +  consumerPrice + "원 이고 "
+                   + "원가가 " + costPrice + "원 이면 " + lossYrofit + lossYrofitCheck +"<br>";
+*/
+
+//19. 24시간 형식의 시간 `hour`가 주어졌을 때, AM/PM 형식으로 변환하여 출력하세요.
+/* 
+var hourTm = prompt("24시간 형식의 시간을 입력하세요","")*1;
+var hourAmPm = (hourTm >=0 && hourTm <12)? "AM":"PM";
+var hourNum  = (hourTm > 12)? hourTm-12: hourTm;
+
+bdObj.innerHTML +=  + hourNum + " "+ hourAmPm + "<br>";
+
+*/
+//20. 직각삼각형의 밑변 `base`와 높이 `height`가 주어졌을 때, 넓이를 계산하여 출력하세요. 
+/* 
+var base = prompt("직각삼각형의 밑변을 입력하세요","0");
+var height = prompt("직각삼각형의 밑변을 입력하세요","0");
+var rectangleArea = (base * height)/2;
+
+bdObj.innerHTML +=  "직각삼각형의 밑변이 " + base + "이고 "+ "높이가 " + height + "이면 넓이는 "  + rectangleArea + "입니다" + "<br>";
+
+*/
+
+/*
+
+
+*/
+//
+</script>
+</html>

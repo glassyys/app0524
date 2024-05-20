@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 
+
+*/
+		table{border-collapse:collapse;
+			  border:1px solid blue;}
+		tr>*{padding:20px;}
+		td.cen{text-align:center}
+		td.num{text-align:right}
+		th{background:pink;}
+/*
+ex) tr: 짝수/홀수 배경색 변경 처리,
+	hover로 배경색 및 글자 적용 처리..
+*/
+		tr:nth-child(even){background:#fff8cb;}
+		tr:hover{background:orange;color:red;}
+	</style>
+
+</head>
+<body>
+	<h2 align="center">학생 성적표</h2>
+	<table align="center" width="80%" border>
+		<tr><th>번호</th><th>이름</th><th>국어</th><th>영어</th><th>수학</th></tr>
+		<tr><td class="cen">1</td><td class="cen">홍길동</td>
+			<td class="num">70</td><td class="num">80</td><td class="num">90</td></tr>
+		<tr><td class="cen">2</td><td class="cen">김길동</td>
+			<td class="num">80</td><td class="num">80</td><td class="num">90</td></tr>
+		<tr><td class="cen">3</td><td class="cen">신길동</td>
+			<td class="num">90</td><td class="num">80</td><td class="num">90</td></tr>
+		<tr><td class="cen">3</td><td class="cen">신길동</td>
+			<td class="num">90</td><td class="num">80</td><td class="num">90</td></tr>
+				<tr><td class="cen">3</td><td class="cen">신길동</td>
+			<td class="num">90</td><td class="num">80</td><td class="num">90</td></tr>
+				<tr><td class="cen">3</td><td class="cen">신길동</td>
+			<td class="num">90</td><td class="num">80</td><td class="num">90</td></tr>
+				<tr><td class="cen">3</td><td class="cen">신길동</td>
+			<td class="num">90</td><td class="num">80</td><td class="num">90</td></tr>
+				<tr><td class="cen">3</td><td class="cen">신길동</td>
+			<td class="num">90</td><td class="num">80</td><td class="num">90</td></tr>
+		
+	</table>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+<table width="30%" align="center" border>
+<tr><th></th></tr>
+<tr><td></td></tr>
+</table>
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body")
+	var subject = prompt("과목명", "")
+	var pt = prompt("점수", "")
+
+	//bdObj.innerHTML = "과목명:"+subject +"<br>"
+	bdObj.innerHTML += subject+ ":" +pt+ "점"
+	
+	var thObj = document.querySelector("th")
+	var tdObj = document.querySelector("td")
+	thObj.innerText = subject;
+	thObj.style.background = "orange";
+	tdObj.innerText = pt;
+	tdObj.style.textAlign = "center";
+
+	bdObj.innerText += "ㅇㅇ";
+
+/*
+#
+
+*/
+//
+</script>
+</html>

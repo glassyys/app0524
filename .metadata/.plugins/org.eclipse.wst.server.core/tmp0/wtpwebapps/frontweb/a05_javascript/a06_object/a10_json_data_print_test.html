@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<h2></h2>
+
+</body>
+<script type="text/javascript">
+var h2Obj = document.querySelector("h2")
+function parseAndLog() {
+  const jsonString = '[{"name":"Alice","age":25},{"name":"Bob","age":35}]';
+  const people = JSON.parse(jsonString);
+  people.forEach(function(person) {
+    console.log(person.name);
+	h2Obj.innerHTML +=  "<h3>"+person.name+"</h3>";
+	h2Obj.innerHTML +=  "<h3>"+person.age+"</h3>";
+	h2Obj.innerHTML +=  "<table border> <tr><td>"+person.age+"</td></tr></table>";
+	h2Obj.innerHTML +=  "<input type=\"text\">입력박스";
+
+  });
+}
+parseAndLog();
+</script>
+</html>

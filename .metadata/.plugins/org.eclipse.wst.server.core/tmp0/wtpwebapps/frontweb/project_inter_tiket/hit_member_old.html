@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f0f0f0;
+}
+
+.login-container {
+	width: 400px;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+label {
+	display: block;
+	font-weight: bold;
+}
+
+input[type="text"], input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+.button1 {
+	width: 100%;
+	padding: 10px;
+	background-color: #007bff;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #0056b3;
+}
+
+ul li {
+	display: inline-block;
+	margin-right: 10px; /* 각 요소 사이의 간격을 조절할 수 있습니다. */
+}
+
+a {
+	text-decoration: none; /* 하이퍼링크의 밑줄을 제거합니다. */
+}
+
+.centered-title {
+	display: flex;
+	justify-content: center;
+}
+.memberContainer {
+	width: 70%; /* 너비를 50%로 설정합니다. */
+	margin: 0 auto; /* 좌우 여백을 자동으로 설정하여 수평 가운데 정렬합니다. */
+	background-color: lightgray; /* 배경색을 지정합니다. */
+	padding: 20px; /* 내부 여백을 추가합니다. */
+	box-sizing: border-box; /* padding을 포함한 너비로 설정합니다. */
+}
+
+.header {
+	display: flex; /* 플렉스 컨테이너로 설정합니다. */
+	align-items: center; /* 수직 가운데 정렬합니다. */
+	border: 3px solid red; /* 테두리 스타일 설정 */
+}
+
+.headerInner {
+	width: 500px;
+	border: 3px solid blue; /* 테두리 스타일 설정 */
+	/*flex-grow: 1;  남은 공간을 모두 채웁니다. */
+}
+
+.headerTitle {
+	width: 600px;
+	text-align: center; /* 텍스트를 가운데 정렬합니다. */
+	border: 3px solid yellow; /* 테두리 스타일 설정 */
+}
+
+.headerTitle1 {
+	text-align: center; /* 텍스트를 가운데 정렬합니다. */
+}
+
+/* .uCheckbox label input[type="checkbox"] + span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 10px;
+} */
+.uCheckbox label input[type="checkbox"]:checked+span {
+	background-color: #007bff;
+}
+
+.memberContainer {
+	background-color: white; /* 배경색을 지정합니다. */
+}
+
+.uBtn {
+	width: 200px;
+}
+
+.footer {
+	position: fixed; /* 화면에 고정 위치시킵니다. */
+	bottom: 0; /* 하단에 위치시킵니다. */
+	left: 0; /* 왼쪽 정렬합니다. */
+	right: 0; /* 오른쪽 정렬합니다. */
+	text-align: center; /* 텍스트를 가운데 정렬합니다. */
+	background-color: #f0f0f0; /* 배경색을 지정합니다. */
+	padding: 10px; /* 안쪽 여백을 추가합니다. */
+}
+
+div {
+	/* margin: 10px;  각 요소 사이의 간격을 조절할 수 있습니다. */
+}
+</style>
+
+</head>
+</script>
+<noscript>
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4M7TGG"
+		height="0" width="0" style="display: none; visibility: hidden"></iframe>
+</noscript>
+<meta charSet="utf-8" />
+<title>회원가입-인터파크</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<!-- <link rel="stylesheet" href="/styles/common/regist.css" />
+<link rel="preload" href="/_next/static/css/425c6040fd8ff83f59c1.css"
+	as="style" />
+<link rel="stylesheet" href="/_next/static/css/425c6040fd8ff83f59c1.css"
+	data-n-g="" /> -->
+<noscript data-n-css="true"></noscript>
+
+</head>
+<body>
+
+	<div id="agred">
+		<div class="header">
+			<div class="headerInner">
+				<a href="https://www.interpark.com" class="headerLogo"> <img
+					src="./image/interpark_logo.jpg" />
+				</a>
+			</div>
+			<div class="headerTitle">
+				<div class="headerTitle1">회원가입</div>
+			</div>
+		</div>
+		<hr>
+			<div id="__next">
+				<div class="memberContainer">
+		<div class="memberContainer">
+			<div class="form-group" style="position: relative;">
+				<img src="./image/person.png" alt="로그인"
+					style="position: absolute; top: 50%; transform: translateY(-50%); left: 5px; width: 20px; height: 20px;">
+				<input type="text" id="inputText" placeholder="아이디"
+					style="padding-left: 25px; width: 355px;"
+					oninput="toggleDeleteButton()">
+				<!-- 이미지 너비 + 여백 크기만큼 padding-left 설정 -->
+				<button type="button" id="deleteButton" class="inputBtn btnDel"
+					style="position: absolute; top: 50%; transform: translateY(-50%); right: 5px; background: none; border: none; display: none;">
+					<span class="fas fa-trash-alt" style="color: red;"></span>
+					<!-- Font Awesome 아이콘 -->
+					<span class="blind">삭제</span>
+				</button>
+			</div>
+<div class="form-group" style="position: relative;">
+    <img src="./image/lock.png" alt="비번표시"
+        style="position: absolute; top: 50%; transform: translateY(-50%); left: 5px; width: 20px; height: 20px;">
+    <input type="password" id="inputText2" placeholder="비밀번호"
+        style="padding-left: 25px; width: 355px;"
+        oninput="togglePasswordVisibility('inputText2', 'passwordShow')">
+    <!-- 이미지 너비 + 여백 크기만큼 padding-left 설정 -->
+    <button type="button" id="passwordShow" class="inputBtn btnDel"
+        style="position: absolute; top: 50%; transform: translateY(-50%); right: 5px; background: none; border: none; display: none;">
+        <span class="fas fa-trash-alt" style="color: red;"></span>
+        <!-- Font Awesome 아이콘 -->
+        <span class="blind">보기</span>
+    </button>
+</div>
+<div class="form-group" style="position: relative;">
+    <img src="./image/lock.png" alt="비번표시"
+        style="position: absolute; top: 50%; transform: translateY(-50%); left: 5px; width: 20px; height: 20px;">
+    <input type="password" id="inputText3" placeholder="비밀번호"
+        style="padding-left: 25px; width: 355px;"
+        oninput="togglePasswordVisibility('inputText3', 'passwordShow2')">
+    <!-- 이미지 너비 + 여백 크기만큼 padding-left 설정 -->
+    <button type="button" id="passwordShow2" class="inputBtn btnDel"
+        style="position: absolute; top: 50%; transform: translateY(-50%); right: 5px; background: none; border: none; display: none;">
+        <span class="fas fa-trash-alt" style="color: red;"></span>
+        <!-- Font Awesome 아이콘 -->
+        <span class="blind">보기</span>
+    </button>
+</div>
+					<div class="contents">
+						<div class="contentWrapper registContent">
+
+							<div class="uBlock">
+								<div class="uInputArea">
+									<div class="col">
+										<div class="uInput">
+											<label for="inputPwConfirm">비밀번호 확인</label>
+											<div class="inputBox">
+												<input type="password" id="inputPwConfirm" class="inputText"
+													placeholder="8~12자 영문, 숫자, 특수문자" value="" tabindex="3" />
+												<button type="button" class="btnDel" aria-label="삭제"></button>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="uBtnArea">
+											<button type="button" class="uBtn">보기</button>
+										</div>
+									</div>
+								</div>
+								<div class="uErrorText" style="display: block"></div>
+							</div>
+							<div class="uBlock">
+								<div class="uInputArea">
+									<div class="col">
+										<div class="uInput">
+											<label for="inputName">이름</label>
+											<div class="inputBox">
+												<input type="text" id="inputName" class="inputText" value=""
+													tabindex="4" />
+												<button type="button" class="btnDel" aria-label="삭제"></button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="uErrorText" style="display: block"></div>
+							</div>
+							<div class="uBlock">
+								<div class="uInputArea emailType">
+									<div class="col">
+										<div class="uInput">
+											<label for="inputEmail">이메일</label>
+											<div class="inputBox">
+												<input type="text" id="inputEmail" class="inputText"
+													value="" tabindex="5" />
+											</div>
+										</div>
+									</div>
+									<div class="col selectCol">
+										<div class="uSelectBox">
+											<label><select tabindex="6"><option
+														value="direct">직접입력</option>
+													<option value="naver.com">@naver.com</option>
+													<option value="hanmail.net">@hanmail.net</option>
+													<option value="gmail.com">@gmail.com</option>
+													<option value="nate.com">@nate.com</option>
+													<option value="hotmail.com">@hotmail.com</option></select></label>
+										</div>
+									</div>
+								</div>
+								<div class="uErrorText" style="display: block"></div>
+								<div class="accountValiBlock" style="display: none">
+									<div class="accountGuide"></div>
+									<p class="blockText">동일 정보로 가입된 계정으로 로그인 하시겠습니까?</p>
+									<a href="#" class="btn btnArrow">로그인하기</a>
+								</div>
+							</div>
+							<div class="uBlock">
+								<div class="uInputArea">
+									<div class="col">
+										<div class="uInput">
+											<label for="inputCellphone">휴대폰</label>
+											<div class="inputBox">
+												<input type="text" id="inputCellphone" class="inputText"
+													placeholder="010 1234 5678" value="" tabindex="7" />
+												<button type="button" class="btnDel" aria-label="삭제"></button>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="uBtnArea">
+											<button type="button" class="uBtn borderType">인증번호받기</button>
+										</div>
+									</div>
+								</div>
+								<div class="uErrorText" style="display: none">점유인증을 하여 휴대폰
+									번호를 등록해주세요. 등록한 번호는 로그인 이후 변경 가능합니다.</div>
+								<div class="accountValiBlock" style="display: none">
+									<div class="accountGuide"></div>
+									<p class="blockText">동일 정보로 가입된 계정으로 로그인 하시겠습니까?</p>
+									<a href="#" class="btn btnArrow">로그인하기</a>
+								</div>
+							</div>
+							<div class="uBlock" style="display: none">
+								<div class="uInputArea">
+									<div class="col">
+										<div class="uInput">
+											<label for="inputCertifyNum">인증번호</label>
+											<div class="inputBox">
+												<input type="text" id="inputCertifyNum" class="inputText"
+													value="" tabindex="8" />
+												<button type="button" class="btnDel" aria-label="삭제"></button>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="uBtnArea">
+											<button type="button" class="uBtn borderType">재발송</button>
+											<button type="button" class="uBtn borderType">확인</button>
+										</div>
+									</div>
+								</div>
+								<div class="certifyTime" style="display: none">
+									인증유효시간 <span classq="time">00:00</span>
+								</div>
+							</div>
+							<div class="uBlock checkBlock">
+								<div class="uCheckbox">
+									<label><input type="checkbox" /><span class="text">SMS,
+											이메일로 상품 및 이벤트 정보를 받겠습니다.(선택)</span></label>
+								</div>
+								<div class="uCheckbox">
+									<label><input type="checkbox" /><span class="text">14세
+											미만입니다.</span></label>
+								</div>
+								<div class="uErrorText" style="display: none">14세 미만 가입시
+									법정대리인 동의 필수 입니다.</div>
+							</div>
+							<div class="uBlock">
+								<p class="blockText">만 14세 미만 회원은 법정대리인(부모님) 동의를 받은 경우만
+									회원가입이 가능합니다.</p>
+							</div>
+							<div class="uBlock" style="display: none">
+								<div class="uInputArea">
+									<div class="col">
+										<div class="uInput">
+											<label for="inputAgreeName">이름</label>
+											<div class="inputBox">
+												<input type="text" id="inputAgreeName" class="inputText"
+													value="" />
+												<button type="button" class="btnDel" aria-label="삭제"></button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="uErrorText" style="display: block"></div>
+							</div>
+							<div class="uBlock" style="display: none">
+								<div class="uInputArea emailType">
+									<div class="col">
+										<div class="uInput">
+											<label for="inputAgreeEmail">이메일</label>
+											<div class="inputBox">
+												<input type="text" id="inputAgreeEmail" class="inputText"
+													value="" />
+											</div>
+										</div>
+									</div>
+									<div class="col selectCol">
+										<div class="uSelectBox">
+											<label><select><option value="direct">직접입력</option>
+													<option value="naver.com">@naver.com</option>
+													<option value="hanmail.net">@hanmail.net</option>
+													<option value="gmail.com">@gmail.com</option>
+													<option value="nate.com">@nate.com</option>
+													<option value="hotmail.com">@hotmail.com</option></select></label>
+										</div>
+									</div>
+								</div>
+								<div class="uErrorText" style="display: block"></div>
+							</div>
+							<div class="uBlock agreeBlock" style="display: none">
+								<div class="uInputArea">
+									<div class="col">
+										<span class="label">가입동의받기</span>
+									</div>
+									<div class="col">
+										<div class="uBtnArea">
+											<button type="button" class="uBtn borderType sType">법정대리인
+												본인 인증</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="ubtnArea">
+								<div class="col">
+									<button type="button" class="uBtn point" disabled="">가입완료</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="footer">
+						<div class="copyright">Copyright © InterparkTriple Corp. All
+							rights reserved.</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			<div class="footer">
+				<div class="copyright">Copyright © InterparkTriple Corp.
+					Allrights reserved.</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<footer class="footer">
+	<div class="copyright">Copyright © InterparkTriple Corp.
+		Allrights reserved.</div>
+</footer>
+</html>
+
+<script type="text/javascript">
+    var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+
+    function toggleDeleteButton() {
+        var inputText = document.getElementById("inputText");
+        var deleteButton = document.getElementById("deleteButton");
+        if (inputText.value.trim() !== "") {
+            deleteButton.innerHTML = '<img src="./image/cancel.png" alt="clean" style="width: 20px; height: 20px;">'; // 새로운 이미지로 버튼 내용 변경
+            deleteButton.style.display = "inline-block";
+        } else {
+            deleteButton.style.display = "none";
+        }
+    }
+
+    // 삭제 버튼 클릭 이벤트 처리
+    deleteButton.addEventListener("click", function() {
+        // 입력 상자의 텍스트를 초기화
+        inputText.value = "";
+    });
+
+/*     function togglePasswordVisibility() {
+        var passwordInput = document.getElementById("inputText2");
+        if (inputText2.value.trim() !== "") {
+            passwordShow.innerHTML = '<img src="./image/visibility.png" alt="clean" style="width: 20px; height: 20px;">'; // 새로운 이미지로 버튼 내용 변경
+            passwordShow.style.display = "inline-block";
+        } else {
+            passwordShow.style.display = "none";
+        }
+    }
+ */
+    function togglePasswordVisibility(inputId, buttonId) {
+        var passwordInput = document.getElementById(inputId);
+        var passwordButton = document.getElementById(buttonId);
+        if (passwordInput.value.trim() !== "") {
+            passwordButton.innerHTML = '<img src="./image/visibility.png" alt="clean" style="width: 20px; height: 20px;">'; // 새로운 이미지로 버튼 내용 변경
+            passwordButton.style.display = "inline-block";
+        } else {
+            passwordButton.style.display = "none";
+        }
+    }
+    document.getElementById("passwordShow").addEventListener("click", togglePasswordVisibility2);
+
+    function togglePasswordVisibility2() {
+        var passwordInput = document.getElementById("inputText2");
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
+        }
+    }
+    
+    document.getElementById("passwordShow2").addEventListener("click", togglePasswordVisibility3);
+
+    function togglePasswordVisibility3() {
+        var passwordInput = document.getElementById("inputText3");
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
+        }
+    }
+    
+    $(document).ready(function() {
+        // 로그인 폼을 가운데로 이동
+        centerLoginForm();
+
+        // 윈도우 크기가 변경될 때마다 로그인 폼 위치 업데이트
+        $(window).resize(function() {
+            centerLoginForm();
+        });
+    });
+
+    function centerLoginForm() {
+        var container = $('.login-container');
+        var windowHeight = $(window).height();
+        var windowWidth = $(window).width();
+        var containerHeight = container.outerHeight();
+        var containerWidth = container.outerWidth();
+
+        var topPosition = (windowHeight - containerHeight) / 2;
+        var leftPosition = (windowWidth - containerWidth) / 2;
+
+        container.css({
+            'top': topPosition + 'px',
+            'left': leftPosition + 'px'
+        });
+    }
+</script>
+</html>

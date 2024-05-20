@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+# 
+
+*/
+/*1. ul기본 속성 설정*/
+#menubar {
+	background: white;
+}
+
+#menubar ul {
+	margin: 0;
+	padding: 0;
+	width: 100%; /*모든 아이템을 한줄에 가질 수 있도록 처리*/
+}
+/*2. li속성 설정:메뉴바 형식으로 변환*/
+#menubar ul li {
+	display: inline-block; /*한줄로 처리하면서 넓이 높이 등 기본 설정 가능*/
+	list-style-type: none; /*마커 삭제*/
+	font-size:30px;
+	padding: 0px 15px;
+}
+
+#menubar1 ul li {
+	display: inline-block; /*한줄로 처리하면서 넓이 높이 등 기본 설정 가능*/
+	list-style-type: none; /*마커 삭제*/
+	font-size:20px;
+	padding: 0px 15px;
+}
+/*3. hyper link 속성 설정(글자 흰색, under line 삭제)*/
+#menubar ul li a {
+	color: black;
+	text-decoration: none; /*아랫줄 링크 보이지 않게 처리*/
+}
+
+#menubar1 ul li a {
+	color: black;
+	text-decoration: none; /*아랫줄 링크 보이지 않게 처리*/
+}
+
+/*4. 메뉴 위에 커서 위치시 hover 처리	*/
+#menubar ul li a:hover {
+	color: violet; /*글자 색상 변경 처리*/
+}
+#menubar1 ul li a:hover {
+	color: blue; /*글자 색상 변경 처리*/
+}
+/*
+	a13_menuList.html 만들고, 쇼핑몰 메뉴 리스트 페이지를 만들어 보세요..
+		Home 의류 식품관 공산품 관리자 로그인
+		
+	*/
+.header-top {
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    width: 100%; /* 화면 전체 너비로 설정 */
+    text-align: center; /* 텍스트를 가운데 정렬 */
+	background-color: black; /* 배경색 지정 */
+	padding: 0px; /* 내부 여백 지정 */
+    z-index: 9999; /* 다른 요소 위에 표시될 수 있도록 z-index를 설정합니다. */
+}
+
+.banner-hd {
+	color: white; /* 글자색 지정 */
+	text-decoration: none; /* 밑줄 제거 */
+	font-weight: bold; /* 글자 굵게 */
+}
+
+.div_main {
+	margin: 20pt;
+}
+
+.title_img {
+	width: 200px;
+	height: 40px;
+	/* align: center; */
+}
+
+.login_img {
+	width: 40px;
+	height: 40px;
+}
+
+.my_page {
+	width: 40px;
+	height: 40px;
+}
+
+li{	list-style-type: none; }
+
+	.searchBtn {
+		/* 여기에 원하는 스타일을 추가하세요 */
+		/*background-color: #f00;  배경색을 빨간색으로 설정 */
+		/*color: #fff;  글자색을 흰색으로 설정 */
+		width: 40px;
+		height: 40px;
+		
+		/* padding: 5px 10px;  내부 여백을 설정 */
+		cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+	}
+	
+	
+	.cart_img {
+		width: 50px;
+		height: 50px;
+	}
+
+    .header_depth2 {
+        position: fixed; /* 화면에 고정됩니다. */
+        top: 100px; /* 원하는 위치로 조정합니다. */
+        left: 5%;
+        background-color: #fff; /* 배경색 지정 */
+        padding: 10px; /* 내부 여백 지정 */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+        z-index: 999; /* 다른 요소 위에 표시되도록 설정합니다. */
+        display: none; /* 초기에 숨겨진 상태로 설정합니다. */
+    }
+    .header_depth2 a {
+        display: block; /* 링크를 블록 요소로 변경하여 수직으로 배치합니다. */
+        padding: 5px 0; /* 위아래 여백 추가 */
+        text-decoration: none; /* 링크에 밑줄 제거 */
+        color: #333; /* 링크 색상 지정 */
+    }
+
+    .header_depth2 a:hover {
+        background-color: #f0f0f0; /* 호버 시 배경색 변경 */
+    }
+    
+    #brand:hover + .header_depth2, .header_depth2:hover {
+        display: block; /* 메인 메뉴에 마우스를 가져갈 때 하위 메뉴를 보이게 합니다. */
+    }
+
+
+    .header_depth3 {
+        position: fixed; /* 화면에 고정됩니다. */
+        margin-left: 80%;
+        top: 100px; /* 원하는 위치로 조정합니다. */
+        left: 0;
+        background-color: #fff; /* 배경색 지정 */
+        padding: 10px; /* 내부 여백 지정 */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+        z-index: 999; /* 다른 요소 위에 표시되도록 설정합니다. */
+        display: none; /* 초기에 숨겨진 상태로 설정합니다. */
+    }
+    
+    .header_depth3 a:hover {
+        background-color: #f0f0f0; /* 호버 시 배경색 변경 */
+    }
+    
+    #my_menu:hover + .header_depth3, .header_depth3:hover {
+        display: block; /* 메인 메뉴에 마우스를 가져갈 때 하위 메뉴를 보이게 합니다. */
+    	visibility: visible; /* 메인 메뉴에 마우스를 가져갈 때 하위 메뉴를 보이게 합니다. */
+    }
+    
+    
+    .header_depth3 a {
+        display: block; /* 링크를 블록 요소로 변경하여 수직으로 배치합니다. */
+        padding: 5px 0; /* 위아래 여백 추가 */
+        text-decoration: none; /* 링크에 밑줄 제거 */
+        color: #333; /* 링크 색상 지정 */
+    }
+
+.menu-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #f0f0f0; /* 배경색 지정 */
+	/* padding: 10px; 내부 여백 지정 */
+}
+/*
+    .flex-item:last-child {
+        margin-left: auto;  마지막 아이템을 오른쪽으로 정렬합니다.
+    }
+*/
+
+.menu-container1 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #f0f0f0; /* 배경색 지정 */
+	/* padding: 10px; 내부 여백 지정 */
+}
+.menu5 {
+	display: flex;
+}
+.menu1 {
+	display: flex;
+}
+
+.menu2 {
+	display: flex;
+}
+
+
+.menu3 {
+	display: flex;
+}
+
+.iframe-container {
+    background-image: url('https://www.saengong.com/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/9531a5c973bf07fbeb05702630ebe639.jpg');
+    background-size: cover; /* 이미지가 요소에 꽉 차게 크기를 조정합니다. */
+    background-position: center; /* 이미지를 가운데로 정렬합니다. */
+    width: 100%; /* 원하는 너비로 조정합니다. */
+    height: 500px; /* 원하는 높이로 조정합니다. */
+    /* 추가적인 스타일링을 적용할 수 있습니다. */
+}
+
+
+iframe {
+    width: 100%; /* 부모 요소에 가득 차도록 iframe 너비를 설정합니다. */
+    height: 100%; /* 부모 요소에 가득 차도록 iframe 높이를 설정합니다. */
+}
+ 
+ 
+/*
+.menu img {
+	width: 150px;
+	height: 30px;
+	margin-right: 5px;  아이콘과 텍스트 사이 간격 조정 
+}
+*/
+
+
+</style>
+
+</head>
+<body>
+	<div class="header-top">
+		<a href="" class="banner-hd">생활공작소 신규 회원 가입시 3,000p</a>
+		<!-- <div class="top-banner__close" onclick="$(this).closest('.top-banner').hide();"><i class="fas fa-xmark"></i></div> -->
+	</div>
+
+	<div class="menu-container">
+		<div class=menu1>
+
+			<nav id="menubar">
+				<ul>
+					<li><a href="#" target="frame01">홈</a></li>
+
+					<li id="brand" target="frame01"><a href="#">브랜드</a></li>
+	          <nav class="header_depth2"><a href="https://www.saengong.com/dh/brand.html">브랜드 소개</a>
+            <a href="https://www.saengong.com/dh/recruitment.html">인재채용</a>
+            <a href="https://www.saengong.com/front/php/b/board_list.php?board_no=1002">윤리경영</a>
+            <a href="https://www.saengong.com/front/php/b/board_list.php?board_no=13">제휴/대량구매 문의</a>
+            <a href="https://www.saengong.com/front/php/b/board_list.php?board_no=8&amp;category_no=1">스토리</a>
+          </nav>
+					<li><a href="#">쇼핑</a></li>
+					<li><a href="#">이벤트</a></li>
+				</ul>
+
+			</nav>
+		</div>
+		<div class=menu2>
+			<li><h1>
+					<a href="/index.html"><span class="blind"></span> 
+					<img class="title_img" src="header_logo.png" alt="" /></a>
+				</h1></li>
+		</div >
+
+		<div class=menu3>
+			<nav id="menubar">
+				<ul>
+			<li><a href="/board/free/notice.html?board_no=1">COMMUNITY</a></li>
+			<li class="" id="my_menu"><a href="" class="header-mypage"> 
+			<img class="my_page" src="hd_my_icon.png" alt="" /></a>
+			</li>
+			<nav class="header_depth3">
+				<a href="prj_login_01.html">로그인</a> 
+				<a href="prj_join_01.html">회원가입</a>
+				<a href="https://www.saengong.com/myshop/index.html">마이페이지</a>
+			</nav>
+			<li class=""><a href="https://www.saengong.com/board/free/notice.html?board_no=1"> 
+			<img class="searchBtn" src="hd_srch_icon.png" alt="검색" /><em class="">1</em></a>
+			</li>
+			<li class=""><a href="/order/basket.html"> 
+			<img class="cart_img" src="hd_cart_icon.png" alt="장바구니" /><em>1</em></a></li>
+			</ul>
+
+			</nav>
+		</div>
+
+	</div>
+
+	<div class="menu-container1">
+		<div class=menu5>
+
+			<nav id="menubar1">
+				<ul>
+					<li><a href="#">펫용품</a></li>
+					<li><a href="#">주망용품</a></li>
+					<li><a href="#">위생용품</a></li>
+					<li><a href="#">청소용품</a></li>
+					<li><a href="#">세탁용품</a></li>
+					<li><a href="#">선물세트</a></li>
+					<li><a href="#">1인가구(단품)</a></li>
+					<li><a href="#">단체 및 기업구매</a></li>
+				</ul>
+
+			</nav>
+		</div>
+	</div>
+	<iframe class="iframe-container" name="frame01" top="200px" width="100%" height="700px"></iframe>
+
+</body>
+</html>

@@ -1,0 +1,366 @@
+@charset "UTF-8";
+/*!
+ _ _  _
+| | || | ticket-desktop v3.5.23
+| | || | INTERPARK UI Development Team
+`___'|_| /styles/common/footer.scss
+
+*/
+.powerlinkWrapper {
+  width: 960px;
+  margin: 50px auto 40px;
+  text-align: left;
+}
+
+.powerlinkWrapper .powerlinkHeader {
+  position: relative;
+  padding: 0 10px 9px;
+  border-bottom: 1px solid #333;
+}
+
+.powerlinkWrapper .powerlinkHeader h4 {
+  line-height: 29px;
+  font-size: 0;
+}
+
+.powerlinkWrapper .powerlinkHeader h4 strong {
+  margin-right: 5px;
+  font-size: 20px;
+  color: #000;
+  vertical-align: bottom;
+}
+
+.powerlinkWrapper .powerlinkHeader h4 span {
+  font-size: 16px;
+  line-height: 26px;
+  color: #999;
+  vertical-align: bottom;
+}
+
+.powerlinkWrapper .powerlinkHeader .powerlinkRequest {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
+  color: #999;
+}
+
+.powerlinkWrapper .powerlinkContents {
+  position: relative;
+}
+
+.powerlinkWrapper .powerlinkContents:before {
+  display: block;
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background-color: #dfe5ed;
+  content: "";
+}
+
+.powerlinkWrapper .powerlinkItems {
+  margin-top: 34px;
+  padding: 0 10px;
+  font-size: 0;
+  box-sizing: border-box;
+}
+
+.powerlinkWrapper .powerlinkItem {
+  display: inline-block;
+  width: 50%;
+  min-height: 84px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+.powerlinkWrapper .powerlinkItem:nth-child(even) a {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.powerlinkWrapper .powerlinkItem:nth-child(odd) a {
+  margin-left: 0;
+}
+
+.powerlinkWrapper .powerlinkItem a {
+  overflow: hidden;
+  display: block;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0;
+}
+
+.powerlinkWrapper .powerlinkItem a:hover {
+  text-decoration: none;
+}
+
+.powerlinkWrapper .powerlinkItem a:hover .powerlinkContent h5 {
+  text-decoration: underline;
+}
+
+.powerlinkWrapper .powerlinkItem .powerlinkImage {
+  display: table-cell;
+  min-width: 78px;
+  vertical-align: top;
+}
+
+.powerlinkWrapper .powerlinkItem .powerlinkImage img {
+  display: block;
+  width: 78px;
+  height: 78px;
+  border: 1px solid #ebebeb;
+  border-radius: 15px;
+}
+
+.powerlinkWrapper .powerlinkItem .powerlinkNo {
+  display: none;
+  float: left;
+  width: 30px;
+  margin-right: -30px;
+  margin-top: 1px;
+}
+
+.powerlinkWrapper .powerlinkItem .powerlinkNo em {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #ef3e43;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.powerlinkWrapper .powerlinkItem .powerlinkContent {
+  display: table-cell;
+  width: 100%;
+  vertical-align: top;
+}
+
+.powerlinkWrapper .powerlinkItem .powerlinkContent h5 {
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 1;
+  color: #000;
+  vertical-align: top;
+}
+
+.powerlinkWrapper .powerlinkItem .powerlinkContent .powerlinkText {
+  min-height: 19px;
+  margin-bottom: 9px;
+  font-size: 14px;
+  margin-right: 20px;
+  line-height: 19px;
+  color: #666;
+}
+
+.powerlinkWrapper .powerlinkItem .powerlinkContent .powerlinkURL {
+  max-width: 360px;
+  font-size: 12px;
+  line-height: 1.3;
+  color: #dc941b;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.powerlinkWrapper.wide {
+  width: 1280px;
+}
+
+.powerlinkWrapper .powerlinkItem {
+  *display: inline;
+  zoom: 1;
+}
+
+.powerlinkWrapper .powerlinkItem .powerlinkContent,
+.powerlinkWrapper .powerlinkItem .powerlinkImage {
+  zoom: 1;
+  *display: inline;
+}
+
+.powerlinkWrapper .powerlinkItem .powerlinkContent {
+  *width: 362px;
+}
+
+.tourEnterFooter {
+  overflow: hidden;
+  min-width: 1280px;
+  background-color: #fff;
+  border-top: 1px solid #e6e6e6;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "맑은 고딕", "Malgun Gothic", "돋움", Dotum, Helvetica, "Apple SD Gothic Neo", sans-serif;
+}
+
+.tourEnterFooter h2,
+.tourEnterFooter ul,
+.tourEnterFooter li,
+.tourEnterFooter a,
+.tourEnterFooter a:link,
+.tourEnterFooter div,
+.tourEnterFooter p,
+.tourEnterFooter span {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "맑은 고딕", "Malgun Gothic", "돋움", Dotum, Helvetica, "Apple SD Gothic Neo", sans-serif;
+  list-style: none;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  text-align: left;
+  line-height: 17px;
+}
+
+.tourEnterFooter .footCorp {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.tourEnterFooter .footInfo {
+  display: flex;
+  width: 1280px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.tourEnterFooter .footNotice {
+  width: 1280px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  text-align: left;
+}
+
+.tourEnterFooter .footNotice p {
+  color: rgba(17, 17, 17, 0.5);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.tourEnterFooter .corpList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 1280px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.tourEnterFooter .corpList > li {
+  position: relative;
+  padding: 10px 27px;
+  box-sizing: border-box;
+}
+
+.tourEnterFooter .corpList > li:first-child {
+  padding-left: 0;
+}
+
+.tourEnterFooter .corpList > li:last-child {
+  padding-right: 0;
+}
+
+.tourEnterFooter .corpList > li:last-child .depth {
+  right: -5px;
+}
+
+.tourEnterFooter .corpList > li:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 1px;
+  width: 1px;
+  height: 12px;
+  background: #ccc;
+}
+
+.tourEnterFooter .corpList > li.active .depth {
+  display: block;
+}
+
+.tourEnterFooter .corpList > li a {
+  color: #333;
+  font-size: 13px;
+  vertical-align: top;
+}
+
+.tourEnterFooter .corpList > li a.bold {
+  font-weight: bold;
+}
+
+.tourEnterFooter .corpList > li a.sub::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 4px 0 0 5px;
+  border-right: 1px solid #111;
+  border-bottom: 1px solid #111;
+  transform: rotate(45deg);
+  vertical-align: top;
+}
+
+.tourEnterFooter .corpList .depth {
+  display: none;
+  position: absolute;
+  top: 31px;
+  right: 13px;
+  z-index: 10;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.tourEnterFooter .corpList .depth li:not(:first-child) {
+  margin-top: 10px;
+}
+
+.tourEnterFooter .infoCol {
+  text-align: left;
+}
+
+.tourEnterFooter .infoCol:not(:first-child) {
+  padding-left: 100px;
+}
+
+.tourEnterFooter .infoTitle {
+  color: #111;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.tourEnterFooter .infoContent {
+  margin-top: 4px;
+  color: #666;
+  font-size: 12px;
+}
+
+.tourEnterFooter .infoContent p span:not(:first-child) {
+  position: relative;
+  padding-left: 11px;
+}
+
+.tourEnterFooter .infoContent p span:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  width: 1px;
+  height: 14px;
+  background-color: #666;
+}
+
+.tourEnterFooter .infoContent a {
+  color: #666;
+  font-size: 12px;
+}
+
+.tourEnterFooter .infoContent .linkText {
+  color: #4a95ff;
+  text-decoration: underline;
+}

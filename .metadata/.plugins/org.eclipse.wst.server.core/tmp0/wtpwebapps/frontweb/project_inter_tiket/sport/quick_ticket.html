@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	a{
+		text-decoration:none;
+	}
+
+	.container{
+		display:flex;
+	}
+	.container *{
+		font-size:7pt;
+	}
+	.container h4{
+		display:inline-block;
+	}
+	.container a{
+		display:none;
+		color:gray;
+	}
+	
+	.team_container{
+		display:none;
+	}
+	.game_container{
+		display:none;
+	}
+	#on{
+		display:block;
+	}
+	
+	.container a:not([href="#"]){
+		display:inline-block;
+	}
+	
+	.genre_container{
+		width:100px;
+	}
+	.team_container{
+		width:100px;
+	}
+	
+	#selected_genre{
+		background:lightblue;
+		color:blue;
+	}
+	#selected_team{
+		background:lightblue;
+		color:blue;
+	}
+	#selected_game{
+		background:lightblue;
+		color:blue;
+	}
+	
+	#ticket_btn{
+		position:absolute;
+		right:40px;
+		bottom:5px;
+		font-size:12pt;
+		color:white;
+		background:#C83F49;
+		padding:5px;
+	}
+	
+</style>
+<script type="text/javascript">
+window.onload=function(){
+}  
+function select_genre(str){
+	var team_array = [];
+	var genre_tag = document.querySelector("." + str);
+	document.querySelector(".baseball").id = "";
+	document.querySelector(".soccer").id = "";
+	genre_tag.id = "selected_genre";
+	
+	if(str == "baseball"){
+		team_array.push("키움 히어로즈");
+		team_array.push("두산 베어스");
+	}else if(str == "soccer"){
+		team_array.push("수원삼성블루윙즈");
+		team_array.push("강원 FC");
+		team_array.push("성남 FC");
+		team_array.push("수원 FC");
+	}
+	
+	//목록의 상단 div를 획득 및 초기화
+	var team_item = document.querySelector(".team_container .item");
+	team_item.innerHTML = "";
+	//구단 버튼 텍스트 일괄 추가
+	for (var i = 0;i<team_array.length;i++){
+		team_item.innerHTML += `<p class='team' onclick="select_team('${team_array[i]}')">${team_array[i]}</p>`
+	}
+	
+	var genre_link = document.querySelector("#genre_link");
+	// 해당 종목 전반을 다루는 페이지로 이동하는 링크 활성화
+	genre_link.href = "ticket.interpark.com/Contents/Sports/Bridge/" + str;
+	genre_link.target = "_parent";
+
+	document.querySelector(".team_container").id = "on";
+	document.querySelector(".game_container").id = "";
+	
+	var ticket_btn = document.querySelector("#ticket_btn")
+	ticket_btn.href = "#"
+	ticket_btn.target = ""
+}
+
+function select_team(str){
+	var teamArr = document.querySelectorAll(".team");
+	for (var i = 0;i<teamArr.length;i++){
+		teamArr[i].id = "";
+		if(teamArr[i].innerText == str){
+			teamArr[i].id = "selected_team";
+		}
+	}
+	
+	var game_contents = document.querySelector(".game_container .item");
+	game_contents.innerHTML = "";
+	game_contents.innerHTML += `<p class='game' id='game' onclick="select_game(this, 'game')">4.25 (목) 14.00 vs 전남 드래곤즈 </p>`
+
+	var team_link = document.querySelector("#team_link");
+	// 해당 종목 전반을 다루는 페이지로 이동하는 링크 활성화
+	team_link.href = "ticket.interpark.com/Contents/Sports/Bridge/" + str;
+	team_link.target = "_parent";
+	
+	document.querySelector(".game_container").id = "on";
+	
+	var ticket_btn = document.querySelector("#ticket_btn")
+	ticket_btn.href = "#"
+	ticket_btn.target = ""
+}
+
+function select_game(obj, str){
+	obj.id = "selected_game";
+	
+	var ticket_btn = document.querySelector("#ticket_btn")
+	ticket_btn.href = str
+	ticket_btn.target = "_parent"
+}
+</script>
+</head>
+<body>
+	<div class="container">
+		<div class="genre_container">
+			<h4 id="genre_title">종목 선택</h4><a id="genre_link" href="#">바로가기></a>
+			<div class="item">
+				<p class="baseball" onclick="select_genre('baseball')">야구</p>
+				<p class="soccer" onclick="select_genre('soccer')">축구</p>
+			</div>
+		</div>
+		<div class="team_container">
+			<h4 id="team_title">구단 선택</h4><a id="team_link" href="#">바로가기></a>
+			<div class="item">
+			</div>			
+		</div>
+		<div class="game_container">
+			<h4 id="game_title">경기 선택</h4>
+			<div class="item">
+			</div>
+		</div>
+	</div>
+	<a href="#" id="ticket_btn">예매하기</input>
+</body>
+</html>

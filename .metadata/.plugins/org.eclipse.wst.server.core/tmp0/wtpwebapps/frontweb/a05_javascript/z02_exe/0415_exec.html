@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	// bdObj.innerHTML += "<h2>제목</h2>"
+/*
+# 일일 문제 
+1. **우주 탐험**: 우주 비행사들이 수집한 행성 샘플의 각 원소가 숫자로 표현된 배열이 있습니다. 
+이 배열의 총합을 구하는 함수를 작성하세요.
+2. **고대 유적의 비밀**: 고대 유적에서 발견된 숫자가 적힌 조각들을 분석해야 합니다. 
+이 숫자들 중 최소값을 찾는 함수를 작성하세요.
+3. **용사의 검**: 전설의 용사가 사용했다는 검들의 파워 레벨이 숫자 배열로 주어집니다. 
+가장 강력한 검의 파워 레벨을 찾는 함수를 작성하세요.
+4. **시간 여행자의 메모**: 시간 여행자가 남긴 메모가 거꾸로 적혀 있습니다. 
+메모를 올바르게 배열하는 함수를 작성하세요.
+5. **왕국의 보물 찾기**: 왕국에 숨겨진 보물 상자들의 위치가 숫자 배열로 표시되어 있습니다. 
+주어진 숫자보다 큰 위치의 보물들만 찾아내는 함수를 작성하세요.
+6. **외계어 번역기**: 외계 행성에서 가져온 문서에 적힌 숫자가 특정 진법으로 표현되어 있습니다.
+이를 10진법으로 번역하는 함수를 작성하세요.
+8. **도서관의 비밀**: 고대 도서관에서 발견된 책들의 목록이 문자열 배열로 주어집니다.
+특정 책이 목록에서 처음으로 나타나는 위치를 찾는 함수를 작성하세요.
+9. **해적선의 로그**: 해적선의 항해 로그가 숫자 배열로 기록되어 있습니다.
+이 로그를 주어진 횟수만큼 오른쪽으로 회전시키는 함수를 작성하세요.
+10. **정령의 축제**: 정령들이 모여 노는 축제에서 각 정령이 가진 마법의 힘이 숫자로 표시된 배열로 주어집니다.
+중복된 마법의 힘을 가진 정령을 제거하고 유일한 힘을 가진 정령만 남기는 함수를 작성하세요.
+
+
+*/
+// 1. **우주 탐험**: 우주 비행사들이 수집한 행성 샘플의 각 원소가 숫자로 표현된 배열이 있습니다. 이 배열의 총합을 구하는 함수를 작성하세요.
+var spaceArray= [25,34,56,33,61]
+var spaceSum = 0;
+var spaceSumRlt = 0;
+function spaceExplor(spaceArray){
+	for(i=0;i<spaceArray.length;i++){
+		spaceSum+=spaceArray[i]
+	}
+	return spaceSum
+}
+
+spaceSumRlt= spaceExplor(spaceArray);
+bdObj.innerHTML += `<h3>우주 탐험 합계 : ${spaceSumRlt} </h3>`
+
+//2. **고대 유적의 비밀**: 고대 유적에서 발견된 숫자가 적힌 조각들을 분석해야 합니다. 이 숫자들 중 최소값을 찾는 함수를 작성하세요.
+var ancientArray = [5,34,16,23,51]
+var ancientMin = ancientArray[0];
+function ancientSecrit(ancientArray){
+	for(i=0;i<ancientArray.length;i++){
+
+		if (ancientArray[i] < ancientMin){
+			ancientMin=ancientArray[i]
+		}
+	}
+	return ancientMin
+}
+
+bdObj.innerHTML += `<h3>고대 유적의 비밀(최소값) : ${ancientSecrit(ancientArray)} </h3>`
+
+// 3. **용사의 검**: 전설의 용사가 사용했다는 검들의 파워 레벨이 숫자 배열로 주어집니다. 가장 강력한 검의 파워 레벨을 찾는 함수를 작성하세요.
+var warriorArray = [5,34,16,23,51]
+var warriorMax = warriorArray[0];
+function warriorSecrit(warriorArray){
+	for(i=0;i<warriorArray.length;i++){
+		if (warriorArray[i] > warriorMax){
+			warriorMax=warriorArray[i]
+		}
+	}
+	return warriorMax
+}
+
+bdObj.innerHTML += `<h3>용사의 검(파워 레벨) : ${warriorSecrit(warriorArray)} </h3>`
+
+// 4. **시간 여행자의 메모**: 시간 여행자가 남긴 메모가 거꾸로 적혀 있습니다. 메모를 올바르게 배열하는 함수를 작성하세요.
+var timeMemoArray = ["마셨다 ","커피를 ","친구를 만나","종로에서 ","어제 "]
+var timeMemoSort = [];
+function timeMan(timeMemoArray){
+	for(i=timeMemoArray.length-1;i>=0;i--){
+		timeMemoSort += timeMemoArray[i]
+	}
+	return timeMemoSort
+}
+bdObj.innerHTML += `<h3>시간 여행자의 메모(소트) : ${timeMan(timeMemoArray)} </h3>`
+
+//5. **왕국의 보물 찾기**: 왕국에 숨겨진 보물 상자들의 위치가 숫자 배열로 표시되어 있습니다. 주어진 숫자보다 큰 위치의 보물들만 찾아내는 함수를 작성하세요.
+
+var trasureArray = [5,34,16,23,51]
+var trasureMax = 17;
+var trasureArrayFind = []
+
+function trasureFind(trasureArray){
+	for(i=0;i<trasureArray.length;i++){
+		if (trasureArray[i] > trasureMax){
+			trasureArrayFind.push(trasureArray[i]);
+		}
+	}
+	return trasureArrayFind
+}
+bdObj.innerHTML += `<h3>왕국의 보물 찾기 : ${trasureFind(trasureArray)} </h3>`
+
+// 6. **외계어 번역기**: 외계 행성에서 가져온 문서에 적힌 숫자가 특정 진법으로 표현되어 있습니다. 이를 10진법으로 번역하는 함수를 작성하세요.
+var twoArray = ["101","1111","1011"]
+var twoArrayTen =[]
+bdObj.innerHTML += `<h3>외계어 번기 : ${parseInt(twoArray[0],2)} </h3>`
+
+
+function twoArrayToTen(twoArray){
+	for(i=0;i<twoArray.length;i++){
+		twoArrayTen.push(parseInt(twoArray[i],2))
+	}
+	return twoArrayTen
+}
+
+bdObj.innerHTML += `<h3>외계어 번역기 : ${twoArrayToTen(twoArray)} </h3>`
+
+//	8. **도서관의 비밀**: 고대 도서관에서 발견된 책들의 목록이 문자열 배열로 주어집니다.
+//	특정 책이 목록에서 처음으로 나타나는 위치를 찾는 함수를 작성하세요.
+function findBookIndex(books, bookTitle) {
+    return books.indexOf(bookTitle);
+}
+
+var idxStart = 0;
+function findBookIndex(books, bookTitle) {
+    for(i=0;i<books.lenght;i++){
+    	if(books[i] === bookTitle ){
+    		idxStart = i;
+    	}
+    }
+	return idxStart;
+}
+
+
+// 테스트를 위한 예제 책 목록 배열과 특정 책 제목
+var libraryBooks = ["책A", "책B", "책C", "책D", "책E"];
+var targetBook = "책B";
+
+// 특정 책이 목록에서 처음으로 나타나는 위치를 찾습니다.
+var index = findBookIndex(libraryBooks, targetBook);
+
+bdObj.innerHTML += `<h3>도서관의 비밀 : ${index} </h3>`
+
+
+// 9. **해적선의 로그**: 해적선의 항해 로그가 숫자 배열로 기록되어 있습니다. 이 로그를 주어진 횟수만큼 오른쪽으로 회전시키는 함수를 작성하세요.
+	function rotatePirateLog(log, rotateCount) {
+    const length = log.length;
+    const rotations = rotateCount % length; // 실제 회전 횟수 계산
+
+    // 배열 끝 요소를 배열의 시작으로 이동
+    for (let i = 0; i < rotations; i++) {
+        const lastElement = log.pop(); // 배열의 끝 요소 추출
+        log.unshift(lastElement); // 배열의 시작에 추가
+    }
+
+    return log;
+}
+
+// 테스트를 위한 예제 로그 배열과 회전 횟수
+const pirateLog = [1, 2, 3, 4, 5];
+const rotateCount = 2;
+
+// 로그를 주어진 횟수만큼 회전시킴
+const rotatedLog = rotatePirateLog(pirateLog, rotateCount);
+bdObj.innerHTML += `<h3>해적선의 로그 : ${rotatedLog} </h3>`
+
+//	10. **정령의 축제**: 정령들이 모여 노는 축제에서 각 정령이 가진 마법의 힘이 숫자로 표시된 배열로 주어집니다.
+//	중복된 마법의 힘을 가진 정령을 제거하고 유일한 힘을 가진 정령만 남기는 함수를 작성하세요.
+// [copilot]
+function uniquePowers(powers) {
+  var unique = [...new Set(powers)];
+  return unique;
+}
+
+// 사용 예시:
+var spiritPowers = [5, 7, 5, 9, 10, 9, 10, 8];
+var uniqueSpiritPowers = uniquePowers(spiritPowers);
+//console.log(uniqueSpiritPowers); // [5, 7, 9, 10, 8]
+bdObj.innerHTML += `<h3>정령의 축제(copilot) : ${uniqueSpiritPowers} </h3>`
+
+// [ChatGPT]
+ 	function uniquePowers02(powers) {
+    // 각 마법의 힘과 등장 횟수를 저장하는 객체를 생성합니다.
+    var powerCount = {};
+    
+    // 배열을 순회하며 각 마법의 힘의 등장 횟수를 세어 저장합니다.
+/*     powers.forEach(power => {
+        if (powerCount[power]) {
+            powerCount[power]++;
+        } else {
+            powerCount[power] = 1;
+        }
+
+    });  
+*/
+    
+
+        for (var i = 0; i < powers.length; i++) {
+            var power = powers[i];
+            if (powerCount[power]) {
+                powerCount[power]++;
+            } else {
+                powerCount[power] = 1;
+            }
+            bdObj.innerHTML += `<h3>정령의 (${powers[i]}) : ${powerCount[power]} </h3>`
+      }
+
+    // 유일한 힘을 가진 정령들을 저장할 배열을 생성합니다.
+    var uniquePowers02 = [];
+    
+    // 등장 횟수가 1인 마법의 힘만 uniquePowers02 배열에 추가합니다.
+    for (const power in powerCount) {
+        if (powerCount[power] === 1) {
+            uniquePowers02.push(parseInt(power));
+        }
+    }
+    
+    return uniquePowers02;
+}
+
+
+
+// 테스트를 위한 예제 마법의 힘 배열
+var powers = [3, 5, 2, 5, 1, 3, 4, 2, 5];
+
+// 중복된 마법의 힘을 제거하고 유일한 힘을 가진 정령만을 반환합니다.
+var result = uniquePowers02(powers);
+bdObj.innerHTML += `<h3>정령의 축제(ChatGPT) : ${result} </h3>`
+
+//
+</script>
+</html>

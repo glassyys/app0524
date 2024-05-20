@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+	<h1>반복 처리(setInterval)</h1>
+	<h2></h2>
+	<table width="300px" height="300px" border>
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+	</table>
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	//bdObj.innerHTML += "<h2>반복 수행할 구문</h2>"
+	var h2Obj = document.querySelector("h2")
+	var tdArr = document.querySelectorAll("td")
+	var cnt = 1; //카운트 처리
+	var int01 = setInterval(function(){
+		if(cnt<10) // index범위가 8까지 이므로
+			tdArr[cnt-1].style.background="purple"
+			// index는 cnt보다 1작으므로..
+		
+		// 1초마다 카운트
+		h2Obj.innerText = "카운트:"+(cnt++)
+		if(cnt%2==0){
+			h2Obj.style.background="yellow"
+		}else{
+			h2Obj.style.background="orange"
+		}
+
+		if(cnt==11){
+			// 자원해제
+			clearInterval(int01)
+			//alert("종료")
+		}
+	}, 1000)
+	
+/*
+#
+
+*/
+//
+</script>
+</html>

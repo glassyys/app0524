@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 
+
+*/
+	
+	</style>
+
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+/*
+# Math 클래스
+1. Math.floor() - 바닥 : 내림처리..
+2. Math.ceil() - 천정 : 올림처리
+3. Math.round() : 반올림처리
+4. Math.random() : 0.0<=R<1.0
+
+*/
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	bdObj.innerHTML = "<h2>0.0 <= Random < 1.0 범위 임의 수</h2>"
+	var ran = Math.random();
+	bdObj.innerHTML += "<h3>"+ran+"</h3>"
+	bdObj.innerHTML += "<h3>"+ran+"</h3>"
+	bdObj.innerHTML += "<h3>"+ran+"</h3>"
+	bdObj.innerHTML += "<h3>"+ran*10+"</h3>"
+	bdObj.innerHTML += "<h3>"+parseInt(ran*10)+"</h3>"
+
+	bdObj.innerHTML += "<h3>1~3 :"+ran*3+"</h3>"
+	bdObj.innerHTML += "<h3>1~3 :"+parseInt(ran*3+1)+"</h3>"
+
+	
+	bdObj.innerHTML += "<h3>1~2 :"+parseInt(ran*2+1)+"</h3>"
+	bdObj.innerHTML += "<h3>1~3 :"+parseInt(ran*3+2)+"</h3>"
+	bdObj.innerHTML += "<h3>2~12 :"+parseInt(ran*11+2)+"</h3>"
+
+ 	bdObj.innerHTML += "<h3>0~1 :"+parseInt(ran*2)+"</h3>"
+	bdObj.innerHTML += "<h3>1~5 :"+parseInt(ran*5+1)+"</h3>"
+	bdObj.innerHTML += "<h3>점수(0~100) :"+parseInt(ran*101)+"</h3>" 
+	/*
+	공식 parseInt(Math.random()*경우의수 + 시작수)
+		==> Math.floor(Math.random()*경우의수 + 시작수))
+	ex1) 0~1 경우의수 : 2, 시작수 :0(X)
+	ex2) 1~5 경우의수 : 5, 시작수 :1
+	ex3) 점수(0~100) 경우의수 : 101, 시작수 : 0(X)
+	
+	*/
+	
+	// f5으로 화면을 refresh할때 마다 임의의 수가 바뀐다.
+/*
+# 내장 객체 Math하위에 random() 메서드
+1. 임의의 수는 프로그래밍에서 여러가지 다양한 경우에 처리를 할 때, 
+	활용된다.
+2. 가위바위보를 임의로 출력하게 한다. 1~6까지 주사위 번호가 임의로 나오게
+	한다 등과 같은 경우에 임의 데이터가 나오게 하는 것을 말한다.
+3. javascript에서는 이를 위해 0.0<=Math.random()<1.0 범위에 실수로
+	데이터를 임의로 동일 경우 수로 나오게 처리하고 있다.
+4. 0.0 <= Math.random() < 1.0
+5. 0.0*10 <= Math.random()*10 < 1.0*10
+   0.0 <= Math.random()*10 < 10.0
+5. parseInt() : 숫자형문자열을 정수, 실수를 정수
+   parseInt("25") ==> 25, parseInt("3.14") ==> 3
+   parseInt("4.54") ==> 4
+   
+6. 0.0 <= parseInt(Math.random()*10) < 10.0
+   0 <= parseInt(Math.random()*10) < 10
+   ==> 정수로 0 ~ 9, 경우의 수가 몇개? 10가지
+7. 공식을 만들어 봅시다.
+	범위를 정해서 랜덤으로 정수를 나오게 할려면.
+	1) 0~5 : parseInt(Math.random()*6) 
+	2) 0~6 : parseInt(Math.random()*7) 
+	3) 0~4 : parseInt(Math.random()*5) 
+	parseInt(Math.random()*경우의수)
+	4) 1~6 : parseInt(Math.random()*5+1)
+	   2~8 : parseInt(Math.random()*7+2)
+	   10~15 : parseInt(Math.random()*6+10)
+	parseInt(Math.random()*경우의수+시작수
+8. 가위, 바위, 보 ==> 경우의 3, 0,1,2 ==> if
+	조건문 없이 처리하는 방법..??
+   홀,짝
+   var games01 = ["가위","바위","보"]
+	games01[0]
+	games01[1]
+	games01[2]
+	임의로 가위, 바위, 보가 나오게 하려면..
+	games01[ran]
+	var ran = parseInt(Math.random()*3)
+	games01[ran] ==> 가위, 바위, 보 중에 하나만 임으로 가져온다..
+
+*/
+
+	var games01 = ["가위","바위","보"]
+	games01[0]
+	games01[1]
+	games01[2]
+	// 임의로 가위, 바위, 보가 나오게 하려면..
+	var ran = parseInt(Math.random()*3)
+
+	bdObj.innerHTML += "<h3>가위/바위/보 중 한개 랜덤 :"+games01[ran]+"</h3>" 
+//
+</script>
+</html>

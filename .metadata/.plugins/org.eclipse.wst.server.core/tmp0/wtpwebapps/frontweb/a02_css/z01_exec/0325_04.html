@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+#
+
+*/
+</style>
+<!-- 
+	<link type="text/css" rel="stylesheet" href="main.css">
+-->
+<style link type="text/css">
+@import
+url(z01_main.css);
+</style>
+<!-- main.css 내용
+body{background-color:yellow;color:red;}
+table{text-align:left;color:blue;}/*글자 정렬을 왼쪽 정렬*/
+p{style="color: tomato; font-size: 30pt";}
+-->
+<!-- 
+#### 예제 4: 외부 스타일 시트 적용
+- **목표**: 별도의 CSS 파일을 HTML 문서에 적용하는 방법 학습하기
+- **과제**: 외부 CSS 파일(`main.css`)을 만들고, 
+`<body>` 태그의 배경색을 설정한 후, HTML 문서에 이 파일을 링크하세요.
+-->
+
+</head>
+<body>
+<!-- css 외부 적용 2번째 형식 -->
+
+	<h3>배경노란색 글자빨간색</h3>
+	<p style="color:blue;font-size:20px;">토마토(인라인태그 글자크기변경:20 글자색:파랑)</p>
+	<p style="color: red">토마토(글자크기:외부css 30pt, 글자색상:빨강)</p>
+	<p style="color: green" >토마토(글자크기:외부css 30pt, 글자색상:빨강)</p>
+
+	<table border>
+		<tr>
+			<td>외부스타일테이블 적용</td>
+			<td>배경:노란색 글자:파란색</td>
+		</tr>
+	</table>
+
+
+</body>
+</html>

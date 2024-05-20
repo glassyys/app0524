@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 
+
+*/
+	
+	</style>
+
+</head>
+<body>
+	<h1></h1>
+	<p></p>
+	<h2></h2>
+	<span></span>
+</body>
+<script type="text/javascript">
+	var h1Obj = document.querySelector("h1") //css선택하는 형식과 동일
+	var pObj = document.querySelector("p") //css선택하는 형식과 동일
+	/*
+	#출력형식
+	1. innerText : html을 해석하지 않고 출력, html이 있을 때는
+					포함된 문자열만 추출하여 출력
+	2. innerHTML : html을 해석(랜더링)하여 출력
+	*/
+	
+	h1Obj.innerText = "DOM 호출(h1)"
+	pObj.innerText = "DOM 출력(p)"
+	//alert("잠시후 또 바뀌어 집니다.")
+	h1Obj.innerText = "DOM 변경(h1)^^"
+	pObj.innerText = "DOM 변경(p)^^"	
+	// <h1></h1> ==(.innerText)==>  <h1>DOM 변경(h1)^^</h1>
+	
+	h1Obj.align="center" // 중앙정렬 속성으로 변신..
+	// <h1></h1> == <h1 align="center">
+	// h1Obj.속성 = "속성값"
+	// <h1></h1> ==> <h1 style="color:blue">
+	h1Obj.style.color="blue"
+	
+/* ex) body에  h2, span 추가하고 화면에  해당 객체를 접근해서
+ 		h2Obj 출력 ^^,  사과가 맛있습니다. 를 출력되게 하세요..
+ 		1) body 안에 h2, span 추가
+ 		2) var h2Obj = document.querySelector("h2")
+ 		   var spanObj = document.querySelector("span")
+ 		3) h2Obj.innerText = "h2Obj 출력 ^^"
+ 		   spanObj.innerText = "사과가 맛있습니다."
+ 		ps) h2Obj.style.color="yellow"
+ 			h2Obj.style.background="red"
+*/
+	var h2Obj = document.querySelector("h2")
+	var spanObj = document.querySelector("span")
+	// <h2>h2Obj 출력 ^^</h2>
+	h2Obj.innerText = "h2Obj 출력 ^^"
+	// <span></span> ==> <span>사과가 맛있습니다.</span>
+	spanObj.innerText = "사과가 맛있습니다."
+	// <h2 style="color:yellow;background:red;"
+	h2Obj.style.color="yellow"
+	h2Obj.style.background="red"
+	
+	
+	
+
+</script>
+</html>

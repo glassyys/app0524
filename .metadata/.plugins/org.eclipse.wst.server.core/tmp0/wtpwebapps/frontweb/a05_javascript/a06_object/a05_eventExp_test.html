@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+# html 프로그램의 진행순서
+1. 위에서 부터 아래로 왼쪽부터 오른쪽을 흘러간다.
+	위에서 선언되지 않는 데이터, 변수, 객체는 아래에서 인식을 못 한다.
+	alert(name) // 선언도 안한 name은 처리가 되지 못 한다.
+	var age;
+	alert(name) // 에러
+	age = 25
+	alert(age) // 처리 가능..
+2. 단, 대입연산자는 오른쪽 왼쪽으로 대입된다.
+	var no1, no2, no3, no4;
+	no1 = no2 = no3 = no4 = 10
+3. DOM객체 인식.
+	태그로 먼저 선언 후에 하단에 객체로 인식이 가능하다.
+	<head>
+		<script>
+			var h2Ob = document.querySelector("h2") (X)
+	<body>
+		<h1></h1>
+		<h2></h2>
+		<script>
+			var h1Ob = document.querySelector("h1") (O)
+4. <head>
+	 	<script>
+	 	    var h2Ob;(전역변수)
+		 	window.onload=function(){
+		 		// 이 블럭안에 있는 DOM은 하단에 body에 선언된 태그라도
+		 		// 인식이 가능 한 이유는 모든 객체를 인식하고 화면이 로딩된 후에
+		 		// 실행하는 구문이기에 가능하다.
+		 		// 지역변수
+		 		var h1Ob = document.querySelector("h1") (O)
+		 		h2Ob = document.querySelector("h2") (O)
+		 		// 지역메서드
+		 		function call(){
+		 			h1Ob.innerHTML
+		 		}
+		 	}	 	
+	 		function call(){ // 전역메서드
+	 			h1Ob.innerHTML(X)
+	 			h2Ob.innerHTML(O)
+	 					)
+	 		}		
+ 	<body>
+ 		<h1></h1>
+ 		<h2></h2>
+ */
+
+
+window.onload=function(){
+	var h2Obj = document.querySelector("h2")
+	h2Obj.innerText = "이벤트 연습"
+	/*
+	# 이벤트 처리 순서
+	1. 화면구현
+	2. 대상 tag를 DOM객체 선언
+	3. 이벤트속성지정
+	4. 이벤트핸들러 함수를 할당.
+	5. 처리에 필요한 객체를 호출하고, 그 속성값을 변경..
+	
+	
+	ex1) body에 type button을 넣고 id="btn01"로 설정후,
+	    버튼을 클릭시,  alert()으로 안녕하세요 로딩.
+	ex2) 하단에 숫자2개를 입력 input 2개를 넣고 name="num01"  name="num02"
+	    를 선언한 후, 입력시 마다. h2에 곱한 결과값이 출력되게 하세요.
+	    
+	    
+	*/
+	var btn01 = document.querySelector("#btn01")
+	var cnt = 1;
+	btn01.onclick=function(){
+		//alert((cnt++)+"번째 안녕하세요!!")
+		h2Obj.innerText =(cnt++)+"번째 안녕하세요!!"
+	}
+	var num01 = document.querySelector("[name=num01]")
+	var num02 = document.querySelector("[name=num02]")
+	num01.onkeyup=calcu
+	num02.onkeyup=calcu
+	function calcu(){
+		//while( isNaN(this.value) ){
+		//	alert("해당 항목에 숫자형 입력 하세요")
+		//}
+		var n01V = num01.value
+		var n02V = num02.value
+		h2Obj.innerText = `${n01V} x ${n02V} = ${n01V*n02V}`
+	}
+
+	function toggleDivs() {
+	    var radio = document.getElementById('radio01');
+	    var div1 = document.getElementById('div1');
+	    var div2 = document.getElementById('div2');
+
+	    if (radio.checked) {
+	        div1.style.display = 'none';
+	        div2.style.display = 'block';
+	    } else {
+	        div1.style.display = 'block';
+	        div2.style.display = 'none';
+	    }
+	}
+ }  
+ 
+	
+
+</script>
+</head>
+<body>
+	<h2></h2>
+	<input type="button" value="클릭하세요" id="btn01"/><br>
+	첫번째:<input type="text" name="num01" value="0"/><br>
+	두번째:<input type="text" name="num02" value="0"/><br>
+<input type="radio" value="옵션1" name="radio01" id="radio01" onchange="toggleDivs()"/>옵션1<br>
+
+<div id="div1" style="display:none;">div1</div>
+<div id="div2">div2</div>
+	
+</body>
+</html>

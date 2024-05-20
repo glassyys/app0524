@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 내장함수
+1. 내장되어 정의하여 개발/필요시 함수명을 호출하여 사용하도록 만든 함수를
+	말한다.
+2. 주요 내장함수의 종류
+	1) 기본 데이터 타입 변환 처리 함수
+		Number() : 숫자형 문자열 데이터를 숫자로 변환해주는 함수
+			Number("25.5") Number("30")
+		parseInt() : 숫자형 문자열데이터를 정수로 변환해준다.
+			parseInt("25.5") ==> 25 (형변환과 소숫점이하 절삭)
+			parseInt("2500원") ==> 2500 (뒤에 문자열을 제외하고 처리)
+			//해당진수에서 10진수로 변환
+			parseInt("1010",2) ==> 10  2진수에서 10진수로 변경
+			parseInt("12",8) ==> 10  8진수에서 10진수로 변경
+			parseInt("A",16) ==> 10  16진수에서 10진수로 변경
+		parseFloat() : 숫자형 문자열데이터를 실수로 변환해준다.
+			parseFloat("25.5") ==> 25.5
+		eval() : 문자열 데이터를 js 코드수행으로 처리한다.
+			eval("var num01; alert(num01)")
+			==> 문자열을 프로그램 실행코드로 변환하여 처리한다.
+			eval("3 + 4 + 5")  ==> 17
+	2) 유형확인
+		isNaN(데이터) : Is not a number?의 약자로 숫자형이 아니면
+			true, 숫자형이면 false로 리턴 처리해준다.
+			# 숫자형이 아닐 때, true
+			isNaN("25") ==> false
+			isNaN("이십오") ==> true
+				숫자형이 아닌 것을  이 함수를 통해서 체크를 하고 
+				형변환할 때 주로 사용한다.
+			ex)
+			var str = "25"
+			var no = 0
+			if(!isNaN(str)){  // parseInt("이십오") : NaN 발생...
+				no = parseInt(str)
+			}
+			
+			
+		isFinite() : 데이터가 한정되어 있는지 여부를 확인해준다.
+	3) 비동기 처리와 시간 처리 함수
+		setTimeout(처리할함수, 1/1000초) 해당 초단위 이후에 수행
+			할 함수를 정의할 때 사용된다.
+			<==> clearTimeout() :자원해재
+		setInterval(처리할함수,1/1000초) 해당 초단위마다 반복수행
+			할 함수를 정의할 때 사용된다.
+			<==> clearInterval():자원해제
+
+*/
+	
+	</style>
+
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	// Number함수 활용
+	var str_num01 = prompt("첫번째 숫자 입력:","0")
+	var num01 = Number(str_num01)
+	// 이중 함수를 이용해서 바로 숫자형으로 변환
+	var num02 = Number(prompt("두번째 숫자 입력:","0"))
+	bdObj.innerHTML = num01+" + " +num02+" = "+(num01+num02)
+	
+/*
+
+*/
+//
+</script>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>절대 경로에 있는 가장 상위 폴드 파일!!</h2>
+	<h3>webapp 폴드와 서버상 프로젝트명은 같은 위치에 있다.</h3>
+	<!--
+    frontweb\src\main\webapp\NewFile.html
+    http://localhost:8080/frontweb/NewFile.html
+    
+    http://localhost:8080/frontweb으로 호출되는 위치는
+    물리적인 폴드로 webapp 하위 폴드에 있는 것으로
+    이미지나 공통설정에 webapp/하위에 설정해서 호출하는 경우가
+    많다.
+    -->
+	<h3>웹섭의 가장 상위에 있는 절대 위치에 있는 이미지 호출</h3>
+	<img src="/frontweb/Elvis.png" width="100" height="200" />
+
+	<div id="agred">
+		<div class="header">
+			<div class="headerInner">
+				<a href="https://www.interpark.com" class="headerLogo"> <img
+					src="./image/interpark_logo.jpg" />
+				</a>
+			</div>
+			<div class="headerTitle">
+				<div class="headerTitle1">약관동의</div>
+			</div>
+		</div>
+		<hr>
+		<div class="memberContainer">
+			<div class="contents">
+				<div class="contentWrapper termsContent">
+					<label><input type="checkbox" /><span class="text">약관전체
+							동의</span></label>
+				</div>
+				<div class="uCheckbox sType checkbox-container">
+					<label>
+						<div class="inputWrap">
+							<input type="checkbox" class="singleSelector requireSelector" />
+							<span class="checkmark"></span>&nbsp&nbsp&nbsp약관전체 동의
+						</div>
+					</label>
+
+				</div>
+				<div class="termsBlock">
+					<div class="label">필수 동의 항목</div>
+					<div class="termsItem">
+						<div class="uCheckbox sType checkbox-container">
+							<label>
+								<div class="inputWrap">
+									<input type="checkbox" class="singleSelector requireSelector" />
+									<span class="checkmark"></span> <a href="#" class="btn btnLink"
+										onclick="return openPopup('https://incorp.interpark.com/member/2016/pop_agreement.html')">[필수]
+										이용약관</a>
+								</div>
+							</label>
+						</div>
+						<div class="uCheckbox sType checkbox-container">
+							<label>
+								<div class="inputWrap">
+									<input type="checkbox" class="singleSelector requireSelector" />
+									<span class="checkmark"></span>
+									<!--             <a href="#" class="btn btnLink">[필수] 전자금융거래 이용약관</a> -->
+									<a href="#" class="btn btnLink"
+										onclick="return openPopup('https://incorp.interpark.com/member/2016/pop_agreement.html')">[필수]
+										전자금융거래 이용약관</a>
+								</div>
+							</label>
+						</div>
+						<div class="uCheckbox sType checkbox-container">
+							<label>
+								<div class="inputWrap">
+									<input type="checkbox" class="singleSelector requireSelector" />
+									<span class="checkmark"></span> <a href="#" class="btn btnLink"
+										onclick="return openPopup('https://incorp.interpark.com/member/2016/pop_agreement.html')">[필수]
+										개인정보 수집동의서</a>
+								</div>
+							</label>
+						</div>
+					</div>
+					<div class="label">선택 동의 항목</div>
+					<div class="termsItem1">
+						<div class="uCheckbox sType checkbox-container">
+							<label>
+								<div class="inputWrap">
+									<input type="checkbox" class="singleSelector requireSelector" />
+									<span class="checkmark"></span> <a href="#" class="btn btnLink"
+										onclick="return openPopup('https://incorp.interpark.com/member/2016/pop_agreement.html')">[선택]
+										개인정보 수집동의서</a>
+								</div>
+							</label>
+						</div>
+						<div class="uCheckbox sType checkbox-container">
+							<label>
+								<div class="inputWrap">
+									<input type="checkbox" class="singleSelector requireSelector" />
+									<span class="checkmark"></span> <a href="#" class="btn btnLink"
+										onclick="return openPopup('https://incorp.interpark.com/member/2016/pop_agreement.html')">[선택]
+										위치기반서비스 이용약관</a>
+								</div>
+							</label>
+						</div>
+					</div>
+					<div class="ubtnArea">
+						<div class="col">
+							<a href="hit_member_test0429.html">
+								<button type="button" class="uBtn" id="button" disabled
+									data-id="nextStep">다음단계</button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+
+
+</html>

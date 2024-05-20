@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 
+
+*/
+	
+	</style>
+
+</head>
+<body>
+	<h2>매개변수값 처리</h2>
+	<h3 onclick="fun01('사과',3000)">
+		여러가지 데이터 매개변수 처리(문자열, 숫자)</h3>
+	<h3 onclick="buy('사과',3000,2)">물건구매(사과, 3000,2)</h3>
+</body>
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	function fun01(str, num){
+		alert("문자열:"+str+", 숫자:"+num)
+	}
+	// ex) 물건명, 가격, 갯수를 받는 함수를 선언하고,
+	// alert()으로 구매물건 : @@, 총비용:@@ 을 클릭시, 출력하게 하세요..
+	function buy(pname, price, cnt){
+		alert(`구매물건 : ${pname}, 총비용:${price*cnt}`)
+	}
+	
+//	bdObj.innerHTML = ""
+/*
+
+*/
+//
+</script>
+</html>

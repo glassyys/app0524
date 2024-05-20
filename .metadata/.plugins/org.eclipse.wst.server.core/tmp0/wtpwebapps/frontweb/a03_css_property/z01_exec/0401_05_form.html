@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#### 연습 문제 5: 파일 업로드 폼
+**목표**: 사용자가 문서 또는 이미지 파일을 업로드할 수 있는 폼을 만듭니다.
+- "파일 선택" 버튼을 포함하며, 사용자가 파일을 선택할 수 있게 합니다.
+- 버튼에 마우스를 호버할 때 색상을 변경하고, 포커스됐을 때는 버튼의 테두리가 두꺼워지도록 합니다.
+- 파일을 선택한 후 제출 버튼을 포함합니다.
+*/
+    .upload-input {
+        display: none;
+    }
+    .upload-label1 {
+        display: inline-block;
+        padding: 10px 15px;
+        display: inline-block;
+        background-color: gray;
+        border-radius: 5px;
+        cursor: crosshair;
+    }
+    .upload-label1:hover {
+        background-color: blue;
+    }
+    .upload-input1:focus {
+        outline: none;
+        border: 5px solid yellow;
+    }
+
+    .upload-label {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .submit-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+	</style>
+
+</head>
+<body>
+	<h3>파일 업로드 폼</h3>
+	<hr>
+	<form>
+	<input type="file" name="file" id="file" class="upload-input">
+    <label for="file" class="upload-label1">파일</label>
+
+	<br>
+    <input type="file" id="fileInput" class="upload-input">
+    <label for="fileInput" class="upload-label">파일 선택</label>
+    
+	<br>
+	<button type="submit" class="submit-button">제출</button>
+	</form>
+</body>
+</html>

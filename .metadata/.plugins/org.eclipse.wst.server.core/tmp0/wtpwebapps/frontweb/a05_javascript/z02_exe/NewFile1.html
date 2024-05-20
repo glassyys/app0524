@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+    <div class="evt-top_new">
+        <h1>
+            <img src="/images/event/factory/appInstall/appInstallMainLayer_3/appdown_pop_top_OCBlayer.jpg?ver=20230821" alt="OK캐쉬백 APP 설치하고 500P 받자!">
+        </h1>
+        <div class="hide">
+            <h2>ok캐쉬백 APP설치하고 500P 받자</h2>
+            <p>이벤트 참여 가능 회원 : OK캐쉬백 APP 설치 후 최초 본인 인증한 고객 (최근 6개월 이상 APP 미실행 회원 포함)</p>
+        </div>
+        <!-- 2023-07-27 -->
+        <div class="date">
+            <span id="enddate"></span>
+        </div>
+        <!-- //2023-07-27 -->
+    </div><!-- 상단 이미지 영역 // -->
+
+<body>
+<div>
+<div id="appInstallPop" class="evt-pop-appdown" style="display: none;">
+    <!-- 상단 이미지 영역 -->
+    <div class="evt-top_new">
+        <h1>
+            <img src="/images/event/factory/appInstall/appInstallMainLayer_3/appdown_pop_top_OCBlayer.jpg?ver=20230821" alt="OK캐쉬백 APP 설치하고 500P 받자!">
+        </h1>
+        <div class="hide">
+            <h2>ok캐쉬백 APP설치하고 500P 받자</h2>
+            <p>이벤트 참여 가능 회원 : OK캐쉬백 APP 설치 후 최초 본인 인증한 고객 (최근 6개월 이상 APP 미실행 회원 포함)</p>
+        </div>
+        <!-- 2023-07-27 -->
+        <div class="date">
+            <span id="enddate"></span>
+        </div>
+        <!-- //2023-07-27 -->
+    </div><!-- 상단 이미지 영역 // -->
+    <div class="evt-send-sms">
+        <!-- 휴대폰 번호 입력란  -->
+        <div class="input-wrap">
+            <form name="appInstallSmsSendForm" action="https://www.okcashbag.com/event/factory/appInstall/appInstallSmsSendBySubmit_3.do" method="post">
+                <input type="hidden" id="type" name="type" value="P">
+                <input type="hidden" id="redirectUrl" name="redirectUrl" value="/displayadmin.do">
+                <input type="hidden" id="channel" name="channel" value="X">
+                <p>
+				<span class="input-txt">
+					<span class="placeholder" onclick="$('#mdn').focus();">'-없이 휴대폰 번호로만 입력하세요'</span>
+					<input type="text" id="mdn" name="mdn" class="phone-number" maxlength="12" title="휴대폰번호 입력">
+				</span>
+                    <button type="button" class="btn-send" title="동의하고 참여하기" onclick="appInstallSmsSend();">
+                        <img src="/images/event/factory/appInstall/appInstallMainLayer_3/202101/btn_sms_send.png?v=37" alt="동의하고 참여하기">
+                    </button>
+                    <!-- 2020-08-31 -->
+                    <span class="age-chkwrap">
+					<input type="checkbox" name="" id="ageChk"><label for="ageChk"> 본인은 만14세 이상임을 확인 합니다.</label>
+				</span>
+                    <!-- 2020-08-31 -->
+                </p>
+            </form>
+        </div><!-- 휴대폰 번호 입력란 //  -->
+        <!-- 개인정보 수집 이용 동의  -->
+        <div class="agree-chk-wrap">
+            <div class="agree-txt">OK캐쉬백 APP 설치 SMS 발송을 위한 개인정보 수집/이용 동의(필수)</div>
+            <!-- <div class="agree-box">
+                <span class="inp-check">
+                    <input type="checkbox" id="inp-agree" name="">
+                    <label for="inp-agree"><span class="hide">동의 합니다</span></label>
+                </span>
+            </div> 2017-03-03 삭제 -->
+        </div>
+        <p class="tbl-txt">SK플래닛(주) 귀중</p>
+        <table>
+            <caption class="hide">OK캐쉬백 APP설치 SMS 발송을 위한 개인정보 이용목적, 수집항목, 보유기간</caption>
+            <colgroup>
+                <col style="width: 35%">
+                <col style="width: 30%">
+                <col style="width: 35%">
+            </colgroup>
+            <thead>
+            <tr>
+                <th scope="col">이용목적</th>
+                <th scope="col">수집항목</th>
+                <th scope="col">보유기간</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="font-size: 14px; color: #476CB8">OK캐쉬백 APP설치<br>SMS발송 및 이벤트<br>당첨 포인트 지급,<br><br>고객 민원 대응 및 이벤트 중복 참여 방지
+                </td>
+                <td>휴대전화번호</td>
+                <td style="font-size: 14px; color: #476CB8">이벤트 참여일 후<br>6개월 후 즉시 파기
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <p class="att">
+            <span>※</span> 고객님께서는 동의를 거부하실 권리가 있습니다. 단, 동의 거부 시 문자 메시지 서비스 이용 및 본 이벤트에 참여하실 수 없습니다
+        </p>
+    </div>
+    <!-- 개인정보 수집 이용 동의 // -->
+    <div class="evt-bottom">
+        <div class="evt-notice">
+            <p class="att">
+                <span>※</span>유의사항
+            </p>
+            <ul class="dash">
+                <li>- 이벤트 참여 포인트 지급은 1인, 1회만 지급 됩니다.</li>
+                <li>- 본인인증 방법 : 휴대폰 본인인증, Syrup월렛 간편인증 중 1가지 선택</li>
+            </ul>
+        </div>
+        <a href="/life/event/eventContent.do?eventId=73348"><img src="/images/event/factory/appInstall/appInstallMainLayer_3/202101/appdown_detail_btn.png?v=37" alt="이벤트 상세안내"></a>
+        <div class="pos">
+			<span class="inp-check" onclick="setAppInstallPopNoSee();$('#appInstallPop').hide();">
+				<input type="checkbox" id="inp-day" name="">
+				<label for="inp-day"><span class="box"></span><span class="hide">하루 동안 보지 않기</span></label>
+			</span>
+        </div>
+    </div>
+    <button type="button" class="down-pop-close" onclick="closeAppInstallPop();">닫기</button>
+</div>
+
+    <div class="evt-send-sms">
+        <!-- 휴대폰 번호 입력란  -->
+        <div class="input-wrap">
+            <form name="appInstallSmsSendForm" action="https://www.okcashbag.com/event/factory/appInstall/appInstallSmsSendBySubmit_3.do" method="post">
+                <input type="hidden" id="type" name="type" value="P">
+                <input type="hidden" id="redirectUrl" name="redirectUrl" value="/displayadmin.do">
+                <input type="hidden" id="channel" name="channel" value="X">
+                <p>
+				<span class="input-txt">
+					<span class="placeholder" onclick="$('#mdn').focus();">'-없이 휴대폰 번호로만 입력하세요'</span>
+					<input type="text" id="mdn" name="mdn" class="phone-number" maxlength="12" title="휴대폰번호 입력">
+				</span>
+                    <button type="button" class="btn-send" title="동의하고 참여하기" onclick="appInstallSmsSend();">
+                        <img src="/images/event/factory/appInstall/appInstallMainLayer_3/202101/btn_sms_send.png?v=37" alt="동의하고 참여하기">
+                    </button>
+                    <!-- 2020-08-31 -->
+                    <span class="age-chkwrap">
+					<input type="checkbox" name="" id="ageChk"><label for="ageChk"> 본인은 만14세 이상임을 확인 합니다.</label>
+				</span>
+                    <!-- 2020-08-31 -->
+                </p>
+            </form>
+        </div><!-- 휴대폰 번호 입력란 //  -->
+        <!-- 개인정보 수집 이용 동의  -->
+        <div class="agree-chk-wrap">
+            <div class="agree-txt">OK캐쉬백 APP 설치 SMS 발송을 위한 개인정보 수집/이용 동의(필수)</div>
+            <!-- <div class="agree-box">
+                <span class="inp-check">
+                    <input type="checkbox" id="inp-agree" name="">
+                    <label for="inp-agree"><span class="hide">동의 합니다</span></label>
+                </span>
+            </div> 2017-03-03 삭제 -->
+        </div>
+        <p class="tbl-txt">SK플래닛(주) 귀중</p>
+        <table>
+            <caption class="hide">OK캐쉬백 APP설치 SMS 발송을 위한 개인정보 이용목적, 수집항목, 보유기간</caption>
+            <colgroup>
+                <col style="width: 35%">
+                <col style="width: 30%">
+                <col style="width: 35%">
+            </colgroup>
+            <thead>
+            <tr>
+                <th scope="col">이용목적</th>
+                <th scope="col">수집항목</th>
+                <th scope="col">보유기간</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="font-size: 14px; color: #476CB8">OK캐쉬백 APP설치<br>SMS발송 및 이벤트<br>당첨 포인트 지급,<br><br>고객 민원 대응 및 이벤트 중복 참여 방지
+                </td>
+                <td>휴대전화번호</td>
+                <td style="font-size: 14px; color: #476CB8">이벤트 참여일 후<br>6개월 후 즉시 파기
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <p class="att">
+            <span>※</span> 고객님께서는 동의를 거부하실 권리가 있습니다. 단, 동의 거부 시 문자 메시지 서비스 이용 및 본 이벤트에 참여하실 수 없습니다
+        </p>
+    </div>
+    <!-- 개인정보 수집 이용 동의 // -->
+    <div class="evt-bottom">
+        <div class="evt-notice">
+            <p class="att">
+                <span>※</span>유의사항
+            </p>
+            <ul class="dash">
+                <li>- 이벤트 참여 포인트 지급은 1인, 1회만 지급 됩니다.</li>
+                <li>- 본인인증 방법 : 휴대폰 본인인증, Syrup월렛 간편인증 중 1가지 선택</li>
+            </ul>
+        </div>
+        <a href="/life/event/eventContent.do?eventId=73348"><img src="/images/event/factory/appInstall/appInstallMainLayer_3/202101/appdown_detail_btn.png?v=37" alt="이벤트 상세안내"></a>
+        <div class="pos">
+			<span class="inp-check" onclick="setAppInstallPopNoSee();$('#appInstallPop').hide();">
+				<input type="checkbox" id="inp-day" name="">
+				<label for="inp-day"><span class="box"></span><span class="hide">하루 동안 보지 않기</span></label>
+			</span>
+        </div>
+    </div>
+
+</div>
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+//	bdObj.innerHTML += "<h2>제목</h2>"
+/*
+#
+
+*/
+//
+</script>
+</html>

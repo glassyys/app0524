@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>인터파크 티켓 - 뮤지컬</title>
+<style type="text/css">
+/*header*/
+header{
+box-sizing:border-box;/*테두리를 포함한 크기를 지정*/
+display:flex;
+flex-direction:colume;/*속성들이 세로방향으로 만들어짐*/
+align-items:center;/*flex를 정렬하는 방법*/
+padding:0;
+width:100%;
+background:white;
+border-bottom:1px solid silver;
+font-size: 16px;
+}
+/*header 전체 box*/
+.firstdiv{
+	display:flex;
+	flex-direction: column;
+	align-items:center;
+	justify-content:flex-start;/*콘텐츠 항목 사이와 주위에 공간을 분배(flex-start:아이템들을 시작점으로 정렬)
+								->flex-direction:column(세로배치)으로 두었으므로 위에서 정렬*/
+	width:100%	
+}
+/*header 로고있는 라인 box*/
+.firstdiv_logo{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+	width:100%;
+	padding:0 30px;
+	box-sizing: border-box;
+	height:100px;
+} 
+/*로고있는 박스 내부 박스*/
+.inside_firstdiv_logo{
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	justify-content:space-betewen; /*아이템들 사이에 균일 간격*/
+	max-width:1280px;/*요소의 최대 가로 크기 설정*/
+	width:100%;
+	height:50px;
+}
+/*내부 박스 안의 로고와 검색 박스*/
+.logo_find{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    gap: 20px;/*로고와 검색창 사이 간격*/
+}
+/*로고 설정*/
+.logosize{
+	width:200px;
+	height:50px;
+	left:0;
+}
+/*검색 설정*/
+.find{
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+    height:50px;
+    max-width: 452px;
+    border:0.5px solid silver;
+    border-radius:50px;
+    cursor: text;
+}
+/*검색창 크기설정 및 border 없애기*/
+.find input{
+	 border:none;
+	 display:flex;
+	 position:relative;
+	 text-align:left;
+	 top:13px;
+	 left:10px;
+	 font-size:15pt; 
+}
+/*검색할때에도 border 없애기 */
+.find input:focus{
+	 outline:none;	 
+}
+
+/*내부 박스 안의 로그인부터 언어설정 박스*/
+.login_language{
+	display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    gap: 20px;
+    width: 100%;
+    max-width: 312px;
+    height: 18px;
+    border-radius: 6px; /*모서리 둥글게*/
+    flex: 1; /*아이템의 순서*/
+    text-wrap: nowrap; /*지정된 박스보다 text가 길면 박스 밖으로 나감(줄바꿈 안됨)*/
+    
+}
+.login_language>a{
+	height: 18px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #111;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*언어 박스*/
+.language{
+	position: relative;
+}
+.language_button{
+	position: relative;
+    font-size: 15px;
+    background-color: transparent;
+    border: none;
+    color: #000;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius:50%;
+    border:1px solid silver;
+}
+.language_imagesize{
+	width:15px;
+	height:20px;
+	border-radius:50%;
+}
+
+/*header의 메뉴바 있는 box*/
+.firstdiv_menu{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+	width:100%;
+	padding:0 30px;
+	box-sizing: border-box;
+	height:50px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+.menubar{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    gap: 20px;
+    max-width: 1280px;
+}
+.menu_first{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 39px;
+    padding: 0;
+    gap: 22px;
+    border-radius: 6px;
+    white-space: nowrap;
+    list-style-type: none;
+    margin: 0;
+}
+.menu_separate{
+	display: flex;
+    align-items: center;
+    width: 1px;
+    height: 15px;
+    background-color: #ddd;
+}
+.menu_second{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 39px;
+    padding: 0;
+    gap: 22px;
+    border-radius: 6px;
+    white-space: nowrap;
+    list-style-type: none;
+    margin: 0;
+}
+.menu_first li a{
+	text-decoration:none;
+	color:black;
+	font-weight: bold;
+	
+}	
+.menu_second li a{
+	text-decoration:none;
+	color:#B21EF1;
+	font-weight: bold;
+}	
+
+/* body */
+body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	background: #fff;
+	display: block;
+}
+
+div {
+	display: block;
+	unicode-bidi: isolate;
+}
+/* main */
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0;
+	width: 100%;
+}
+.musimenuContents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 20px;
+    isolation: isolate;
+    position: relative;
+    width: 100%;}
+/* 이미지 슬라이드 */
+.imageList {
+	align-items: center;
+	margin: 0 0 4px;
+}
+
+div.wrapper {
+	justify-content: center;
+	margin-top: 40px;
+	box-sizing: border-box;
+}
+
+.imageSlideCover {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.imageSlideBox {
+	margin: 20px;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 1.2rem;
+}
+
+.imageList {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    isolation: isolate;
+    width: calc(100% - 60px);
+    max-width: 128rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.imageSlideArea {
+	margin-left: 10%;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	display: flex;
+	box-sizing: content-box;
+}
+
+.musicalLink {
+	position: relative;
+	display: block;
+	width: 250px;
+	height: 340px;
+	border-radius: 12px;
+	overflow: hidden;
+	background: #fff;
+	margin: 20px;
+}
+
+.information {
+	position: absolute;
+	width: calc(100% -56px);
+	left: 28px;
+	bottom: 28px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.musicalShow {
+	flex-shrink: 0;
+	position: relative;
+	transition-property: transform;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.bestOfBest{
+	width: 305px;
+    margin-right: 20px;
+}
+.btnPrev {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 40%;
+	margin-left: 10%;
+	width: 2.8rem;
+	height: 2.8rem;
+	border-radius: 10rem;
+	font-size: 0;
+	cursor: pointer;
+	z-index: 1;
+	left: 5px;
+}
+
+.btnNext {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 40%;
+	margin-right: 10%;
+	width: 2.8rem;
+	height: 2.8rem;
+	border-radius: 10rem;
+	font-size: 0;
+	cursor: pointer;
+	z-index: 1;
+	right: 5px;
+}
+/* 메뉴이동 */
+.musicalMenu {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	gap: 28px;
+	width: 100%;
+	scroll-snap-align: start;
+	scroll-margin-top: 50px;
+}
+.realMenu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 8px;
+	margin: 60px auto 0;
+	padding: 0 20px;
+}
+.musicalButton {
+	position: relative;
+	display: flex;
+	height: 56px;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 0 16px 0 24px;
+	gap: 4px;
+	border-radius: 100px;
+	color: #000;
+	font-size: 17px;
+	font-weight: 700;
+	line-height: 150%;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	cursor: pointer;
+}
+/* 광고배너 */
+.adList {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 20px;
+	height: auto;
+	list-style-type: none;
+	margin: 50px;
+	padding: 0;
+}
+.miniBanner{
+	position: relative;
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 150px;
+    width: 600px;
+}
+/* 지금 할인중 */
+.productCard {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+}
+.infoCardBridge{
+position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #f3f3f3;
+    box-sizing: border-box;
+    display:block;
+}
+.infoCardBox{
+display:block;
+margin: 20px;
+}
+.infocard{
+display:block;}
+.infoText {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+	padding: 16px;
+	gap: 8px;
+	box-sizing: border-box;
+	position: relative;
+}
+.musiInfo{
+text-decoration: none;
+}
+.saleInfo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px 10px;
+	background: #fff;
+	border: 1px solid #dfb4fc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+.saleInfo span
+{color: #8e43e7;
+}
+.cardImage {
+    position: relative; 
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+.discountTable {
+	display: block;
+	list-style-type: disc;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 40px;
+	unicode-bidi: isolate;
+	margin-left: -35px;
+}
+
+.discountSlide {
+	display: flex;
+	flex-direction: row;
+	padding: 0;
+	gap: 20px;
+	max-width: 1500px;
+	width: calc(100% - 60px);
+	overflow: hidden;
+	margin-left: -20%;
+}
+
+.discountTitle {
+	white-space: normal;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 150%;
+	max-height: 300%;
+	word-wrap: break-word;
+	word-break: break-all;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	width: 100%;
+	font-weight: 700;
+	font-size: 17px;
+	color: #000;
+}
+
+.discountPlace {
+	margin-top: 8px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 150%;
+	color: #000;
+	display: flex;
+}
+
+.discountPeriod {
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 150%;
+	color: #999;
+	list-style: none;
+}
+
+.discountPriceBox {
+	margin-top: 8px;
+	display: flex;
+	gap: 8px;
+}
+
+.discountRate {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 150%;
+	color: #ff322e;
+}
+
+.discountFinPrice {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 150%;
+	color: #000;
+}
+
+.openBtn {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 8px;
+	width: 100%;
+}
+
+.openDiscountAll {
+	box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.6rem 4rem;
+    gap: .4rem;
+    border: 1px solid #ddd;
+    border-radius: 3.2rem;
+    background-color: #fff;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.7rem;
+    line-height: 150%;
+    text-align: center;
+    color: #000;
+    cursor: pointer;
+}
+/* 뮤지컬 둘러보기 */
+.selectGenre{
+    position: relative;
+    display: flex;
+    height: 50px;
+    margin: 0;
+    padding: 0 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    }
+.productFix{
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    width: 50%;
+    max-width: 2000px;
+    padding-bottom: 8px;
+    gap: 16px;
+    background-color: #fff;
+    z-index: 2;
+}
+.scrollMaintain{
+    display: flex;
+    padding: 0 20px;
+    justify-content: safe center;
+    align-items: center;
+    gap: 20px;
+    align-self: stretch;
+    background: #fff;
+    margin: 0 auto;
+    max-width: 1280px;
+    box-sizing: border-box;
+    width: calc(100vw - 60px);
+    border-bottom: 1px solid #e8e8e8;
+}
+.selectGenre{
+    position: relative;
+    display: flex;
+    height: 50px;
+    margin: 0;
+    padding: 0 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    font-size: 13px;
+}
+.genreFilter{
+display: flex;
+    width: calc(100vw - 60px);
+    max-width: 1280px;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    margin: 0 auto;
+}
+.filterGenre{
+position: relative;
+    display: flex;
+    height: 39px;
+    padding: 0 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    border-radius: 32px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #666;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%;
+    cursor: pointer;
+    white-space: nowrap;
+    text-wrap: nowrap;
+}
+.productList{
+    max-width: 1280px;
+    width: auto;
+    margin-bottom: 90px;
+    box-sizing: border-box;
+    margin-left: 15%;
+   	display: flex;
+   	gap: 60px 20px;
+}
+.ticketItem{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 3%;
+    margin: 20px;
+}
+.ticketItem_Image{
+        position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 133%;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+    }
+.ticketItem_Text{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 16px 0 0;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 150%;
+    list-style: none;
+    }
+.ti_Title{
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 150%;
+    max-height: 300%;
+    word-wrap: break-word;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 17px;
+    font-weight: 700;
+    color: #000;
+}
+.ti_Place{
+    margin-top: 8px;
+    font-size: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #000;
+    line-height: 150%;
+}
+.ti_Date{
+    font-size: 15px;
+    color: #999;
+    line-height: 150%;
+}
+.saleBridge{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 8px;
+}
+.saleBridgeBox{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4px;
+}
+.bridgeSeat{
+border-color: #f0d9fd;
+color: #b070f0;
+}
+.bridgeOnly{
+border-color: #ffe4d5;
+color: #ff7262;
+}
+.coulumnList{
+    grid-template-columns: repeat(5,1fr);
+    min-width: 1024px;
+    display: grid;
+}
+/*footer*/
+footer{
+	display: block;
+    unicode-bidi: isolate;
+}
+.all_layout footer{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	padding:0;
+	isolation:isolation;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	background:white;
+}
+.footer_separate_1ca79{
+	width:100%;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	gap:30px;
+	padding-bottom: 50px;
+}
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+.footer_separate_1ca79 .footer_Menu_5a354{
+	display: flex;
+	flex-direction:row;
+	align-items:center;
+	justify-content: center;
+	width:100%;
+	height:50px;
+	padding:0 30px;
+	box-sizing: border-box;
+	border-top:1px solid rgba(0,0,0,.1);
+	border-bottom:1px solid rgba(0,0,0,0.5);
+}
+.footer_separate_1ca79 .footer_info_a9553{
+	display: flex;
+	padding: 0 30px; /*정보 양끝 padding*/
+	box-sizing: border-box;
+	gap: 100px;/*각 정보 사이*/
+	width: 100%;
+	max-width:1340px;
+}
+
+.footer_separate_1ca79 .footer_notice_67e58{
+	max-width:1340px;
+	padding: 0 30px;
+	box-sizing: border-box;
+	font-style:normal;
+	font-weight:400;
+	font-size:12px;
+	line-height: 18px;
+	color: hsla(0, 0%, 7%, .5);
+	width: 100%;
+}
+/*footer 메뉴바*/
+.footer_separate_1ca79 .footer_notice_67e58 .footer_Menulist_772c2{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;/*각 메뉴 사이의 공간*/
+    max-width: 1280px;
+    width: 100%;
+    height: 36px;
+    padding: 1px 0;
+    border-radius: 6px;
+    list-style-type: none;
+}
+.footer_separate_1ca79 .footer_menu table {
+	list-style-type:none;/*마커 삭제*/
+	margin:0;
+	padding:0px;
+	border-top: 1px silver solid;
+	width:100%;
+	text-align:center;
+}
+table:first-child {/*테이블 위 아래 border*/
+	border-left: 0;
+}
+table:last-child {
+	border-right: 0;
+}
+.footer_separate_1ca79 .footer_menu table tr td{
+	display:inline-block;
+	padding:0px 15px;
+	margin:0;
+	height:50px;
+}
+.footer_separate_1ca79 .footer_menu table tr td a{
+	text-decoration:none;/*아랫줄 없애기*/
+	color:black;
+
+}
+table td {
+	border-left: 1px silver solid;
+	border-right: 1px silver solid;
+	line-height: 50px;
+}
+table td:first-child {
+	border-left: 0;
+}
+table td:last-child {
+	border-right: 0;
+}/**/
+
+.footer_separate_1ca79 .footer_Menu_5a354 .footer_Menulist_772c2{
+	display: inline-block;
+    white-space: nowrap; /* 한 줄에 표시하도록 설정 */
+}
+.footer_separate_1ca79 .footer_Menu_5a354 .footer_Menulist_772c2 li:not(:last-child):before{
+	content: "|";
+    position: absolute;
+    left: calc(100% + 25px);
+    width: 1px;
+    height: 12px;
+    color: #ccc;
+}
+.footer_separate_1ca79 .footer_Menu_5a354 .footer_Menulist_772c2 li a{
+	text-decoration: none;
+    color: #111;
+}
+
+/*footer_menu hover기능*/
+.footer_separate_1ca79 .footer_Menu_5a354 .footer_Menulist_772c2 li .footer_submenu_e2ced{
+	display: none;
+    flex-direction: column;
+    gap: 12px;
+    align-items: start;
+    position: absolute;
+    padding: 20px;
+    right: 0;
+    top: 16px;
+    z-index: 1;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 0 16px rgba(0, 0, 0, .2);
+    list-style-type: none;
+}
+.footer_separate_1ca79 .footer_notice_67e58 .footer_Menulist_772c2 li a{
+	text-decoration: none;
+    color: #111;
+}
+
+.footer_separate_1ca79 a{
+	margin:0;
+	cursor: pointer;
+}
+.footer_info_a9553>div:not(.footer_details_ba312){
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 4px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    color: #666;
+}
+.footer_separate_1ca79 .footer_info_a9553 .footer_linktext_6d29b{
+	color:#4a95ff;
+}
+.footer_details_ba312{
+	display:none;
+}
+/* 링크 설정 */
+a{
+color:black;
+text-decoration:none;}
+
+</style>
+</head>
+<body style="overflow: overlay;">
+	<main id="contents">
+		<header>
+  <!--로고~언어까지 담고 있는 박스 지정 -->
+ 	<!-- header 전체 //header_wrap_abfca-->
+ 		<div class="firstdiv"> <!-- header 에서 로고 있는 라인 box -->
+			<div class="firstdiv_logo"> <!-- header 에서 로고 있는 라인 box -->
+				<div class="inside_firstdiv_logo">
+					<div class="logo_find">
+						<div class="logo">
+						<a href="https://tickets.interpark.com/">
+							<img class="logosize" src="interparkticket_logo.jpg">
+						</a>
+						</div>
+						<div class="find">
+							<div>
+							<input type="text" placeholder="검색하세요">
+							</div>
+						</div>						
+					</div>
+					<div class="login_language">
+						<a href="input login">로그인</a>
+						<a href="input ">회원가입</a>
+						<a href="input">마이페이지</a>
+						<div class="language">
+							<button class="language_button">
+								<img class="language_imagesize" src="korea.png"> 
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+	<div class="firstdiv_menu"><!-- header 에서 메뉴 있는 라인 box -->
+		<div class="menubar">
+			<ul class="menu_first">
+				<li><a href="MainHome_Musical.html">뮤지컬</a>
+				</li><li><a href="input hyper link">콘서트</a>
+				</li><li><a href="input hyper link">스포츠</a>
+				</li><li><a href="input hyper link">전시/행사</a>
+				</li><li><a href="input hyper link">클래식/무용</a>
+				</li><li><a href="input hyper link">아동/가족</a>
+				</li><li><a href="input hyper link">연극</a>
+				</li><li><a href="input hyper link">레저/캠핑</a>
+				</li><li><a href="input hyper link">토핑</a>
+				</li><li><a href="input hyper link">MD샵</a>
+			</li></ul>
+			<div class="menu_separate"></div>
+			<ul class="menu_second">
+				<li><a href="input hyper link">랭킹</a>
+				</li><li><a href="input hyper link" class="menufontcolor">오픈공지</a>
+				</li><li><a href="input hyper link" class="menufontcolor">지역별</a>
+				</li><li><a href="input hyper link" class="menufontcolor">공연장</a>
+				</li><li><a href="input hyper link"><img src="MOL.PNG"></a>
+			</li></ul>
+				
+		</div>
+	</div>
+		</div>
+		
+
+</header>
+		<div id="startPoint" class="wrapper imageSlideCover">
+			<div class="imageSlideBox imageList">
+				<div class="imageSlideArea">
+					<div class="musicalShow" style="margin-right: 20px;">
+						<a
+							href="Musical_InfoPage.html"
+							class="musicalLink slide01"> <img alt="영웅" class="bestOfBest"
+							style="position: absoulte; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0;"
+							src="https://tickets.interpark.com/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FMusc%2F2404%2F240401035839_P0003831.gif&w=3840&q=75">
+							<ul class="information" style="color: #FFF">
+								<li class="info_Title">영웅</li>
+								<li class="info_Place">세종문화회관 대극장</li>
+								<li class="info_Date">2024.05.29 - 2024.08.11</li>
+							</ul>
+						</a>
+						<div></div>
+						<a
+							href="http://ticket.interpark.com/Ticket/Goods/TPBridge.asp?GoodsCode=24001473"
+							class="musicalLink slide02"> <img alt="그레이트 코멧" class="bestOfBest"
+							style="position: absoulte; height: 100%; width: 100%;"
+							src="https://tickets.interpark.com/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FMusc%2F2402%2F240205030931_24001473.gif&w=3840&q=75">
+							<ul class="information" style="color: #FFF">
+								<li class="info_Title">그레이트 코멧</li>
+								<li class="info_Place">유니버설아트센터</li>
+								<li class="info_Date">2024.03.26 - 2024.06.16</li>
+							</ul>
+						</a>
+						<div></div>
+						<a
+							href="http://ticket.interpark.com/Ticket/Goods/TPBridge.asp?GoodsCode=24000645"
+							class="musicalLink slide03"> <img alt="파과" class="bestOfBest"
+							style="position: absoulte; height: 100%; width: 100%;"
+							src="https://tickets.interpark.com/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FMusc%2F2402%2F240205031355_24000645.gif&w=3840&q=75">
+							<ul class="information" style="color: #FFF">
+								<li class="info_Title">파과</li>
+								<li class="info_Place">홍익대 대학로 아트센터 대극장</li>
+								<li class="info_Date">2024.03.15 - 2024.05.26</li>
+							</ul>
+						</a>
+						<div></div>
+						<a
+							href="http://ticket.interpark.com/Ticket/Goods/TPBridge.asp?GoodsCode=24000293"
+							class="musicalLink slide04"> <img alt="마리 앙투아네트 10주년 기념공연" class="bestOfBest"
+							style="position: absoulte; height: 100%; width: 100%;"
+							src="https://tickets.interpark.com/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FMusc%2F2402%2F240205031232_24000293.gif&w=3840&q=75">
+							<ul class="information" style="color: black">
+								<li class="info_Title">마리 앙투아네트</li>
+								<li class="info_Place">디큐브 링크아트센터</li>
+								<li class="info_Date">2024.02.27 - 2024.05.26</li>
+							</ul>
+						</a>
+						<div></div>
+						<a
+							href="http://ticket.interpark.com/Ticket/Goods/TPBridge.asp?GoodsCode=24005266"
+							class="musicalLink slide05"> <img alt="시카고" class="bestOfBest"
+							style="position: absoulte; height: 100%; width: 100%;"
+							src="https://tickets.interpark.com/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FMusc%2F2404%2F240412030249_24005266.gif&w=3840&q=75">
+							<ul class="information" style="color: #FFF">
+								<li class="info_Title">시카고</li>
+								<li class="info_Place">디큐브 링크아트센터</li>
+								<li class="info_Date">2024.06.07 - 2024.09.29</li>
+							</ul>
+						</a>
+						<div></div>
+					</div>
+				</div>
+			</div>
+			<button class="btnPrev">
+				<img
+					src="https://openimage.interpark.com/UI/tour/pages/main/slide_arrow.svg"
+					style="transform: rotate(180deg)">이전
+			</button>
+			<button class="btnNext">
+				<img
+					src="https://openimage.interpark.com/UI/tour/pages/main/slide_arrow.svg">
+				다음
+			</button>
+		</div>
+		<article class="musicalMenu">
+			<section class="menuCover">
+				<div class="musimenuContents">
+					<div class="realMenu" style="min-width: 487px;">
+						<button type="button" aria-label="뮤지컬 전체보기" class="musicalButton">
+							뮤지컬 전체보기 <img alt="뮤지컬 전체보기" width="12" height="12"
+								class="cateImg" style="color: transparent"
+								src="https://tickets.interpark.com/contents/images/line.svg">
+						</button>
+						<button type="button" aria-label="요즘 HOT" class="musicalButton">
+							<img alt="요즘 HOT Icon" width="24" height="24"
+								style="color: transparent"
+								src="https://tickets.interpark.com/contents/_next/image?url=%2Fcontents%2Fimages%2Fhot.png&w=48&q=75">
+							요즘HOT <img alt="요즘 HOT" width="12" height="12" class="cateImg"
+								style="color: transparent"
+								src="https://tickets.interpark.com/contents/images/line.svg">
+						</button>
+						<button type="button" aria-label="오리지널/내한" class="musicalButton">
+							오리지널/내한 <img alt="오리지널/내한" width="12" height="12" class="cateImg"
+								style="color: transparent"
+								src="https://tickets.interpark.com/contents/images/line.svg">
+						</button>
+						<button type="button" aria-label="라이선스" class="musicalButton">
+							라이선스 <img alt="라이선스" width="12" height="12" class="cateImg"
+								style="color: transparent"
+								src="https://tickets.interpark.com/contents/images/line.svg">
+						</button>
+						<button type="button" aria-label="창작뮤지컬" class="musicalButton">
+							창작뮤지컬 <img alt="창작뮤지컬" width="12" height="12" class="cateImg"
+								style="color: transparent"
+								src="https://tickets.interpark.com/contents/images/line.svg">
+						</button>
+						<button type="button" aria-label="넌버별퍼포먼스" class="musicalButton">
+							넌버별퍼포먼스 <img alt="넌버별퍼포먼스" width="12" height="12" class="cateImg"
+								style="color: transparent"
+								src="https://tickets.interpark.com/contents/images/line.svg">
+						</button>
+					</div>
+				</div>
+			</section>
+		</article>
+		<article class="musicAdv" style="margin-top: 60px;">
+			<section class="menuCover">
+				<div class="musimenuContents">
+					<div class="adCover">
+						<ul class="adList">
+							<li><a class="miniBanner"
+								href="https://events.interpark.com/exhibition?exhibitionCode=240305008">
+									<img alt="청년문화예술패스" sizes="413px"
+									src="https://tickets.interpark.com/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FMusc%2F2404%2F240412051009_19018229.gif&w=3840&q=75"
+									style="position: absoulte; height: 100%; width: 100%; inset: 0px; color: transparent;">
+							</a></li>
+							<li><a class="miniBanner"
+								href="https://events.interpark.com/page?pageId=CCC000014P1#subCorner_220608004">
+									<img alt="공연, 이달의 혜택" sizes="413px"
+									src="https://tickets.interpark.com/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FMusc%2F2402%2F240205055846_19018229.gif&w=3840&q=75"
+									style="position: absoulte; height: 100%; width: 100%; inset: 0px; color: transparent;">
+							</a></li>
+							<li><a class="miniBanner"
+								href="http://ticket.interpark.com/Ticket/Goods/TPBridge.asp?GoodsCode=24004455">
+									<img alt="뮤지컬 <마리 앙투아네트> 10주년 기념공연" sizes="413px"
+									src="https://tickets.interpark.com/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FMusc%2F2404%2F240408045752_24004455.gif&w=3840&q=75"
+									style="position: absoulte; height: 100%; width: 100%; inset: 0px; color: transparent;">
+							</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</article>
+		<article class="nowSale">
+			<section class="discounting">
+				<div class="panelTitle">
+					<h2 style="font-size: 250%; text-align: center;">지금 할인중!</h2>
+				</div>
+				<div class="panelContents">
+					<div class="discountTicketCover">
+						<div class="discountList ">
+							<div class="imageSlideArea">
+								<div class="discountSlide productCard">
+									<a role="link" tabindex="0" class="productCard">
+									<div class ="infoCardBox">
+										<div class="infoCard">
+											<div class="infoCardBridge">
+												<img alt="미오 프라텔로" class="cardImage"
+													
+													src="https://tickets.interpark.com/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FPlay%2Fimage%2Flarge%2F24%2F24005912_p.gif&w=3840&q=75">
+											</div>
+											</div>
+											<div class="infoText">
+												<div class="saleInfo">
+													<span>프리뷰 할인</span>
+												</div>
+												<ul class="discountTable">
+													<li class="discountTitle">뮤지컬 <미오 프라텔로></li>
+													<li class="discountPlace">링크아트센터 벅스홀</li>
+													<li class="discountPeriod">2024.05.21 ~ 08.11</li>
+													<li class="discountPriceBox"><span
+														class="discountRate"> 40%</span> <span
+														class="discountFinPrice"> 46,200원</span></li>
+												</ul>
+											</div>
+										</div>
+										<div class ="infoCardBox">
+										<a href="https://tickets.interpark.com/goods/24004834" class="musiInfo">
+										<div class="infoCard">
+											<div class="infoCardBridge">
+												<img alt="음악극 <섬:1933~2019>" class="cardImage"
+													src="https://tickets.interpark.com/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FPlay%2Fimage%2Flarge%2F24%2F24004834_p.gif&w=3840&q=75">
+											</div>
+											</div>
+											<div class="infoText">
+												<div class="saleInfo">
+													<span>프리뷰 할인</span>
+												</div>
+												<ul class="discountTable">
+													<li class="discountTitle">음악극 <섬:1933~2019></li>
+													<li class="discountPlace">국립정동극장</li>
+													<li class="discountPeriod">2024.05.22 ~ 07.07</li>
+													<li class="discountPriceBox"><span
+														class="discountRate"> 40%</span> <span
+														class="discountFinPrice"> 30,800원</span></li>
+												</a></ul>
+											</div>
+											</div>
+											<div class ="infoCardBox">
+											<div class="infoCard">
+											<div class="infoCardBridge">
+												<img alt="웨스턴 스토리" class="cardImage"
+													src="https://tickets.interpark.com/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FPlay%2Fimage%2Flarge%2F24%2F24002031_p.gif&w=3840&q=75">
+											</div>
+											</div>
+											<div class="infoText">
+												<div class="saleInfo">
+													<span>직장인 할인</span>
+												</div>
+												<ul class="discountTable">
+													<li class="discountTitle">웨스턴 스토리</li>
+													<li class="discountPlace">인터파크 유니플렉스 1관</li>
+													<li class="discountPeriod">2024.03.13 ~ 06.09</li>
+													<li class="discountPriceBox"><span
+														class="discountRate"> 20%</span> <span
+														class="discountFinPrice"> 52,800원</span></li>
+												</ul>
+											</div>
+											</div>
+											<div class ="infoCardBox">
+											<div class="infoCard">
+											<div class="infoCardBridge">
+												<img alt="브론테" class="cardImage"						
+													src="https://tickets.interpark.com/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FPlay%2Fimage%2Flarge%2F24%2F24001487_p.gif&w=3840&q=75">
+											</div>
+											</div>
+											<div class="infoText">
+												<div class="saleInfo">
+													<span>SNS 팔로우 할인</span>
+												</div>
+												<ul class="discountTable">
+													<li class="discountTitle">브론테</li>
+													<li class="discountPlace">링크아트센터드림 드림1관</li>
+													<li class="discountPeriod">2024.03.04 ~ 06.02</li>
+													<li class="discountPriceBox"><span
+														class="discountRate"> 15%</span> <span
+														class="discountFinPrice"> 34,000원</span></li>
+												</ul>
+											</div>
+											</div>
+											<div class ="infoCardBox">
+											<div class="infoCard">
+											<div class="infoCardBridge">
+												<img alt="비아 에어 메일" class="cardImage"
+													src="https://tickets.interpark.com/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FPlay%2Fimage%2Flarge%2F24%2F24001122_p.gif&w=3840&q=75">
+											</div>
+											</div>
+											<div class="infoText">
+												<div class="saleInfo">
+													<span>피닉스 이륙 할인</span>
+												</div>
+												<ul class="discountTable">
+													<li class="discountTitle">비아 에어 메일</li>
+													<li class="discountPlace">대학로 TOM(티오엠)1관</li>
+													<li class="discountPeriod">2024.03.06 ~ 05.26</li>
+													<li class="discountPriceBox"><span
+														class="discountRate"> 20%</span> <span
+														class="discountFinPrice"> 56,000원</span></li>
+												</ul>
+											</div>
+											</div>
+									</a>
+									<!-- <button class="btnNext">
+				<img
+					src="https://openimage.interpark.com/UI/tour/pages/main/slide_arrow.svg">
+				다음
+			</button> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="openBtn">
+					<button class="openDiscountAll">
+					<a href = "https://events.interpark.com/page?pageId=CCC000014P1&app_header_state=fix&app_tapbar_state=hide#subCorner_220608004" class="musiInfo">
+						할인티켓 전체보기 <img
+							src="https://openimage.interpark.com/UI/tour/pages/main/slide_arrow.svg">
+							</a>
+					</button>
+				</div>
+			</section>
+		</article>
+		<!-- <article class="ticketOpen">
+			<section class="discounting">
+				<div class="panelTitle">
+					<h2 style="font-size: 250%; text-align: center;">티켓 오픈</h2>
+				</div>
+			</section>
+		</article> -->
+		<article class = "MusicalMain">
+			<div class="panelTitle">
+					<h2 style="font-size: 250%; text-align: center;">뮤지컬 둘러보기</h2>
+			</div>
+			<div class="musimenuContents">
+				<div class = "productFix" aria-label="둘러보기 필터">
+					<div class="scrollMaintain">
+						<button class="selectGenre" aria-label="전체">
+							<span>전체</span>
+							</button>
+						</div>
+						<div class="scrollMaintain">
+						<button class="selectGenre"aria-label="요즘 HOT">
+							<span>
+							<img alt="요즘 Hot"src="https://tickets.interpark.com/contents/_next/image?url=%2Fcontents%2Fimages%2Fhot.png&w=48&q=75" style="width:20px; height:20px;">
+							요즘 HOT
+							</span>
+							</button>
+						</div>
+						<div class="scrollMaintain">
+						<button class="selectGenre" aria-label="오리지널/내한">
+							<span>
+							오지지널/내한
+							</span>
+							</button>
+						</div>
+						<div class="scrollMaintain">
+						<button class="selectGenre" aria-label="라이선스">
+							<span>
+							라이선스
+							</span>
+							</button>
+						</div>
+						<div class="scrollMaintain">
+						<button class="selectGenre" aria-label="창작뮤지컬">
+							<span>
+							창작뮤지컬
+							</span>
+							</button>
+						</div>
+						<div class="scrollMaintain">
+						<button class="selectGenre"aria-label="넌버별퍼포먼스">
+							<span>
+							넌버별퍼포먼스
+							</span>
+							</button>
+						</div>
+				</div>
+			</div>
+			<div class = "genreFilter">
+				<button class = "filterGenre" aria-label="정렬 순서 필터 열기">일간 랭킹순
+				<img src="https://tickets.interpark.com/contents/images/arrow.svg">
+				</button>
+				<button class = "filterGenre" aria-label="지역 순서 필터 열기">지역 전체
+				<img src='https://tickets.interpark.com/contents/images/arrow.svg'>
+				</button>
+			</div>
+		<div class = "productList coulumnList" aria-label="상품 리스트">
+			<a class = "ticketItem" gtm-label="디어 에반 핸슨">
+				<div class = "ticketItem_Image">
+					<img alt="디어 에반 핸슨" src="https://tickets.interpark.com/contents/_next/image?url=https%3A%2F%2Fticketimage.interpark.com%2FPlay%2Fimage%2Flarge%2F24%2F24001044_p.gif&w=3840&q=75"
+					style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+				</div>
+				<ul class = "ticketItem_Text">
+					<li class = "ti_Title"> 뮤지컬 <디어 에반 핸슨> (Dear Evan Hansen)</li>
+					<li class = "ti_Place"> 충무아트센터 대극장 </li>
+					<li class = "ti_Date"> 2024.03.28 ~ 06.23 </li>
+					<li class = "saleBridge">
+						<div class = "saleBridgeBox">
+							<span class = "bridgeSeat"> 좌석우위</span>
+						</div>
+					</li>
+				</ul>
+			</a>
+			<a class = "ticketItem" gtm-label="베어 더 뮤지컬">
+				<div class = "ticketItem_Image">
+					<img alt="베어 더 뮤지컬" src="https://tickets.interpark.com/contents/_next/image?url=https%3A%2F%2Fticketimage.interpark.com%2FPlay%2Fimage%2Flarge%2F24%2F24004835_p.gif&w=3840&q=75"
+					style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+				</div>
+				<ul class = "ticketItem_Text">
+					<li class = "ti_Title"> 베어 더 뮤지컬 (bare the musical)</li>
+					<li class = "ti_Place"> 두산아트센터 연강홀 </li>
+					<li class = "ti_Date"> 2024.05.22 ~ 08.25 </li>
+				</ul>
+			</a>
+			<a class = "ticketItem" gtm-label="음악극 섬">
+				<div class = "ticketItem_Image">
+					<img alt="음악극 <섬:1933~2019>" src="https://tickets.interpark.com/contents/_next/image?url=https%3A%2F%2Fticketimage.interpark.com%2FPlay%2Fimage%2Flarge%2F24%2F24004834_p.gif&w=3840&q=75"
+					style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+				</div>
+				<ul class = "ticketItem_Text">
+					<li class = "ti_Title"> 음악극 <섬:1933~2019> </li>
+					<li class = "ti_Place"> 국립정동극장 </li>
+					<li class = "ti_Date"> 2024.05.22 ~ 07.07 </li>
+					<li class = "saleBridge">
+						<div class = "saleBridgeBox">
+							<span class = "bridgeOnly"> 단독판매</span>
+						</div>
+					</li>
+				</ul>
+			</a>
+			<a class = "ticketItem" gtm-label="뮤지컬 일 테노레">
+				<div class = "ticketItem_Image">
+					<img alt="뮤지컬 일 테노레" src="https://tickets.interpark.com/contents/_next/image?url=https%3A%2F%2Fticketimage.interpark.com%2FPlay%2Fimage%2Flarge%2F24%2F24002523_p.gif&w=3840&q=75"
+					style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+				</div>
+				<ul class = "ticketItem_Text">
+					<li class = "ti_Title"> 뮤지컬 일 테노레 (IL TENORE)</li>
+					<li class = "ti_Place"> 블루스퀘어 신한카드홀 </li>
+					<li class = "ti_Date"> 2024.03.29 ~ 05.19 </li>
+					<li class = "saleBridge">
+						<div class = "saleBridgeBox">
+							<span class = "bridgeSeat"> 좌석우위</span>
+						</div>
+					</li>
+				</ul>
+			</a>
+			<a class = "ticketItem" gtm-label="뮤지컬 <브론테>">
+				<div class = "ticketItem_Image">
+					<img alt="뮤지컬 <브론테>" src="https://tickets.interpark.com/contents/_next/image?url=https%3A%2F%2Fticketimage.interpark.com%2FPlay%2Fimage%2Flarge%2F24%2F24001487_p.gif&w=3840&q=75"
+					style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+				</div>
+				<ul class = "ticketItem_Text">
+					<li class = "ti_Title"> 뮤지컬 <브론테> </li>
+					<li class = "ti_Place"> 링크아트센터드림 드림1관 </li>
+					<li class = "ti_Date"> 2024.03.04 ~ 06.02 </li>
+					<li class = "saleBridge">
+						<div class = "saleBridgeBox">
+							<span class = "bridgeOnly"> 단독판매</span>
+						</div>
+					</li>
+				</ul>
+			</a>
+			<a class = "ticketItem" gtm-label="시카고">
+				<div class = "ticketItem_Image">
+					<img alt="뮤지컬 시카고" src="https://tickets.interpark.com/contents/_next/image?url=https%3A%2F%2Fticketimage.interpark.com%2FPlay%2Fimage%2Flarge%2F24%2F24005266_p.gif&w=3840&q=75"
+					style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+				</div>
+				<ul class = "ticketItem_Text">
+					<li class = "ti_Title"> 뮤지컬 <시카고> </li>
+					<li class = "ti_Place"> 디큐브 링크아트센터 </li>
+					<li class = "ti_Date"> 2024.06.07 ~ 09.29 </li>
+					<li class = "saleBridge">
+						<div class = "saleBridgeBox">
+							<span class = "bridgeSeat"> 좌석우위</span>
+						</div>
+					</li>
+				</ul>
+			</a>
+			<a class = "ticketItem" gtm-label="그레이트 코멧">
+				<div class = "ticketItem_Image">
+					<img alt="그레이트 코맷" src="https://tickets.interpark.com/contents/_next/image?url=https%3A%2F%2Fticketimage.interpark.com%2FPlay%2Fimage%2Flarge%2F24%2F24001473_p.gif&w=3840&q=75"
+					style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+				</div>
+				<ul class = "ticketItem_Text">
+					<li class = "ti_Title"> 뮤지컬 <그레이트 코멧> </li>
+					<li class = "ti_Place"> 유니버설아트센터 </li>
+					<li class = "ti_Date"> 2024.03.26 ~ 06.16 </li>
+					<li class = "saleBridge">
+						<div class = "saleBridgeBox">
+							<span class = "bridgeSeat"> 좌석우위</span>
+						</div>
+					</li>
+				</ul>
+			</a>
+			<a class = "ticketItem" gtm-label="2024 뮤지컬 갈라 콘서트 〈페치카〉">
+				<div class = "ticketItem_Image">
+					<img alt="2024 뮤지컬 갈라 콘서트 〈페치카〉" src="https://tickets.interpark.com/contents/_next/image?url=https%3A%2F%2Fticketimage.interpark.com%2FPlay%2Fimage%2Flarge%2F24%2F24006281_p.gif&w=3840&q=75"
+					style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+				</div>
+				<ul class = "ticketItem_Text">
+					<li class = "ti_Title"> 2024 뮤지컬 갈라 콘서트 〈페치카〉 </li>
+					<li class = "ti_Place"> 성남아트센터 오페라하우스 </li>
+					<li class = "ti_Date"> 2024.06.06 </li>
+					<li class = "saleBridge">
+						<div class = "saleBridgeBox">
+							<span class = "bridgeOnly"> 단독판매</span>
+						</div>
+					</li>
+				</ul>
+			</a>
+			<a class = "ticketItem" gtm-label="기깔나는 코믹 서부극 뮤지컬 〈웨스턴 스토리〉">
+				<div class = "ticketItem_Image">
+					<img alt="기깔나는 코믹 서부극 뮤지컬 〈웨스턴 스토리〉" src="https://tickets.interpark.com/contents/_next/image?url=https%3A%2F%2Fticketimage.interpark.com%2FPlay%2Fimage%2Flarge%2F24%2F24002031_p.gif&w=3840&q=75"
+					style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+				</div>
+				<ul class = "ticketItem_Text">
+					<li class = "ti_Title"> 기깔나는 코믹 서부극 뮤지컬 〈웨스턴 스토리〉 </li>
+					<li class = "ti_Place"> 인터파크 유니플렉스 1관 </li>
+					<li class = "ti_Date"> 2024.03.13 ~ 06.09 </li>
+					<li class = "saleBridge">
+						<div class = "saleBridgeBox">
+							<span class = "bridgeOnly"> 단독판매</span>
+						</div>
+					</li>
+				</ul>
+			</a>
+			<a class = "ticketItem" gtm-label="뮤지컬 〈프랑켄슈타인〉 10주년 기념공연">
+				<div class = "ticketItem_Image">
+					<img alt="뮤지컬 〈프랑켄슈타인〉 10주년 기념공연" src="https://tickets.interpark.com/contents/_next/image?url=https%3A%2F%2Fticketimage.interpark.com%2FPlay%2Fimage%2Flarge%2F24%2F24005971_p.gif&w=3840&q=75"
+					style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+				</div>
+				<ul class = "ticketItem_Text">
+					<li class = "ti_Title"> 뮤지컬 〈프랑켄슈타인〉 10주년 기념공연 </li>
+					<li class = "ti_Place"> 블루스퀘어 신한카드홀 </li>
+					<li class = "ti_Date"> 2024.06.05 ~ 08.25 </li>
+					<li class = "saleBridge">
+						<div class = "saleBridgeBox">
+							<span class = "bridgeSeat"> 좌석우위</span>
+						</div>
+					</li>
+				</ul>
+			</a>
+		</div>
+		</article>
+	</main>
+	<footer>
+	<div class="footer_separate_1ca79">
+		<div class="footer_menu">
+				<table>
+					<tbody><tr>
+					<td><a href="input your hyper link">회사소개</a></td>
+					<td><a href="#">이용약관</a></td>
+					<td><a href="#">개인정보처리방침</a></td>
+					<td><a href="a01_position.html" target="frame01">위치기반서비스이용약관</a></td>
+					<td><a href="#">여행약관</a></td>
+					<td><a href="#">여행자보험 가입내역</a></td>
+					<td><a href="#">티켓판매안내</a></td>
+					<td><a href="#">공지사항</a></td>
+					<td><a href="#">고객센터</a></td>
+					<td><a href="#">Language</a></td>
+					</tr><tr>
+				</tr></tbody></table>
+		</div>
+		<div class="footer_info_a9553">
+			<div class="footer_3box_f8889">
+				<h2>(주)인터파크트리플</h2>
+				<div>
+					<p>주소 서울시 강남구 삼성로 512 삼성동빌딩 10층</p>
+					<p>
+						<span>사업자등록번호 824-81-02515</span>
+						"&nbsp;"
+						<a class="footer_linktext_6d29b" role="link" tabindex="0" title="새 창으로 열림">사업자정보확인</a>
+					</p>
+					<p>통신판매업신고 2022-서울강남-02179</p>
+					<p>관광사업증 등록번호 : 제2014-42호</p>
+					<p>호스팅서비스제공자 (주)인터파크트리플｜대표이사 최휘영</p>
+				</div>
+			</div>
+			<div class="footer_3box_f8889">
+				<h2>고객센터</h2>
+				<div>
+					<p>투어 1588-3443｜티켓 1544-1555</p>
+					<p>팩스 02-830-7807｜이메일 helpdesk@interparktriple.com</p>
+					<p>해외항공 02-3479-4399｜국내항공 02-3479-4340</p>
+					<p>
+						<span>
+							<a class="footer_linktext_6d29b" role="link" tabindex="0" title="새 창으로 열림">투어 1:1문의</a>
+						</span>
+						"|"
+						<span>
+							<a class="Footer_linkText__6d29b" href="https://ticket.interpark.com/HelpDesk/SosWrite.asp" title="새 창으로 열림" style="color:#4a95ff">티켓 1:1문의</a>
+						</span>
+					</p>
+				</div>
+			</div>
+			<div class="footer_3box_f8889">
+				<h2>전자금융거래 분쟁처리 담당</h2>
+				<div>
+					<p>투어 1588-3443｜티켓 1544-1555</p>
+					<p>팩스 02-830-8295｜이메일 intersolution@interparktriple.com</p>
+					<p>개인정보보호책임자 cpo@interparktriple.com</p>
+				</div>
+			</div>
+			
+			<details class="footer_details_ba312"></details>
+		
+		</div>
+		<div class="footer_notice_67e58">
+			<p>(주)인터파크트리플은 항공사가 제공하는 개별 항공권 및 여행사가 제공하는 
+				일부 여행상품에 대하여 통신판매중개자의 지위를 가지며, 해당상품, 상품정보, 
+				거래에 관한 의무와 책임은 판매자에게 있습니다.</p>
+			<p>항공권 또는 항공권이 포함된 경우, 표시되는 상품요금은 예상 유류할증료와 
+				제세공과금이 포함된 가격이며, 발권일/환율 등에 따라 변동될 수 있습니다.</p>
+			<p>(주)인터파크트리플은 인터파크티켓, 인터파크투어의 통신판매중개자로서 통신판매의 
+				당사자가 아니므로, 개별 판매자가 등록한 오픈마켓 상품에 대해서 
+				(주)인터파크트리플은 일체 책임을 지지 않습니다.</p>
+			<p class="footer_bottom_f8889">
+				Copyright@InterparkTriple Corp. All Rights Reserved.</p>
+		</div>
+	</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	td{text-align:center;font-size:25pt;}
+</style>
+<script type="text/javascript">
+var tdArr;
+var ckIdx=4;
+window.onload=function(){
+	var h2Obj = document.querySelector("h2")
+	var h3Obj = document.querySelector("h3")
+	tdArr = document.querySelectorAll("td")
+	for(var idx=0;idx < tdArr.length;idx++){
+		tdArr[idx].innerText= idx+1
+	}
+	tdArr[ckIdx].style.background="yellow"
+	h2Obj.innerText = "keyup이벤트"
+	// this: window = 현재 이 함수를 포함하여 이벤트를 처리하는 객체를 지칭
+	//       즉, window를 의미..
+	
+	this.onkeyup=function(){
+		h3Obj.innerText = "화살표:"+event.keyCode
+		initBgColor() // 키를 누를때마다 전체 색상으로 흰색으로 만들고
+		// 오른쪽키를  
+		if(event.keyCode==39){
+			tdArr[++ckIdx].style.background="yellow"
+			h2Obj.innerHTML += "idex["+ ckIdx + "]<br>"
+		}
+		//왼쪽키
+		if(event.keyCode==37){
+			tdArr[--ckIdx].style.background="yellow"
+				h2Obj.innerHTML += "idex["+ ckIdx + "]<br>"
+		}	
+		//위로
+		if(event.keyCode==38){
+			// 감소?
+			tdArr[ckIdx-=3].style.background="yellow"
+			h2Obj.innerHTML += "idex["+ ckIdx + "]<br>"
+		}	
+		//아래는
+		if(event.keyCode==40){
+			// 증가?
+			tdArr[ckIdx+=3].style.background="yellow"
+			h2Obj.innerHTML += "idex["+ ckIdx + "]<br>"
+		}			
+	}
+}  
+function initBgColor(){
+	// 배경색상을 초기화하는 함수 처리..
+	for(var idx=0;idx < tdArr.length;idx++){
+		tdArr[idx].style.background=""
+	}	
+}
+</script>
+</head>
+<body>
+	<h2></h2>
+	<h3></h3>
+	<table border width="300px" height="300px">
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+	</table>
+
+</body>
+</html>

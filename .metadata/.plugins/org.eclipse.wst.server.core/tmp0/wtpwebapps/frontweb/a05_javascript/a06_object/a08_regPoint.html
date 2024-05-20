@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	td{text-align:center;}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	var h2Obj = document.querySelector("h2")
+	var korObj = document.querySelector("[name=kor]")
+	var engObj = document.querySelector("[name=eng]")
+	var regBtn = document.querySelector("#regBtn")
+	var tbodyObj = document.querySelector("tbody")
+	var avgPt = document.querySelector("#avgPt")
+	var avgEn = document.querySelector("#avgEn")
+	h2Obj.innerText = "점수 등록"
+	var cnt = 0;
+	var tot = 0;
+	regBtn.onclick=regPoint  // 클릭시, 정의된 함수 할당
+	engObj.onkeyup=function(){
+		if(event.keyCode ==13){
+			regPoint() // 이벤트시 정의된 함수 실행
+		}
+	}
+	var engTot = 0;
+	function regPoint(){
+		var kor = Number(korObj.value)// + 연산으로 형변환 꼭 필요..
+		var eng = Number(engObj.value)// + 연산으로 형변환 꼭 필요..
+		tot += kor  // 총점 누적
+		engTot += eng  // 총점 누적
+		tbodyObj.innerHTML +="<tr><td>"+(++cnt)+"</td><td>"+
+			kor+"</td><td>"+eng+"</td></tr>"
+		korObj.value=""
+		engObj.value=""
+		korObj.focus() /// 커서위치를 국어위치
+		avgPt.innerText = parseInt(tot/cnt)  // 현재등록된 갯수
+		avgEn.innerText = parseInt(engTot/cnt)  // 현재등록된 갯수
+		// Math.floor() : 절삭, parseInt()
+	}
+	// 15:45~
+	
+	/*
+	ex) 번호별 국어점수 등록
+	등록할 국어 점수:[   ]
+	등록할 영어 점수:[   ][등록]
+	번호  국어점수 영어점수
+	1	 @@@    @@@
+	2	 @@@    @@@
+	3	 @@@    @@
+	평균  @@@    @@@
+	
+	*/
+	
+}  
+</script>
+</head>
+<body>
+	<h2></h2>
+	국어점수:<input type="text" name="kor" size="3"/><br>
+	영어점수:<input type="text" name="eng" size="3"/><br>
+	<input type="button" id="regBtn" value="등록"/>
+	<table border>
+		<thead>
+			<tr><th>번호</th><th>국어점수</th><th>영어점수</th></tr>
+		</thead>
+		<tbody>
+		
+		</tbody>
+		<tfoot>
+			<tr><th>평균</th><th id="avgPt">0</th>
+							<th id="avgEn">0</th></tr>
+		</tfoot>
+	</table>
+</body>
+</html>

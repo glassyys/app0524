@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#### 문제 6: 가상 클래스와 구조적 가상 클래스 복합 활용
+과제: 모든 <p> 태그 중에서 첫 번째 <p> 태그만을 선택하여 배경색을 'lightblue'로 설정하고, 
+그 내부의 첫 번째 단어만 폰트 크기를 '20px', 색상을 'navy'로 변경하세요.
+
+*/
+		p:nth-child(1){background:lightblue;}
+		p:first-letter{color:navy;font-size:20pt;}
+
+	</style>
+
+</head>
+<body>
+<p>1번테스트</p>
+<p>2번테스트</p>
+<p>3번테스트</p>
+<p>4번테스트</p>
+<p>5번테스트</p>
+</body>
+</html>

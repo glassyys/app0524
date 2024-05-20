@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문제 5: 설문조사 양식</title>
+</head>
+<body>
+<!-- 
+### 문제 5: 설문조사 양식
+새로운 제품에 대한 고객의 선호도를 조사하는 설문조사 양식을 만드세요.
+설문조사는 사용자의 연령대(20대, 30대, 40대 선택),
+선호하는 제품 색상(단일 선택), 그리고 제품에 대한 추가 의견을 수집해야 합니다.
+연령대와 선호하는 제품 색상은 라디오 버튼을 사용하여 선택하게 하고,
+추가 의견은 다중행 텍스트 입력을 사용하여 수집하세요.
+  <label for="css">30대</label><br>
+-->
+<h2>신제품 설문조사</h2>
+<form action="0321_survey.jsp">
+    
+	■ 연령대:<br>
+ 	20대<input type="radio" id="age" name="age" value="20대"><br>
+ 	30대<input type="radio" id="age" name="age" value="30대"><br>
+ 	40대<input type="radio" id="age" name="age" value="40대"><br>
+	
+	■ 선호색상 :<br>
+ 	빨강<input type="radio" id="color" name="color" value="빨강"><br>
+ 	파랑<input type="radio" id="color" name="color" value="파랑"><br>
+ 	노랑<input type="radio" id="color" name="color" value="노랑"><br>
+ 	보라<input type="radio" id="color" name="color" value="보라"><br>
+	■ 추가의견:<br>
+	<textarea name="opn" placeholder="추가의견을 입력하세요"
+	cols="22" rows="5" 
+	required/></textarea><br>
+	<input type="submit" value="등록">
+
+</form>
+</body>
+</html>

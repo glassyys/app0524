@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>회사 소개 멤버마우스 올리면 내용 설명 나오는것 적용 예제</title>
+    <style>
+        /* CSS 스타일링 */
+        .section {
+            position: relative;
+            margin-bottom: 50px;
+            padding: 20px;
+            color: red;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px 20px 30px 40px;
+        }
+        .section h2 {
+            position: relative;
+            z-index: 1;
+        }
+        .section:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0%;
+            width: 100%;
+            height:100%;
+            background-image: url('corp_back.png'); /* 배경 이미지 경로 */
+            background-size: cover;
+            background-position: center;
+            border:3px ridge blue; 
+            opacity: 0.5;
+            z-index: 0;
+        }
+        .team-member {
+            display: inline-block;
+            margin: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            /* border-radius: 50%;*/
+        }
+        .team-member .member-info {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width:200px;height:150px;
+            /* transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;*/
+            background-color: yellow;
+            border-radius: 5px; 
+            border:3px ridge blue; 
+            visibility: hidden;
+            opacity: 0;
+            
+            /* transition: visibility 0s, opacity 0.3s linear; */
+            z-index: 1;
+        }
+        .team-member:hover .member-info {
+            visibility: visible;
+            opacity: 1;
+        }
+        div h3,p{
+        color:blue;}
+
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h2 style="z-index: 1;">회사 역사</h2>
+    </div>
+
+    <div class="section">
+        <h2 style="z-index: 1;">비전</h2>
+    </div>
+
+    
+    <div class="section">
+        <h2 style="z-index: 1;">팀 멤버</h2>
+        <div class="team-member">
+            <img src="eng_hong.png" alt="Member 1">
+            <div class="member-info">
+                <h3>홍길동</h3>
+                <p>기술 부문 리더</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="markting_kim.png" alt="Member 2">
+            <div class="member-info">
+                <h3>김영희</h3>
+                <p>마케팅 담당자</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="sales_lee.png" alt="Member 3">
+            <div class="member-info">
+                <h3>이철수</h3>
+                <p>영업 담당자</p>
+            </div>
+        </div>
+        <!-- 필요한 만큼 팀 멤버를 추가할 수 있습니다. -->
+</body>
+</html>

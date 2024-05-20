@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+    <div id="bdObj"></div>
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body"); //css선택하는 형식과 동일
+
+
+
+//### 실습 연습문제(아래 문제에서 삼항연산자가 익숙치 않으면 true/false만 출력해도 됩니다)
+//1. 점수를 입력받아 90점 이상이면 "A등급", 80점 이상 90점 미만이면 "B등급", 
+//70점 이상 80점 미만이면 "C등급", 그 외는 "D등급"을 출력하세요.
+
+/* 	var score = prompt("점수를 입력하세요?","0");
+	var grade = score>=90? 'A':
+		        score>=80? 'B':
+		        score>=70? 'C':
+		        'D';
+	bdObj.innerHTML += "당신의 등급은?"+ grade +"입니다."
+ */
+//2. 물건의 가격을 입력받아, 가격이 50000원 이상이면 10% 할인된 가격을, 
+// 그렇지 않으면 5% 할인된 가격을 출력하세요.
+/* 	var prodPrice = Number(prompt("물건의 가격을 입력하세요?","0"));
+	var discRate = prodPrice>= 5000? '10':'5';
+	
+	var dicdPrice = prodPrice * (discRate / 100);
+	
+	bdObj.innerHTML += "물건의 가격:"+ prodPrice +"원" + "<br>";
+	bdObj.innerHTML += "할인율:"+ discRate +"% "+ "<br>";
+	bdObj.innerHTML += "할인된 물건의 가격:"+ dicdPrice +"원 "+ "<br>";
+ */
+ 
+//3. 현재 온도를 입력받아, 30도 이상이면 "더움", 10도 이상 30도 미만이면 "선선",
+// 그 이하면 "추움"을 출력하세요.
+/* 
+var currTemper = Number(prompt("현재온도는?","0"));
+var weather = currTemper>= 30? '더움':(currTemper< 30 && currTemper>=10)? '선선':'추움';
+bdObj.innerHTML += "현재온도:"+ currTemper +"도" + "<br>"
+bdObj.innerHTML += "날씨는:"+ weather + "<br>"
+ */
+//4. 변수 `x`의 값을 5로 설정하고, `x`를 1씩 증가시키는 코드를 작성한 후, `x`의 값을 출력하세요.
+/* var x = 5;
+bdObj.innerHTML += "x"+ x + "<br>";
+x += 1;
+bdObj.innerHTML += "x"+ x + "<br>";
+x += 1;
+bdObj.innerHTML += "x"+ x + "<br>";
+ */
+
+//그리고 `x`를 1씩 감소시키는 코드를 작성한 후, `x`의 값을 다시 출력하세요.
+/* var x = 10;
+bdObj.innerHTML += "x원래값"+ x + "<br>";
+--x;
+bdObj.innerHTML += "x : "+ x + "<br>";
+--x;
+bdObj.innerHTML += "x : "+ x + "<br>";
+--x;
+bdObj.innerHTML += "x : "+ x + "<br>";
+ */
+//5. 변수 `a`와 `b`가 각각 10과 20일 때, `a`와 `b`의 값을 서로 바꾸는 코드를 작성하세요.
+/* var a=10; b=20;
+
+bdObj.innerHTML += "a : "+ a + "와 b:" + b + "<br>";
+temp = a;
+a = b;
+b = temp;
+bdObj.innerHTML += "a : "+ a + "와 b:" + b + "<br>" ;
+*/
+
+//6. 사용자로부터 숫자를 입력받아, 그 숫자가 짝수인지 홀수인지를 출력하세요.
+/* var numInput = prompt("숫자를 입력하세요!","0");
+
+var numEvnOddChk = numInput%2 == 0? '짝수' : '홀수';
+bdObj.innerHTML += "숫자"+ numInput+ "은" + numEvnOddChk + "입니다"+ "<br>";
+
+
+ */
+
+//5. 날짜를 입력받아, 그 날짜가 주말(토요일 또는 일요일)인지 아닌지를 출력하세요(이달 기준).
+
+/* var dayApril = prompt("4월의 날짜를 입력하세요!(1-30)","0");
+
+if (['6', '7', '13', '14', '20', '21', '27', '28'].includes(dayApril)) {
+		        	    // 조건 충족 시 실행할 코드
+bdObj.innerHTML += "4월" + dayApril + "일은 주말입니다." + "<br>";
+}
+else{
+	bdObj.innerHTML += "4월" + dayApril + "일은 주말이 아닙니다." + "<br>";
+}
+ */
+
+/*
+//2024년 4월의 특정 날짜를 입력받음
+var inputDate = new Date(2024, 3, dayApril);
+
+// 요일을 가져오기 위해 getDay() 메서드 사용 (0은 일요일, 1은 월요일, ..., 6은 토요일)
+var dayOfWeek = inputDate.getDay();
+
+// 3항 연산자를 사용하여 주말 여부 확인
+var isWeekend = (dayOfWeek === 0 || dayOfWeek === 6) ? "주말입니다." : "주말이 아닙니다.";
+
+// 결과 출력
+//console.log(isWeekend);
+bdObj.innerHTML += inputDate + "은"+ isWeekend + "<br>";
+*/
+
+//6. 변수 `num`에 1부터 10까지의 숫자를 하나씩 대입하면서, `num`이 3의 배수일 때마다
+// "3의 배수"를 출력하는 코드를 작성하세요.
+/* 
+var num =0;
+var chk3em = (num+=1);
+var chk3em_rlt = (chk3em % 3)==0 ? "3의 배수" : "";
+bdObj.innerHTML += chk3em+ " " + chk3em_rlt + "<br>";
+var chk3em = (num+=1);
+var chk3em_rlt = (chk3em % 3)==0 ? "3의 배수" : "";
+bdObj.innerHTML += chk3em+ " " + chk3em_rlt + "<br>";
+
+var chk3em = (num+=1);
+var chk3em_rlt = (chk3em % 3)==0 ? "3의 배수" : "";
+bdObj.innerHTML += chk3em+ " " + chk3em_rlt + "<br>";
+
+var chk3em = (num+=1);
+var chk3em_rlt = (chk3em % 3)==0 ? "3의 배수" : "";
+bdObj.innerHTML += chk3em+ " " + chk3em_rlt + "<br>";
+
+var chk3em = (num+=1);
+var chk3em_rlt = (chk3em % 3)==0 ? "3의 배수" : "";
+bdObj.innerHTML += chk3em+ " " + chk3em_rlt + "<br>";
+
+var chk3em = (num+=1);
+var chk3em_rlt = (chk3em % 3)==0 ? "3의 배수" : "";
+bdObj.innerHTML += chk3em+ " " + chk3em_rlt + "<br>";
+
+var chk3em = (num+=1);
+var chk3em_rlt = (chk3em % 3)==0 ? "3의 배수" : "";
+bdObj.innerHTML += chk3em+ " " + chk3em_rlt + "<br>";
+
+var chk3em = (num+=1);
+var chk3em_rlt = (chk3em % 3)==0 ? "3의 배수" : "";
+bdObj.innerHTML += chk3em+ " " + chk3em_rlt + "<br>";
+
+var chk3em = (num+=1);
+var chk3em_rlt = (chk3em % 3)==0 ? "3의 배수" : "";
+bdObj.innerHTML += chk3em+ " " + chk3em_rlt + "<br>";
+
+var chk3em = (num+=1);
+var chk3em_rlt = (chk3em % 3)==0 ? "3의 배수" : "";
+bdObj.innerHTML += chk3em+ " " + chk3em_rlt + "<br>";
+*/
+
+/* 
+for (var num=1; num<=10; ++num)
+{
+	var chk3em = (num % 3)==0 ? "3의 배수" : "3의 배수 아님";
+	bdObj.innerHTML += "숫자" + num+ " : " + chk3em + "<br>";
+
+}
+*/
+
+/* 
+//    <div id="bdObj"></div> //body 안에 이코드 추가하면 실행됨
+for (var num = 1; num <= 10; ++num) {
+    var chk3em_rlt = (num % 3) == 0 ? "3의 배수" : "";
+    var bdObj = document.getElementById("bdObj"); // bdObj 요소를 가져옴
+    bdObj.innerHTML += num + " " + chk3em_rlt + "<br>"; // bdObj의 내용을 변경
+}
+*/
+
+//7. 구매 금액에 따른 적립 포인트를 계산하여 출력하는 프로그램을 작성하세요.
+// 10000원 이상 구매 시 구매 금액의 5%를, 그렇지 않으면 2%를 적립해 줍니다.
+/* 
+var buyAmt = parseInt(prompt("구매금액을 입력하세요?","0"));
+
+//10000원 이상 구매 시 구매 금액의 5%를, 그렇지 않으면 2%를 적립해 줍니다.
+var saveRate = buyAmt>=10000? 5 : 2;
+var pointSave = buyAmt*(saveRate/100);
+bdObj.innerHTML +=  "구매금액은"+buyAmt+ "원 " + "적립율은"+saveRate+"%"+" 적립금액은" + pointSave + "점 입니다." + "<br>";
+ */
+
+//8. 학생의 점수를 입력받아 60점 이상이면 "합격", 그렇지 않으면 "불합격"을 출력하는 프로그램을 작성하세요.
+
+/* var studentPoint= prompt("학생의 점수를 입력하세요","0");
+var passYn = studentPoint>=60? "합격" : "불합격";
+ 
+bdObj.innerHTML += "학생의 점수는" + studentPoint + "점 으로" + passYn +"입니다." + "<br>"; 
+*/
+
+//9. 두 수를 입력받아, 두 수의 차이가 10보다 크면 "차이가 많이 납니다", 10 이하면 "차이가 적습니다"를 출력하세요.
+var numFirst= prompt("비교할 첫번째점수를 입력하세요","0");
+var numSecond= prompt("비교할 두번째점수를 입력하세요","0");
+var numDiff = Math.abs(numFirst-numSecond)>10? "차이가 많이 납니다" : "차이가 적습니다";
+
+bdObj.innerHTML += "숫자" + numFirst + "과" + numSecond +"는" + numDiff +"<br>"; 
+bdObj.innerHTML += `<h3>숫자 ${numFirst} 과 ${numSecond}는 ${numDiff}</h3>`
+//
+</script>
+</html>

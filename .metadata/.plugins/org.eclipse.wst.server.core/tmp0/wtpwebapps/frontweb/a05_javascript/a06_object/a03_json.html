@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 
+
+*/
+	
+	</style>
+
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	bdObj.innerHTML = "<h2>json객체 처리</h2>"
+	var prod = {}  // 객체의 생성..(속성이 있는 객체를 사용할 때는 반드시 객체생성)
+	// 객체 기억  ex) 사람으로 보면 저장되 기억 메모리..
+	prod.name = "사과"  // 속성의 추가..
+	prod.price = 3000   // 문자열 속성 추가.
+	prod.name = "바나나"  // 속성값의 변경.
+	// 객체 행동(함수-메서드) 
+	// ex) 입출력/기능처리.. 눈보다.  눈이라는 기능을 통해서 객체 기억에 저장
+	//     이 저장된 정보를 통해서 판단을 하여 행동..
+	prod.buy = function(cnt){  // 입력
+		// 속성(함수) : 메서드 추가  
+		// 내부적 가지고 있는 속성과 함께 처리..
+		bdObj.innerHTML += "과일명:"+this.name
+		bdObj.innerHTML += ", 가격:"+this.price
+		bdObj.innerHTML += ", 구매갯수:"+cnt
+		bdObj.innerHTML += ", 총계:"+this.price*cnt+"<br>"
+		return this.price*cnt   // 반응을 보임
+	}
+	var tot = prod.buy(5)  // 메서드 호출.. 매개변수를 전송하여 데이터 처리
+	tot += prod.buy(4)  // 메서드 호출.. 매개변수를 전송하여 데이터 처리
+	tot += prod.buy(3)  // 메서드 호출.. 매개변수를 전송하여 데이터 처리
+	bdObj.innerHTML += "<h3>전체 총계:"+tot+"</h3>"
+	
+	// ex) a04_jsonExp.html json으로 music객체를 초기에 선언하고,
+	//    속성으로  타이틀, 가수, 발매연도를 할당하여   출력하세요
+	
+	
+/*
+# json 객체 연습
+1. json 객체는 여러가지 속성을 설정하여 사용할 수 있고, 속성을 추가/변경도
+	가능하면, 삭제도 처리할 수 있다.
+2. json 객체의 다양한 처리
+	var prod = {}  // 객체의 생성..(속성이 있는 객체를 사용할 때는 반드시 객체생성)
+	prod.name = "사과"  // 속성의 추가..
+	prod.price = 3000   // 문자열 속성 추가.
+	prod.name = "바나나"  // 속성값의 변경.
+	prod.buy = function(cnt){
+		// 속성(함수) : 메서드 추가
+		bdObj.innerHTML += "과일명:"+this.name
+		bdObj.innerHTML += ", 가격:"+this.price
+		bdObj.innerHTML += ", 구매갯수:"+cnt
+		bdObj.innerHTML += ", 총계:"+this.price*cnt
+		return this.price*cnt
+	}
+	var tot = prod.buy(5)  // 메서드 호출.. 매개변수를 전송하여 데이터 처리
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+*/
+//
+</script>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+.popCenter{
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+text-align: center;
+}
+.popup.popInfoPlace >.popupWrap{
+width: 70rem;
+max-height: 900px;
+overflow: auto;
+}
+.popupHead {
+overflow: hidden;
+height: 5rem;
+padding: 0 2rem;
+line-height: 5rem;
+text-align: left;
+border-bottom: 0.1rem solid #dde4ec;
+border-top-left-radius: 1rem;
+border-top-right-radius: 1rem;
+}
+.popupTitle{
+font-size: 1.6rem;
+font-weight: bold;
+color: #000;
+}
+.popupCloseBtn{
+position: absolute;
+    top: 0.3rem;
+    right: 0.6rem;
+    width: 4.4rem;
+    height: 4.4rem;
+    background-size: 1.8rem 1.8rem;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: 0;
+    cursor: pointer;
+}
+.popPriceGuide{
+margin-bottom: 2rem;
+color: #999;
+}
+.popPriceContent{
+max-height: 52rem;
+overflow: auto;
+}
+.popPriceTable{
+overflow: auto;
+width: 100%;
+min-width: 55rem;
+max-width: 100rem;
+margin: 0 auto;
+font-size: 1.5rme;
+border-collapse: collapse;
+border-top: 0.1rem solid #dfe5ed;
+border-bottom: 0.1rem solid #dfe5ed;
+}
+col{
+display: table-column;
+unicode-bidi: isolate;
+}
+.co1{
+width: 17rem;
+}
+.col3{
+width: 8rem;
+}
+.popPriceTable td{
+padding: 1rem 0;
+max-width: 35rem;
+color: #666;
+border-top: 0.1rem solid #dfe5ed;
+}
+.category{
+padding: 0 1rem;
+font-size: 1.5rem;
+font-weight: bold;
+text-align: center;
+background-color: #f4f6f9;
+color: #000;
+}
+.categoryContents{
+display: -webkit-box;
+overflow: hidden;
+text-overflow: ellipsis;
+max-height: 6rem;
+}
+.name{
+padding-left: 2rem;
+padding-right: 2rem;
+line-height: 150%;
+}
+.guide{
+display: block;
+font-size: 0.8rem;
+color: #8e43e7;
+}
+</style>
+</head>
+<body>
+<div id = "popupInfoPrice" class="popup popupCenter popInfoPrice">
+	<div class = "popupWrap">
+		<div class="popupHead">
+			<strong class = "popupTitle">전체가격 보기</strong>
+			<button class="popupCloseBtn">
+				<span class="blind">닫기</span>
+			</button>
+		</div>
+	</div>
+	<div class= "popupBody">
+		<div class="popPriceWrap">
+			<p class="popPriceGuide"> 특정 기간, 특정 공연일에만 판매되는 가격이 있습니다. 예매 시 참고하시기 바랍니다. </p>
+			<div class = "popPriceContent">
+				<table class="popPriceTable">
+					<colgroup>
+						<col class="col1">
+						<col class="col2">
+						<col class="col3">
+					</colgroup>
+					<tbody>
+						<tr class>
+							<td class="category" rowspan="9">
+								<span class="categoryContents">VIP석</span>
+							</td>
+							<td class="name">
+								<strong>일반</strong>
+							</td>
+							<td>
+								<strong>160,000원</strong>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+							일반 - TOPING회원할인
+							<span class="guide">2024.03.26~2024.08.11 예매 시까지</span>
+							</td>
+							<td>144,000원</td>
+						<tr>
+							<td class="name">에이콤 재관람할인</td>
+							<td>144,000원</td>
+						</tr>
+						<tr>
+							<td class="name">영웅x아카데미 보호자</td>
+							<td>144,000원</td>
+						</tr>
+						<tr>
+							<td class="name">영웅x아카데미 수강생</td>
+							<td>142,000원</td>
+						</tr>
+						<tr>
+							<td class="name">국가유공자</td>
+							<td>112,000원</td>
+						</tr>
+						<tr>
+							<td class="name">장애인(4~6급)</td>
+							<td>112,000원</td>
+						</tr>
+						<tr>
+							<td class="name">청소년</td>
+							<td>112,000원</td>
+						</tr>
+						<tr>
+							<td class="name">장애인(1~3급)</td>
+							<td>80,000원</td>
+						</tr>
+						<tr class="divider">
+							<td class="category" rowspan="7">
+								<span class="categoryContents">R석</span>
+							</td>
+							<td class="name">
+								<strong>일반</strong>
+							</td>
+							<td>
+								<strong>140,000원</strong>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+							일반 - TOPING회원할인
+							<span class="guide">2024.03.26~2024.08.11 예매 시까지</span>
+							</td>
+							<td>126,000원</td>
+						</tr>
+						<tr>
+							<td class="name">에이콤 재관람할인</td>
+							<td>126,000원</td>
+						</tr>
+						<tr>
+							<td class="name">국가유공자</td>
+							<td>98,000원</td>
+						</tr>
+						<tr>
+							<td class="name">장애인(4~6급)</td>
+							<td>98,000원</td>
+						</tr>
+						<tr>
+							<td class="name">청소년</td>
+							<td>98,000원</td>
+						</tr>
+						<tr>
+							<td class="name">장애인(1~3급)</td>
+							<td>70,000원</td>
+						</tr>
+						<tr class="divider">
+							<td class="category" rowspan="7">
+								<span class="categoryContents">S석</span>
+							</td>
+							<td class="name">
+								<strong>일반</strong>
+							</td>
+							<td>
+								<strong>100,000원</strong>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+							일반 - TOPING회원할인
+							<span class="guide">2024.03.26~2024.08.11 예매 시까지</span>
+							</td>
+							<td>90,000원</td>
+						</tr>
+						<tr>
+							<td class="name">에이콤 재관람할인</td>
+							<td>90,000원</td>
+						</tr>
+						<tr>
+							<td class="name">국가유공자</td>
+							<td>70,000원</td>
+						</tr>
+						<tr>
+							<td class="name">장애인(4~6급)</td>
+							<td>70,000원</td>
+						</tr>
+						<tr>
+							<td class="name">청소년</td>
+							<td>70,000원</td>
+						</tr>
+						<tr>
+							<td class="name">장애인(1~3급)</td>
+							<td>50,000원</td>
+						</tr>
+						<tr class="divider">
+							<td class="category" rowspan="7">
+								<span class="categoryContents">A석</span>
+							</td>
+							<td class="name">
+								<strong>일반</strong>
+							</td>
+							<td>
+								<strong>80,000원</strong>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+							일반 - TOPING회원할인
+							<span class="guide">2024.03.26~2024.08.11 예매 시까지</span>
+							</td>
+							<td>72,000원</td>
+						</tr>
+						<tr>
+							<td class="name">에이콤 재관람할인</td>
+							<td>72,000원</td>
+						</tr>
+						<tr>
+							<td class="name">국가유공자</td>
+							<td>56,000원</td>
+						</tr>
+						<tr>
+							<td class="name">장애인(4~6급)</td>
+							<td>56,000원</td>
+						</tr>
+						<tr>
+							<td class="name">청소년</td>
+							<td>56,000원</td>
+						</tr>
+						<tr>
+							<td class="name">장애인(1~3급)</td>
+							<td>40,000원</td>
+						</tr>
+						<tr class="divider">
+							<td class="category" rowspan="7">
+								<span class="categoryContents">B석</span>
+							</td>
+							<td class="name">
+								<strong>일반</strong>
+							</td>
+							<td>
+								<strong>60,000원</strong>
+							</td>
+						</tr>
+						<tr>
+							<td class="name">
+							일반 - TOPING회원할인
+							<span class="guide">2024.03.26~2024.08.11 예매 시까지</span>
+							</td>
+							<td>54,000원</td>
+						</tr>
+						<tr>
+							<td class="name">에이콤 재관람할인</td>
+							<td>54,000원</td>
+						</tr>
+						<tr>
+							<td class="name">국가유공자</td>
+							<td>56,000원</td>
+						</tr>
+						<tr>
+							<td class="name">장애인(4~6급)</td>
+							<td>42,000원</td>
+						</tr>
+						<tr>
+							<td class="name">청소년</td>
+							<td>42,000원</td>
+						</tr>
+						<tr>
+							<td class="name">장애인(1~3급)</td>
+							<td>30,000원</td>
+						</tr>
+					</tbody>	
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

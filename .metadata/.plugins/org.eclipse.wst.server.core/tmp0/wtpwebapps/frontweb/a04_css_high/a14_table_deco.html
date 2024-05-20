@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# table 표꾸미기..
+1. 테이블은 실무적으로도 많이 활용되는 코드 중에 하나이고, css 적용도
+	효과적으로 하는 것이 필요로 한다. 다음의 css는 기본적으로 테이블에서
+	적용할 내용이다.
+2. 주요 table css 적용 코드
+	1) border : 표의 테두리에 대한 두께 종류 색상을 처리한다.
+		기본적을 table은 2중 선이 있기에 이에 대한 처리가 필요하다.
+	2) border-collapse : collapse
+		중복된 테두리 합치기 : 2중 선으로 된 border를 합치는 처리를 해준다.
+	3) padding : 여백
+		테이블 안에 글자와 정렬의 내용에 따라 적절한 border와 글자 사이에
+		여백이 필요로 한다.
+	4) text-align : 정렬
+		테이블의 cell 안에 글자는 일반적으로 아래의 데이터 유형에 따라
+		정렬형식을 지정 한다.
+		코드성 데이터(번호, 사원번호, 부서번호, 일련번호, 학번등)은
+			정해진 규칙에 의해 numbering 되는 데이터 이기에 중앙정렬을 한다.
+		리스트형 문자열데이터 : 공지사항에서 글의 제목, 주소 등 나열되는 리스트
+			데이터는 왼쪽 정렬을 처리한다.
+		숫자형 데이터 : 천단위로 콤마를 표현하는 숫자형 데이터는 오른쪽에 padding을
+			주고 오른쪽 정렬을 처리한다.
+	5) border-bottom : 타이틀 아래쪽에 열과 실데이터를 구분하기 위하여 
+		테두리(border) 옵션을 준다.
+	6) tr:nth-child(even|odd) : 행단위로 홀수열과 짝수열을 구분하기위해
+		가상클래스 옵션 중하나인 구조 옵션을 처리한다.
+	7) tr:hover : 마우스가 올라오면 행의 배경색이 변경하여 커서 위헤 데이터를
+		구분하여 처리하기 위하여 사용된다.
+*/
+		table{border-collapse:collapse;
+			  border:1px solid green;}
+		tr>*{padding:15px;}		  
+		.str01{text-align:center;}
+		.str02{text-align:left;}
+		.num01{text-align:right;}
+		.hd01{ border-bottom:2px double navy; }
+		tbody tr:nth-child(even){
+			background:aliceblue;
+		}
+		tbody tr:hover{
+			background:#ffccff;color:#6600ff;font-weight:900;
+			
+		}
+	</style>
+	
+</head>
+
+<body>
+	<table width="50%" height="100pt" border>
+		<col width="30%"><col width="70%">
+		<thead>
+			<tr class="hd01">
+				<th>번호</th><th>내용</th>
+			</tr>	
+		</thead>
+		<tbody>	
+			<tr>
+				<td class="str01">1</td><td >공지사항 출력합니다.</td>
+			</tr>
+			<tr>
+				<td class="str01">2</td><td class="num01">1,200,000</td>
+			</tr>
+			<tr>
+				<td class="str01">3</td><td class="num01">1,200,000</td>
+			</tr>
+			<tr>
+				<td class="str01">4</td><td class="num01">1,200,000</td>
+			</tr>
+			<tr>
+				<td class="str01">5</td><td class="num01">1,200,000</td>
+			</tr>	
+		</tbody>					
+	</table>
+	
+</body>
+</html>

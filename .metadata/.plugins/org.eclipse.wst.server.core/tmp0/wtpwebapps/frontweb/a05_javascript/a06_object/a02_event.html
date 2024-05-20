@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 
+
+*/
+	
+	</style>
+	<script type="text/javascript">
+		// 화면이 하단의 body끝까지 처리된 후, 이벤트 핸들러 함수에 의해
+		// 호출되어 처리되게 할 때, 사용
+		window.onload=function(){
+			var h1Obj = document.querySelector("h1")
+			h1Obj.innerText = "onload 이벤트 시작"
+			// 객체.on이벤트=함수   : 프로그램으로 이벤트 처리
+			h1Obj.onclick=function(){
+				alert("이벤트 호출..")
+			}
+			// DOM 객체, 이벤트선언, 이벤핸들러 함수 호출..
+			// 1. 이벤트할 대상 객체
+			var idObj = document.querySelector("[name=id]")
+			// 키를 눌렀을 때, 이벤트 핸들어에 의해 처리..
+			// 2. 이벤트를 지정  idObj.on이벤트
+			// 3. 이벤트를 일어 났을 때, 처리할 내용을 함수로 정의해서 연결
+			// 		이벤트 핸들러 함수..:한번한 사용하는 익명함수(이름이 없는)
+			//                       재사용이 필요한 경우 선언된 함수로 설정
+			idObj.onkeyup=function(){
+				// 입력한 내용을 상단의 h1에 출력하겠습니다.
+				h1Obj.innerText = this.value
+			}
+		}
+/*
+		window.onload=function(){
+			var h1Obj = document.querySelector("h1")
+			h1Obj.innerText = "타이틀"
+		}  
+ 
+*/		
+		
+		function call(){
+			
+		}
+	</script>
+</head>
+<body>
+	<h1></h1>
+	아이디:<input type="text" name="id" value=""/>
+</body>
+<script type="text/javascript">
+
+/*
+# 이벤트 처리
+1. javascript뿐만 아니라 대부분의 프로그램에서는 이벤트라는 기능을 처리한다.
+2. 특정한 action을 했을 때, 그 action과 연결된 함수가 호출되고 그 함수에 정의된
+	내용을 처리하는 것을 이벤트 처리라고 한다.
+3. 이 때, action을 이벤트이고, action과 연결된 함수를 이벤트 핸들어 함수라고 한다.
+   1) 이벤트의 대상 객체(DOM)
+   2) 이벤트 유형 설정
+   3) 이벤트 핸들러 함수 선언 및 이벤트 대상객체.on이벤트유형의 속성값을 설정..
+4. 자바스크립트에서 주로 사용되는 이벤트
+	1) 마우스 처리
+		click
+		dblclick
+		mouseover
+		mouseout
+	2) 키보드 입력 처리
+		keyup
+		keydown
+	3) 화면이 로딩되었을 때
+		load
+	- 위와 같은 이벤트는 이벤트를 처리할 때  대상객체에 on이벤트명으로 속성을 선언하고
+		대입연산자에 의해서 이벤트 핸들러 함수를 정의하여 이벤트를 처리한다.
+5. 화면에 이벤트 처리 순서와 핵심 코드.
+	1) 화면구성(html 태그)
+	   <h1>안녕</h1>
+	2) 이벤트 대상 객체 선언(#아이디명, .클래스명, 태그, 그외 복합 선택자..)
+		var domOb = document.querySelector("선택자")
+		ex)
+		var h1domOb = document.querySelector("h1")
+		var idOb = document.querySelector("[name=id]")
+		var domArr = document.querySelectorAll("다수선택자")
+	3) 이벤트 속성 선언 및 핸들러 연결
+		domOb.onclick=function(){}
+		domOb.onkeyup=function(){}
+		ex) idOb.onkeyup=function(){}
+		function call(){}
+		domOb.onclick=call
+	4) 이벤트 핸들러 메서드 내용 구현
+		이벤트 핸들러 구성시 주요 속성
+		dom객체.innerHTML
+		dom객체.innerText
+		dom객체.기본속성(align, value)
+		dom객체.style.css속성(color, background,...)
+		조건문 반복문에 의해 할당 처리
+		keyup의 경우 event.keyCode (키별로 처리할 코드..)
+		functio call(){
+		
+		
+		}
+		
+
+
+
+
+
+
+
+
+
+
+		
+*/
+//
+</script>
+</html>

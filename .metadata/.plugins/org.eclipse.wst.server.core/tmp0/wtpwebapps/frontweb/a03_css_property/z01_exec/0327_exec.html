@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+### 실습 문제 (7문제)
+1. CSS 색상 표현에 대한 이해를 확인하기 위해 다음 색상을 
+   16진수 코드와 RGB 형식으로 변환하세요: #00FF00
+2. 아래의 HTML 요소에 CSS를 적용하여 텍스트를 빨간색으로, 배경을 파란색으로 설정하세요:
+   ```html
+   <div>Hello, CSS!</div>
+   ```
+3. 텍스트의 들여쓰기와 정렬을 다음과 같이 설정하세요:
+   - 들여쓰기: 2em
+   - 정렬: 가운데 정렬
+4. 다음 링크에 밑줄을 제거하고, 마우스 오버 시 색상을 빨간색으로 변경하는 CSS를 적용하세요:
+   ```html
+   <a href="#">Click here</a>
+   ```
+5. 폰트 크기를 24px로, 굵기를 진하게, 폰트 패밀리를 Arial로 설정하세요.
+6. 박스의 너비를 300px로, 높이를 200px로, 배경 색상을 노란색으로, 
+테두리를 실선으로, 테두리 색상을 파란색으로 설정하세요.
+7. 텍스트의 아래에 점선으로 모서리를 가진 박스를 만드세요. 박스의 모서리 반지름은 20px로 설정하세요.
+*/
+	p{text-indent:2em;text-align:center;}
+	a:hover{color:red;}
+	body{background:ghostwhite;}
+	span{background:deepskyblue;}
+	div{
+		width:300px;height:200px;
+		background:yellow;
+		border:1px solid blue;
+	}
+	#round_dot{border-radius:20px;border-style:dotted;}
+
+	</style>
+
+</head>
+<body>
+<h2>[연습문제1]</h2>
+<h1 style="color: 008b8b;">색상확인</h1>
+<h1 style="color: rgb(0,139,139)";>색상확인</h1>
+<h1 style="color: DarkCyan;">색상확인</h1>
+<h2>[연습문제2]</h2>
+   <div style="color: #ff0000;background-color: blue;">Hello, CSS!</div>
+<h2>[연습문제3]</h2>
+	<p>자바스크립트(JavaScript)_태그선택자</p>
+
+	<p style="text-indent:2em;">자바스크립트(JavaScript)</p>
+	<p style="text-align:center;">자바스크립트(JavaScript)</p>
+	
+    <p style="text-indent:3em;"> 자바스크립트(JavaScript)는 웹 페이지를 동적으로 만들고 상호작용할 수 있게 하는 프로그래밍 언어입니다. 자바스크립트는 주로 클라이언트 측 웹 개발에서 사용되며, 웹 브라우저에서 실행됩니다. HTML 및 CSS와 함께 웹 개발의 핵심 요소 중 하나입니다.
+자바스크립트는 다음과 같은 주요 기능을 수행할 수 있습니다.</p>
+<h2>[연습문제4]</h2>
+   <a href="#" style="text-decoration:none;">Click here</a>
+<h2>[연습문제5]</h2>
+	<h3>과자</h3>	
+	<h3 style="font-family:Arial;font-size:24px;fond:bold;">Arial_과자</h3>
+<h2>[연습문제6]</h2>
+<div>박스의 너비를 300px로, 높이를 200px로, 배경 색상을 노란색으로, 테두리를 실선으로, 테두리 색상을 파란색으로 설정하세요.</div>
+<h2>[연습문제7]</h2>
+	<p id="round_dot">7. 텍스트의 아래에 점선으로 모서리를 가진 박스를 만드세요.<br>박스의 모서리 반지름은 20px로 설정하세요.</p>
+	<p id="round_dot" style="width:400px;height:100px;">7. 텍스트의 아래에 점선으로 모서리를 가진 박스를 만드세요.<br>박스의 모서리 반지름은 20px로 설정하세요.</p>
+</body>
+</html>

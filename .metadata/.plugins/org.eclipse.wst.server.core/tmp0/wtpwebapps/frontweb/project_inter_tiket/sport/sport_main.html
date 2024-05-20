@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	a{
+		text-decoration:none;
+	}
+	
+	#quickticket_btn{
+		color:white;
+		background:skyblue;
+		padding:10px;
+	}
+
+	.s_menu{
+		font-size:12pt;
+		padding:5px;
+	}
+	
+	.s_menu a{
+		display:none;
+		background:#36454F;
+		color:white;
+		padding:5px;
+	}
+	#selected_menu a{
+		display:block;
+	}
+	
+	.genre{
+		background:#36454F;
+	}
+	.genre>p{
+		color:white;
+	}
+	.gamebox{
+		background:white;
+		font-size:10pt;
+		display:inline-block;
+	}
+	#hidden{
+		display:none;
+	}
+	.gamebox img{
+		width:100px;
+	}
+	
+	.team{
+		background:black;
+		color:white;
+		display:inline-block;
+	}
+	
+	#ticket_btn{
+		font-size:12pt;
+		color:white;
+		background:#C83F49;
+		padding:5px;
+	}
+</style>
+<script type="text/javascript">
+	function quickt_btn(){
+		var qt = document.querySelector("#quickticket_btn")
+		if (qt.innerText == "빠른 예매　　　>"){
+			qt.innerText = "빠른 예매　　　X";
+			qt.href="quick_ticket.html";
+		}else{
+			qt.innerText = "빠른 예매　　　>";
+			qt.href="main_slide.html";
+		}
+	}
+	
+	function select_menu(obj){
+		if(obj.id == ""){
+			var sm_array = document.querySelectorAll(".s_menu")
+			for (var i = 0;i<sm_array.length;i++){
+				sm_array[i].id = "";
+			}
+			obj.id = "selected_menu";
+		}else{
+			obj.id = "";
+		}
+	}
+	
+	function open_teams(str){
+		var box_array = document.querySelectorAll("#" + str + "_genre .gamebox");
+		var teambox = document.querySelector("#" + str + "_genre .teambox");
+		console.log("." + str + "_genre .teambox")
+		if(teambox.id == "hidden"){
+			for (var i = 0;i<box_array.length;i++){
+				box_array[i].id = "hidden";
+			}
+			teambox.id = "";
+		}else{
+			for (var i = 0;i<box_array.length;i++){
+				box_array[i].id = "";
+			}
+			teambox.id = "hidden";
+		}
+	}
+</script>
+</head>
+<body>
+	<table align="center">
+		<tr>
+			<td>
+				<iframe src="sub_slide.html" title="서브 슬라이드" width="160px" height="180px" name="sub_slide"></iframe>
+			</td>
+			<td rowspan="2">
+				<iframe src="main_slide.html" title="메인 슬라이드" width="420px" height="260px" name="main_slide"></iframe>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a onclick="quickt_btn()" id="quickticket_btn" href="quick_ticket.html" target="main_slide">빠른 예매　　　></a>
+			</td>
+		</tr>
+	</table>
+	<table align="center">
+		<tr>
+			<td>
+				<div class="s_menu" onclick="select_menu(this)">프리미어리그(EPL)
+					<a href="#">토트넘 홋스퍼 FC</a>
+					<a href="#">아스날 FC</a>
+					<a href="#">맨체스터 시티 FC</a>
+					<a href="#">첼시 FC</a>
+					<a href="#">맨체스터 유나이티드 FC</a>
+				</div>
+				<div class="s_menu" onclick="select_menu(this)">축구 시즌권/멤버십
+					<a href="#">2024 서울이랜드FC 멤버십</a>
+					<a href="#">2024 수원삼성블루윙즈 멤버십</a>
+					<a href="#">2024 안산그리너스FC 멤버십</a>
+					<a href="#">2024 수원FC 멤버십</a>
+					<a href="#">2024 부천FC1995 연간회원권</a>
+					<a href="#">2024 천안시티FC 멤버십</a>
+					<a href="#">2024 천안시티FC 티켓북</a>
+				</div>
+				<div class="s_menu" onclick="select_menu(this)">야구
+					<a href="#">야구메인</a>
+					<a href="#">두산베어스</a>
+					<a href="#">키움히어로즈</a>
+				</div>
+				<div class="s_menu" onclick="select_menu(this)">축구
+					<a href="#">축구메인</a>
+					<a href="#">강원FC</a>
+					<a href="#">수원삼성블루윙즈</a>
+					<a href="#">수원FC</a>
+					<a href="#">부천FC 1995</a>
+					<a href="#">성남FC</a>
+					<a href="#">서울 이랜드 FC</a>
+					<a href="#">천안시티FC</a>
+					<a href="#">안산그리너스FC</a>
+					<a href="#">전남 드래곤즈</a>
+				</div>
+				<div class="s_menu" onclick="select_menu(this)">E스포츠
+					<a href="#">부산 이스포츠 경기장</a>
+					<a href="#">LCK</a>
+					<a href="#">LCK CL</a>
+					<a href="#">VCT PACIFIC</a>
+				</div>
+				<div class="s_menu" onclick="select_menu(this)">스포츠이벤트
+					<a href="#">2024 우리금융 챔피언십</a>
+					<a href="#">Z-Fight Night</a>
+					<a href="#">신세계 이마트배 고교야구</a>
+					<a href="#">2024 Aramco Team Series</a>
+				</div>
+			</td>
+			<td>
+				<div class="genre" id='baseball_genre'>
+					<p>야구 | baseball</p> <p onclick="open_teams('baseball')">구단선택</p>
+					<div>
+						<div class="gamebox">
+							<img src="media/bears.png">VS<img src="media/VSCode-Thick.png">
+							<p>2024.04.25 18:30</p>
+							<p>잠실야구장</p>
+							<p>두산 베어스 VS 비주얼 스튜디오 코드</p>
+							<a href="#" id="ticket_btn">예매하기</a>
+						</div>
+						<div class="gamebox">
+							<img src="media/heroes.png">VS<img src="media/VSCode-Thick.png">
+							<p>2024.04.25 18:30</p>
+							<p>고척스카이돔</p>
+							<p>키움 히어로즈 VS 비주얼 스튜디오 코드</p>
+							<a href="#" id="ticket_btn">예매하기</a>
+						</div>
+						<div class="gamebox">
+							<img src="media/bears.png">VS<img src="media/VSCode-Thick.png">
+							<p>2024.04.25 18:30</p>
+							<p>잠실야구장</p>
+							<p>두산 베어스 VS 비주얼 스튜디오 코드</p>
+							<a href="#" id="ticket_btn">예매하기</a>
+						</div>
+					</div>
+					<div class="teambox" id="hidden" align="center">
+						<div class="team">
+							<img src="media/heroes.png">
+							<p>키움 히어로즈</p>
+						</div>
+						<div class="team">
+							<img src="media/bears.png">
+							<p>두산 베어스</p>
+						</div>
+					</div>
+				</div>
+				<div class="genre" id='soccer_genre'>
+					<p>축구 | soccer</p> <p onclick="open_teams('soccer')">구단선택</p>
+					<div>
+						<div class="gamebox">
+							<img src="media/bears.png">VS<img src="media/VSCode-Thick.png">
+							<p>2024.04.25 18:30</p>
+							<p>잠실야구장</p>
+							<p>두산 베어스 VS 비주얼 스튜디오 코드</p>
+							<a href="#" id="ticket_btn">예매하기</a>
+						</div>
+						<div class="gamebox">
+							<img src="media/heroes.png">VS<img src="media/VSCode-Thick.png">
+							<p>2024.04.25 18:30</p>
+							<p>고척스카이돔</p>
+							<p>키움 히어로즈 VS 비주얼 스튜디오 코드</p>
+							<a href="#" id="ticket_btn">예매하기</a>
+						</div>
+						<div class="gamebox">
+							<img src="media/bears.png">VS<img src="media/VSCode-Thick.png">
+							<p>2024.04.25 18:30</p>
+							<p>잠실야구장</p>
+							<p>두산 베어스 VS 비주얼 스튜디오 코드</p>
+							<a href="#" id="ticket_btn">예매하기</a>
+						</div>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

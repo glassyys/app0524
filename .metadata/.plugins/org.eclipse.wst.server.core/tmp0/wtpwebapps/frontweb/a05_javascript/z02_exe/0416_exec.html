@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	var h2Obj = document.querySelector("h2")
+	//h2Obj.innerText = ""
+	/*
+/*
+### 자바스크립트 연습 문제
+#### `eval`, 타이머, 그리고 JSON의 기본
+1. `eval`을 사용하여 표현식 `5 + 7 * 2`를 평가하는 JavaScript 코드 조각을 작성하세요.
+2. 클릭할 때 경고 창에 문자열 `"10 + 5"`의 평가 결과를 표시하는 버튼을 만드세요.
+3. `setTimeout`을 사용하여 5초 후에 환영 메시지가 표시되는 경고창을 표시하세요.
+4. `setInterval`을 사용하여 3초마다 콘솔에 "Hello World"를 반복하여 로그하는 함수를 작성하세요.
+5. 이전 질문에서 만든 간격을 `clearInterval`로 중지하는 방법을 보여주세요.
+
+#### 이벤트 처리 및 표시
+1. div를 클릭할 때 텍스트를 "Clicked!"로 변경하는 함수를 작성하세요.
+2. 클릭할 때 입력 상자에서 제공된 숫자의 제곱을 계산하고 표시하는 HTML 버튼을 만드세요.
+3. `eval`을 사용하여 텍스트 입력에서 제공된 산술식의 결과를 평가하고 표시하는 간단한 문자열 계산기를 만드세요.
+4. 이전에 설정한 10초 후에 대화 상자가 표시되는 타임아웃 액션을 방지하는 방법에 대해 `clearTimeout`을 사용하는 방법을 설명하세요.
+clearTimeout(set01) // 메모리 해제.. 위 내용 수행 후..
+
+#### JSON 작업
+1. 사용자의 이름, 나이 및 이메일 속성을 가진 JSON 객체를 만드세요. 이름을 콘솔에 출력하세요.
+2. 이전 질문에서 만든 JSON 객체에 호출될 때 콘솔에 이메일을 출력하는 메서드를 추가하세요.
+3. 배열과 객체의 속성 이름 및 나이를 나타내는 JSON 문자열을 구문 분석하고 각 사람의 이름을 로깅하는 스크립트를 작성하세요.
+4. JavaScript 개체를 JSON 문자열로 변환하는 방법을 설명하세요.
+*/
+/* 
+	var people = {}       // 객체의 생성..(속성이 있는 객체를 사용할 때는 반드시 객체생성)
+	people.name = "홍길동";  // 속성의 추가..
+	people.age = 30;       // 문자열 속성 추가.
+	people.email = "yys@naver.com"; // 속성값의 변경.
+		people.emil_p = function(){
+		h2Obj.innerHTML += ", 이메일:"+people.email;
+	}
+	h2Obj.innerHTML += "이름:" + people.name;
+	h2Obj.innerHTML += ", 나이:" + people.age + "<br>";
+	people.emil_p();
+
+*/
+/*
+#### 고급 상호 작용
+1. 세 개의 버튼이 있는 HTML 페이지를 디자인하세요. 각 버튼을 클릭할 때 페이지의 표시 영역에 번호가 추가되어야 합니다.
+2. `eval`을 사용하여 특정 HTML 요소의 가시성을 토글하는 JavaScript 함수를 생성하세요.
+3. HTML 단락 태그에 표시된 숫자를 1초마다 자동으로 증가시키는 `setInterval`을 사용하세요.
+4. 버튼을 사용하여 위 작업에서 숫자를 다시 0으로 설정하는 재설정 기능을 구현하세요.
+
+#### 응용 프로그램에서 `eval` 사용
+1. 텍스트 입력 상자에 입력된 문자열로 입력된 연산을 수행할 수 있는 기본 계산기를 위한 HTML 인터페이스를 만드세요.
+2. 문자열 형식의 업데이트로 주어진 경우 `eval`을 사용하여 JSON 객체의 속성을 업데이트하는 스크립트를 작성하세요.
+
+*/
+//	#### `eval`, 타이머, 그리고 JSON의 기본
+// 1. `eval`을 사용하여 표현식 `5 + 7 * 2`를 평가하는 JavaScript 코드 조각을 작성하세요.
+/* 
+	var str_clcu = "5 + 7 * 2"
+	h2Obj.innerHTML += `5 + 7 * 2,  ${eval(str_clcu)}`
+*/
+	
+//2. 클릭할 때 경고 창에 문자열 `"10 + 5"`의 평가 결과를 표시하는 버튼을 만드세요.
+/* 	
+	var showResult = document.querySelector("#showResult")
+	
+	showResult.onclick=function(){
+		var calcu = "10+5"
+		var calcuR = eval(calcu)
+		alert(calcuR)
+	}
+ */
+//3. `setTimeout`을 사용하여 5초 후에 환영 메시지가 표시되는 경고창을 표시하세요.
+		// var msgCrm = confirm("5 초 후에 문제를 내겠습니다\n진행하실려면 확인")
+/* 
+		var set01 = setTimeout(function(){
+		h2Obj.innerHTML += `<h3>문제: 3X4,  ${(3*4)}</h3>`
+		alert("환영합니다.")
+		clearTimeout(set01) // 메모리 해제.. 위 내용 수행 후..
+		}, 5000) // 5000 ==> 1/1000초이기에 5초를 의미
+ */	
+// 4. `setInterval`을 사용하여 3초마다 콘솔에 "Hello World"를 반복하여 로그하는 함수를 작성하세요.
+/* 
+		var h2Obj = document.querySelector("h2")
+		var idx = 0;
+		var int01 = setInterval(function(){
+			h2Obj.innerHTML += "<h1>"+ (++idx) + " Hello World"+"</h1>"
+			if(idx==10){
+				clearInterval(int01)
+			}
+		},1000)
+
+*/	
+//	1. div를 클릭할 때 텍스트를 "Clicked!"로 변경하는 함수를 작성하세요.
+/* 		var divObj = document.querySelector("#cli")
+		divObj.onclick=function(){
+			divObj.innerText ="Clicked!"
+		} */
+
+//		2. 클릭할 때 입력 상자에서 제공된 숫자의 제곱을 계산하고 표시하는 HTML 버튼을 만드세요.
+/*  		var num_22 = document.querySelector("#num_22")
+ 		var btn02 = document.querySelector("#btn02")
+		btn02.onclick=function(){
+			h2Obj.innerText = num_22.value ** 2
+		} 
+*/
+}
+
+</script>
+
+
+</head>
+<body>
+	<h2></h2>
+	<div id="cli">aa</div>
+	<input type="button" value="클릭하세요" id="btn01"/><br>
+	<button id="showResult">평가 결과 표시</button><br>
+	
+	<input type="text" id="num_22"/><br>
+	<input type="button" value="제곱" id="btn02"/><br>
+
+</body>
+<script type="text/javascript">
+var h2Obj = document.querySelector("h2")
+function parseAndLog() {
+  const jsonString = '[{"name":"Alice","age":25},{"name":"Bob","age":35}]';
+  const people = JSON.parse(jsonString);
+  people.forEach(function(person) {
+    console.log(person.name);
+	h2Obj.innerHTML +=  person.name  + "<br>";;
+
+
+  });
+}
+parseAndLog();
+</script>
+
+</html>

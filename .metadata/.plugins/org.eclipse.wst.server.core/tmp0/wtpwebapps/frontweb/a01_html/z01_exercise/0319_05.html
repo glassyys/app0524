@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지실습</title>
+</head>
+<body>
+<!-- 
+### 문제 5: 사진 갤러리 페이지 만들기
+
+**요구사항:**
+
+- `div` 태그를 사용하여 각 사진을 감싸는 컨테이너를 만드세요.
+- 각 사진(`img` 태그 사용) 아래에는 `figcaption` 태그를 사용하여 사진 설명을 추가하세요.
+- 사진은 최소 3개 이상 포함시키세요.
+- 각 사진에는 다른 `width`와 `height` 속성 값을 적용해 다양한 크기를 표현해 보세요.
+-->
+	<h2>이미지</h2>
+	<img src="Elvis.png"  width="200" height="200"/>
+	<img src="Elvis.png" alt="이미지표시" style="width:10%">
+	<figcaption>엘비스프레슬리</figcaption>
+
+
+
+    <div>
+        <img src="Elvis.png" alt="사진 1" width="200" height="150">
+        <figcaption>사진 1 설명</figcaption>
+    </div>
+    <div>
+        <img src="lee.jfif" alt="사진 2" width="250" height="200">
+        <figcaption>사진 2 설명</figcaption>
+    </div>
+    <div>
+        <img src="kang.jfif" alt="사진 3" width="300" height="250">
+        <figcaption>사진 3 설명</figcaption>
+    </div>
+
+<table border> <!-- border : 테이블 전체 cell border 굵기 -->
+	<caption>인물</caption>
+	<thead>
+		<tr><th>이름</th><th>나이</th><th>이메일</th></tr>
+	</thead>
+	<tbody>
+		<tr><td>엘비스</td>
+		    <td>200<span style="color:blue">세</span></td>
+		    <td><img src="../a01_chap01/Elvis.png" alt="사진 1" width="50" height="50"/>
+		    	<figcaption>엘비스프레슬리는 유명한 가수입니다.</figcaption>
+		    </td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr><td>이순신</td>
+		    <td>1000<span style="color:blue">세</span></td>
+		    <td><img src="lee.jfif" alt="사진 2" width="80" height="50"/>
+		    	<figcaption>바다의 제왕 
+		    	<span style="color:red">승리</span>의 상징
+		    	</figcaption>
+		    </td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr><td>강감찬</td>
+		    <td>2000<span style="color:blue"><h2>세</h2></span></td>
+		    <td><mark><img src="kang.jfif" alt="사진 3" width="100" height="70"/></mark>
+		    	<figcaption>귀주대첩</figcaption>
+		    </td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr><th colspan="3">이미지예제 응용입니다.</th></tr>
+    </tfoot>
+	
+</table>
+</body>
+</html>

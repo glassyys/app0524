@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>메뉴 레이아웃</title>
+<style>
+    .menu-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f0f0f0; /* 배경색 지정 */
+        padding: 10px; /* 내부 여백 지정 */
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .menu img {
+        width: 24px; /* 아이콘 이미지 크기 조정 */
+        height: 24px;
+        margin-right: 5px; /* 아이콘과 텍스트 사이 간격 조정 */
+    }
+</style>
+</head>
+<body>
+
+<div class="menu-container">
+    <div class="menu">
+        <div>메뉴1</div>
+        <ul>
+            <li><a href="#">브랜드</a></li>
+            <li><a href="#">쇼핑</a></li>
+            <li><a href="#">이벤트</a></li>
+        </ul>
+    </div>
+    <div class="menu">
+        <div>메뉴2</div>
+        <ul>
+            <li>
+                <a href="" class="header-mypage">
+                    <img class="login_img" src="hd_my_icon.png" alt=""/>
+                    마이페이지
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="menu">
+        <div>메뉴3</div>
+        <ul>
+            <li>
+                <a href="/order/basket.html">
+                    <img class="cart_img" src="hd_cart_icon.png" alt="장바구니"/>
+                    장바구니
+                    <em class="cart_count">1</em>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

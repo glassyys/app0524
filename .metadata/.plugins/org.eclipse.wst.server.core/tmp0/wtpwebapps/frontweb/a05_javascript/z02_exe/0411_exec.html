@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+<h3></h3>
+ <!-- <h3 style="color:blue";>무작위 색상은 </h3> -->
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	// bdObj.innerHTML = "제목"
+/*
+### 연습 문제
+1. `var numbers = [1, 2, 3, 4, 5]`에서 홀수만 포함하는 새 배열을 만드세요.
+2. `var numbers = [10, 20, 30, 40, 50]`를 거꾸로 정렬하세요.
+3. 함수 `multiplyByTwo(x)`를 정의하고, 이 함수를 사용하여 숫자 10을 두 배로 만드세요.
+4. `var array = [1, 2, 3, 4, 5]`에서 각 요소를 2배 증가시키는 코드를 작성하세요.
+5. 문자열 배열 `var days = ['월', '화', '수', '목', '금']`에서 '목'과 '금'만 포함하는 새 배열을 만드세요.
+6. 함수 `isEven(number)`를 작성하여 주어진 숫자가 짝수인지 확인하세요.
+7. '컴퓨터와 가위바위보' 게임을 위한 함수를 정의하고, 랜덤 결과를 출력하세요.
+8. 홀/짝을 결정하는 함수 `oddOrEven()`을 작성하고, 1~10까지 숫자에 대해 적용한 결과를 출력하세요.
+9. `var colors = ['빨강', '노랑', '파랑', '초록']`에서 무작위로 하나의 색상을 선택하는 함수를 작성하고 결과를 출력하세요.
+
+
+*/
+// 1. `var numbers = [1, 2, 3, 4, 5]`에서 홀수만 포함하는 새 배열을 만드세요.
+
+var numbers = [1, 2, 3, 4, 5];
+var numbersNew = [];
+for(i=0; i<5; i++){
+	if(numbers[i]%2 !== 0){
+		bdObj.innerHTML += numbers[i]+ "<br>";
+		numbersNew.push(numbers[i])
+	}
+}
+bdObj.innerHTML += numbersNew + "<br>";
+
+
+// 2. `var numbers = [10, 20, 30, 40, 50]`를 거꾸로 정렬하세요.
+var numbers2 = [10, 20, 30, 40, 50]
+for(i=numbers2.length -1; i>=0; i--){
+	bdObj.innerHTML += numbers2[i]+ "<br>";
+}
+
+// 3. 함수 `multiplyByTwo(x)`를 정의하고, 이 함수를 사용하여 숫자 10을 두 배로 만드세요.
+
+function multiplyByTwo(num_x){
+	var num_2em = 0;
+	var multiple_num = num_x*2;
+	bdObj.innerHTML += num_x + "의 2배는"+ multiple_num + "<br>";
+	return multiple_num;
+}
+
+multiplyByTwo(10);
+
+
+// 4. `var array = [1, 2, 3, 4, 5]`에서 각 요소를 2배 증가시키는 코드를 작성하세요.
+var arrayMultTest = [1, 2, 3, 4, 5];
+for(i=0; i < arrayMultTest.length; i++){
+	arrayMultTest[i]= multiplyByTwo(arrayMultTest[i]);
+	// bdObj.innerHTML += multiplyByTwo(arrayMultTest[i])+ "<br>";
+
+}
+bdObj.innerHTML += arrayMultTest+ "<br>";
+
+// 5. 문자열 배열 `var days = ['월', '화', '수', '목', '금']`에서 '목'과 '금'만 포함하는 새 배열을 만드세요.
+var days = ['월', '화', '수', '목', '금']
+var daysNew= [];
+for(i=0; i < days.length; i++){
+	if (days[i] === "목"){
+		daysNew.push(days[i]);
+	}
+	if (days[i] === "금"){
+		daysNew.push(days[i]);
+	}
+}
+bdObj.innerHTML += daysNew + "<br>";
+
+// 6. 함수 `isEven(number)`를 작성하여 주어진 숫자가 짝수인지 확인하세요.
+function isEven(num_input){
+	if (num_input%2 == 0){
+		bdObj.innerHTML += "입력된 숫자 "+num_input +"는 짝수입니다" + "<br>";
+	}else{
+		bdObj.innerHTML += "입력된 숫자 "+num_input +"는 짝수가 아닙니다" + "<br>";
+	}
+}
+isEven(4);
+
+// 7. '컴퓨터와 가위바위보' 게임을 위한 함수를 정의하고, 랜덤 결과를 출력하세요.
+function randomF(){
+	var randomA = ["가위","바위","보"];
+	var ran = parseInt(Math.random()*3)
+	bdObj.innerHTML += "<h3>"+ "가위/바위/보 중 한개 랜덤 :"+ randomA[ran] +"</h3>"
+}
+randomF();
+
+
+// 8. 홀/짝을 결정하는 함수 `oddOrEven()`을 작성하고, 1~10까지 숫자에 대해 적용한 결과를 출력하세요.
+function oddOrEven(oddOrEvenNum){
+	if (oddOrEvenNum%2 == 0){
+		bdObj.innerHTML += oddOrEvenNum +"는 짝수입니다" + "<br>";
+	}else{
+		bdObj.innerHTML += oddOrEvenNum +"는 홀수입니다" + "<br>";
+	}
+}
+
+for(i=1; i <= 10; i++){
+	oddOrEven(i);
+}
+
+//9. `var colors = ['빨강', '노랑', '파랑', '초록']`에서 
+// 무작위로 하나의 색상을 선택하는 함수를 작성하고 결과를 출력하세요.
+var h3Obj = document.querySelector("h3")
+function colorsrandom(){
+	//var colors = ['빨강', '노랑', '파랑', '초록']
+	var colors = ['red', 'yellow', 'blue', 'green']
+	var ran = parseInt(Math.random()*4)
+	var color = colors[ran]; // 랜덤한 색상 선택
+	bdObj.innerHTML += "<h3>"+ "무작위 색상은 : "+ colors[ran] +"</h3>"
+	bdObj.innerHTML += "<h3 style='color: " + color + "'>무작위 색상은 : " + color + "</h3>";
+	    // HTML 태그 생성 및 스타일 적용하여 bdObj에 추가
+	bdObj.innerHTML += "<h3>" + "색상테스트" +"</h3>";
+
+}
+colorsrandom();
+
+//
+</script>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 
+
+*/
+	
+	</style>
+
+</head>
+<body>
+	<h1 id="curBuy">현재금액</h1>
+	<h1 id="totPay">총금액</h1>
+	<input type="button" value="총금액보기" onclick="showTot()"/>
+	<h1 onclick="buy(1000)">사과 구매(1000)</h1>
+	<h1 onclick="buy(2000)">바나나 구매(2000)</h1>
+	<h1 onclick="buy(3000)">오렌지 구매(3000)</h1>
+	<h1 onclick="buy(4000)">딸기구매(4000)</h1>	
+</body>
+<script type="text/javascript">
+	var h1Obj = document.querySelector("#curBuy")
+	var totObj = document.querySelector("#totPay")
+	var totPay=0
+	function buy(pay){
+		totPay += pay
+		h1Obj.innerText="현재 구매 금액:"+pay
+		//+"원 누적 총비용:"+totPay
+	}
+	function showTot(){
+		totObj.innerText="현재까지 총 금액:"+totPay
+	}
+	function fun01(){
+		var num01 = 10;
+		var num02 = 20;
+		return num01 + num02;
+	}
+/*
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	bdObj.innerHTML += "<h2>리턴값</h2>"
+	var tot = fun01()
+	bdObj.innerHTML += "<h3>변수:"+tot+"</h3>"
+	bdObj.innerHTML += "<h3>리턴값함수호출:"+fun01()+"</h3>"
+*/	
+/*
+# 함수의 복합적인 기능 처리..
+1. 함수의 정의로 처리되는 형태는
+	1) 함수 기본적인 호출에서
+		- 출력/전역변수저장/로직처리/반복처리
+		- 입력값 처리(매개변수1, 매개변수2...)
+		- 리턴값 처리
+		로 하나씩 기능을 처리하는 것보다 복합적으로 처리하는 경우가 
+		많다.
+2. 함수의 복합적 처리 예시
+	1) 매개변수 + 연산처리 + 리턴값 처리
+		function plus(num01, num02){
+			var tot = num01 + num02
+			return tot
+		}
+		이 함수는 매개변수 2개를 받아서 합산을 하고, 그 결과값을 리턴한다.
+		var tot01 = plus(10,20) 30
+		var tot02 = plus(20,40) 60
+		함수가 처리되고 그 결과값은 tot01에 30으로 할당되어 처리된다.
+	2) 매개변수 + 출력 +  전역변수 저장 처리
+		var h1Obj = document.querySelector("#curBuy")
+		var totPay = 0 //전역변수..
+		function buy(pay){
+			h1Obj.innerText="현재 구매 금액:"+pay+"원"
+			totPay += pay
+		}
+		<h1 id="curBuy"></h1>
+		<h1 onclick="buy(1000)">사과 구매(1000)</h1>
+		<h1 onclick="buy(2000)">바나나 구매(2000)</h1>
+		<h1 onclick="buy(3000)">오렌지 구매(3000)</h1>
+		<h1 onclick="buy(4000)">딸기구매(4000)</h1>
+		<input type="button" value="지금까지 통합 출력"
+				onclick="showTot()">
+		<h2 id="showTot">현재 종금액:0원</h2>
+	
+		var showObj = document.querySelector("#showTot")
+		function showTot(){
+			showObj.innerText = "현재 총금액:"+totPay+"원"
+		}
+
+
+
+*/
+//
+</script>
+</html>

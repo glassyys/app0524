@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>블로그 포스트</title>
+<style>
+    table{
+        border:1px solid black;
+        width:30%;
+        margin-left:auto;
+        margin-right: auto;
+        border-collapse: collapse;
+    }
+    
+    th, td{
+        border: 1px solid black;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <table border="1"> <!-- 테이블 생성 -->
+        <caption>블로그 <strong>포스트용</strong> 테이블</caption>
+        <tr> <!-- 행 생성 (1행) -->
+            <th>2행1열</th>
+            <th rowspan="2">1행2열</th> <!-- 아래로 2행을 병합 -->
+        </tr>
+        <tr> <!-- 행 생성 (2행) -->
+            <td>2행1열</td>
+        </tr>
+        <tr> <!-- 행 생성 (2행) -->
+            <td colspan="2">3행1열</td> <!-- 오른쪽 2행을 병합 -->
+        </tr>
+    </table>
+</body>
+</html>

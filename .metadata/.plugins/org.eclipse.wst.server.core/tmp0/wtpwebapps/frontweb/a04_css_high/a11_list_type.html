@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+3. css 리스트 꾸미기
+1) 리스트의 모양을 꾸미는 css3 프로퍼티들
+	 ● list-style-type : 아이템 마커 타입 지정
+	 	disc|circle|square|armenian|decimal|georgian|
+	 	lower-alpha|lower-roman|upper-alpha|upper-roman|none
+	 ● list-style-image : 아이템 마커 이미지 지정
+	 ● list-style-position : 아이템 마커의 출력 위치 지정(아이템 영역 내
+	 	혹은 영역 바깥)
+	 	inside|outside
+	 ● list-style : 앞에 3개 프로퍼티 값을 한번에 지정하는 단출 프로퍼티
+*/
+	/*1 단계 : ul, li 색상 padding 적용*/
+	ul{
+		background:pink;padding:10px ;
+		list-style-position:inside;
+	}
+	
+	ul.type01{list-style-type:square}
+	ul.type02{list-style-type:alpha}
+	ul.type03{list-style-type:upper-alpha}
+
+	ul li{
+		background:greenyellow;
+		margin-bottom:5px;
+	}
+	/*ex) a11_list_type.html
+		list를 좋아하는 과일로 지정하고, 위에 선언한, list-style-type으로
+		화면에 출력되게 처리해보세요.. 유형 3개 정도..
+	*/
+	</style>
+
+</head>
+<body>
+	<h2>과일 메뉴</h2>
+	<hr>
+	<ul>
+		<li>사과</li>
+		<li>바나나</li>
+		<li>딸기</li>
+	</ul>
+	<ul class="type01">
+		<li>사과</li>
+		<li>바나나</li>
+		<li>딸기</li>
+	</ul>
+	<ul class="type02">
+		<li>사과</li>
+		<li>바나나</li>
+		<li>딸기</li>
+	</ul>
+	<ul class="type03">
+		<li>사과</li>
+		<li>바나나</li>
+		<li>딸기</li>
+	</ul>
+</body>
+</html>

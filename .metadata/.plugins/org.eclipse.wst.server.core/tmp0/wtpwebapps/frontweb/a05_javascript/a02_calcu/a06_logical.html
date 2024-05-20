@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 
+
+*/
+	
+	</style>
+
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	bdObj.innerHTML = "<h2>논리 연산자</h2>"
+	var age = 15
+	bdObj.innerHTML += "<h3>청소년 여부(논리곱):"+
+		(age>=14&&age<18)+"</h3>"
+	bdObj.innerHTML += "<h3>무료입장 여부(논리합):"+
+		(age<4||age>=65)+"</h3>"
+	bdObj.innerHTML += "<h3>청소년이 아닌경우 부정 즉, 성인인 경우(부정):"+
+		!(age>=14&&age<18)+"</h3>"
+	//  
+// ex1) id와 pwd를 입력받아 로그인 성공 여부를 출력하세요.
+	var id = 'himan'
+	var pwd = '7777'
+	var isLogin = id=='himan' && pwd == '7777'
+	bdObj.innerHTML += `<h2>입력한 id:${id}, 입력한 password:${pwd},
+						결과 : ${isLogin}</h2>`
+// ex2) 날씨 변수를 입력 받아  안좋음 이외에는 외출여부를 true가 나오게
+//      부정 연산자를 이용하여 출력하세요..
+	var weather = '화창'
+	var goOut = !(weather=='안좋음') //weather!='안좋음' 안좋음 이외는 외출여부가 true
+	bdObj.innerHTML += `<h2>입력한 날씨:${weather}, 
+						외출여부:${goOut}</h2>`
+// 삼항 연산자:조건문 없이 결과값을 바로 처리할 수 있는 연산자.
+//  	 조건문,논리연산자 ? 처리1 : 처리2
+//       조건문이 true이면 처리1이 되고, false 처리2가 되는 경우..
+	bdObj.innerHTML += `<h2>입력한 id:${id}, 입력한 password:${pwd},
+						결과 : ${isLogin?'로그인 성공':'로그인실패'}</h2>`
+	bdObj.innerHTML += `<h2>입력한 날씨:${weather}, 
+						외출여부:${goOut?'외출하세요':'집에 계시죠'}</h2>`	
+/*
+# 논리연산자(논리식)
+1. 비교연산자 2개 이상으로 연결하여, 
+	논리곱(and &&), 논리합(or ||)를 처리하여 결과값을  boolean을 
+	처리할 때 사용한다.
+ 1) 논리곱(and &&)
+	조건1 && 조건2 나열되어 두개의 조건이 모두다 true일 때, true이고,
+	그외는 false
+	ex) age>=14 && age<18  청소년기 여부.
+	    id == 'himan' && pwd == '7777'  로그인 성공 여부
+ 2) 논리합(or ||)
+	조건1 || 조건2 나열되어 두개의 조건 중 하나라도 true이면 true
+	그 외는 모두 다 false일 때만  false 처리한다.
+	ex) age < 5 || age>=65  입장료 무료 나이 처리..
+2. 부정연산자(not !)
+	true ==> false, false ===> true
+	!(chNo==3) chNo!=3 ==> 3번이 아닐 때..
+	!(age>=14 && age<18) ==> age<14 || age>=18
+*/
+	
+//
+</script>
+</html>

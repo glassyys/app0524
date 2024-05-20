@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 반응형 웹 기기의 크기만큼 브라우저 화면 동작 처리.. -->
+<meta name="viewport" 
+	content="width=device-with, initial-scale=1.0">
+<title>반응형 웹 메뉴 처리</title>
+	<style type="text/css">
+		/*form 전체 모양 설정*/
+		.login-form{
+			width:300px;
+			margin:100px auto;
+			padding:20px;
+			border:1px solid #ccc;
+			border-radius:5px;
+		}	
+		/* 각 요소객체에 대한 기본 css 적용*/
+		.form-control{
+			width:100%;
+			padding:10px;
+			margin-bottom:15px;
+			border:1px solid #ddd;
+			border-radius:4px;
+			box-sizing:border-box;
+			/*
+			각 요소의 최종적으로 계산된 넓이에 padding 속성이 영향을 미치지 않게
+			처리하기 위함
+			*/
+		}
+		/*마우스 커서를 위치 시켰을 때*/
+		.form-control:hover{
+			background:lightgray;
+		}
+		/*마우스를 포커싱했을 때*/
+		.form-control:focus{
+			font-size:110%;
+			border-color:blue;
+			outline:none; /*포커싱시, 아우트라인 삭제 처리..*/
+		}
+		body{font-family:Arial, sans-serif;}
+		.login-btn{
+			width:100%;
+			padding:10px;
+			background:#007bff;
+			color:white;
+			border:none;
+			border-radius:4px;
+			cursor:pointer;
+		}
+		
+		
+			
+	
+	/*화면의 크기에 따른 스타일 변경*/
+	@media screen and(max-width:600px){
+		/*실제 nav bar의 width을 %로 반응적으로 처리.*/
+	}
+	
+/*
+# 
+
+*/
+		.content{ display:none;}
+		.content:target{ display:block;}
+		main{ width:100%;height:500px;}
+		
+		nav#menu ul{
+			list-style-type:none;/*마커 삭제*/
+			margin:0;
+			padding:0;
+			overflow:hidden;
+			background-color:#333;
+		}
+		
+		nav#menu li{
+			float:left;
+		}
+		nav#menu li a{
+			display:block;
+			color:white;
+			text-align:center;
+			padding:14px 16px;
+			text-decoration:none;
+		}
+		nav#menu li a:hover{
+			background-color:#111;
+			color:pink;
+		}
+		footer{
+			background-color:#f8f9fa;
+			text-align:center;
+			padding:20px 0;
+			margin-top:20px;font-size:0.8em;color:#777;
+		}
+		
+	</style>
+</head>
+<body>
+<!-- 메타태그에 따른 화면구성 
+ex) 로그인메뉴를 추가/링크도 추가항 출력..
+-->
+<nav id="menu">
+	<ul>
+		<li><a href="#home">홈</a></li>	
+		<li><a href="#service">서비스</a></li>	
+		<li><a href="#about">회사소개</a></li>	
+		<li><a href="#contack">문의하기</a></li>	
+		<li><a href="#login">로그인</a></li>	
+	</ul>
+</nav>
+<main>
+	<section id="home" class="content">home</section>
+	<section id="service" class="content">service</section>
+	<section id="about" class="content">about</section>
+	<section id="contack" class="content">contack</section>
+	<section id="login" class="content">
+		<div class="login-form">
+			<h2 align="center">로그인</h2>
+			<form>
+				<label for="username">사용자명</label>
+				<input class="form-control" type="text" id="username" name="username"><br>
+				<label for="password">패스워드</label>
+				<input class="form-control"  type="password" id="password" name="password"><br>
+				<button class="login-btn" type="submit">로그인</button>	
+			</form>
+		</div>	
+	</section>
+</main>
+<footer>
+	<p>2024 나의 쇼핑몰, 모든 권리 보유</p>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>절대경로</h2>
+<!--
+# 절대경로..
+1. 웹서버에서 실행되었을 때 경로(###)
+
+   http://localhost:8080/frontweb/a01_html/a01_chap01/a12_abs_path.html
+   
+   
+   http://localhost:8080/frontweb : 경로가 웹서버 가종시 기준점이 된다..
+   ==> 물리적 파일 경로 frontweb\src\main\webapp
+   
+2. 웹서버가 있는 OS(운영체제)의 경로로 설정.. 
+   브라우저 단위로 실행했을때, 접근 할 수 있는 경로..
+   cd:\\@@@\@@@ 로 처리하는 것을 말한다.
+
+-->
+	<h3>운영체제 절대경로명으로 접근(파일시스템에서 해당 html을 실행했을 때만 호출가능하다.)</h3>
+	<img src="C:\a00_javaexp\workspace1\frontweb\src\main\webapp\a01_html\a01_chap01\apple.png"/>
+
+<!-- 
+3. 외부 이미지 파일 호출
+	# 링크처리
+	1) 인터넷 검색하여 이미지의 주소를 복사
+	2) 복사된 주소를 src=""의 속성값을 할당.
+	3) 기타 이미지의 width/height등의 속성 설정..
+	4) 화면에 확인..
+	# 다운로드
+	1) 인터넷상에 검색하여 이미지를 다운로드 처리
+		파일명변경 ==> 현재폴드에 복사
+	2) 복사된 주소를 src="변경된 파일명으로 속성값 할당"의 속성값을 할당.
+	3) 기타 이미지의 width/height등의 속성 설정..
+	4) 화면에 확인..
+-->
+<img width="100" height="200" src="https://res.cloudinary.com/jnto/image/upload/w_750,h_1100,f_auto,fl_lossy,q_auto,c_fill/v1/media/filer_public/c1/ef/c1efe731-88d0-4667-9dae-dcba59ad6f27/img_covid_top_agalhe"/>
+<img src="https://res.cloudinary.com/jnto/image/upload/w_750,h_1100,f_auto,fl_lossy,q_auto,c_fill/v1/media/filer_public/c1/ef/c1efe731-88d0-4667-9dae-dcba59ad6f27/img_covid_top_agalhe"/>
+
+<img width="100" height="200" src="C:\Users\human-03\Downloads\test_img_html_0320.png"/>
+<img width="100" height="200" src="img01.png"/>
+
+</body>
+</html>

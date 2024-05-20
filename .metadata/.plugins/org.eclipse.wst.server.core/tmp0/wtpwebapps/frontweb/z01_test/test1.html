@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css"> 
+/*  
+#  
+
+*/
+
+.Login-form{
+         background:white;
+         width:350px;
+         margin:100PX AUTO;
+         padding:100px;
+         border-radius:5px;
+      }   
+.form-control{
+         width:99%;
+         padding:10px;
+         background:lightgray;
+         margin-bottom:15px;
+         border:3px solid #ddd;
+         border-radius:none;
+         box-sizing:border-box;}
+body{font-family:Arial, sans-serif;}
+.login-btn{
+         width:99%;
+         padding:10px;
+         background:black;
+         color:white;
+         border:none;
+         border-radius:none;
+         cursor:pointer;
+      }
+      
+      span{border:none; text-decoration:none; color:black;
+      font-size:12px; 
+      }
+      
+
+</style>
+</head>
+
+
+<body>
+<div class="Login-form">
+<h1 align="center">로그인</h1>
+<form>
+<br>
+<h2 align="center">안녕하세요</h2>
+<h2 strong align="center">로그인 해주세요</h2>
+<input class="form-control" type="text" id="id" name="id" required placeholder="id"><br>
+<input class="form-control" type="password" id="passward" name="password" required placeholder="Password"><br>
+
+<div class="login-menu">
+        <!-- 아이디 저장/보안접속 -->
+        <div class="security"><input id="member_check_save_id0" name="check_save_id" fw-filter="" fw-label="아이디저장" fw-msg="" value="T" type="checkbox"  /><label for="member_check_save_id0" >아이디 저장</label> <img src="//img.echosting.cafe24.com/design/skin/default/member/ico_access.gif" alt="보안접속" /> 보안접속 </div>
+        <!-- $아이디 저장/보안접속 -->
+
+        <!-- 아이디/비밀번호찾기/회원가입 -->
+        <ul class="login-find">
+<span><a href="/member/id/find_id.html" style="text-decoration:none;">아이디찾기</a></span>
+          <span><a href="/member/passwd/find_passwd_info.html" style="text-decoration:none;">비밀번호찾기</a></span>
+          <span><a href="/member/join.html" style="text-decoration:none;">회원가입</a></span>
+        </ul>
+<!-- $아이디/비밀번호찾기/회원가입 -->
+<button class="login-btn" type="submit"> 로그인 </button>
+
+
+</form>
+</div>
+</body>
+
+</html>

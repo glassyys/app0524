@@ -1,0 +1,4 @@
+@charset "UTF-8";
+body{background-color:yellow;color:red;}
+table{text-align:left;color:blue;}/*글자 정렬을 왼쪽 정렬*/
+p{color: tomato; font-size: 30pt;}

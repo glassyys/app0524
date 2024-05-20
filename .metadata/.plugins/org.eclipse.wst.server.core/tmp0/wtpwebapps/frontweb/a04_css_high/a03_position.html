@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 박스의 배치 :position
+1. normal flow
+	1) 웹 페이지에 나타난 순서대로 html  태그 배치
+	2) position 프로퍼티를 이용하여 noraml flow문시 가능
+2. position 프로퍼티를 이용한 배치 방법
+	1) 정적 배치 - position : static(default)
+		기존 요소객체에 맞추어서 출력 처리.
+	2) 상대 배치 - position : relative
+	3) 절대 배치 - position : absolute
+	4) 고정 배치 - position : fixed
+	5) 유동 배치 - float : left 혹은 float: right
+	ps)position: relative, absolute, fixed는 속성값은
+		위치지정 속성.속성값이 동반하여 처리한다.
+		top, bottom, left, right에 속성값 px/t(절대단위), %(상대단위)
+	
+	
+	ex)
+	position:relative;left:20px;top:10px;
+		옆에 있는 다른 요소객체나, 변경되었을 때 기준점으로 변경..
+		static, ralative 현재 선택된 태그 코드를 기준으로
+			위치변경
+	position:absolute;left:20px;top:10px;	
+		태그코드의 선언위치가 아니고, 선언한 내용을 기준을 
+		절대 위치를 지정한다.
+		
+		left:20px; 제일 왼쪽면 기준으로 오른쪽을 20px 이동  
+		top:10px;  제일 위쪽면 기준으로 아래로 10px 이동
+		
+	position:fixed;left:20px;top:10px;
+		화면이 스크롤 되더라도 특정한 화면 기준의 위치를 계속
+		유지할 때 사용
+	    top:10px;	초기에 설정되고 스크롤시 마다 변경..
+		left:20px;	
+	
+	
+			
+	
+3. position 프로퍼티를 사용할 때, 태그의 위치와 크기
+	1) top, bottom, left, right, width, height 프로퍼티 지정
+		이들 프로퍼티는 배치방법에 따라 다르게 사용됨
+*/
+		div{
+			display:inline-block;
+			height:50px;width:50px;
+			border:1px solid lightgray;
+			text-align:center;
+			color:white;
+			background:red;
+		}
+		.up:hover{
+			position:relative;/*relative는 현재 해당 위치 기준으로*/
+			right:40px;/*오른쪽에서 왼쪽  20px 설정*/
+			bottom:20px; /*아래에서 위로 20px설정*/
+			background:green;
+		}
+		.down:hover{
+			position:relative;/*relative는 현재 해당 위치 기준으로*/
+			left:20px;/*왼쪽에서 오른쪽으로  20px 설정*/
+			top:20px; /*위에서 아래로 20px설정*/
+			background:blue;
+		}
+		.abs1{
+			position:absolute;
+			left:60px;/*왼쪽에서 오른쪽으로  20px 설정*/
+			top:30px; /*위에서 아래로 20px설정*/
+			background:orange;		
+		}
+		.abs2{
+			position:absolute;
+			right:60px;/*오른쪽에서 왼쪽으로  20px 설정*/
+			top:30px; /*위에서 아래로 20px설정*/
+			background:navy;		
+		}	
+		.abs3{
+			position:absolute;
+			left:20px;/*오른쪽에서 왼쪽으로  20px 설정*/
+			top:1300px; /*위에서 아래로 20px설정*/
+			background:purple;		
+		}
+		.fixed{
+			position:fixed;
+			left:160px;/*왼쪽에서 오른쪽으로  20px 설정*/
+			top:20px; /*위에서 아래로 20px설정*/
+			background:pink;		
+		}					
+	</style>
+
+</head>
+<body>
+	<div class="fixed">고정</div>	
+	<div class="abs2">절대</div>	
+	<div class="abs3">절대</div>	
+	<br><br><br><br>
+	<br><br><br><br>
+	<br><br><br><br>
+	<br><br><br><br>
+	<br><br><br><br>
+	<br><br><br><br>
+	<br><br><br><br>
+	<br><br><br><br>
+	<div class="down">T</div>
+	<div class="up">h</div>
+	<div class="down">a</div>
+	<div class="up">n</div>
+	<div class="down">k</div>
+	<div class="up">s</div>
+	<div class="abs1">절대</div>	
+
+</body>
+</html>

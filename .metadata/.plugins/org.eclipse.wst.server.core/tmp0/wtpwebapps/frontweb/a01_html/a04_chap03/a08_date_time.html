@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+# 날짜와 시간 정보 처리 폼 요수
+1. 날짜와 시간 정보는 데이터 처리에 중요한 요소이다.
+	이를 위해 type으로 여러가지 날짜와 시간 형식을 지정하여 처리하고 있다.
+2. 여러가지 type 속성값
+	1) 기본형식
+		<input type="month|week|date|time|datetime-local">
+	2) type 속성
+		month : 년/월 입력 2016-9
+		week : 년/몇번째 주 2016-W16
+		date : 년/월/일    2016-09-01
+		datetime-local : 해당 나라의 시간
+			년/월/일/오전, 오후/시/분/초 100분의1초 2016-9-01T21:30:10.32
+		time : 시/분  21:30
+ 	달:<input type="month" onchange="document.body.innerHTML+=this.value">
+ -->
+ 	달:<input type="month"/><br>
+ 	주:<input type="week"/><br>
+ 	날짜:<input type="date"/><br>
+ 	로컬날짜:<input type="datetime-local"/><br>
+ 	시간:<input type="time"/><br>
+ <!-- 생일을축하합니다.
+ 당신의 생일은  @@@년 @@월 @@입니다. 아래에 생일파티 계획을 입력하세요!
+
+ -->
+	<h2>당신의 생일은 2020년 01월 01일 입니다.</h2>
+	<form action="a09_show.jsp">
+	생일:<input type="date" name="birthday" value="2000-05-20"><br>
+	파티시간:<input type="time" name="partyTime"><br>
+	파티장소:<input type="text" name="partyloc"><br>
+	<input type="submit" value="전송">
+	</form>
+	<form action="a09_show.jsp">
+	<table>
+	<tr><td>생일</td>
+		<td><input type="date" name="birthday" value="2000-05-20"></td>
+	</tr>
+	<tr><td>파티시간</td>
+		<td><input type="time" name="partyTime"></td>
+	</tr>
+	<tr><td>파티장소</td>
+		<td><input type="text" name="partyloc"></td>
+	</tr>
+	
+	<tr>
+		<td colspan="2">
+		<input type="submit" value="등록">
+		</td>
+	</tr>
+	</table>
+	</form>
+</body>
+</html>

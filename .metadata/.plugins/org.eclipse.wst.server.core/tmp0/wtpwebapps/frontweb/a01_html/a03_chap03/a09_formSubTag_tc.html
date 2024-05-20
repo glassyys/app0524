@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+# form하위의 여러가지 요소
+1. 텍스트 입력
+	1) input type="text"
+		한줄짜리 입력창
+	2) input type="password"
+		암호입력창 : 사용자 입력 문자 대신 '*' 등 다른 글자로 출력
+	3) textarea
+		여러줄 입력창
+2. 기본 형식
+	input type="text|password"
+		name="요소이름"
+		maxlength="문자갯수(최대입력가능한)"
+		size="문자갯수(보이는 문자갯수)"		
+	    value="초기입력되는텍스트"
+	    placeholder : 실제 입력되는 값이 아니라 설명을 위한 출력
+ -->
+기본입력:<input type="text"/><br>
+최대 문자갯수 지정:<input type="text" maxlength="2"/><br>
+보이는 문자갯수 지정:<input type="text" size="2" /><br>
+보이는 문자갯수 지정:<input type="text" size="1" /><br>
+초기 입력 데이터 지정:<input type="text" value="안녕"/><br>
+설명내용:<input type="text" placeholder="여기에 입력(클릭해서 입력)"/><br>
+<!-- 
+ex) 위 속성값을 활용하여
+구매할 물건정보(물건명, 가격, 갯수)를 선언하여 입력할 form을 구성해보세요.
+ -->
+<!-- 
+form에 포함된 경우 required 옵션을 통해 기본적으로 전송하기 전에 필수 옵션을
+확인할 수 있다. minlength를 지정하면 최소 글자수까지 제한하여 처리할 수 있다.
+ --> 
+<h2>구매정보</h2> 
+<form>
+	물건명:<input type="text" name="pname" placeholder="물건명 입력(10자이내)"
+			size="20" maxlength="10" required/><br>
+	가 격:<input type="text" name="price" placeholder="가격입력(10자이내)"
+			size="20" minlength="3" maxlength="10" required/><br>
+	갯 수:<input type="text" name="cnt" placeholder="갯수입력(5자이내)"
+			size="20" maxlength="5" required/><br>
+	<input type="submit" value="구매"/>
+</form>			
+<!-- 
+# 다중행 입력 창
+1. 기본 형식
+	<textarea cols="열 갯수" rows="행 갯수"
+		name="요소이름"></textarea>
+	cols, rows : 텍스트 입력창의 크기로 가로세로 문자 수(영어를 기준으로)
+ -->
+기타사항 입력<br>
+<textarea cols="20" rows="10" name="content"></textarea> 					
+
+<!-- 
+a10_introMy.html
+자기소개서 타이틀로,
+이름, 암호(최대4글자), 자소서(다중행)를 작성하여 form형식에 넣고,
+a11_showMy.jsp에 작성완료버튼 클릭시, 출력되게 하세요..
+모든 입력 항목은 반드시 입력하게 처리하세요.
+
+# 개발 순서
+1. 파일만들기
+	a10_introMy.html
+	a11_showMy.jsp
+2. 핵심로직
+	form action="a11_showMy.jsp"	
+		name="name" value="홍길동"
+ 		type="submit" 클릭시,
+ 	==> a11_showMy.jsp?name=홍길동
+3. form화면 만들기(a10_introMy.html)
+	<form action="a11_showMy.jsp">
+		이름:<input name="name" required/><br>
+		암호:<input type="password" name="pwd" required/><br>
+		자소서:<textarea name="intro" cols="10" rows="10 required></textarea><br>
+		<input type="submit" value="등록"/>
+4. 출력화면 만들기(a11_showMy.jsp)
+	<h1>자소서 등록 결과</h1>
+	<h2>이름:${param.name}</h2>
+	<h2>암호:${param.pwd}</h2>
+	<h2>자소서:${param.intro}</h2>
+		
+		 
+ 		
+ 		
+ -->
+ 
+ 
+ 
+ 
+</body>
+</html>

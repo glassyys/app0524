@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+#
+
+*/
+</style>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var bdObj=document.querySelector("body")
+bdObj.innerHTML += `<h1> 조건문 </h1>`
+// 1. 사용자가 입력한 수가 짝수인지 홀수인지를 판별하는 함수를 작성하세요.
+var num01 = Number(prompt("1. 숫자 입력하기 "));
+	if (num01 % 2 == 0 ){
+		bdObj.innerHTML += "1. 짝수입니다. <br>";
+	}else {
+		bdObj.innerHTML += "1. 홀수입니다. <br>";
+	}
+// 2. 세 개의 숫자를 입력받아 가장 큰 숫자를 출력하는 함수를 작성하세요.
+var num021 = Number(prompt("2. 숫자 입력하기 첫번째"));
+var num022 = Number(prompt("2. 숫자 입력하기 두번째"));
+var num023 = Number(prompt("2. 숫자 입력하기 세번째"));
+	if (num021 > num022 && num021 > num023){
+		bdObj.innerHTML += `2. 첫번째 입력 값인 ${num021}이 가장 큽니다. <br>`
+	}
+	if (num022 > num021 && num022 > num023){
+		bdObj.innerHTML += `2. 두번째 입력 값인 ${num022}이 가장 큽니다. <br>`
+	}
+	if (num023 > num021 && num023 > num022){
+		bdObj.innerHTML += `2. 세번째 입력 값인 ${num023}이 가장 큽니다. <br>`
+	}
+// 3. 두 수를 입력받아 큰 수를 반환하는 함수를 작성하세요.
+var num031 = Number(prompt("3. 숫자 입력하기 첫번째"));
+var num032 = Number(prompt("3. 숫자 입력하기 두번째"));
+	if (num031 > num032){
+		bdObj.innerHTML += `3. 첫번째 입력 값인 ${num031}이 ${num032}보다 큽니다. <br>`
+	}else {
+		bdObj.innerHTML += `3. 두번째 입력 값인 ${num032}이 ${num031}보다 큽니다. <br>`
+	}
+// 4. 문자열을 입력받아 "Hello"가 포함되어 있으면 "Hello"를, 그렇지 않으면 "Goodbye"를 출력하는 함수를 작성하세요.
+var string = prompt("4. 문자열 입력하기");
+	if (string.includes( "Hello")){
+		bdObj.innerHTML += "4. Hello! <br>";
+	} else {
+		bdObj.innerHTML += "4. Goodbye! <br>";
+	}
+// 일부 포함: '.includes' 사용하기
+// 5. 사용자로부터 키(cm)와 몸무게(kg)를 입력받아 BMI 지수를 계산하고, 결과에 따라 저체중, 정상, 과체중, 비만을 판단하는 함수를 작성하세요.
+var height = Number(prompt("5. 키 입력하기"));
+var heightMeter = height / 100
+var weight = Number(prompt("5. 몸무게 입력하기"));
+var bmi = parseInt(weight / (heightMeter*heightMeter));
+	if(bmi < 18.5){
+		bdObj.innerHTML += `5. BMI가 ${bmi}이므로 저체중입니다. <br>`;
+	}
+	if(bmi > 25){
+		bdObj.innerHTML += `5. BMI가 ${bmi}이므로 과체중입니다. <br>`;
+	} else {
+		bdObj.innerHTML += `5. BMI가 ${bmi}이므로 정상입니다. <br>`;
+	}
+// 6. 사용자로부터 두개의 시간(시와 분)을 입력받고 두 시간의 차이를 분으로 반환하는 함수를 작성하세요.
+var hour01 = Number(prompt("6. 시간입력하기(1) - 시"));
+var minute01 = Number (prompt("6. 시간입력하기(1) - 분"));
+var hour02 = Number(prompt("6. 시간입력하기(2) - 시"));
+var minute02 = Number (prompt("6. 시간입력하기(2) - 분"));
+	if(hour01 >= hour02){
+		bdObj.innerHTML += `6. 두 시간의 차이는 ${(hour01)-(hour02)}시간 ${(minute01)-(minute02)}분 입니다.<br>`
+	} 
+	if(hour02 >= hour01){
+		bdObj.innerHTML += `6. 두 시간의 차이는 ${(hour02)-(hour01)}시간 ${(minute02)-(minute01)}분 입니다.<br>`
+	}
+	if(hour01>25 || hour02>25){
+		bdObj.innerHTML += `6. 시간은 25시를 넘을 수 없습니다. <br>`
+	}
+	if(minute01>60 || minute02>60){
+		bdObj.innerHTML += `6. 분은 60분을 넘을 수 없습니다. <br>`
+	}
+// 7. 어떤 자동차의 연료 효율(갤런당 마일)을 입력받아 유럽 연료 효율(리터당 킬로미터)로 변환하는 함수를 작성하세요.
+var eff01 = Number(prompt("7. 연료 효율입력하기 (갤런당 마일)"));
+var europe = eff01 * 0.42514;
+bdObj.innerHTML += `7. 입력된 연료효율(갤런당 마일)은 ${eff01} Mpg이고, 이를 리터당 킬로미터로 변환시 ${europe} Km/L입니다.`;
+bdObj.innerHTML += `<h1> 반복문 </h1>` 
+// 8. 1부터 100까지의 수 중에서 모든 짝수를 출력하는 프로그램을 작성하세요.
+bdObj.innerHTML += ` 8. 1부터 100까지의 수 중에서 모든 짝수를 출력 <br>` 
+for (var cnt01 = 1; cnt01<= 100; cnt01+=1){
+	if(cnt01%2==0) bdObj.innerHTML += `${cnt01}, `;
+}
+// 9. 1부터 N까지의 합을 계산하는 함수를 작성하세요.
+bdObj.innerHTML += `<br> 9. 1부터 100까지의 합을 계산 <br>`
+var cnt02 = 1;
+for (var i = 1; i<= 100; i++)
+	cnt02 = cnt02 + i;
+	bdObj.innerHTML += `${cnt02}`;
+// 10. 사용자로부터 N을 입력받아 N개의 별(*)을 한 줄로 출력하는 함수를 작성하세요.
+var starWant = Number(prompt("10. '*' 출력하고 싶은 숫자 입력"));
+bdObj.innerHTML += `<br> 10. * 출력하기 <br>`
+var star = '';
+for (var i = 0; i<= starWant; i++){
+	star += '*';
+}
+bdObj.innerHTML += `${star}`;
+// 11. 배열의 요소를 반대 순서로 출력하는 함수를 작성하세요.
+bdObj.innerHTML += `<br> 11. 배열의 요소를 반대 순서로 출력  <br>`
+var array = ["H","E","L","L","O"];
+var reverseArray = "";
+for (var i= array.length-1; i>=0; i--){	
+reverseArray += array[i]
+}
+bdObj.innerHTML += `${reverseArray}`;
+// 12. 사용자로부터 N을 입력받아 1부터 N까지의 수 중에서 3의 배수와 5의 배수를 출력하는 프로그램을 작성하세요.
+bdObj.innerHTML += `<br> 12. 1부터 N까지의 수 중에서 3의 배수와 5의 배수를 출력  <br>`
+bdObj.innerHTML += `3의 배수 출력  <br>`
+var num12 = Number(prompt("12. 숫자입력하기"));
+for (var i=1; i<= num12; i++){
+	if(i % 3 == 0){
+	bdObj.innerHTML += `${i},`
+	}
+}
+bdObj.innerHTML += `<br> 5의 배수 출력  <br>`
+for (var i=1; i<= num12; i++){
+if(i % 5 == 0){
+	bdObj.innerHTML += `${i},`
+	}
+}
+// 13. M, N을 입력 받아 M X N 크기의 테이블 작성하세요.
+bdObj.innerHTML += `<br> 13. M X N 크기의 테이블 작성  <br>`
+var M = parseInt(prompt("13. M(가로) 입력하기"));
+var N = parseInt(prompt("13. N(세로) 입력하기"));
+var table = "<table border>";
+for (var i = 0; i < M; i++){
+	table += "<tr>";
+for (var p = 0; p < N; p++){
+	table += "<td>행" +(i + 1)+ ", 열" + (p + 1) + "</td>"; 
+}
+table += "</tr>";
+}
+table += "</table>";
+bdObj.innerHTML += table;
+// 14. 사용자로부터 N을 입력받아 N개의 최대값과 최소값을 찾아 출력하는 프로그램을 작성하세요.
+bdObj.innerHTML += `<br> 14. 배열 N의 최대값과 최소값을 찾아 출력  <br>`
+var arryN = [10, 20, 30, 40, 50]
+var max = arryN[0];
+var min = arryN[0];
+for(var i = 1; i<arryN.length; i++){
+	if (arryN[i]>max){
+		max = arryN[i];
+	}
+	if (arryN[i]<min){
+		min = arryN[i];
+	}
+}
+bdObj.innerHTML += `최대값은 ${max}이고, 최소값은 ${min}`
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	bdObj.innerHTML += "<h2>setTimeout 시간 이후 처리</h2>"
+	var msgCrm = confirm("5 초 후에 문제를 내겠습니다\n진행하실려면 확인")
+	if(msgCrm){
+		var set01 = setTimeout(function(){
+		var ex01 = prompt("3 X 4 ?", "0")
+		bdObj.innerHTML += `<h3>입력한 답은 ${ex01}</h3>`
+		bdObj.innerHTML += `<h3>문제: 3X4, 정답여부 
+				${(3*4)==ex01}</h3>`
+		clearTimeout(set01) // 메모리 해제.. 위 내용 수행 후..
+		}, 5000) // 5000 ==> 1/1000초이기에 5초를 의미
+	}
+/*
+# 시간처리 함수.
+1. setTimout : 특정한 시간 이후에 처리한 기능을 수행할 때 사용한다.
+	- 기본형식..
+	var set01 = setTimeout(function()){처리할 내용}, 1/1000초)
+	처리할 내용을 해당 시간 이후에 수행하게 한다.
+	clearTimeout(set01)
+	위 처리한 내용을 메모리에 할당하고 있기에 위 형식으로 자원을 해제해주어야 한다.
+2. setInterval : 특정한 시간 마다 처리하는 기능을 반복해서 수행할 때, 사용된다.
+	var int01 = setInterval(function(){ 반복수행할 내용}, 1/100)
+	1/1000초 마다 수행할 내용을 처리한다.
+	clearInterval(in01)
+	메모리를 해제하기에 반복수행을 중단처리한다.
+*/
+//
+</script>
+</html>

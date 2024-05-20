@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>개인일일점검</title>
+	<style type="text/css">
+/*
+#
+
+*/
+input:focus{background:yellow;font-size:15pt;}
+	</style>
+
+</head>
+<body>
+<form name="fo" method="get" action="daily_chk.jsp">
+
+<h1>Personal daily inspection</h1>
+[name]
+<input type="text" name="name"/><br>
+1. Attendance today(Arrived or late before 9:00)<br>
+Reasons for leaving early<br>
+답변:<input size="100" type="text" name="answer01"/><br>
+2. Did you focus on the class with a positive mind?<br>
+1) Didn't you encounter any disturbing contents such as chat or video that are not related to class in class?<br>
+답변:<input size="100" type="text" name="answer02" /><br>
+2) Did you concentrate effectively in class?<br>
+답변:<input size="100" type="text" name="answer03"/><br>
+​3. In the course of the class, what was difficult and what needs to be solved.<br>
+답변:<br>
+<textarea name="answer04" cols="25" rows="5"></textarea><br>
+
+​# What is difficult to understand or difficult to understand today?<br>
+<textarea name="answer05" cols="25" rows="5"></textarea><br>
+<br>
+​# If you have any suggestions related to class, write them.<br>
+<textarea name="answer06" cols="25" rows="5"></textarea><br>
+   
+<input type="submit" /><br>
+
+</form>			
+</body>
+</html>

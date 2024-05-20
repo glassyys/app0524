@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>아이디찾기</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #f0f0f0;
+}
+
+.login-container {
+	width: 400px;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+label {
+	display: block;
+	font-weight: bold;
+}
+
+input[type="text"], input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+.button1 {
+	width: 100%;
+	padding: 10px;
+	background-color: #007bff;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #0056b3;
+}
+
+ul li {
+	display: inline-block;
+	margin-right: 10px; /* 각 요소 사이의 간격을 조절할 수 있습니다. */
+}
+
+a {
+	text-decoration: none; /* 하이퍼링크의 밑줄을 제거합니다. */
+}
+
+.input-with-image {
+	background-image: url('이미지_파일_경로');
+	background-repeat: no-repeat;
+	background-position: right center; /* 이미지 위치 조정 가능 */
+	padding-right: 20px; /* 이미지와 텍스트 사이 여백 설정 */
+}
+
+.centered-title {
+	display: flex;
+	justify-content: center;
+}
+</style>
+<!-- CDN(content delivery network) 방식 jquery 시작 -->
+<!-- 
+<script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+ -->
+<!-- lib 다운로드 설치 처리 -->
+<script src="jquery-3.7.1.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		// $("h2").css("color","yellow").text("jquery시작")
+	})
+</script>
+<script language="JavaScript" type="text/JavaScript">
+	document.domain="interpark.com";
+
+	$(document).ready(function(){
+		egsIncorp.sendPageEgs( "id_search" );
+		fnDormInit();
+	});
+
+	function fnDormInit() {
+		isEmptyStr('50') ? sessionStorage.removeItem('sector') : sessionStorage.setItem('sector', '50');
+	}
+
+	
+	function chkCert(type) {
+		egsIncorp.sendEventEgs('id_search', 'find_id_certify');
+
+		// 2013.03.18
+		var form = document.MemberMatchPwdForm;
+		var reqSite = "10";
+		var div = "MATCH_ID";
+
+		if(type == 'hp'){
+			form.certGb.value = "H";
+			form.action = "https://incorp.interpark.com/member/checkCert.do";
+			form._method.value  = "secuHp";
+			if('pc' == 'mobile' && '' == 'Y'){
+				$('input[name=authRtnUrl]').val(encodeURIComponent(location.href));
+				form.addVar.value = "&reqSite=" + ("15" + div);
+				form.target = "_self";
+				form.submit();
+			}else{
+				form.addVar.value = "&reqSite=" + (reqSite + div);
+				form.target = "varWinName";
+				var fullUrl = "https://incorp.interpark.com/member/checkCert.do?"+$(form).serialize();
+				window.open(fullUrl,"varWinName","width=410, height=460, resizable=0, scrollbars=no, status=0, titlebar=0, toolbar=0, left=435, top=250" );
+			}
+		}else if ( type == 'ipin'){
+			document.reqCBAForm.action = 'http://ipin.siren24.com/i-PIN/jsp/ipin_j10.jsp';
+			if('pc' == 'mobile' && '' == 'Y'){
+				var newRetUrl = '23https://incorp.interpark.com/member/matchid.do?_method=authResult&formName=MemberMatchPwdForm'+"&reqSite=15MATCH_ID&mbrId=&mbrInfo=&authRtnUrl="+encodeURIComponent(location.href);
+				$("form[name=reqCBAForm]").find('input[name=retUrl]').val(newRetUrl);
+				document.reqCBAForm.target = '_self';
+				$(document.reqCBAForm).submit();
+			}else{
+				var fullUrl = "http://ipin.siren24.com/i-PIN/jsp/ipin_j10.jsp?"+$(document.reqCBAForm).serialize();
+				varWinNameObj = window.open(fullUrl, 'IPINWindow', 'width=450, height=500, resizable=0, scrollbars=no, status=0, titlebar=0, toolbar=0');
+				document.reqCBAForm.target = 'IPINWindow';
+			}
+		}
+	}
+
+	function ipinResult(val1, val2, val3, val4, val5, val6, val7, val8, val9, val10) {
+		var form	= document.reqCBAForm;
+		form.elements["result"].value = val1;
+
+		var form1	= document.MemberMatchPwdForm;
+		form1.elements["discrHash"].value = val2;
+		form1.elements["ciscrHash"].value = val8;
+
+		if (val1 == '1') {
+			form1._method.value  = "findMemIdCert";
+			form1.elements["certGb"].value = "I";
+			form1.elements["retInfo"].value = val9;
+			form1.elements["cReqNum"].value = val10;
+			form1.action="https://incorp.interpark.com/member/matchIdProc.do";
+			form1.target  = "";
+			form1.submit();
+		} else {
+			alert("인증에 실패했습니다. 다른 방법으로 아이디를 찾아보십시오.");
+			changeTab('/member/matchid.do?_method=findMemberId');
+			return;
+		}
+	}
+
+	function secuResult(arr) {
+		var val1 = arr[0];
+		var val2 = arr[1];
+		var val3 = arr[2];
+		var val4 = arr[3];
+		var val5 = arr[4];
+		var val6 = arr[5];
+		var val7 = arr[6];
+		var val8 = arr[7];
+		var val9 = arr[8];
+		var val10 = arr[9];
+		var val11 = arr[10];
+		var val12 = arr[11];
+		var cReqNum = arr[15];
+
+		var form	= document.MemberMatchPwdForm;
+		form.elements["result"].value = val1;
+
+		if (val1 == 'Y') {
+			form.elements["certGb"].value = "H";
+			form.elements["discrHash"].value = val3;
+			form.elements["ciscrHash"].value = val6;
+			form.elements["retInfo"].value = val4;
+			form.elements["reqNum1"].value = val5;
+			form.elements["cReqNum"].value = cReqNum;
+			form._method.value  = "findMemIdCert";
+			form.action="https://incorp.interpark.com/member/matchIdProc.do";
+			form.target = "";
+			form.submit();
+		} else {
+			alert("인증에 실패했습니다. 아이핀인증 또는 고객센터로 연락 바랍니다.");
+		}
+		return;
+	}
+
+	
+	function chkFormValid(certType) {
+		if(certType == 'hp') {
+			var $inputHpMemNm = $('#inputHpMemNm');
+			var inputHpMemNmVal = $inputHpMemNm.val();
+
+			if(isEmptyStr(inputHpMemNmVal) || inputHpMemNmVal == $inputHpMemNm.attr('placeholder')) {
+				showErrorMessage('이름을 입력해주세요.');
+				$inputHpMemNm.focus()
+				return false;
+			}
+
+			var $inputHp = $('#inputHp');
+			var inputHpVal = $inputHp.val();
+			var regExp = /^\d{3}\d{3,4}\d{4}$/;
+			if(isEmptyStr(inputHpVal) || inputHpVal == $inputHp.attr('placeholder')) {
+				showErrorMessage('휴대폰번호를 입력해주세요. (-없이 입력)');
+				$inputHp.focus();
+				return false;
+			} else if(!regExp.test(inputHpVal)) {
+				showErrorMessage('잘못된 휴대폰번호 형식입니다. (-없이 입력)');
+				$inputHp.val('').focus()
+				return false;
+			}
+		} else if(certType == 'email') {
+			var $inputEmailMemNm = $('#inputEmailMemNm');
+			var inputEmailMemNmVal = $inputEmailMemNm.val();
+			if(isEmptyStr(inputEmailMemNmVal) || inputEmailMemNmVal == $inputEmailMemNm.attr('placeholder')) {
+				showErrorMessage('이름을 입력해주세요.');
+				return false;
+			}
+
+			var $inputEmail = $('#inputEmail');
+			var inputEmailVal = $inputEmail.val();
+			if( isEmptyStr(inputEmailVal) || inputEmailVal == $inputEmail.attr('placeholder') ) {
+				showErrorMessage('이메일을 입력해주세요.');
+				return false;
+			} else if(!regExEmail.test(inputEmailVal)) {
+				showErrorMessage('잘못된 이메일 형식입니다. ');
+				$inputEmail.focus();
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	function getCertCheckNo(certType) {
+		if(!chkFormValid(certType)) return false;
+
+		var isExistMem = false;
+		$.ajax({
+			 type:"POST"
+			,async: false
+			,url:"/member/matchIdProc.do"
+			,data: {
+			 	"_method": "chkMemberExist",
+				"memNm": certType == 'hp' ? $('#inputHpMemNm').val() : $('#inputEmailMemNm').val(),
+				"certType": certType == 'hp' ? 'sms' : certType,
+				"hp": $('#inputHp').val(),
+				"email": $('#inputEmail').val()
+			}
+			,contentType:"application/x-www-form-urlencoded; charset=utf-8"
+		}).done(function(r){
+			if(r.code == '00') {
+				isExistMem = true;
+			} else {
+				showErrorMessage('입력하신 정보와 일치하는 회원이 없습니다. 다른 인증수단으로 재시도해주세요.');
+			}
+		});
+
+		if(isExistMem) {
+			if (certType == 'hp') {
+				var toSend = "&mpNo=" + $('#inputHp').val() + "&reqSite=10";
+				var url = "/member/checkCert.do?_method=certByMpNo";
+				var loader = new net.ContentLoader(url, receiveResponse, null, "POST", toSend, null);
+			} else if (certType == 'email') {
+				var data = {
+					"_method": "findIdByEmail",
+					"memNm": $('#inputEmailMemNm').val(),
+					"email": $('#inputEmail').val()
+				};
+
+				var form = document.reqCertUserInfoForm;
+
+				$.ajax({
+					type: "POST",
+					url: "/member/checkCert.do",
+					data: data,
+					contentType: "application/x-www-form-urlencoded; charset=utf-8",
+					success: function (json) {
+						var result = json.result;
+						if (result == "Y") {
+							form.certKey.value = json.certKey;
+							showErrorMessage('', false);
+							initTimer('email');
+							showToastMessage('인증번호를 보냈어요.', 3);
+						} else if (result == "F") {
+							showErrorMessage('인증번호 발송에 실패하였습니다. 다시 발송해 주십시오.');
+							clearTimer();
+						} else {
+							showErrorMessage('입력하신 정보와 일치하는 회원이 없습니다. 다른 인증수단으로 재시도해주세요.');
+							clearTimer();
+						}
+					},
+					error: function (e) {
+						showErrorMessage('인증번호 발송에 실패하였습니다. 다시 발송해 주십시오.');
+					}
+				});
+			}
+		}
+	}
+
+	function receiveResponse() {
+		var form = document.reqCertUserInfoForm;
+		var xmlDoc = this.req.responseXML;
+		var bSmsYn = xmlDoc.getElementsByTagName("bSmsYn"); //sucess
+		var certKey = xmlDoc.getElementsByTagName("certKey");
+		bSmsYn = bSmsYn[0].firstChild.nodeValue;
+		certKey = certKey[0].firstChild.nodeValue;
+
+		if (bSmsYn == "sucess") {
+			form.certKey.value = certKey;
+			showErrorMessage('', false);
+			initTimer();
+			showToastMessage('인증번호를 보냈어요.', 3);
+		} else {
+			showToastMessage('인증번호를 발송에 실패했습니다. 다시 발송해 주십시오.', 3);
+		}
+	}
+
+	function chkCertNo(certType) {
+		if(!chkFormValid(certType)) return false;
+		var form = document.reqCertUserInfoForm;
+
+		if(certType == 'hp') {
+			var $inputHpCertNo = $('#inputHpCertNo');
+			var inputHpCertNoVal = $inputHpCertNo.val();
+			if (isEmptyStr(inputHpCertNoVal) || inputHpCertNoVal == $inputHpCertNo.attr('placeholder')) {
+				showErrorMessage('인증번호를 입력 하세요.');
+				$inputHpCertNo.focus()
+				return false;
+			}
+
+			if (!checkTimer()) {
+				showErrorMessage("인증번호 유효시간이 초과되었습니다.");
+				$inputHpCertNo.val('').focus()
+				return false;
+			}
+
+			var certKey = form.certKey.value;
+			var url = "/member/checkCert.do?_method=chkCertNo";
+			var toSend = "&certKey=" + escape(encodeURIComponent(certKey)) + "&certNo=" + escape(encodeURIComponent(inputHpCertNoVal)) + "&isBefore=N&isPopup=Y";
+			var loader = new net.ContentLoader(url, receiveResponseForCertOk, null, "POST", toSend, null);
+		} else if(certType == 'email') {
+			var $inputEmailCertNo = $('#inputEmailCertNo');
+			var inputEmailCertNoVal = $inputEmailCertNo.val();
+			if (isEmptyStr(inputEmailCertNoVal) || inputEmailCertNoVal == $inputEmailCertNo.attr('placeholder')) {
+				showErrorMessage('인증번호를 입력 하세요.');
+				$inputEmailCertNo.focus()
+				return false;
+			}
+
+			if (!checkTimer()) {
+				showErrorMessage("인증번호 유효시간이 초과되었습니다.");
+				$inputEmailCertNo.val('').focus()
+				return false;
+			}
+
+			var form = document.reqCertUserInfoForm;
+			var certKey = form.certKey.value;
+			$.ajax({
+				type: "POST",
+				url:"/member/checkCert.do?_method=checkEmailValidation",
+				data: {tp: 304, seq: certKey, seqNo: inputEmailCertNoVal},
+				contentType:"application/x-www-form-urlencoded; charset=utf-8",
+				success: function(json) {
+					if(json.result == 'Y') {
+						chkMemInfo('email');
+					} else {
+						showErrorMessage("인증번호가 일치하지 않아요. 다시 확인해 주세요.");
+					}
+				},
+				error: function(e) {
+
+				}
+			});
+		}
+	}
+
+	function receiveResponseForCertOk() {
+		var xmlDoc = this.req.responseXML;
+		var certFlag = xmlDoc.getElementsByTagName("certFlag"); //sucess
+		certFlag = certFlag[0].firstChild.nodeValue;
+
+		if (certFlag == "Y") {
+			chkMemInfo('hp');
+		} else {
+			showErrorMessage("인증번호가 일치하지 않아요. 다시 확인해 주세요.");
+		}
+	}
+
+	function chkMemInfo(certType) {
+		var form = document.reqCertUserInfoForm;
+		form.action = "https://incorp.interpark.com/member/matchIdProc.do";
+		form._method.value  = "findMemIdCertNo";
+		form.callTp.value = 'json';
+
+		if(certType == 'hp') {
+			form.memNm.value = $('#inputHpMemNm').val();
+			form.hp.value = $('#inputHp').val();
+			form.certNo.value = $('#inputHpCertNo').val();
+			form.email.value = '';
+			form.certType.value = 'sms';
+		} else if(certType == 'email') {
+			form.memNm.value = $('#inputEmailMemNm').val();
+			form.email.value = $('#inputEmail').val();
+			form.certNo.value = $('#inputEmailCertNo').val();
+			form.hp.value = '';
+			form.certType.value = 'email';
+		}
+
+		$.ajax({
+			 type:"POST"
+			,url:"/member/matchIdProc.do"
+			,data:$(form).serialize()
+			,contentType:"application/x-www-form-urlencoded; charset=utf-8"
+		}).done(function(r){
+			if(r.code == '00') {
+				showErrorMessage('', false);
+				$(form).find("input[name='callTp']").val('');
+				form.submit();
+			} else if(r.code == '01') {
+				showErrorMessage('인증번호가 일치하지 않아요. 다시 확인해 주세요.');
+			} else {
+				var msg = (certType == 'hp') ? '입력하신 이름, 휴대폰번호가 일치하는 ID가 없습니다. 이메일 또는 본인인증으로 찾아주세요.'
+										 : '입력하신 이름, 이메일과 일치하는 ID가 없습니다. 휴대폰번호 또는 본인인증으로 찾아주세요.'
+				showErrorMessage(msg);
+			}
+		}).error(function(){
+			alert('오류가 발생하였습니다. 잠시 후에 다시 시도해주세요.');
+		});
+	}
+</script>
+
+<style>
+	ul .options{height: 132px;}
+
+	html {
+		font-size: 62.5%;
+	}
+
+	html,
+	body * {
+		font-family: "Pretendard", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	}
+</style>
+
+</head>
+<body>
+<!-- 	<div class="login-container"> -->
+		<form id="login-form">
+<form name="MemberMatchPwdForm" method="post" action="/member/matchid.do" onsubmit="return false;">
+	<input type="hidden" name="_method" value="matchIdnNm">
+	<input type="hidden" name="_style" value="imfs">
+	<input type="hidden" name="discrHash">
+	<input type="hidden" name="ciscrHash">
+	<input type="hidden" name="retInfo" value="">
+	<input type="hidden" name="reqNum1" value="">
+	<input type="hidden" name="cReqNum" value="">
+
+	<div id="container" class="container">
+		<div class="infoSearchWrap">
+			<div class="infoSearchHeader">
+				<div class="backButton">
+					<button type="button" onclick="javascript:historyback();">뒤로가기</button>
+				</div>
+				<h2>계정 찾기</h2>
+			</div>
+			<div class="infoSearchBody">
+				<div class="searhTabWrap">
+					<div class="tabWrap">
+						<div class="tab current">
+							<a href="javascript:egsIncorp.sendEventEgs( 'id_search', 'tap_find_id' ); javascript:changeTab('/member/matchid.do?_method=findMemberId');">아이디 찾기</a>
+						</div>
+						<div class="tab">
+							<a href="javascript:egsIncorp.sendEventEgs( 'id_search', 'tap_find_pw' ); javascript:changeTab('/member/matchpwd.do?_method=findMemberPwd');">비밀번호 찾기</a>
+						</div>
+					</div>
+				</div>
+				<div class="searchContentsWrapper">
+					 
+					<div class="searchContents current">
+						<div class="titleWrap">
+							<button type="button" class="titleBtn">
+								<span class="titleText">휴대폰 본인인증으로 찾기</span>
+							</button>
+						</div>
+						<div class="contentsWrap">
+							<div class="inner">
+								<p class="message">본인확인(실명인증)이 완료된 아이디는 본인명의 휴대폰 인증으로 아이디를 찾을 수 있어요.</p>
+								<div class="confirmWrap">
+									<div class="activeButton">
+										<button type="button" onclick="javascript:chkCert('hp');">휴대폰 인증</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="searchContents">
+						<div class="titleWrap">
+							<button type="button" class="titleBtn">
+								<span class="titleText">아이핀으로 찾기</span>
+							</button>
+						</div>
+						<div class="contentsWrap">
+							<div class="inner">
+								<p class="message">아이핀으로 확인하기 위해서는 아이핀 ID가 있어야 해요.</p>
+								<div class="confirmWrap">
+									<div class="activeButton">
+										<button type="button" onclick="javascript:chkCert('ipin');">아이핀 인증</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="searchContents">
+						<div class="titleWrap">
+							<button type="button" class="titleBtn">
+								<span class="titleText">휴대폰 번호로 찾기</span>
+							</button>
+						</div>
+						<div class="contentsWrap">
+							<div class="inner">
+								<p class="message">입력하신 이름과 휴대폰 번호가 회원 정보와 일치한 경우 인증번호가 발송돼요.</p>
+								<div class="inputForm">
+									<div class="inputStyle">
+										<input id="inputHpMemNm" type="text" class="searchInput" placeholder="이름">
+										<button type="button" class="inputBtn btnDel">
+											<span class="blind">삭제</span>
+										</button>
+									</div>
+									<div class="inputStyle">
+										<input id="inputHp" type="tel" class="searchInput" placeholder="휴대폰 번호 (- 없이 입력)">
+										<button type="button" class="inputBtn btnDel">
+											<span class="blind">삭제</span>
+										</button>
+									</div>
+									<div class="hasButtonWrap numberSend" style="display:none;">
+										<div class="inputStyle">
+											<input id="inputHpCertNo" type="text" class="certNoInput" maxlength="10" placeholder="인증번호 6자리">
+											<button type="button" class="inputBtn btnDel">
+												<span class="blind">삭제</span>
+											</button>
+											<div class="count"></div>
+										</div>
+										<div class="buttonStyle">
+											<button type="button" onclick="javascript:getCertCheckNo('hp'); return false;">다시 받기</button>
+										</div>
+									</div>
+									<div class="errorMessage">
+										<div class="message"></div>
+									</div>
+									<div class="confirmWrap">
+										<div class="activeButton">
+											<button type="button" class="certBtn" onclick="javascript:getCertCheckNo('hp'); return false;" disabled="">인증번호 받기</button>
+											<button type="button" class="confirmBtn" style="display:none;" onclick="javascript:egsIncorp.sendEventEgs('id_search', 'find_id_hp'); javascript:chkCertNo('hp'); return false;" disabled="">확인</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="searchContents">
+						<div class="titleWrap">
+							<button type="button" class="titleBtn">
+								<span class="titleText">이메일로 찾기</span>
+							</button>
+						</div>
+						<div class="contentsWrap">
+							<div class="inner">
+								<p class="message">입력하신 이름과 이메일 주소가 회원 정보와 일치한 경우 인증번호가 발송돼요.</p>
+								<div class="inputForm">
+									<div class="inputStyle">
+										<input id="inputEmailMemNm" type="text" class="searchInput" placeholder="이름">
+										<button type="button" class="inputBtn btnDel">
+											<span class="blind">삭제</span>
+										</button>
+									</div>
+									<div class="inputStyle">
+										<input id="inputEmail" type="text" class="searchInput" placeholder="이메일 주소">
+										<button type="button" class="inputBtn btnDel">
+											<span class="blind">삭제</span>
+										</button>
+									</div>
+									<div class="hasButtonWrap numberSend" style="display:none;">
+										<div class="inputStyle">
+											<input id="inputEmailCertNo" type="text" class="certNoInput" maxlength="10" placeholder="인증번호 8자리">
+											<button type="button" class="inputBtn btnDel">
+												<span class="blind">삭제</span>
+											</button>
+											<div class="count"></div>
+										</div>
+										<div class="buttonStyle">
+											<button type="button" onclick="javascript:getCertCheckNo('email'); return false;">다시 받기</button>
+										</div>
+									</div>
+									<div class="errorMessage">
+										<div class="message"></div>
+									</div>
+									<div class="confirmWrap">
+										<div class="activeButton">
+											<button type="button" class="certBtn" onclick="javascript:getCertCheckNo('email'); return false;" disabled="">인증번호 받기</button>
+											<button type="button" class="confirmBtn" style="display:none;" onclick="javascript:egsIncorp.sendEventEgs('id_search', 'find_id_email'); javascript:chkCertNo('email'); return false;" disabled="">확인</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/static/js/main/search/search.js"></script>
+	<script src="/static/js/main/search/header_ui.js"></script>
+	<script src="/static/js/main/search/toast.js"></script>
+
+	<input type="hidden" name="id" size="41" maxlength="8" value="SPAK001"> 	
+	<input type="hidden" name="srvNo" size="41" maxlength="6" value="002006"> 	
+	<input type="hidden" name="reqNum" size="41" maxlength="40"> 				
+	<input type="hidden" name="certDate" size="41" maxlength="14">				
+	<input type="hidden" name="jumin" size="41" maxlength="13">				
+	<input type="hidden" name="name" size="41" maxlength="20">				
+	<input type="hidden" name="certGb" size="41" maxlength="20" value=""> 	
+	<input type="hidden" name="addVar" size="41" maxlength="320" value="&amp;reqSite=10MATCH_ID"> 
+	<input type="hidden" name="retUrl" size="41" value="22https://incorp.interpark.com/member/matchpwd.do?_method=securesult"> 
+	<input type="hidden" name="reqInfo" size="41" maxlength="20">
+	<input type="hidden" name="result" size="10" value=""> 
+	<input type="hidden" name="authRtnUrl" value="">
+</form>
+		</form>
+<!-- 	</div> -->
+</body>
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+
+	function toggleDeleteButton() {
+		var inputText = document.getElementById("inputText");
+		var deleteButton = document.getElementById("deleteButton");
+		if (inputText.value.trim() !== "") {
+			deleteButton.innerHTML = '<img src="cancel.png" alt="clean" style="width: 20px; height: 20px;">'; // 새로운 이미지로 버튼 내용 변경
+			deleteButton.style.display = "inline-block";
+		} else {
+			deleteButton.style.display = "none";
+		}
+	}
+
+	// 삭제 버튼 클릭 이벤트 처리
+	deleteButton.addEventListener("click", function() {
+		// 입력 상자의 텍스트를 초기화
+		inputText.value = "";
+	});
+
+	function togglePasswordVisibility() {
+		var passwordInput = document.getElementById("inputText2");
+		/* 	    if (passwordInput.type === "password") {
+		 passwordInput.type = "text";
+		 } else {
+		 passwordInput.type = "password";
+		 } */
+		if (inputText2.value.trim() !== "") {
+			passwordShow.innerHTML = '<img src="visibility.png" alt="clean" style="width: 20px; height: 20px;">'; // 새로운 이미지로 버튼 내용 변경
+			passwordShow.style.display = "inline-block";
+		} else {
+			passwordShow.style.display = "none";
+		}
+	}
+
+	document.getElementById("passwordShow").addEventListener("click",
+			togglePasswordVisibility2);
+
+	function togglePasswordVisibility2() {
+		var passwordInput = document.getElementById("inputText2");
+		if (passwordInput.type === "password") {
+			passwordInput.type = "text";
+		} else {
+			passwordInput.type = "password";
+		}
+
+	}
+	//수정
+	/* 	function togglePasswordVisibility2() {
+	 var passwordInput = document.getElementById("inputText2");
+	 if (passwordInput.type === "password") {
+	 passwordInput.type = "text";
+	 } else {
+	 passwordInput.type = "password";
+	 }
+	 } */
+	document.getElementById("showPasswordButton").addEventListener("click",
+			togglePasswordVisibility);
+	document.getElementById("passwordShow").addEventListener("click",
+			togglePasswordVisibility2);
+	//document.getElementById("passwordShow").addEventListener("click", togglePasswordVisibility2);
+
+	// 입력 상자의 내용이 변경될 때마다 버튼 표시 여부 확인
+	/*   	inputText.addEventListener("input", function() {
+	 if (inputText.value.trim() !== "") {
+	 deleteButton.style.display = "inline-block";
+	 } else {
+	 deleteButton.style.display = "none";
+	 }
+	 }); */
+
+	$(document).ready(function() {
+		// 로그인 폼을 가운데로 이동
+		centerLoginForm();
+
+		// 윈도우 크기가 변경될 때마다 로그인 폼 위치 업데이트
+		$(window).resize(function() {
+			centerLoginForm();
+		});
+	});
+
+	function centerLoginForm() {
+		var container = $('.login-container');
+		var windowHeight = $(window).height();
+		var windowWidth = $(window).width();
+		var containerHeight = container.outerHeight();
+		var containerWidth = container.outerWidth();
+
+		var topPosition = (windowHeight - containerHeight) / 2;
+		var leftPosition = (windowWidth - containerWidth) / 2;
+
+		container.css({
+			'top' : topPosition + 'px',
+			'left' : leftPosition + 'px'
+		});
+	}
+	/*
+	 #
+
+	 */
+	//
+</script>
+</html>

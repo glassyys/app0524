@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+# 
+
+*/
+	
+	</style>
+
+</head>
+<body>
+	<table width="30%" border>
+		<thead>
+			<tr><th>번호</th><th>이름</th></tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+</body>
+<script type="text/javascript">
+	var bdObj = document.querySelector("tbody") //css선택하는 형식과 동일
+	var no = 1;
+	bdObj.innerHTML += `<tr><th>${no++}</th>
+	                        <th>홍길동</th></tr>`
+	bdObj.innerHTML += `<tr><th>${no++}</th><th>김길동</th></tr>`
+	bdObj.innerHTML += `<tr><th>${no++}</th><th>신길동</th></tr>`
+	bdObj.innerHTML += `<tr><th>${no++}</th><th>오길동</th></tr>`
+	bdObj.innerHTML += `<tr><th>${no++}</th><th>마길동</th></tr>`
+	bdObj.innerHTML += `<tr><th>${no++}</th><th>구길동</th></tr>`
+	var no = 1; //초기화
+	console.log('no++:'+(no++)) 
+	console.log('no:'+no)
+	console.log('++no:'+(++no))
+	console.log('no--:'+(no--))
+	console.log('no:'+no)
+	console.log('--no:'+(--no))
+/*
+# 증감 연산자
+1. 데이터를 증가/감소시킬 때, 사용하는 연산자를 말한다.
+   변수명++, 변수명--;
+2. 변수명++, ++변수명 차이
+	ex) var no = 1;
+		console.log(no++)  ==> 1 출력은 하고, 다음에 증가처리
+		console.log(no)    ==> 2  
+		console.log(++no)  ==> 3 먼저 증가를 하고, 출력을 처리..
+		console.log(no--)  ==> 3 출력  하고, 다음에 감소처리
+		console.log(no)    ==> 2
+		console.log(--no)  ==> 1 먼저 감소하고 출력 처리
+		
+	
+	
+*/
+//
+</script>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+1. **텍스트 그림자가 있는 제목 만들기**
+   - 제목 텍스트에 그림자를 추가하여 입체감을 주는 효과를 만드세요.
+`text-shadow` 속성을 사용하여, 그림자가 오른쪽으로 4px, 아래로 4px 이동하도록 하고,
+흐림 효과는 8px로 설정하세요. 그림자 색상은 자유롭게 선택하세요.
+
+*/
+		h1.h1_s1{ text-shadow:4px 4px 8px orange;}	
+/*
+2. **커스텀 마우스 커서**
+   - 웹 페이지 내의 특정 버튼에 마우스를 올렸을 때, 
+   마우스 커서가 `pointer`에서 `help` 아이콘으로 변경되도록 CSS를 사용해 구현하세요.
+*/
+        button:hover {
+            cursor: help;
+        }
+/*
+3. **인라인 박스와 블록 박스 변환**
+   - `span` 태그를 사용하여 생성된 여러 개의 요소가 줄바꿈 없이 나열되어 있습니다.
+   CSS를 사용하여, 이 `span` 태그들을 블록 박스로 변경하고,
+   각각의 박스에 `20px`의 마진을 추가하세요.
+*/
+
+		.span01{display:block;
+			background:yellow;
+			width:100px;height:20px;
+			padding:10px;
+			border:3px solid green; 
+			margin:20px;}
+/*
+4. **인라인-블록 요소로 레이아웃 만들기**
+   - 여러 개의 `div` 태그를 사용하여 너비와 높이가 지정된 박스를 만들고,
+이들을 `inline-block` 속성을 사용하여 한 줄에 3개씩 나열되도록 구성하세요.
+각 박스에는 서로 다른 배경색을 적용하세요.
+*/
+		div{display:inline-block;width:50px;height:50px; 
+			border:2px solid navy;margin:0px;}
+        .box1 { background-color: red; }
+
+/*
+5. **고정 위치 배너 만들기**
+   - 화면 하단에 고정되어 스크롤을 해도 항상 보이는 광고 배너를 만드세요.
+배너는 화면의 가운데에 위치해야 하며, `position: fixed;` 속성을 사용하세요.
+*/
+		div#fixed{
+			width:20%;
+			height:20%;
+			background:pink;
+			border:1px solid red;
+			position:fixed;
+			top:0px;left:50%;
+			padding:10px;
+			transform: translateX(-50%);
+		}
+/*
+6. **텍스트 그림자로 아이콘 효과 만들기**
+- 숫자 혹은 기호를 사용하여 간단한 아이콘을 만들고,
+`text-shadow` 속성을 활용해 이 아이콘에 입체감을 주세요.
+예를 들어, `>` 기호에 여러 색상의 그림자를 추가하여 화살표
+아이콘이 입체적으로 보이게 만들 수 있습니다.
+*/
+		h3.h3_s3{color:green;
+		    font-size: 60px;
+			text-shadow:2px 2px 4px black, 2px 2px 2px red;}	
+/*
+7. **마우스 오버 시 텍스트 색상과 배경색 변환**
+   - 특정 텍스트에 마우스를 올렸을 때,
+     텍스트 색상이 변경되고 배경색도 함께 변하는 효과를 CSS만을 사용하여 구현하세요.
+     변화되는 색상은 자유롭게 선택하세요.
+*/
+
+h4:hover{background:yellow;color:purple;font-size:15pt;}
+
+	</style>
+
+</head>
+<body>
+	<div id="fixed">휴먼컴퓨터학원</div>
+
+	<h1 class="h1_s1">제목 그림자</h1>
+
+	<button>마우스를 올려보세요!</button>
+	<input type="button" style="cursor: help" value="전송"><br><br>
+	
+	<span>블록 테스트</span>
+	<span class="span01">블록 테스트</span>
+	<span class="span01">블록 테스트</span>
+	
+	<h2>
+	<div></div>
+	<div></div>
+	<div></div>
+	</h2>
+	<h2>
+	<div></div>
+	<div></div>
+	<div></div>
+	</h2>
+	
+		<div class="box1">배경</div>
+	
+	<h3 class="h3_s3">♤ ▶</h3>
+	
+	<h4>마우스오버효과</h4>
+</body>
+</html>

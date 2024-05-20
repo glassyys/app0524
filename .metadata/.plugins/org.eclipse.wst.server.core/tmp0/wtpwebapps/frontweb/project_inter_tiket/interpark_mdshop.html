@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+		<meta http-equiv="Content-Script-Type" content="text/javascript">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="티켓 Desktop">
+		<title>md샵 - 스포츠 - 인터파크</title>
+        <meta name="description" content="갖고 싶던 스포츠 굿즈도 인터파크에서 최저가로 손쉽게 " />
+        <meta name="keywords" content="인터파크, 티켓, 프로스포츠, 프로야구, 프로축구, 프로농구, 프로배구, MD샵, 구단용품, 굿즈 예매" />
+		<script type="text/javascript" src="//ticket.interpark.com/Lib/js/jquery-1.11.2.min.js"></script>
+		<!-- CSS -->
+		
+        <link rel="stylesheet" href="//ticketimage.interpark.com/TicketImage/uidev/desktop/styles/base/reset.css" />
+        
+        <link rel="stylesheet" href="//ticketimage.interpark.com/TicketImage/uidev/desktop/styles/common/head.css" />
+
+		
+		
+        <link rel="stylesheet" href="//ticketimage.interpark.com/TicketImage/uidev/desktop/styles/common/footer.css" />
+		
+        <link rel="stylesheet" href="//ticketimage.interpark.com/TicketImage/uidev/desktop/styles/pages/mdShop/mdShop.css">
+	<style type="text/css">
+
+.topHeaderWrapper .intermdWrap .intermdsWrap .innerWrap .cateWrap .subCateWrap ul li a span {
+    display: inline-block;
+    padding: 2px 0;
+    border-bottom: 1px solid transparent;
+}
+.topHeaderWrapper .intermdWrap .intermdsWrap .innerWrap .cateWrap .subCateWrap ul li a {
+    display: block;
+    font-size: 14px;
+    color: #363636;
+}
+
+.topHeaderWrapper .intermdWrap .intermdsWrap .innerWrap .cateWrap h3 {
+    position: absolute;
+    top: -49px;
+    left: 0;
+    width: 100%;
+}
+.topHeaderWrapper .intermdWrap .intermdsWrap .innerWrap .cateWrap {
+    position: relative;
+    display: inline-block;
+    width: 137px;
+    vertical-align: top;
+    text-align: center;
+}
+.topHeaderWrapper .intermdWrap .intermdsWrap .innerWrap .cateWrap:first-child h3:before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: 0;
+    display: block;
+    width: 1px;
+    height: 13px;
+    background-color: #c4c4c4;
+}
+.topHeaderWrapper .intermdWrap .intermdsWrap .innerWrap .cateWrap h3:after {
+    content: "";
+    position: absolute;
+    top: 17px;
+    right: 0;
+    display: block;
+    width: 1px;
+    height: 13px;
+    background-color: #c4c4c4;
+}
+.topHeaderWrapper .intermdWrap .intermdsWrap .innerWrap .cateWrap .subCateWrap {
+    padding: 16px 0;
+    display: none;
+}
+.topHeaderWrapper .intermdWrap .intermdsWrap .innerWrap .cateWrap {
+    position: relative;
+    display: inline-block;
+    width: 137px;
+    vertical-align: top;
+    text-align: center;
+}
+.topHeaderWrapper .intermdWrap .intermdsWrap .innerWrap .cateWrap .subCateWrap ul li + li {
+    margin-top: 7px;
+}
+
+	</style>
+	
+</head>
+<body>
+<div id="gateway_warp" class="gnbArea_ui">
+    <div id="gateway_con">
+        <div class="gnbArea_top">
+            <div class="bn_Center"></div>
+            <div class="gnbArea_left_ui">
+                <ul>
+                    <li><a class="btn_gnbHome" href="http://www.interpark.com/">홈</a></li>
+                    <li><a class="btn_gnbTour" href="http://tour.interpark.com/?&amp;tid1=main_gnb&amp;tid2=left_top&amp;tid3=tour&amp;tid4=tour">투어</a></li>
+                    <li class="btn_gnbTicket"><a href="http://ticket.interpark.com/?&amp;tid1=main_gnb&amp;tid2=left_top&amp;tid3=ticket&amp;tid4=ticket">티켓</a></li>
+                    <li><a class="btn_gnbShopping" href="http://shop.interpark.com/">쇼핑</a></li>
+                    <li><a class="btn_gnbBook" href="http://book.interpark.com/bookPark/html/book.html?&amp;tid1=main_gnb&amp;tid2=left_top&amp;tid3=book&amp;tid4=book">도서</a></li>
+                </ul>
+            </div>
+            <div class="gnbArea_right">
+                <div id="gnbArea_link">
+                    <ul>
+                            <li id="logstatus"><a href="https://accounts.interpark.com/authorize/ticket-pc?postProc=FULLSCREEN&amp;version=v2&amp;origin=https%3a%2f%2fticket.interpark.com%2fGate%2fTPLoginConfirmGate.asp%3fGroupCode%3d%26Tiki%3d%26Point%3d%26PlayDate%3d%26PlaySeq%3d%26HeartYN%3d%26TikiAutoPop%3d%26BookingBizCode%3d%26MemBizCD%3dWEBBR%26CPage%3d%26GPage%3dhttps%253a%252f%252fticket.interpark.com%252fcontents%252fPromotion%252fMDShop" name="aLogin" id="aLogin"><span id="imgLogin">로그인</span></a></li>
+                            <li><a href="https://member.interpark.com/signup?join_site_tp=50&join_ipp_id=" name="aMember" id="aMember"><span id="imgMember">회원가입</span></a></li>
+                        
+                        <li><a href="http://shop.interpark.com/order/cartlist.do?_method=cartList&amp;logintgt=cart&amp;wid1=kang&amp;wid2=cartlist&amp;wid3=02" name="aReserve" id="aReserve">장바구니</a></li>
+                        <li class="mypage" onmouseover="subMemushowlayer('dlmypgsub');" onmouseout="subMemushowlayer('dlmypgsub');">
+                            <a href="http://shop.interpark.com/mypage/common/MyPage.do?logintgt=mypage&smid1=header&smid2=logout&smid3=mypage">
+                                마이페이지
+                                <img class="icon_arrow" src="http://ticketimage.interpark.com/TicketImage/main/100506_main/Gateway/gateway_arrow.gif">
+                            </a>&nbsp;
+                            <div style="display: none;" id="dlmypgsub" class="lay_mypgsub">
+                                <ul>
+                                    <li><a href="http://shop.interpark.com/mypage/common/MyPage.do?logintgt=mypage&amp;wid1=kang&amp;wid2=mypage&amp;wid3=03">마이페이지</a></li>
+                                    <li><a href="http://shop.interpark.com/mypage/order/OrderSearchList.do?_method=initial&amp;logintgt=mypage">주문/배송조회</a></li>
+                                    <li><a href="http://shop.interpark.com/gate/ZZimList.do?_method=ZZimList&amp;sid1=common&amp;sid2=ZZim&amp;sid3=001&amp;si">찜리스트</a></li>
+                                    <li><a href="http://shop.interpark.com/event/eventCoupon.do?_method=detailMypage&amp;sid1=gb&amp;sid2=svc&amp;FromLogin=Y">할인쿠폰내역</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="http://shop.interpark.com/ecenter/MainFAQ.do?_method=MainFAQ&amp;wid1=kang&amp;wid2=ecenter&amp;wid3=05">고객센터</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+	
+
+    <div class="topHeaderWrapper">
+        <div class="headerWrap">
+            <div class="intermdWrap">
+                <div class="intermdsWrap">
+                    <div class="subIntermds">
+                        <div class="innerWrap">
+                                <div class="cateWrap">
+                                    <h3>
+                                        <a href="/contents/Promotion/MDShop?dispNo=001780002" class="cateName">스포츠MD</a>
+                                    </h3>
+                                    <div class="subCateWrap">
+                                        <ul>
+                                                <li class="">
+                                                    <a href="https://ticket.interpark.com/contents/Promotion/Event/MDShopList?dispNo=001780002001">
+                                                        <span class="name">키움 히어로즈</span>
+                                                    </a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="https://ticket.interpark.com/contents/Promotion/Event/MDShopList?dispNo=001780002008">
+                                                        <span class="name">두산 베어스</span>
+                                                    </a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="https://ticket.interpark.com/contents/Promotion/Event/MDShopList?dispNo=001780002003">
+                                                        <span class="name">LG 트윈스</span>
+                                                    </a>
+                                                </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cateWrap">
+                                    <h3>
+                                        <a href="https://ticket.interpark.com/contents/Promotion/MDShop?dispNo=001780007" class="cateName">스타MD</a>
+                                    </h3>
+                                    <div class="subCateWrap">
+                                        <ul>
+                                                <li class="">
+                                                    <a href="https://ticket.interpark.com/contents/Promotion/Event/MDShopList?dispNo=001780007025">
+                                                        <span class="name">국카스텐</span>
+                                                    </a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="https://ticket.interpark.com/contents/Promotion/Event/MDShopList?dispNo=001780007026">
+                                                        <span class="name">자우림</span>
+                                                    </a>
+                                                </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mainContentsWrapper">
+        <div class="mainLogoWrapper">
+            <h1>
+                <a href="//ticket.interpark.com/contents/Promotion/MDShop" title="MDShop메인 링크이동">
+                    <img src="//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/mdShop/logo_mdShopMain.png" alt="인터파크 MD SHOP 공연의 감동을 영원히 지속시켜줄 특별한 MD가 한 곳에!">
+                </a>
+                
+            </h1>
+        </div>
+            <div class="mainCateListWrapper">
+                <div class="mainCateListWrap">
+                    <ul>
+                            <li>
+                                <a href="/contents/Promotion/Event/MDShop?dispNo=001780002" target="">
+                                    <span class="imgWrap">
+                                        <img src="./images/MDshop_main_sport.jpg" alt="스포츠MD">
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/contents/Promotion/Event/MDShop?dispNo=001780006" target="">
+                                    <span class="imgWrap">
+                                        <img src="./images/MDshop_main_sport.jpg" alt="전시MD">
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/contents/Promotion/Event/MDShop?dispNo=001780007" target="">
+                                    <span class="imgWrap">
+                                        <img src="//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/mdShop/MDshop_main_bn_00178007.jpg" alt="스타MD">
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        
+    </div>
+	<div class="mdInfoWrapper">    
+    <div class="infoWrapper">
+        <!--
+          <p>[인터파크 티켓] MD SHOP에서 판매되는 상품은 [인터파크 쇼핑]사이트를 통해 결제 및 배송이 이루어집니다.</p>
+          <p>주문/배송조회, 취소/반품/교환신청은 [인터파크 쇼핑]에서 확인해주세요.</p>
+          <a class="linkBtn" href="http://www.interpark.com/mypage/common/MyPage.do?logintgt=mypage&wid1=kang&wid2=mypage&wid3=03">
+            <span>확인하기</span>
+          </a>
+        <p>MD샵 고객센터 1661-2385</p>
+        -->
+        <p>공연/스포츠의 감동을 영원히 지속시켜 줄 특별한 MD상품을 [인터파크 티켓] 에서 만나보세요!</p>
+          <p>· [인터파크 티켓] MD샵에서 판매되는 상품은 [인터파크 쇼핑] 사이트를 통해 결제 및 배송이 이루어집니다.</p>
+          <p>· MD샵 상품은 [인터파크 쇼핑] 사이트를 통해 결제가 이루어지므로, NOL카드 적립 및 청구할인에서 제외됩니다</p>
+        <a class="linkBtn" href="http://shop.interpark.com/mypage/common/MyPage.do?logintgt=mypage&smid1=header&smid2=logout&smid3=mypage">
+            <span>확인하기</span>
+        </a>
+        <p>MD샵 CS센터 1661-2385<br />평일 9시~18시</p>
+        </div>
+</div>
+</div>
+
+
+	    
+        <!-- 띠배너 시작 -->
+<div id="target_bandBanner"></div>
+<!--// 띠배너 끝 -->
+
+<link rel="stylesheet" href="//ticketimage.interpark.com/TicketImage/uidev/desktop/styles/common/test/footer.css" />    <!-- RD-1234 푸터변경 -->
+<script type="text/javascript" src="//ticket.interpark.com/common/footer/footer.js"></script>
+
+<script type="text/javascript">
+
+    function tourOpen() {
+        window.open("https://talk-tour.interpark.com/talk", "TalkTourPC", "width=480, height=790, toolbar=no, menubar=no, scrollbars=no, resizable=no");
+    }
+
+    function businessPerson() {
+        window.open("https://www.ftc.go.kr/bizCommPop.do?wrkr_no=8248102515&apv_perm_no=", "BusPC", "width=720, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=no");
+    }
+
+    function goSosWritePopUp()
+    {
+	    var url = "https://tickets.interpark.com/contents/help";
+		window.open(url, "create", "width=417,height=660,scrollbars=auto");
+	}
+
+</script>
+
+<footer class="tourEnterFooter">
+    <div class="footCorp">
+
+        <ul class="corpList">
+            <li>
+                <a href="https://corp.interpark.com/" target="_blank" title="새 창으로 열림">회사소개</a>
+            </li>
+            <li>
+                <a href="https://m.interpark.com/terms.html#agree" target="_blank" title="새 창으로 열림">이용약관</a>
+            </li>
+            <li>
+                <a href="https://m.interpark.com/terms.html#protect_privacy" class="bold" target="_blank" title="새 창으로 열림">개인정보처리방침</a>
+            </li>
+            <li>
+                <a href="https://m.interpark.com/terms.html#location_terms" target="_blank" title="새 창으로 열림">위치기반서비스 이용약관</a>
+            </li>
+            <li>
+                <a href="http://tour.interpark.com/company/companyOutsidecovenant.aspx" target="_blank" title="새 창으로 열림">여행약관</a>
+            </li>
+            <li>
+                <a href="http://tour.interpark.com/customer/noticeview.aspx?seq=10638" target="_blank" title="새 창으로 열림">여행자보험 가입내역</a>
+            </li>
+            <li>
+                <a href="http://ticket.interpark.com/TiKi/Info/ENTInfo.asp?info=c_info_20" target="_blank" title="새 창으로 열림">티켓판매안내</a>
+            </li>
+            <li>
+                <a href="https://travel.interpark.com/home/customer/board/notice/ticket" target="_blank" title="새 창으로 열림">공지사항</a>
+            </li>
+            <li class="">
+                <a href="javascript:;" class="sub">고객센터</a>
+                <ul class="depth">
+                    <li><a href="http://tour.interpark.com/customer/" target="_blank" title="새 창으로 열림">투어 고객센터</a></li>
+                    <li><a href="http://ticket.interpark.com/HelpDesk/HelpDeskMain.asp?&tid1=main_gnb&tid2=right_top&tid3=help&tid4=help" target="_blank" title="새 창으로 열림">티켓 고객센터</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;" class="sub">Language</a>
+                <ul class="depth">
+                    <li><a href="http://ticket.interpark.com" target="_blank" title="새 창으로 열림">Korean</a></li>
+                    <li><a href="http://www.globalinterpark.com/main/main?lang=en&smid1=header&smid2=logout&smid3=language" target="_blank" title="새 창으로 열림">English</a></li>
+                    <li><a href="http://www.globalinterpark.com/main/main?lang=ja&smid1=header&smid2=logout&smid3=language" target="_blank" title="새 창으로 열림">Japanese</a></li>
+                    <li><a href="http://www.globalinterpark.com/main/main?lang=zh&smid1=header&smid2=logout&smid3=language" target="_blank" title="새 창으로 열림">Chinese</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="footInfo">
+        <div class="infoCol">
+            <h2 class="infoTitle">(주)인터파크트리플</h2>
+            <div class="infoContent">
+                <p>주소 서울시 강남구 삼성로 512 삼성동빌딩 10층</p>
+                <p>사업자등록번호 824-81-02515 <a class="linkText" href="javascript:businessPerson();" title="새 창으로 열림">사업자정보확인</a></p>
+                <p>통신판매업신고 2022-서울강남-02179</p>
+                <p>관광사업증 등록번호 : 제2014-42호</p>
+                <p>호스팅서비스제공자 (주)인터파크트리플｜대표이사 최휘영</p>
+            </div>
+        </div>
+        <div class="infoCol">
+            <h2 class="infoTitle">고객센터</h2>
+            <div class="infoContent">
+                <p>
+                    <span>
+                        투어
+                        <a href="tel:1588-3443">1588-3443</a>
+                    </span>
+                    <span>
+                        티켓
+                        <a href="tel:1544-1555">1544-1555</a>
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        팩스
+                        <a href="tel:02-830-7807">02-830-7807</a>
+                    </span>
+                    <span>
+                        이메일
+                        <a href="mailto:helpdesk@interparktriple.com">helpdesk@interparktriple.com</a>
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        해외항공
+                        <a href="tel:02-3479-4399">02-3479-4399</a>
+                    </span>
+                    <span>
+                        국내항공
+                        <a href="tel:02-3479-4340">02-3479-4340</a>
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        <a href="javascript:tourOpen();" class="linkText" title="새 창으로 열림">투어 1:1문의</a>
+                    </span>
+                    <span>
+                        
+                        <a class="linkText" href="https://ticket.interpark.com/HelpDesk/SosWrite.asp" title="페이지 이동">티켓 1:1문의</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="infoCol">
+            <h2 class="infoTitle">전자금융거래 분쟁처리 담당정보</h2>
+            <div class="infoContent">
+                <p>
+                    <span>
+                        투어
+                        <a href="tel:1588-3443">1588-3443</a>
+                    </span>
+                    <span>
+                        티켓
+                        <a href="tel:1544-1555">1544-1555</a>
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        팩스
+                        <a href="tel:02-830-8295">02-830-8295</a>
+                    </span>
+                    <span>
+                        이메일
+                        <a href="mailto:intersolution@interparktriple.com">intersolution@interparktriple.com</a>
+                    </span>
+                </p>
+                <p>
+                    개인정보보호책임자 <a href="mailto:cpo@interparktriple.com">cpo@interparktriple.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="footNotice">
+        <p>
+            (주)인터파크트리플은 항공사가 제공하는 개별 항공권 및 여행사가 제공하는 일부 여행상품에 대하여 통신판매중개자의 지위를 가지며, 해당상품, 상품정보, 거래에 관한
+            의무와 책임은 판매자에게 있습니다.
+        </p>
+        <p>항공권 또는 항공권이 포함된 경우, 표시되는 상품요금은 예상 유류할증료와 제세공과금이 포함된 가격이며, 발권일/환율 등에 따라 변동될 수 있습니다.</p>
+        <p>
+            (주)인터파크트리플은 인터파크티켓, 인터파크투어의 통신판매중개자로서 통신판매의 당사자가 아니므로, 개별 판매자가 등록한 오픈마켓 상품에 대해서 (주)인터파크트리플은 일체
+            책임을 지지 않습니다.
+        </p>
+        <p>Copyright ⓒ InterparkTriple Corp. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+    	
+        <!-- GA 태깅 -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QCJFLB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- Facebook Pixel Code -->
+        <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=135611513637810&ev=PageView&noscript=1" /></noscript>
+	</body>
+    <script src="//ticketimage.interpark.com/TicketImage/uidev/desktop/scripts/plugins/jquery.bxslider/jquery.bxslider.min.js"></script>
+    <script src="//ticketimage.interpark.com/TicketImage/uidev/desktop/scripts/plugins/customSelect/customSelect.js"></script>
+    <script src="/contents/Scripts/Common/PrivacyCertify.js"></script>
+    <script src="/contents/Scripts/Promotion/MDShop.js?v=20230223"></script>
+    <script src="/contents/Scripts/Common/Cookie.js"></script>
+    <script type="text/javascript" src="//ticket.interpark.com/common/GA_Tracking/GA_Tracking.js"></script>
+	<script type="text/javascript" src="//ticket.interpark.com/Lib/js/Ticket.lib.js"></script>
+	<!-- 장기세션 스크립트 -->
+	<script language="javascript" src="//accounts.interpark.com/resources/js/interpark.accounts.js"></script>
+    
+	<script>
+	document.addEventListener("DOMContentLoaded", function() {
+	    // 스포츠MD와 스타MD 메뉴 요소 가져오기
+	    var sportsMDMenu = document.querySelector('a.cateName[href="/contents/Promotion/MDShop?dispNo=001780002"]');
+	    var starMDMenu = document.querySelector('a.cateName[href="/contents/Promotion/MDShop?dispNo=001780007"]');
+	    var subMenus = document.querySelectorAll('.subCateWrap');
+
+	    // 스포츠MD 메뉴에 mouseover 이벤트 추가
+	    sportsMDMenu.addEventListener("mouseover", function() {
+	        // 스포츠MD와 스타MD 하위 메뉴 모두 보이기
+	        showAllSubmenus();
+	    });
+
+	    // 스타MD 메뉴에 mouseover 이벤트 추가
+	    starMDMenu.addEventListener("mouseover", function() {
+	        // 스포츠MD와 스타MD 하위 메뉴 모두 보이기
+	        showAllSubmenus();
+	    });
+
+	    // 모든 하위 메뉴 보이기 함수
+	    function showAllSubmenus() {
+	        subMenus.forEach(function(menu) {
+	            menu.style.display = "block";
+
+	            // 하위 메뉴에 mouseover 이벤트 추가하여 메뉴를 유지
+	            menu.addEventListener("mouseover", function() {
+	                menu.style.display = "block";
+	            });
+
+	            // 하위 메뉴에서 마우스를 떼면 메뉴 숨김
+	            menu.addEventListener("mouseout", function() {
+	                menu.style.display = "none";
+	            });
+	        });
+	    }
+
+	    // 스포츠MD 메뉴에 mouseout 이벤트 추가
+	    sportsMDMenu.addEventListener("mouseout", function() {
+	        // 모든 하위 메뉴 숨기기
+	        hideAllSubmenus();
+	    });
+
+	    // 스타MD 메뉴에 mouseout 이벤트 추가
+	    starMDMenu.addEventListener("mouseout", function() {
+	        // 모든 하위 메뉴 숨기기
+	        hideAllSubmenus();
+	    });
+
+	    // 모든 하위 메뉴 숨기기 함수
+	    function hideAllSubmenus() {
+	        subMenus.forEach(function(menu) {
+	            menu.style.display = "none";
+	        });
+	    }
+	});
+
+</script>
+</html>

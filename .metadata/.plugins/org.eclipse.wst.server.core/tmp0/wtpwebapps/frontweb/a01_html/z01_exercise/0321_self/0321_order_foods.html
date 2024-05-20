@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문제 3: 음식 주문 폼</title>
+</head>
+<body>
+<!-- 
+### 문제 3: 음식 주문 폼
+음식 주문 폼을 만드세요. 사용자는 피자, 파스타, 샐러드 중에서 하나 이상 선택할 수 있어야 합니다.
+각 선택지는 체크박스를 사용하여 표현하세요. 또한,
+사용자가 선호하는 음료를 텍스트 입력과 
+datalist를 사용하여 선택할 수 있도록 하세요. 
+음료 선택지로는 "콜라", "사이다", "물"이 있습니다.
+-->
+<h2>주문할음식</h2>
+<hr>
+	<form action="0321_order_foods.jsp">
+	<h3>음식주문결과</h3>
+	피자:<input type="checkbox" name="Foods" value="피자" checked><br>
+	파스타:<input type="checkbox" name="Foods" value="파스타"><br>
+	샐러드:<input type="checkbox" name="Foods" value="샐러드"><br>
+		<label for="drink">음료를 선택하세요:</label>
+		<input list="drinks01" id="drink01" name="drink01" required/>
+		<datalist id="drinks01">
+		  <option value="콜라">
+		  <option value="사이다">
+		  <option value="환타">
+		  <option value="식혜">
+		</datalist><br>
+		<input type="submit" value="주문">
+	<!-- 
+# type="checkbox"
+1. 다중선택이 가능하면서 모양인 []로 value으로 선택된 값을 지정한다.
+	 -->
+</form>
+</body>
+</html>

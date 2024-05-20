@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	var h2Obj = document.querySelector("h2")
+	h2Obj.innerText = "회원명등록"
+	var memId = document.querySelector("[name=memId]")
+	var regBtn = document.querySelector("#regBtn")
+	var tbodyObj = document.querySelector("tbody")
+	var cnt = 1;
+	memId.onkeyup=function(){
+		// event.keyCode : 키에 대한 고유값
+		//h2Obj.innerText = event.keyCode
+		if(event.keyCode == 13){
+			tbodyObj.innerHTML+="<tr><th>"+(cnt++)+"</th><td>"+memId.value+"</td></tr>"
+			memId.value=""  // 하단에 입력된 회원명을 초기화 처리..
+		}
+	}
+	/*
+	ex) 번호별 국어점수 등록
+	등록할 점수:[   ][등록]
+	번호  국어점수
+	1	 @@@
+	2	 @@@
+	3	 @@@
+	평균  @@@
+	
+	*/
+	
+	// 이벤트와 이벤핸들러 처리..
+	regBtn.onclick=function(){
+		// 속성을 처리할 대상 객체/속성
+		// 1. memId.value
+		//alert(memId.value)
+		// 2. tbodyObj.innerHTML
+		tbodyObj.innerHTML+="<tr><th>"+(cnt++)+"</th><td>"+memId.value+"</td></tr>"
+	}
+	
+	/*
+# 회원등 동적으로 등록하고 리스트 처리되는 내용..
+1. 화면구현
+2. 사용할 DOM 선언..?	
+3. 이벤트 속성 선언/이벤트 핸들러 메서드
+	1) 대상객체.on이벤트명=function()
+-----------------------------------	
+4. 이벤트 핸들러 메서드에 내용 처리.
+	
+	*/
+}  
+</script>
+</head>
+<body>
+	<h2></h2>
+	등록할 회원:<input type="text" name="memId"/>
+	<input type="button" value="등록" id="regBtn"/>
+	<table width="200pt" border>
+		<thead>
+			<tr><th>번호</th><th>회원명</th></tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+
+</body>
+</html>

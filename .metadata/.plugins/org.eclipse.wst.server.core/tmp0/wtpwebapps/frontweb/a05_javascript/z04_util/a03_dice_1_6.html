@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+/*
+#
+
+*/
+
+	</style>
+
+</head>
+<body>
+
+</body>
+
+<script type="text/javascript">
+	var bdObj = document.querySelector("body") //css선택하는 형식과 동일
+	bdObj.innerHTML += "주사위테스트" + "<br>"
+	// 주사위를 던지는 함수
+	function rollDice() {
+	    // Math.random()은 0 이상 1 미만의 난수를 생성하므로,
+	    // 1에서 6 사이의 정수를 얻기 위해선 1을 더하고 6을 곱합니다.
+	    return Math.floor(Math.random() * 6) + 1;
+	}
+
+	// 주사위를 던져서 결과를 출력
+	bdObj.innerHTML += "주사위를 던진 결과: " + rollDice();
+/*
+#
+
+*/
+//
+</script>
+</html>

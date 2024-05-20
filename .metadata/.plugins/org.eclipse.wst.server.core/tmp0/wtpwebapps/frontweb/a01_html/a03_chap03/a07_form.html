@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form name="fo" method="get" action="a08_show.jsp">
+	구매할 과일명 : <input type="text" name="fname"/><br>
+	구매할 갯수 : <input type="text" name="fcnt"/><br>
+	<input type ="submit" value="구매">
+<!-- 	a08_show.jsp?fname=사과&fcnt=5
+		요청할페이지?key=value&key=value
+		===>
+		받는 페이지에서는
+		${param.key}==> 입력한 값을 확인..
+구매할 과일명:[    ]
+구매할 갯수:[    ]
+[전송]
+==>
+a08_show.jsp에서
+구매한 과일:@@@
+구매한 갯수:@@@
+로 출력되게 하세요.
+-->
+</form>
+</body>
+</html>
